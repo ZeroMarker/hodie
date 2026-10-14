@@ -6,6 +6,7 @@
 scripts/vocab/fetch.sh                      # 下载到 data/raw 并校验 sha256
 python3 -m venv .venv && .venv/bin/pip install -r scripts/vocab/requirements.txt
 .venv/bin/python -I scripts/vocab/build.py  # 生成 data/build/vocab.db
+.venv/bin/python -I scripts/vocab/load_pg.py "$(avn service get mammoth --format '{service_uri}' | sed 's#/defaultdb?#/hodie?#')"  # 导入 Aiven PostgreSQL 的 vocab schema
 ```
 
 产物为 SQLite,共十张表:
@@ -53,3 +54,7 @@ Wiktionary(2026-10-01 dump):15759 词有词源说明,12805 词有来源链(共 4
 - 来源链只认 inh、der、bor 等模板和紧跟 from 的 {{m}},「past participle of」这类写法的环节会漏掉(如 inspect 缺 inspicio)。
 - 同形词缀不区分来源,如英语 in-(进入)与拉丁语 in-(否定)合并为一条。
 - ECDICT 的雅思、托福标签数量偏多,考试标签仍待对照大纲抽检。
+
+## PostgreSQL
+
+线上库为 Aiven 的 `mammoth` 服务(PostgreSQL 18,免费版 1GB),数据库 `hodie`。词库在 `vocab` schema,`public` 留给用户和学习记录。`load_pg.py` 每次删除并重建整个 `vocab` schema,约 30 秒;导入后 `senses.examples` 转为 jsonb,另加 `lower(word)` 索引。2026-10-14 导入后 `vocab` 占 79MB,整库 87MB。
