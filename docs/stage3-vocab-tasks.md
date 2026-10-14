@@ -19,15 +19,17 @@
 
 所有任务都遵守以下约定,保证可复现、可审核、成本可控。
 
-1. **生成与构建分离**:生成脚本放在 `scripts/vocab/ai_*.py`,结果写入 `data/ai/<任务>.jsonl`,每行带 `word_id`、`model`、`prompt_version` 和生成时间。`build.py` 只读取这些文件合并入库,不调用 API。
-2. **增量与缓存**:已生成的 `word_id` + `prompt_version` 不重复请求;修改 prompt 时提升 `prompt_version`。
-3. **模型**:生成脚本只依赖兼容 OpenAI 的 Chat Completions 接口,通过环境变量 `LLM_BASE_URL`、`LLM_API_KEY`、`LLM_MODEL` 配置,不在代码里写死提供方。默认按 DeepSeek V4.1 Flash 设计 prompt(输入 0.15、输出 0.6 美元每百万 token)。每次请求处理 20 个词,要求输出 JSON。
-    - opencode 自身的 Go 订阅(`opencode-go` 提供方)只用于 opencode 写代码,不用于批量生成:Go 说明它面向编程智能体流量并监控滥用,而且每 5 小时只能用月额度的 20%。批量生成请用 DeepSeek 官方 API 或其他按量计费的 key。
-    - 粗略估算:四个任务共约 3.7 万个词次,约 1900 次请求,约 1500 万输入 token、500 万输出 token,按上述价格约 5 美元。以试跑实测为准。
+1. **由 opencode 直接生成**:不写逐词调用 LLM API 的脚本,内容由 opencode 会话本身按批写出。流程:
+    - `scripts/vocab/ai_export.py <任务>` 从 `vocab.db` 导出输入,每批 100 个词,写到 `data/ai/input/<任务>/0001.json`;
+    - opencode 逐批读取输入,把结果写到 `vocab-ai/<任务>/0001.jsonl`,每行一个词,带 `word_id` 和 `prompt_version`;
+    - `scripts/vocab/ai_validate.py <任务>` 按各任务的规则校验,输出通过率和不通过的 `word_id`,不通过的重新生成;
+    - `build.py` 只读取 `vocab-ai/` 合并入库。
+2. **结果入库**:`vocab-ai/` 提交到仓库(和 `data/` 不同),生成成本只付一次;每完成若干批就提交一次,中断后从缺失的批次继续。修改生成要求时提升 `prompt_version`,只重做受影响的批次。
+3. **生成要求写进仓库**:每个任务的生成要求写在 `vocab-ai/<任务>/PROMPT.md`,每批生成前都重读一遍,保证不同会话之间标准一致。
 4. **校验**:每个任务都要有程序校验(规则见各任务),不通过的结果丢弃或重试,不入库。
-5. **来源标记**:入库行的 `source` 写 `ai:<model>`,并加 `reviewed`(0 或 1)列。应用只展示 `reviewed = 1` 的数据,或在界面上标出「AI 生成」;这一点由产品决定,先两种都支持。
+5. **来源标记**:入库行的 `source` 写 `ai:opencode/<model>`,并加 `reviewed`(0 或 1)列。应用只展示 `reviewed = 1` 的数据,或在界面上标出「AI 生成」;这一点由产品决定,先两种都支持。
 6. **人工抽检**:每个任务随机抽 200 条导出为 `data/ai/review/<任务>.csv`,供人工检查。抽检错误率低于 5% 时,整批标为 `reviewed = 1`。
-7. **成本**:先用 50 个词试跑,记录 token 用量,估算全量费用后写进本文,再跑全量。
+7. **试跑**:每个任务先做 1 批,运行校验并人工看 20 条,确认质量后再做全量。
 8. **不改动现有数据**:Tatoeba、WordNet、Wiktionary 的数据保持原样,AI 数据只做补充。
 
 ## 任务 1:补齐例句
