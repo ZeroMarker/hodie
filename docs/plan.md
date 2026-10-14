@@ -25,7 +25,7 @@
 | AI 对话 | Claude API | 口语陪练、语法纠错、造句 |
 | 部署 | Vercel + 托管 Postgres | 运维负担最小 |
 
-词汇图谱继续用 PostgreSQL,不引入 Neo4j:WordNet 约 50 万条关系,用关系表加递归查询即可;相似词推荐用 pgvector。图谱可视化用 Cytoscape.js。数据来源为 WordNet(关系)、ECDICT(中文释义)、SUBTLEX-US(词频)、Oxford 3000(CEFR,需核对许可证)。ConceptNet 常识关系和 LLM 自动抽取关系放到发布之后,避免挤压 SRS 主线。
+词汇图谱继续用 PostgreSQL,不引入 Neo4j:WordNet 约 50 万条关系,用关系表加递归查询即可;相似词推荐用 pgvector。图谱可视化用 Cytoscape.js。数据来源为 Open English WordNet(关系)、ECDICT(中文释义)、wordfreq(词频)、CEFR-J(CEFR 等级),详见 [词库来源选择](vocab-sources.md)。ConceptNet 常识关系和 LLM 自动抽取关系放到发布之后,避免挤压 SRS 主线。
 
 词源作为同一张图谱的扩展,不另建系统。主数据来源是 Wiktionary dump(CC BY-SA,需要署名,衍生数据库还要考虑 share-alike 的影响);Etymonline 是商业站点,不批量抓取,只作人工参考;PIE 数据库的许可证待核对。完整的 PIE 语系图谱和语义变化追踪放到发布之后。
 
