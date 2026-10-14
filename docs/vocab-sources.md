@@ -62,4 +62,6 @@ wordfreq 数据、Octanove 和 Wiktionary 都是 CC BY-SA。只要分发由它�
 - [ ] 拿到最新 CET-4/6、雅思大纲词表后,抽检 ECDICT 考试标签 200 词。
 - [ ] 如需展示词频来源或柯林斯星级,联系 ECDICT 作者确认来源。
 
+构建脚本和结果见 [scripts/vocab](../scripts/vocab/README.md)。
+
 返回 [开发计划](plan.md)。
