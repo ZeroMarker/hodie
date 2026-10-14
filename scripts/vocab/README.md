@@ -20,7 +20,7 @@ python3 -m venv .venv && .venv/bin/pip install -r scripts/vocab/requirements.txt
 - `etymology_steps`:结构化的来源链,如 respect ← 中古英语 respect ← 古法语 respect ← 拉丁语 respectus;只取词源第一段。
 - `morphemes` / `word_morphemes`:构词拆分(如 inspect = in- + -spect),词缀的原义和来源语言取自词缀自身的词条。
 - `collocations`:从 Tatoeba 全部 204 万英文句子统计的搭配,窗口 ±3、logDice ≥ 7、至少出现 5 次,每词最多 5 条;`phrase` 为最常见的原文片段,如 make a decision。
-- `examples`:Tatoeba 中英例句(中文已转简体),每词最多 3 句,优先选其余词都更常见的短句;`author` 用于署名。阶段 3 为没有例句的词书词补充 AI 例句,`source` 为 `ai:opencode/<model>`、`license` 为 `own`、`reviewed` 为 0(Tatoeba 数据为 1)。
+- `examples`:Tatoeba 中英例句(中文已转简体),每词最多 3 句,优先选其余词都更常见的短句;`author` 用于署名。阶段 3 为没有例句的词书词补充 AI 例句(每词 2 条,共 7866 词、15732 条),`source` 为 `ai:opencode/<model>`、`license` 为 `own`、`reviewed` 为 0(Tatoeba 数据为 1)。
 
 wordfreq 数据禁止转成 CSV 再分发,不要把产物导出为 CSV 对外提供。
 
@@ -39,7 +39,7 @@ wordfreq 数据禁止转成 CSV 再分发,不要把产物导出为 CSV 对外提
 - `ai_validate.py` 按任务规则校验,输出通过率和不通过的 `word_id`;不通过的结果丢弃或重写,不入库。`--review 0` 可跳过抽检导出。
 - 入库行 `source` 写 `ai:opencode/<model>`;`reviewed` 先写 0,人工抽检错误率低于 5% 后整批改 1。
 
-2026-10-14 试跑:任务 1 第 1 批 100 词共 200 条例句,校验 100/100 通过(见 `vocab-ai/examples/`)。任务 1 全量共 79 批,已完成第 1 批。
+2026-10-14 任务 1 全量完成:79 批、7866 个词、15732 条 AI 例句,`ai_validate.py` 校验 7866/7866 通过(`prompt_version=2`)。词书词的例句覆盖从 7120 补到 14986(100%);入库行 `reviewed` 仍为 0,待人工抽检。
 
 ## 2026-10-14 构建结果
 
@@ -59,7 +59,7 @@ wordfreq 数据禁止转成 CSV 再分发,不要把产物导出为 CSV 对外提
 
 WordNet:19504 词有词义,共 58876 个词义,约 23.8 万条关系;947 个词义带语域标签。
 
-Tatoeba:72863 对中英句子,8430 词配到 19036 句。各词书例句覆盖率:中考 99%、NGSL 95%、高考 92%、CET-4 87%、考研 80%、CET-6 73%、雅思 69%、托福 49%、GRE 29%。
+Tatoeba:72863 对中英句子,8430 词配到 19036 句。阶段 3 任务 1 又为没有例句的 7866 个词书词补了 15732 条 AI 例句(`source=ai:opencode/deepseek-v4.1-flash`)。两者合计 16296 词有例句;词书词覆盖 14986/14986(100%),各词书均 100%(此前:中考 99%、NGSL 95%、高考 92%、CET-4 87%、考研 80%、CET-6 73%、雅思 69%、托福 49%、GRE 29%)。
 
 Wiktionary(2026-10-01 dump):15759 词有词源说明,12805 词有来源链(共 43347 步),5141 词有构词拆分;共 4057 个语素,571 个词缀中 435 个有原义。首次构建需扫描整个 dump,约 17 分钟,抽出的英文段落缓存在 `data/build/wiktionary-en.json.gz`,之后重建约 40 秒。
 
@@ -70,7 +70,7 @@ Wiktionary(2026-10-01 dump):15759 词有词源说明,12805 词有来源链(共 4
 - 约 4200 词只因词频入选(不在任何词书或 CEFR 词表中),仍混有少量人名、地名和粗俗词,只用于查词,不进学习队列。
 - CEFR 词表有 41 个词条在 ECDICT 中找不到,主要是英式拼写(personalisation)、带重音符号(café)和词组(check-in desk)。
 - 搭配按词形统计,同一搭配的不同时态会重复出现,如 pay attention 和 paid attention。
-- 中高级词书的例句覆盖不足,缺口由阶段 3 的 AI 生成例句补齐(须人工抽检)。
+- 词书词的例句缺口已由阶段 3 任务 1 的 AI 例句补齐(14986/14986,100%);AI 例句 `reviewed` 仍为 0,须人工抽检后置 1。
 - 词源文本是简化渲染,少数模板被直接丢弃,句子偶有缺词;阶段 3 用 LLM 讲解词源时应以 `etymology_steps` 为准。
 - 来源链只认 inh、der、bor 等模板和紧跟 from 的 {{m}},「past participle of」这类写法的环节会漏掉(如 inspect 缺 inspicio)。
 - 同形词缀不区分来源,如英语 in-(进入)与拉丁语 in-(否定)合并为一条。
