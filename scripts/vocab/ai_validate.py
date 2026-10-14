@@ -33,6 +33,9 @@ MIN_TOKENS, MAX_TOKENS = 6, 14
 PER_WORD = 2
 # 中文用全角标点,出现半角 , . ! ? : ; 即判为不通过
 HALF_PUNCT_RE = re.compile(r"[,\.!?:;]")
+# 切词:带连字符的复合词算一个词(如 well-being、x-ray),
+# 否则连字符目标词会被拆开,永远匹配不到(见 form_map 键为连字符形式)。
+TOKEN_RE = re.compile(r"[a-z]+(?:['-][a-z]+)*")
 
 
 def load_words(db):
@@ -55,13 +58,28 @@ def target_span(tokens, word, word_id, forms):
             if tokens[i:i + len(parts)] == parts:
                 return set(range(i, i + len(parts)))
         return None
-    return {i for i, t in enumerate(tokens) if forms.get(t, (None,))[0] == word_id}
+    span = {i for i, t in enumerate(tokens) if forms.get(t, (None,))[0] == word_id}
+    if span:
+        return span
+    # 含缩写点的目标词(如 no.、B.C.、i.e.):切词会把点丢掉,按去除非字母后
+    # 的连续 token 再匹配一次。
+    if "." in word:
+        norm = re.sub(r"[^a-z]", "", word.lower())
+        for i in range(len(tokens)):
+            acc = ""
+            for j in range(i, len(tokens)):
+                acc += re.sub(r"[^a-z]", "", tokens[j])
+                if acc == norm:
+                    return set(range(i, j + 1))
+                if len(acc) >= len(norm):
+                    break
+    return None
 
 
 def check_example(text_en, text_zh, word, word_id, rank, forms):
     """校验一条例句,返回不通过的原因(空列表表示通过)。"""
     reasons = []
-    tokens = tatoeba.TOKEN_RE.findall(text_en.lower())
+    tokens = TOKEN_RE.findall(text_en.lower())
     if not MIN_TOKENS <= len(tokens) <= MAX_TOKENS:
         reasons.append(f"英文 {len(tokens)} 词,不在 {MIN_TOKENS}-{MAX_TOKENS}")
     span = target_span(tokens, word, word_id, forms)
