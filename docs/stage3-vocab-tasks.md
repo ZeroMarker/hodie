@@ -12,7 +12,7 @@
 | --- | --- | --- |
 | 中英例句(`examples`,Tatoeba + AI) | 14986 | 0(任务 1 已完成;AI 例句 `reviewed` 待人工抽检后置 1) |
 | 搭配(`collocations`,Tatoeba logDice 统计) | 6347 | 8639 词没有搭配 |
-| WordNet 词义(`senses`) | 14330 | 其中 10105 词是多义词,尚未确定哪个词义对应 ECDICT 的核心中文义 |
+| WordNet 词义(`senses`) | 14330 | 0(任务 2 已完成:10105 个多义词已确定核心义词义,9961 个有 `core_sense_id`,144 个无法判断为 NULL;`reviewed` 待人工抽检) |
 | 词源来源链(`etymology_steps`) | 10489 | 有数据但没有中文讲解 |
 
 ## 通用约定

@@ -11,7 +11,7 @@ python3 -m venv .venv && .venv/bin/pip install -r scripts/vocab/requirements.txt
 
 产物为 SQLite,共十一张表:
 
-- `words`:词条、音标、中英释义、词性、词形变化(`exchange`)、CEFR 等级、wordfreq 排名和 Zipf 值、NGSL 排名、是否具体名词(`concrete`,首个名词词义属于动物、植物、食物、人造物、身体、自然物)。`id` 由 `word_ids.tsv` 登记,重建时保持不变,新词追加。
+- `words`:词条、音标、中英释义、词性、词形变化(`exchange`)、CEFR 等级、wordfreq 排名和 Zipf 值、NGSL 排名、是否具体名词(`concrete`,首个名词词义属于动物、植物、食物、人造物、身体、自然物)、核心义词义(`core_sense_id`,阶段 3 任务 2 生成,多义词书词的 ECDICT 核心中文义对应的 `senses.id`,无法判断时为 NULL)。`id` 由 `word_ids.tsv` 登记,重建时保持不变,新词追加。
 - `word_lists`:词书归属,`list` 取 `zk`、`gk`、`cet4`、`cet6`、`ky`、`ielts`、`toefl`、`gre`、`ngsl`。
 - `senses`:Open English WordNet 词义,含释义、英文例句、语域(informal、slang、archaic、vulgar、derogatory)和 lexfile 语义类别。
 - `relations`:词间关系,记录源词义;类型有 synonym、antonym、hypernym、hyponym、similar、derived_from、pertainym。
@@ -30,16 +30,20 @@ wordfreq 数据禁止转成 CSV 再分发,不要把产物导出为 CSV 对外提
 
 ```bash
 .venv/bin/python -I scripts/vocab/ai_export.py examples      # 导出输入到 data/ai/input/examples/(每批 100 词)
+.venv/bin/python -I scripts/vocab/ai_export.py core_sense    # 任务 2:导出到 data/ai/input/core_sense/
 .venv/bin/python -I scripts/vocab/ai_validate.py examples    # 校验 vocab-ai/examples/,并导出人工抽检 CSV
+.venv/bin/python -I scripts/vocab/ai_validate.py core_sense  # 校验 vocab-ai/core_sense/
 .venv/bin/python -I scripts/vocab/build.py                   # 重新构建,vocab-ai/ 的结果一并入库
 ```
 
 - `ai_export.py` 按 `words.id` 排序切批,词集不变时批次可复现;目标集只看原始数据的缺口,不含 `vocab-ai/` 已生成的结果,所以合并入库后重新导出不会错位。`--batch N` 只导一批,`--missing` 只导还没有结果的批次。
 - opencode 逐批把结果写到 `vocab-ai/<任务>/NNNN.jsonl`,每行一个词,带 `word_id`、`prompt_version` 和 `model`。
 - `ai_validate.py` 按任务规则校验,输出通过率和不通过的 `word_id`;不通过的结果丢弃或重写,不入库。`--review 0` 可跳过抽检导出。
-- 入库行 `source` 写 `ai:opencode/<model>`;`reviewed` 先写 0,人工抽检错误率低于 5% 后整批改 1。
+- 例句入库行 `source` 写 `ai:opencode/<model>`;核心义词义写入 `words.core_sense_id`。`reviewed` 先写 0,人工抽检错误率低于 5% 后整批改 1(核心义词义的抽检以结果文件里的 `reviewed` 为准,`words` 表暂不加该列)。
 
 2026-10-14 任务 1 全量完成:79 批、7866 个词、15732 条 AI 例句,`ai_validate.py` 校验 7866/7866 通过(`prompt_version=2`)。词书词的例句覆盖从 7120 补到 14986(100%);入库行 `reviewed` 仍为 0,待人工抽检。
+
+2026-10-14 任务 2 全量完成:102 批、10105 个多义词书词,`ai_validate.py` 校验 10105/10105 通过(`prompt_version=1`)。其中 9961 词(98.6%)给出 `core_sense_id`,144 词(1.4%)无法判断写 NULL;待人工抽检。
 
 ## 2026-10-14 构建结果
 
@@ -57,7 +61,7 @@ wordfreq 数据禁止转成 CSV 再分发,不要把产物导出为 CSV 对外提
 | GRE | 7504 |
 | NGSL | 2809 |
 
-WordNet:19504 词有词义,共 58876 个词义,约 23.8 万条关系;947 个词义带语域标签。
+WordNet:19504 词有词义,共 58876 个词义,约 23.8 万条关系;947 个词义带语域标签。多义词书词 10105 个,其中 9961 个(98.6%)由阶段 3 任务 2 确定了核心义对应的 `core_sense_id`,144 个无法判断写 NULL。
 
 Tatoeba:72863 对中英句子,8430 词配到 19036 句。阶段 3 任务 1 又为没有例句的 7866 个词书词补了 15732 条 AI 例句(`source=ai:opencode/deepseek-v4.1-flash`)。两者合计 16296 词有例句;词书词覆盖 14986/14986(100%),各词书均 100%(此前:中考 99%、NGSL 95%、高考 92%、CET-4 87%、考研 80%、CET-6 73%、雅思 69%、托福 49%、GRE 29%)。
 
@@ -72,6 +76,7 @@ Wiktionary(2026-10-01 dump):15759 词有词源说明,12805 词有来源链(共 4
 - 搭配按词形统计,同一搭配的不同时态会重复出现,如 pay attention 和 paid attention。
 - 词书词的例句缺口已由阶段 3 任务 1 的 AI 例句补齐(14986/14986,100%);AI 例句 `reviewed` 仍为 0,须人工抽检后置 1。
 - AI 例句为满足「其余词更常见」的规则,用词偏简单:old 出现在约 17% 的句子里(2645/15732),个别句子语义别扭(如 brandish 的「挥舞那块旧金子」)。人工抽检时重点看这两点,必要时提升 `prompt_version`,要求用词多样。
+- 核心义对应的词义(任务 2)为 AI 判断,`reviewed` 仍为 0,须人工抽检后置 1。判断以 ECDICT 释义第一行为准,同一行有多个中文义项时优先取第一个;144 个词因 WordNet 缺对应义项或词条是词组、专名而写 NULL。介词、数词、代词、感叹词等 WordNet 没有对应词性的标记不校验词性,只校验 id 属于该词。
 - 词源文本是简化渲染,少数模板被直接丢弃,句子偶有缺词;阶段 3 用 LLM 讲解词源时应以 `etymology_steps` 为准。
 - 来源链只认 inh、der、bor 等模板和紧跟 from 的 {{m}},「past participle of」这类写法的环节会漏掉(如 inspect 缺 inspicio)。
 - 同形词缀不区分来源,如英语 in-(进入)与拉丁语 in-(否定)合并为一条。
