@@ -16,6 +16,7 @@ from wordfreq import top_n_list, zipf_frequency
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))  # -I 模式下需手动加入本目录
 import tatoeba  # noqa: E402
+import wiktionary  # noqa: E402
 import wordnet  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -134,6 +135,7 @@ def main():
 
     wordnet.load(db, RAW)
     tatoeba.load(db, RAW)
+    wiktionary.load(db, RAW)
     db.commit()
     print("words:", db.execute("SELECT count(*) FROM words").fetchone()[0])
     for name, n in db.execute("SELECT list, count(*) FROM word_lists GROUP BY list ORDER BY list"):

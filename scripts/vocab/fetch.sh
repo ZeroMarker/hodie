@@ -14,6 +14,11 @@ fetch octanove-vocabulary-profile-c1c2-1.0.csv "$CEFRJ/octanove-vocabulary-profi
 fetch ngsl_stats.csv https://www.newgeneralservicelist.com/s/NGSL_12_stats.csv
 fetch english-wordnet-2025.xml.gz https://github.com/globalwordnet/english-wordnet/releases/download/2025-edition/english-wordnet-2025.xml.gz
 
+# Wiktionary 官方 dump(约 1.6GB);kaikki.org 的 wiktextract 导出在本机只有约 15KB/s,改用官方 dump 自行解析
+WIKT=enwiktionary-20261001-pages-articles.xml.bz2
+fetch "$WIKT" "https://dumps.wikimedia.org/enwiktionary/20261001/$WIKT"
+echo "f9ed426c69c6b21d026613bd0f200c2aaa1145e9  $WIKT" | sha1sum -c
+
 # Tatoeba 每周重新导出,不固定校验和;删掉旧文件即可更新
 TATOEBA=https://downloads.tatoeba.org/exports/per_language
 fetch eng_sentences_detailed.tsv.bz2 "$TATOEBA/eng/eng_sentences_detailed.tsv.bz2"
