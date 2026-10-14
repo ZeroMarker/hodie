@@ -15,6 +15,7 @@ from pathlib import Path
 from wordfreq import top_n_list, zipf_frequency
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))  # -I 模式下需手动加入本目录
+import collocations  # noqa: E402
 import tatoeba  # noqa: E402
 import wiktionary  # noqa: E402
 import wordnet  # noqa: E402
@@ -22,6 +23,8 @@ import wordnet  # noqa: E402
 ROOT = Path(__file__).resolve().parents[2]
 RAW = ROOT / "data" / "raw"
 OUT = ROOT / "data" / "build" / "vocab.db"
+# 词条 id 登记表,入库;重建时沿用旧 id,新词追加,用户数据可以放心引用 words.id
+ID_REGISTRY = Path(__file__).resolve().parent / "word_ids.tsv"
 
 FREQ_TOP = 30000
 CEFR_ORDER = ["A1", "A2", "B1", "B2", "C1", "C2"]
@@ -57,6 +60,19 @@ def load_cefr():
 
 def load_ngsl():
     return {row["Lemma"].strip().lower(): int(row["SFI Rank"]) for row in read_csv("ngsl_stats.csv")}
+
+
+def load_registry():
+    if not ID_REGISTRY.exists():
+        return {}
+    with open(ID_REGISTRY, encoding="utf-8", newline="") as f:
+        return {word: int(i) for i, word in csv.reader(f, delimiter="\t", quoting=csv.QUOTE_NONE)}
+
+
+def save_registry(ids):
+    with open(ID_REGISTRY, "w", encoding="utf-8", newline="") as f:
+        for word, i in sorted(ids.items(), key=lambda x: x[1]):
+            f.write(f"{i}\t{word}\n")
 
 
 def main():
@@ -98,6 +114,7 @@ def main():
         if key not in rows or (word == key and rows[key]["word"].strip() != key):
             rows[key] = row
 
+    registry = load_registry()
     seen = set()
     for key, row in rows.items():
         word = row["word"].strip()
@@ -114,10 +131,13 @@ def main():
         if not (listed or freq_only):
             continue
         seen.add(key)
+        if word not in registry:
+            registry[word] = max(registry.values(), default=0) + 1
         cur = db.execute(
-            "INSERT INTO words (word, phonetic, definition_en, translation_zh, pos, exchange,"
-            " cefr, freq_rank, zipf, ngsl_rank) VALUES (?,?,?,?,?,?,?,?,?,?)",
+            "INSERT INTO words (id, word, phonetic, definition_en, translation_zh, pos, exchange,"
+            " cefr, freq_rank, zipf, ngsl_rank) VALUES (?,?,?,?,?,?,?,?,?,?,?)",
             (
+                registry[word],
                 word,
                 row["phonetic"] or None,
                 unescape(row["definition"]),
@@ -133,8 +153,10 @@ def main():
         lists = tags | ({"ngsl"} if key in ngsl else set())
         db.executemany("INSERT INTO word_lists VALUES (?, ?)", [(l, cur.lastrowid) for l in lists])
 
+    save_registry(registry)
     wordnet.load(db, RAW)
     tatoeba.load(db, RAW)
+    collocations.load(db, RAW)
     wiktionary.load(db, RAW)
     db.commit()
     print("words:", db.execute("SELECT count(*) FROM words").fetchone()[0])

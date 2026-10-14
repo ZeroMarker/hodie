@@ -23,6 +23,8 @@ REGISTER_SYNSETS = {
 SENSE_RELATIONS = {"antonym": "antonym", "derivation": "derived_from", "pertainym": "pertainym"}
 SYNSET_RELATIONS = {"hypernym": "hypernym", "hyponym": "hyponym", "similar": "similar"}
 
+CONCRETE_LEXFILES = {"noun.animal", "noun.artifact", "noun.body", "noun.food", "noun.object", "noun.plant"}
+
 SCHEMA = """
 CREATE TABLE senses (
     id TEXT PRIMARY KEY,
@@ -32,7 +34,8 @@ CREATE TABLE senses (
     sense_order INTEGER NOT NULL,
     definition TEXT,
     examples TEXT,
-    register TEXT
+    register TEXT,
+    lexfile TEXT
 );
 CREATE INDEX senses_word ON senses(word_id);
 CREATE TABLE relations (
@@ -67,12 +70,24 @@ def parse(path):
             rels = [(r.get("relType"), r.get("target")) for r in el.findall("SynsetRelation")]
             synsets[el.get("id")] = {
                 "definition": el.findtext("Definition"),
+                "lexfile": el.get("lexfile"),
                 "examples": [e.text for e in el.findall("Example") if e.text],
                 "relations": rels,
                 "register": next((REGISTER_SYNSETS[t] for k, t in rels if k == "exemplifies" and t in REGISTER_SYNSETS), None),
             }
             el.clear()
     return entries, synsets
+
+
+def mark_concrete(db):
+    """首个名词词义属于可画出来的类别时,标为具体名词,用于「具体名词加图」。"""
+    db.execute("ALTER TABLE words ADD COLUMN concrete INTEGER NOT NULL DEFAULT 0")
+    placeholders = ",".join("?" * len(CONCRETE_LEXFILES))
+    db.execute(
+        f"UPDATE words SET concrete = 1 WHERE id IN (SELECT word_id FROM senses"
+        f" WHERE pos = 'n' AND sense_order = 1 AND lexfile IN ({placeholders}))",
+        sorted(CONCRETE_LEXFILES),
+    )
 
 
 def load(db, raw):
@@ -101,7 +116,8 @@ def load(db, raw):
                 (REGISTER_SYNSETS[t] for k, t in sense_rels if k == "exemplifies" and t in REGISTER_SYNSETS), None
             )
             rows.append((sense_id, wid, synset_id, pos, order, syn["definition"],
-                         json.dumps(syn["examples"], ensure_ascii=False) if syn["examples"] else None, register))
+                         json.dumps(syn["examples"], ensure_ascii=False) if syn["examples"] else None, register,
+                         syn["lexfile"]))
             for other in synset_words[synset_id] - {wid}:
                 rels.add((wid, other, "synonym", sense_id))
             for kind, target in sense_rels:
@@ -113,7 +129,8 @@ def load(db, raw):
                         if other != wid:
                             rels.add((wid, other, SYNSET_RELATIONS[kind], sense_id))
 
-    db.executemany("INSERT INTO senses VALUES (?,?,?,?,?,?,?,?)", rows)
+    db.executemany("INSERT INTO senses VALUES (?,?,?,?,?,?,?,?,?)", rows)
+    mark_concrete(db)
     db.executemany("INSERT INTO relations VALUES (?,?,?,?,'oewn')", sorted(rels))
     print("senses:", len(rows), "words with senses:", len({r[1] for r in rows}))
     for kind, n in db.execute("SELECT type, count(*) FROM relations GROUP BY type ORDER BY 2 DESC"):

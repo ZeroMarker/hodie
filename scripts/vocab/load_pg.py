@@ -1,7 +1,8 @@
 """把 data/build/vocab.db 导入 PostgreSQL 的 vocab schema(整体重建)。
 
 用法:load_pg.py <postgres URI>。SQLite 建表语句与 PostgreSQL 兼容,原样执行;
-senses.examples 导入后转为 jsonb。词库只读,重建前会删除整个 vocab schema。
+senses.examples 导入后转为 jsonb。先导入 vocab_new,再在一个事务里替换 vocab,导入期间线上可读。
+旧 schema 用 CASCADE 删除,所以 public 下的表不要对 vocab 建外键;words.id 由 word_ids.tsv 保证稳定。
 """
 
 import sqlite3
@@ -13,6 +14,7 @@ import psycopg
 ROOT = Path(__file__).resolve().parents[2]
 DB = ROOT / "data" / "build" / "vocab.db"
 SCHEMA = "vocab"
+STAGING = "vocab_new"
 
 
 def main(uri):
@@ -23,9 +25,9 @@ def main(uri):
         "SELECT sql FROM sqlite_master WHERE type = 'index' AND sql IS NOT NULL ORDER BY rowid").fetchall()
 
     with psycopg.connect(uri) as pg:
-        pg.execute(f"DROP SCHEMA IF EXISTS {SCHEMA} CASCADE")
-        pg.execute(f"CREATE SCHEMA {SCHEMA}")
-        pg.execute(f"SET search_path TO {SCHEMA}")
+        pg.execute(f"DROP SCHEMA IF EXISTS {STAGING} CASCADE")
+        pg.execute(f"CREATE SCHEMA {STAGING}")
+        pg.execute(f"SET search_path TO {STAGING}")
         for name, sql in tables:
             pg.execute(sql)
             cols = [r[1] for r in src.execute(f"PRAGMA table_info({name})")]
@@ -37,7 +39,9 @@ def main(uri):
             pg.execute(sql)
         pg.execute("ALTER TABLE senses ALTER COLUMN examples TYPE jsonb USING examples::jsonb")
         pg.execute("CREATE INDEX words_lower ON words (lower(word))")
-        pg.execute(f"ANALYZE")
+        pg.execute(f"DROP SCHEMA IF EXISTS {SCHEMA} CASCADE")
+        pg.execute(f"ALTER SCHEMA {STAGING} RENAME TO {SCHEMA}")
+        pg.execute("ANALYZE")
         size = pg.execute(f"SELECT pg_size_pretty(sum(pg_total_relation_size(c.oid))) FROM pg_class c"
                           f" JOIN pg_namespace n ON n.oid = c.relnamespace WHERE n.nspname = '{SCHEMA}'"
                           " AND c.relkind = 'r'").fetchone()[0]
