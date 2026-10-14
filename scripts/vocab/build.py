@@ -8,10 +8,15 @@ wordfreq 数据禁止转成 CSV 再分发,所以输出只用 SQLite。
 
 import csv
 import re
+import sys
 import sqlite3
 from pathlib import Path
 
 from wordfreq import top_n_list, zipf_frequency
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))  # -I 模式下需手动加入本目录
+import tatoeba  # noqa: E402
+import wordnet  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 RAW = ROOT / "data" / "raw"
@@ -127,6 +132,8 @@ def main():
         lists = tags | ({"ngsl"} if key in ngsl else set())
         db.executemany("INSERT INTO word_lists VALUES (?, ?)", [(l, cur.lastrowid) for l in lists])
 
+    wordnet.load(db, RAW)
+    tatoeba.load(db, RAW)
     db.commit()
     print("words:", db.execute("SELECT count(*) FROM words").fetchone()[0])
     for name, n in db.execute("SELECT list, count(*) FROM word_lists GROUP BY list ORDER BY list"):
