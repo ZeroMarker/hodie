@@ -71,6 +71,7 @@ Wiktionary(2026-10-01 dump):15759 词有词源说明,12805 词有来源链(共 4
 - CEFR 词表有 41 个词条在 ECDICT 中找不到,主要是英式拼写(personalisation)、带重音符号(café)和词组(check-in desk)。
 - 搭配按词形统计,同一搭配的不同时态会重复出现,如 pay attention 和 paid attention。
 - 词书词的例句缺口已由阶段 3 任务 1 的 AI 例句补齐(14986/14986,100%);AI 例句 `reviewed` 仍为 0,须人工抽检后置 1。
+- AI 例句为满足「其余词更常见」的规则,用词偏简单:old 出现在约 17% 的句子里(2645/15732),个别句子语义别扭(如 brandish 的「挥舞那块旧金子」)。人工抽检时重点看这两点,必要时提升 `prompt_version`,要求用词多样。
 - 词源文本是简化渲染,少数模板被直接丢弃,句子偶有缺词;阶段 3 用 LLM 讲解词源时应以 `etymology_steps` 为准。
 - 来源链只认 inh、der、bor 等模板和紧跟 from 的 {{m}},「past participle of」这类写法的环节会漏掉(如 inspect 缺 inspicio)。
 - 同形词缀不区分来源,如英语 in-(进入)与拉丁语 in-(否定)合并为一条。
