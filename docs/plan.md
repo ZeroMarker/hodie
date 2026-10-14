@@ -27,6 +27,8 @@
 
 词汇图谱继续用 PostgreSQL,不引入 Neo4j:WordNet 约 50 万条关系,用关系表加递归查询即可;相似词推荐用 pgvector。图谱可视化用 Cytoscape.js。数据来源为 WordNet(关系)、ECDICT(中文释义)、SUBTLEX-US(词频)、Oxford 3000(CEFR,需核对许可证)。ConceptNet 常识关系和 LLM 自动抽取关系放到发布之后,避免挤压 SRS 主线。
 
+词源作为同一张图谱的扩展,不另建系统。主数据来源是 Wiktionary dump(CC BY-SA,需要署名,衍生数据库还要考虑 share-alike 的影响);Etymonline 是商业站点,不批量抓取,只作人工参考;PIE 数据库的许可证待核对。完整的 PIE 语系图谱和语义变化追踪放到发布之后。
+
 ## 里程碑
 
 交付分五个阶段,第 5 周末得到可用的 MVP,第 12 周公开发布。
@@ -34,21 +36,21 @@
 1. **阶段 0:准备(第 1 周)**
     - 确认目标人群、核心卖点和成功指标(如 7 日留存、每日学习时长)。
     - 搭好项目骨架、CI、代码规范和数据库迁移。
-    - 整理词库来源(CET-4/6、雅思、高频 3000 词、WordNet、ECDICT、SUBTLEX-US、Oxford 3000),确认许可证。
+    - 整理词库来源(CET-4/6、雅思、高频 3000 词、WordNet、ECDICT、SUBTLEX-US、Oxford 3000、Wiktionary dump),确认许可证。
 2. **阶段 1:MVP 核心(第 2 到 5 周)**
     - 账号体系和用户资料。
-    - 词卡:释义、音标、发音、例句,导入 WordNet 、词频和 CEFR 等级,展示同义词和反义词。
+    - 词卡:释义、音标、发音、例句,导入 WordNet 、词频和 CEFR 等级,展示同义词、反义词和词根词缀拆解(词源数据随 Wiktionary 解析导入)。
     - SRS 调度,先用 SM-2,再换 FSRS。
     - 每日学习与复习队列、连续打卡、进度统计。
     - 验收:用户能独立完成「注册 → 学新词 → 次日复习」的闭环。
 3. **阶段 2:内容与练习(第 6 到 8 周)**
     - 选择、拼写、听写、例句填空四种题型。
     - 听力片段(TTS 生成加人工抽检)。
-    - 错题本、词书切换,以及词根词缀联想和图谱可视化(Cytoscape.js)。
+    - 错题本、词书切换,以及词族展开、词源链和图谱可视化(Cytoscape.js)。
     - PWA 离线缓存,保证通勤场景可用。
 4. **阶段 3:AI 能力(第 9 到 10 周)**
     - AI 口语对话:按场景和难度分级,带实时语法与用词纠正。
-    - 为生词自动生成语境例句;用 pgvector 做相似词推荐;AI 辅助抽取词间关系,须人工审核。
+    - 为生词自动生成语境例句;用 pgvector 做相似词推荐;AI 辅助抽取词间关系,须人工审核;基于已入库的词源数据用 LLM 生成词源讲解,避免编造。
     - 控制成本:限制对话轮数,缓存常见请求,简单任务用小模型。
 5. **阶段 4:打磨与发布(第 11 到 12 周)**
     - 埋点和数据看板。
@@ -74,6 +76,12 @@
 - `relations`(src, dst, type):同义、反义、上位、下位、派生等关系。
 - `morphemes`:词根词缀及其与词的关联(如 spect → inspect、respect)。
 - `words` 增加 CEFR 等级和词频排名列。
+
+为支持词源,再增加以下内容:
+
+- `languages`:语言节点(如 Latin、Old French)。
+- `relations.type` 增加 `inherited`、`borrowed_from`、`derived_from`、`semantic_shift`。
+- `morphemes` 增加来源语言和原义列(如 spect 来自 Latin specere,「看」)。
 
 ## 主要风险与应对
 
