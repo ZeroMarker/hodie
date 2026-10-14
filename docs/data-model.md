@@ -24,4 +24,6 @@
 - `relations.type` 增加 `inherited`、`borrowed_from`、`derived_from`、`semantic_shift`。
 - `morphemes` 增加来源语言和原义列(如 spect 来自 Latin specere,「看」)。
 
+为支持语域,`senses` 增加语域标签列(formal、informal、slang),数据来自 WordNet 和 Wiktionary 的部分标注。
+
 返回 [开发计划](plan.md)。
