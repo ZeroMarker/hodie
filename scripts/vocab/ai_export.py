@@ -12,7 +12,6 @@
 
 import argparse
 import json
-import re
 import sqlite3
 import sys
 from pathlib import Path
@@ -20,21 +19,10 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))  # -I 模式下需手动加入本目录
 import ai_common as ai  # noqa: E402
 
-POS_RE = re.compile(r"^([a-z]+\.)\s*")
-
 WORD_BOOK = "EXISTS (SELECT 1 FROM word_lists l WHERE l.word_id = w.id)"
 # 目标集按 Tatoeba 等原始数据判断,不含 vocab-ai/ 已生成的例句,
 # 这样合并入库后重新导出时批次不变,可从缺失的批次继续。
 HAS_EXAMPLES = "EXISTS (SELECT 1 FROM examples e WHERE e.word_id = w.id AND e.source NOT LIKE 'ai:%')"
-
-
-def split_zh(text):
-    """ECDICT 释义的第一行是核心义,行首是词性标记(如 n.、vt.)。"""
-    line = (text or "").split("\n", 1)[0].strip()
-    m = POS_RE.match(line)
-    if m:
-        return line[m.end():].strip() or None, m.group(1)
-    return line or None, None
 
 
 def examples_words(db):
@@ -48,7 +36,7 @@ def examples_words(db):
         collocations.setdefault(wid, []).append(phrase)
     words = []
     for wid, word, zh, cefr in rows:
-        core, pos = split_zh(zh)
+        core, pos = ai.split_zh(zh)
         item = {"word_id": wid, "word": word, "zh": core, "pos": pos, "cefr": cefr}
         if collocations.get(wid):
             item["collocations"] = collocations[wid]
@@ -56,7 +44,30 @@ def examples_words(db):
     return words
 
 
-TASKS = {"examples": examples_words}
+def core_sense_words(db):
+    """任务 2 核心义对应 WordNet 词义的输入:有多于一个 WordNet 词义的多义词书词,按 id 排序。
+
+    提供 ECDICT 释义全文(含多行)和该词全部词义(id、词性、英文释义),
+    让模型判断第一行核心中文义对应哪个词义。
+    """
+    rows = db.execute(
+        f"SELECT w.id, w.word, w.translation_zh FROM words w"
+        f" WHERE {WORD_BOOK}"
+        f" AND (SELECT count(*) FROM senses s WHERE s.word_id = w.id) > 1 ORDER BY w.id"
+    ).fetchall()
+    senses = {}
+    for wid, sid, pos, definition in db.execute(
+        "SELECT word_id, id, pos, definition FROM senses ORDER BY word_id, sense_order"
+    ):
+        senses.setdefault(wid, []).append({"id": sid, "pos": pos, "def": definition})
+    words = []
+    for wid, word, zh in rows:
+        _, pos = ai.split_zh(zh)
+        words.append({"word_id": wid, "word": word, "zh": zh, "pos": pos, "senses": senses[wid]})
+    return words
+
+
+TASKS = {"examples": examples_words, "core_sense": core_sense_words}
 
 
 def main():

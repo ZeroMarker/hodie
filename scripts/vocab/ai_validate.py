@@ -2,8 +2,8 @@
 
 用法:
     python -I scripts/vocab/ai_validate.py examples                  # 校验全部已生成批次
-    python -I scripts/vocab/ai_validate.py examples --batch 1        # 只校验第 1 批
-    python -I scripts/vocab/ai_validate.py examples --review 200     # 另导出人工抽检 CSV
+    python -I scripts/vocab/ai_validate.py core_sense --batch 1      # 只校验第 1 批
+    python -I scripts/vocab/ai_validate.py core_sense --review 200   # 另导出人工抽检 CSV
 
 任务 1(例句)的校验规则(见 docs/stage3-vocab-tasks.md):
     1. 每个词恰好 2 条例句,两条不重复;
@@ -12,6 +12,12 @@
     4. 其余词的 freq_rank 中位数要低于目标词;
     5. 中文非空,且不含英文目标词;
     6. 中文必须用全角标点,出现半角 , . ! ? : ; 即不通过。
+
+任务 2(核心义对应 WordNet 词义)的校验规则:
+    1. core_sense_id 要么是 null,要么必须是该词 sense id 之一;
+    2. 非 null 时,词性要和 ECDICT 释义第一行的词性标记一致
+       (n.→n、a.→a、vt./vi./v.→v、adv.→r、pl.→n;介词、数词、代词、感叹词
+        和没有标记的不校验词性,因为 WordNet 没有对应词性)。
 不通过的结果丢弃或重写后重跑,不入库。
 """
 
@@ -37,13 +43,35 @@ HALF_PUNCT_RE = re.compile(r"[,\.!?:;]")
 # 否则连字符目标词会被拆开,永远匹配不到(见 form_map 键为连字符形式)。
 TOKEN_RE = re.compile(r"[a-z]+(?:['-][a-z]+)*")
 
+# ECDICT 释义首行的词性标记 → WordNet 词性;无法对应的不校验词性
+ECDICT_POS = {"n.": "n", "a.": "a", "vt.": "v", "vi.": "v", "v.": "v", "adv.": "r", "pl.": "n"}
+# WordNet 的形容词卫星词义(s)按形容词(a)处理
+SENSE_POS = {"s": "a"}
 
-def load_words(db):
+REVIEW_HEADER = {
+    "examples": ["word_id", "word", "text_en", "text_zh", "prompt_version", "model"],
+    "core_sense": ["word_id", "word", "zh", "core_sense_id", "sense_pos", "sense_def", "prompt_version", "model"],
+}
+
+
+def load_examples_words(db):
     """word_id → (word, freq_rank),缺 freq_rank 的词按最生僻处理。"""
     rows = db.execute(
         "SELECT id, word, coalesce(freq_rank, ?) FROM words", (tatoeba.UNKNOWN_RANK,)
     ).fetchall()
     return {wid: (word, rank) for wid, word, rank in rows}
+
+
+def load_core_sense_words(db):
+    """word_id → 词、释义首行、词性标记和全部词义 (pos, definition)。"""
+    words = {}
+    for wid, word, zh in db.execute("SELECT id, word, translation_zh FROM words"):
+        _, pos = ai.split_zh(zh)
+        words[wid] = {"word": word, "zh": (zh or "").split("\n", 1)[0].strip(), "pos": pos, "senses": {}}
+    for wid, sid, pos, definition in db.execute("SELECT word_id, id, pos, definition FROM senses"):
+        if wid in words:
+            words[wid]["senses"][sid] = (pos, definition)
+    return words
 
 
 def target_span(tokens, word, word_id, forms):
@@ -105,8 +133,9 @@ def check_example(text_en, text_zh, word, word_id, rank, forms):
     return reasons
 
 
-def check_record(rec, words, forms, version):
-    """校验一行结果,返回 (不通过原因, 通过时可用于抽检的例句)。"""
+def check_example_record(rec, ctx, version):
+    """校验一行例句结果,返回 (不通过原因, 通过时可用于抽检的例句)。"""
+    words, forms = ctx["words"], ctx["forms"]
     wid = rec.get("word_id")
     if wid not in words:
         return [f"word_id {wid} 不在库中"], []
@@ -133,6 +162,44 @@ def check_record(rec, words, forms, version):
     return [], [(wid, word, e["text_en"], e["text_zh"], rec.get("prompt_version"), rec.get("model")) for e in examples]
 
 
+def check_core_sense_record(rec, ctx, version):
+    """校验一行核心义词义结果,返回 (不通过原因, 通过时可用于抽检的行)。"""
+    words = ctx["words"]
+    wid = rec.get("word_id")
+    if wid not in words or not words[wid]["senses"]:
+        return [f"word_id {wid} 不在库中或没有词义"], []
+    reasons = []
+    if rec.get("prompt_version") != version:
+        reasons.append(f"prompt_version {rec.get('prompt_version')} 不是 {version}")
+    sid = rec.get("core_sense_id")
+    sense = None
+    if sid is not None:
+        if not isinstance(sid, str) or sid not in words[wid]["senses"]:
+            reasons.append(f"core_sense_id {sid!r} 不是该词的词义")
+        else:
+            sense = words[wid]["senses"][sid]
+            want = ECDICT_POS.get(words[wid]["pos"])
+            got = SENSE_POS.get(sense[0], sense[0])
+            if want and got != want:
+                reasons.append(f"词性 {got} 与释义首行 {words[wid]['pos']} 不一致")
+    if reasons:
+        return reasons, []
+    return [], [(wid, words[wid]["word"], words[wid]["zh"], sid,
+                 sense[0] if sense else "", (sense[1] or "") if sense else "",
+                 rec.get("prompt_version"), rec.get("model"))]
+
+
+LOADERS = {"examples": load_examples_words, "core_sense": load_core_sense_words}
+CHECKERS = {"examples": check_example_record, "core_sense": check_core_sense_record}
+
+
+def load_context(task, db):
+    ctx = {"words": LOADERS[task](db)}
+    if task == "examples":
+        ctx["forms"] = tatoeba.form_map(db)
+    return ctx
+
+
 def expected_batches(task):
     """从已导出的输入文件读回每个批次的 word_id,用于报告未生成的词。"""
     expected = {}
@@ -144,15 +211,15 @@ def expected_batches(task):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("task", choices=sorted(ai.PROMPT_VERSION), help="任务名,如 examples")
+    parser.add_argument("task", choices=sorted(ai.PROMPT_VERSION), help="任务名,如 core_sense")
     parser.add_argument("--batch", type=int, help="只校验这个批次(从 1 开始)")
     parser.add_argument("--review", type=int, default=200, help="人工抽检 CSV 的条数,0 表示不导出")
     args = parser.parse_args()
 
     version = ai.PROMPT_VERSION[args.task]
     db = sqlite3.connect(ai.DB)
-    words = load_words(db)
-    forms = tatoeba.form_map(db)
+    ctx = load_context(args.task, db)
+    check = CHECKERS[args.task]
 
     paths = sorted((ai.AI / args.task).glob("*.jsonl"))
     if args.batch:
@@ -167,7 +234,7 @@ def main():
         file_errors += errors
         total_lines += len(records)
         for rec in records:
-            reasons, samples = check_record(rec, words, forms, version)
+            reasons, samples = check(rec, ctx, version)
             if reasons:
                 failed[rec.get("word_id")] = reasons
             else:
@@ -180,7 +247,7 @@ def main():
     rate = len(passed) / total_lines * 100 if total_lines else 0.0
     print(f"通过 {len(passed)} 个词,不通过 {len(failed)} 个,通过率 {rate:.1f}%")
     for wid, reasons in list(failed.items())[:20]:
-        word = words.get(wid, ("?",))[0]
+        word = ctx["words"].get(wid, {}).get("word", "?")
         print(f"  不通过 {wid} {word}:{' ; '.join(reasons)}")
     if len(failed) > 20:
         print(f"  …另有 {len(failed) - 20} 个不通过")
@@ -198,8 +265,8 @@ def main():
         rows = review_rows if len(review_rows) <= args.review else random.Random(0).sample(review_rows, args.review)
         with open(path, "w", encoding="utf-8", newline="") as f:
             writer = csv.writer(f)
-            writer.writerow(["word_id", "word", "text_en", "text_zh", "prompt_version", "model"])
-            writer.writerows(sorted(rows))
+            writer.writerow(REVIEW_HEADER[args.task])
+            writer.writerows(sorted(rows, key=lambda r: r[0]))
         print(f"抽检导出 {len(rows)} 条到 {path}")
 
 

@@ -5,6 +5,7 @@
 """
 
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -15,9 +16,21 @@ REVIEW = ROOT / "data" / "ai" / "review"  # 人工抽检导出,不入库
 
 BATCH_SIZE = 100
 # 生成要求版本,随每个任务单独维护;改动生成要求时提升,只重做受影响的批次
-PROMPT_VERSION = {"examples": 2}
+PROMPT_VERSION = {"examples": 2, "core_sense": 1}
 # 入库行的 source 写 ai:opencode/<model>;结果文件里的 model 字段优先,缺省用这个
 DEFAULT_MODEL = "deepseek-v4.1-flash"
+
+# ECDICT 释义的首行是核心义,行首是词性标记(如 n.、vt.)
+POS_RE = re.compile(r"^([a-z]+\.)\s*")
+
+
+def split_zh(text):
+    """拆出 ECDICT 释义第一行(核心义)的内容和词性标记。"""
+    line = (text or "").split("\n", 1)[0].strip()
+    m = POS_RE.match(line)
+    if m:
+        return line[m.end():].strip() or None, m.group(1)
+    return line or None, None
 
 
 def result_path(task, batch):

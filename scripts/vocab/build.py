@@ -114,7 +114,25 @@ def load_ai_examples(db, path):
     print("ai examples:", len(rows))
 
 
-AI_LOADERS = {"examples": load_ai_examples}
+def load_ai_core_sense(db, path):
+    """核心义对应的 WordNet 词义:写 words.core_sense_id,只接受属于该词的 sense id。"""
+    sense_ids = {}
+    for wid, sid in db.execute("SELECT word_id, id FROM senses"):
+        sense_ids.setdefault(wid, set()).add(sid)
+    rows = []
+    for file in sorted(path.glob("*.jsonl")):
+        records, errors = ai.read_jsonl(file)
+        for error in errors:
+            print(f"ai core_sense: 解析失败 {error}")
+        for rec in records:
+            sid, wid = rec.get("core_sense_id"), rec.get("word_id")
+            if isinstance(sid, str) and sid in sense_ids.get(wid, ()):
+                rows.append((sid, wid))
+    db.executemany("UPDATE words SET core_sense_id = ? WHERE id = ?", rows)
+    print("ai core_sense:", len(rows))
+
+
+AI_LOADERS = {"examples": load_ai_examples, "core_sense": load_ai_core_sense}
 
 
 def main():
@@ -138,7 +156,8 @@ def main():
             cefr TEXT,
             freq_rank INTEGER,
             zipf REAL,
-            ngsl_rank INTEGER
+            ngsl_rank INTEGER,
+            core_sense_id TEXT
         );
         CREATE TABLE word_lists (
             list TEXT NOT NULL,
