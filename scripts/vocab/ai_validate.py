@@ -10,7 +10,8 @@
     2. 英文 6 到 14 个词;
     3. 用 tatoeba.form_map 还原词形后,句中必须包含目标词;
     4. 其余词的 freq_rank 中位数要低于目标词;
-    5. 中文非空,且不含英文目标词。
+    5. 中文非空,且不含英文目标词;
+    6. 中文必须用全角标点,出现半角 , . ! ? : ; 即不通过。
 不通过的结果丢弃或重写后重跑,不入库。
 """
 
@@ -18,6 +19,7 @@ import argparse
 import csv
 import json
 import random
+import re
 import sqlite3
 import statistics
 import sys
@@ -29,6 +31,8 @@ import tatoeba  # noqa: E402
 
 MIN_TOKENS, MAX_TOKENS = 6, 14
 PER_WORD = 2
+# 中文用全角标点,出现半角 , . ! ? : ; 即判为不通过
+HALF_PUNCT_RE = re.compile(r"[,\.!?:;]")
 
 
 def load_words(db):
@@ -78,6 +82,8 @@ def check_example(text_en, text_zh, word, word_id, rank, forms):
         reasons.append("中文为空")
     elif word.lower() in text_zh.lower():
         reasons.append("中文包含英文目标词")
+    if HALF_PUNCT_RE.search(text_zh):
+        reasons.append("中文含半角标点")
     return reasons
 
 
