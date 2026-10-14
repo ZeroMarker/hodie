@@ -31,7 +31,8 @@ CREATE TABLE examples (
     source TEXT NOT NULL,
     source_id TEXT NOT NULL,
     author TEXT,
-    license TEXT NOT NULL
+    license TEXT NOT NULL,
+    reviewed INTEGER NOT NULL DEFAULT 1
 );
 CREATE INDEX examples_word ON examples(word_id);
 """

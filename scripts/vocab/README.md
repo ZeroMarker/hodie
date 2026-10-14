@@ -1,6 +1,6 @@
 # 词库构建
 
-来源与许可见 [词库来源选择](../../docs/vocab-sources.md)。原始数据和产物都在 `data/`,不入库。
+来源与许可见 [词库来源选择](../../docs/vocab-sources.md)。原始数据和产物都在 `data/`,不入库;阶段 3 AI 生成的结果在 `vocab-ai/`,入库。
 
 ```bash
 scripts/vocab/fetch.sh                      # 下载到 data/raw 并校验 sha256
@@ -20,9 +20,26 @@ python3 -m venv .venv && .venv/bin/pip install -r scripts/vocab/requirements.txt
 - `etymology_steps`:结构化的来源链,如 respect ← 中古英语 respect ← 古法语 respect ← 拉丁语 respectus;只取词源第一段。
 - `morphemes` / `word_morphemes`:构词拆分(如 inspect = in- + -spect),词缀的原义和来源语言取自词缀自身的词条。
 - `collocations`:从 Tatoeba 全部 204 万英文句子统计的搭配,窗口 ±3、logDice ≥ 7、至少出现 5 次,每词最多 5 条;`phrase` 为最常见的原文片段,如 make a decision。
-- `examples`:Tatoeba 中英例句(中文已转简体),每词最多 3 句,优先选其余词都更常见的短句;`author` 用于署名。
+- `examples`:Tatoeba 中英例句(中文已转简体),每词最多 3 句,优先选其余词都更常见的短句;`author` 用于署名。阶段 3 为没有例句的词书词补充 AI 例句,`source` 为 `ai:opencode/<model>`、`license` 为 `own`、`reviewed` 为 0(Tatoeba 数据为 1)。
 
 wordfreq 数据禁止转成 CSV 再分发,不要把产物导出为 CSV 对外提供。
+
+## 阶段 3:AI 补全
+
+例句、核心义、搭配、词源讲解这些缺口由 opencode 直接按批生成,流程和约定见 [阶段 3 词库任务](../../docs/stage3-vocab-tasks.md)。每个任务的生成要求写在 `vocab-ai/<任务>/PROMPT.md`,每批生成前重读一遍。
+
+```bash
+.venv/bin/python -I scripts/vocab/ai_export.py examples      # 导出输入到 data/ai/input/examples/(每批 100 词)
+.venv/bin/python -I scripts/vocab/ai_validate.py examples    # 校验 vocab-ai/examples/,并导出人工抽检 CSV
+.venv/bin/python -I scripts/vocab/build.py                   # 重新构建,vocab-ai/ 的结果一并入库
+```
+
+- `ai_export.py` 按 `words.id` 排序切批,词集不变时批次可复现;目标集只看原始数据的缺口,不含 `vocab-ai/` 已生成的结果,所以合并入库后重新导出不会错位。`--batch N` 只导一批,`--missing` 只导还没有结果的批次。
+- opencode 逐批把结果写到 `vocab-ai/<任务>/NNNN.jsonl`,每行一个词,带 `word_id`、`prompt_version` 和 `model`。
+- `ai_validate.py` 按任务规则校验,输出通过率和不通过的 `word_id`;不通过的结果丢弃或重写,不入库。`--review 0` 可跳过抽检导出。
+- 入库行 `source` 写 `ai:opencode/<model>`;`reviewed` 先写 0,人工抽检错误率低于 5% 后整批改 1。
+
+2026-10-14 试跑:任务 1 第 1 批 100 词共 200 条例句,校验 100/100 通过(见 `vocab-ai/examples/`)。任务 1 全量共 79 批,已完成第 1 批。
 
 ## 2026-10-14 构建结果
 

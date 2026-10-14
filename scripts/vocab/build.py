@@ -1,4 +1,4 @@
-"""把 data/raw 下的原始词库合并成 data/build/vocab.db(SQLite)。
+"""把 data/raw 下的原始词库和 vocab-ai/ 下的 AI 补全结果合并成 data/build/vocab.db(SQLite)。
 
 收录范围:带考试标签、在 NGSL 或 CEFR 词表中,或 wordfreq 排名前 30000 的 ECDICT 词条;
 只因词频入选的,须有英文释义,并跳过专有名词和屈折形式。
@@ -15,6 +15,7 @@ from pathlib import Path
 from wordfreq import top_n_list, zipf_frequency
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))  # -I 模式下需手动加入本目录
+import ai_common as ai  # noqa: E402
 import collocations  # noqa: E402
 import tatoeba  # noqa: E402
 import wiktionary  # noqa: E402
@@ -23,6 +24,7 @@ import wordnet  # noqa: E402
 ROOT = Path(__file__).resolve().parents[2]
 RAW = ROOT / "data" / "raw"
 OUT = ROOT / "data" / "build" / "vocab.db"
+AI_OUT = ROOT / "vocab-ai"  # 阶段 3 AI 生成的结果,入库
 # 词条 id 登记表,入库;重建时沿用旧 id,新词追加,用户数据可以放心引用 words.id
 ID_REGISTRY = Path(__file__).resolve().parent / "word_ids.tsv"
 
@@ -73,6 +75,46 @@ def save_registry(ids):
     with open(ID_REGISTRY, "w", encoding="utf-8", newline="") as f:
         for word, i in sorted(ids.items(), key=lambda x: x[1]):
             f.write(f"{i}\t{word}\n")
+
+
+def load_ai(db):
+    """合并 vocab-ai/ 下各任务的 AI 补全结果;只做补充,不改动现有数据。
+
+    结果由 opencode 按 vocab-ai/<任务>/PROMPT.md 生成、ai_validate.py 校验通过。
+    入库行 source 写 ai:opencode/<model>,reviewed 取结果行里的值(默认 0,人工抽检后改 1)。
+    """
+    for task_dir in sorted(p for p in AI_OUT.glob("*") if p.is_dir()):
+        loader = AI_LOADERS.get(task_dir.name)
+        if loader:
+            loader(db, task_dir)
+
+
+def load_ai_examples(db, path):
+    """例句:为仍没有例句的词补充,每词 2 条,license 写 own。"""
+    known = {row[0] for row in db.execute("SELECT id FROM words")}
+    have = {row[0] for row in db.execute("SELECT DISTINCT word_id FROM examples")}
+    rows = []
+    for file in sorted(path.glob("*.jsonl")):
+        records, errors = ai.read_jsonl(file)
+        for error in errors:
+            print(f"ai examples: 解析失败 {error}")
+        for rec in records:
+            wid = rec.get("word_id")
+            if wid not in known or wid in have:
+                continue  # 词不在库里,或已有例句(Tatoeba 或其他批次),保持原样
+            have.add(wid)
+            for i, ex in enumerate(rec.get("examples") or []):
+                source = f"ai:opencode/{rec.get('model') or ai.DEFAULT_MODEL}"
+                rows.append((wid, ex["text_en"], ex["text_zh"], source, f"ai-{wid}-{i}", rec.get("reviewed", 0)))
+    db.executemany(
+        "INSERT INTO examples (word_id, text_en, text_zh, source, source_id, license, reviewed)"
+        " VALUES (?,?,?,?,?,'own',?)",
+        rows,
+    )
+    print("ai examples:", len(rows))
+
+
+AI_LOADERS = {"examples": load_ai_examples}
 
 
 def main():
@@ -158,6 +200,7 @@ def main():
     tatoeba.load(db, RAW)
     collocations.load(db, RAW)
     wiktionary.load(db, RAW)
+    load_ai(db)
     db.commit()
     print("words:", db.execute("SELECT count(*) FROM words").fetchone()[0])
     for name, n in db.execute("SELECT list, count(*) FROM word_lists GROUP BY list ORDER BY list"):
