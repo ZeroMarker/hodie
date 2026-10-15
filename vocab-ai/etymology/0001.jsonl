@@ -86,7 +86,7 @@
 {"word_id": 141, "prompt_version": 1, "model": "deepseek-v4-pro", "reviewed": 0, "text": "源自晚期拉丁语 accidēntālis，由 accident 加后缀 -al 构成，表示偶然的、意外的。"}
 {"word_id": 144, "prompt_version": 1, "model": "deepseek-v4-pro", "reviewed": 0, "text": "借自拉丁语 acclāmō（欢呼），由 ad-（向）加 clāmō（呼喊）构成，本义是齐声喝彩，引申为称赞、赞誉。"}
 {"word_id": 146, "prompt_version": 1, "model": "deepseek-v4-pro", "reviewed": 0, "text": "借自法语 acclimater，词形直接来自该法语词，表示使适应、习惯。"}
-{"word_id": 147, "prompt_version": 1, "model": "deepseek-v4-pro", "reviewed": 0, "text": "借自法语 accolade，源自古奥克语 acolada（拥抱），本义是拥抱，引申为授爵、嘉奖。"}
+{"word_id": 147, "prompt_version": 2, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自法语 accolade，经奥克语 acolada（拥抱）与俗拉丁语 *accollō（搂颈），上溯拉丁语 collum（颈），本义是拥抱，引申为授爵、嘉奖。"}
 {"word_id": 148, "prompt_version": 1, "model": "deepseek-v4-pro", "reviewed": 0, "text": "借自拉丁语 accommodātus，由 ad-（向）加 modus（尺度）相关词构成，本义是调整到合适，引申为容纳、适应。"}
 {"word_id": 150, "prompt_version": 1, "model": "deepseek-v4-pro", "reviewed": 0, "text": "源自拉丁语 accommodātiō（调整），由 accommodō（使适应）构成，引申为住宿、适应。"}
 {"word_id": 152, "prompt_version": 1, "model": "deepseek-v4-pro", "reviewed": 0, "text": "借自法语 accompagnement，由 accompany 加后缀 -ment 构成，表示伴随之物，引申为伴奏、伴随物。"}

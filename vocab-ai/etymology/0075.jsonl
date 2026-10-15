@@ -52,7 +52,7 @@
 {"word_id": 14799, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语 prōpositiō，出自 prōponō（提出），经古法语 proposicion 进入中古英语，指提出的主张、命题。"}
 {"word_id": 14800, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语 prōpōnere（提出），由 prō-（在前）加 pōnere（放置）构成，经中古英语 proponen 进入英语，指提出、提议。"}
 {"word_id": 14801, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语 proprietārius，与 proprietas 及 proprius（自己的）同族，经法语 propriétaire 进入英语，指专有的、所有者的。"}
-{"word_id": 14805, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语 proprietās，经盎格鲁-诺曼语和古法语进入中古英语 proprietee，指合乎礼数的恰当、得体。"}
+{"word_id": 14805, "prompt_version": 2, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 proprietee，经盎格鲁-诺曼语 propreté 与中古法语 proprieté，上溯拉丁语 proprietās，指合乎礼数的恰当、得体。"}
 {"word_id": 14806, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中世纪拉丁语 propulsio，出自拉丁语 propello（向前驱动），指推动、推进力。"}
 {"word_id": 14807, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语 prōrogō（延长、推迟），经古法语 proroger 进入英语，指使议会休会、延期。"}
 {"word_id": 14808, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中世纪拉丁语 prosaicus（散文的），出自拉丁语 prosa，再溯至 prorsus（直截的），与 vertō（转）相关，指平淡无奇的。"}

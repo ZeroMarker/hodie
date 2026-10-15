@@ -27,7 +27,7 @@
 {"word_id": 17297, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 slight、古英语 sliht（平滑、平坦），上溯原始日耳曼语 *slihtaz，由平滑无奇引申为轻微的、纤细的。"}
 {"word_id": 17299, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自低地德语或荷兰语 slim（坏、狡猾），出自中古荷兰语 slim（歪斜），上溯原始日耳曼语 *slimbaz（弯曲），由歪斜引申为细长。"}
 {"word_id": 17300, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 slime、古英语 slīm，上溯原始日耳曼语 *slīmą，根义为黏滑，出自原始印欧语 *sley-，故指黏泥、黏液。"}
-{"word_id": 17301, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 slymy，由古英语 slīm（黏泥）加后缀 -y 构成，上溯原始日耳曼语 *slīmą，意为黏滑的。"}
+{"word_id": 17301, "prompt_version": 2, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 slymy，由古英语 slīm（黏泥）加后缀 -y 构成，意为黏滑的。"}
 {"word_id": 17302, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 slynge，出自古诺斯语 slyngja、slyngva（投掷），上溯原始日耳曼语 *slingwaną（缠绕），由投掷引申指投石索。"}
 {"word_id": 17303, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 slippen、中古低地德语 slippen，上溯原始日耳曼语 *slipjaną（滑动），出自原始印欧语 *sleyb-（滑），故指滑倒、溜走。"}
 {"word_id": 17305, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 slypper，由 slip（滑）加后缀 -er（表动作之物）构成，本指滑行的东西，后指拖鞋。"}

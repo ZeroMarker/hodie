@@ -77,7 +77,7 @@
 {"word_id": 15370, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语 recīprocātus，与 re-（回）相关，加 -ate 构成动词，意为往回回应，引申为回报、互换。"}
 {"word_id": 15374, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 reciten、古法语 reciter，上溯拉丁语 recitō，意为诵读出来，引申为背诵、列举。"}
 {"word_id": 15375, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 rekles、古英语 rēcelēas，由 reck（留意、在意）加 -less（无）构成，意为不加留意的，引申为鲁莽的、不顾后果的。"}
-{"word_id": 15377, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 rekenen、古英语 recenian，上溯原始日耳曼语 rekanōn（计数、说明）与原始印欧语 h₃reǵ-（使正直），由计数引申为计算、估计、认为。"}
+{"word_id": 15377, "prompt_version": 2, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 rekenen、古英语 recenian，上溯原始西日耳曼语 *rekanōn（计数）与 *rekan，或与原始印欧语 *h₃reǵ-（使正直）相关，由计数引申为计算、估计、认为。"}
 {"word_id": 15378, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 reclaymen，经古法语与拉丁语 reclamo，由 re-（回）加 claim（索取、要求）构成，本义是唤回，引申为开垦、收回。"}
 {"word_id": 15379, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古法语 réclamation，上溯拉丁语 reclamatio，由 reclaim（开垦、收回）加 -ation（行为）构成，指开垦、收复。"}
 {"word_id": 15380, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自拉丁语 reclino（向后弯曲），引申为向后靠、躺下。"}

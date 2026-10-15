@@ -94,7 +94,7 @@
 {"word_id": 1098, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "来自中古英语 arest、古法语 areste，上溯俗拉丁语 *arrestō，由 ad- 加 rest 构成，本义是停下，引申为逮捕。"}
 {"word_id": 1101, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "来自中古英语 arivaile、中古法语 arrivaille，由 arriver（到达）构成，引申为到达、到来。"}
 {"word_id": 1102, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "来自中古英语 arriven、古法语 ariver，上溯早期中世纪拉丁语 adripo（靠岸），由 rīpa（岸）构成，引申为到达。"}
-{"word_id": 1103, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "来自中古英语 arrogaunce、中古法语 arrogance、拉丁语 arrogantia，本义是妄自索取，引申为傲慢。"}
+{"word_id": 1103, "prompt_version": 2, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 arrogaunce，经中古法语 arrogance，上溯拉丁语 arrogantia，引申为傲慢、自负。"}
 {"word_id": 1104, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "来自中古英语 arrogaunt、古法语 arrogant、拉丁语 arrogāns，本义是妄自索取的，引申为傲慢的。"}
 {"word_id": 1105, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "来自拉丁语 arrogātus，上溯 arrogō（索取、冒认），由 ad 加 rogō（请求）构成，引申为冒认、霸占。"}
 {"word_id": 1106, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "来自中古英语 arwe、古英语 earh，上溯原始日耳曼语 *arhwō，本义是箭，引申为箭头、箭矢。"}

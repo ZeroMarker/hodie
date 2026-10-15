@@ -50,7 +50,7 @@
 {"word_id": 9098, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "来自中古英语、古英语 hungor（饥饿、渴望），上溯原始日耳曼语 *hungruz，词根原始印欧语 *kenk- 意为灼痛、渴求，故指饥饿。"}
 {"word_id": 9099, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "来自中古英语 hungry、古英语 hungriġ，由 hunger（饥饿）加后缀 -y 表示具有该性质，故指饥饿的、渴望的。"}
 {"word_id": 9100, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "或借自西弗拉芒语 hunke（大块），与 hump 相关并含小称后缀 -kin，本指厚块，后指健壮迷人的男子。"}
-{"word_id": 9101, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "来自中古英语 hunten、古英语 huntian，上溯原始日耳曼语 *huntōn（追捕），或与原始印欧语 *ḱent-（抓取）相关，故指打猎、搜寻。"}
+{"word_id": 9101, "prompt_version": 2, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 hunten、古英语 huntian，上溯原始西日耳曼语 *huntōn（追捕），或与原始印欧语 *ḱent-（抓取）相关，指打猎、搜寻。"}
 {"word_id": 9102, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "来自中古英语 huntere，由 hunt（打猎）加表施动者的后缀 -er 构成，故指猎人、搜寻者。"}
 {"word_id": 9103, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "来自中古英语 hunting、古英语 huntung，由 hunt（打猎）加名词后缀 -ing 构成，故指打猎、搜寻。"}
 {"word_id": 9107, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "来自中古英语 hurlen，今指用力投掷、猛扔，与 hurry、hurtle 相关。"}

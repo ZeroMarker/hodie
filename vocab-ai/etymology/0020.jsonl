@@ -1,5 +1,5 @@
 {"word_id": 3750, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 confederat，上溯晚期拉丁语 cōnfoederātus，加 -ate 构成，本义是结盟联合的，引申为同盟者、同谋。"}
-{"word_id": 3752, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，经中古法语 conférer、古法语 conferer，上溯拉丁语 cōnferō（一并带来），本义是把意见带到一起，引申为商谈、授予。"}
+{"word_id": 3752, "prompt_version": 2, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自早期现代英语 conferre，经中古法语 conférer、古法语 conferer，上溯拉丁语 cōnferō（一并带来），本义是把意见带到一起，引申为商谈、授予。"}
 {"word_id": 3753, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自中古法语 conférence，上溯中世纪拉丁语 cōnferentia，由 con-（共同）加 ferō（带来）构成，本义是把意见带到一起，引申为会议、讨论。"}
 {"word_id": 3755, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 confessen、盎格鲁-诺曼语与古法语 confesser，上溯拉丁语 confessus，由 con- 加 fateor（承认）构成，本义是坦承，引申为承认、忏悔。"}
 {"word_id": 3756, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 confessioun、古法语 confession，上溯拉丁语 cōnfessiō（承认、信仰告白），由 confess 加 -ion 构成，引申为供认、忏悔。"}
@@ -17,7 +17,7 @@
 {"word_id": 3776, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语 cōnflīctus，来自 conflīgō（相互撞击），由 com- 加 flīgō（打击）构成，本义是相撞，引申为冲突、争执。"}
 {"word_id": 3778, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 confluence，上溯晚期拉丁语 cōnfluentia（汇流），本义是水流汇聚，引申为汇合、汇集。"}
 {"word_id": 3779, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 conformen，经中古法语与盎格鲁-诺曼语 conformer，上溯拉丁语 conformāre（塑形、使之相合），本义是使取同一形状，引申为遵从、符合。"}
-{"word_id": 3781, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 conformyte，上溯中古法语 conformité，本义是与某形状相合，引申为符合、一致、遵从。"}
+{"word_id": 3781, "prompt_version": 2, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 conformyte，上溯中古法语 conformité，引申为符合、一致、遵从。"}
 {"word_id": 3782, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 confounden（毁坏）、盎格鲁-诺曼语 cunfundre 与古法语 confondre，上溯拉丁语 cōnfundō（混在一起），本义是混杂，引申为使困惑、击败。"}
 {"word_id": 3783, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自中古法语 confronter，上溯中世纪拉丁语 confronto，由 con- 加 frontem（前额、正面）构成，本义是面对面而立，引申为面对、对抗。"}
 {"word_id": 3786, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 confused（受挫、混乱）、盎格鲁-诺曼语 confus，上溯拉丁语 cōnfūsus，来自 cōnfundō（混在一起），本义是混作一团，引申为使困惑。"}

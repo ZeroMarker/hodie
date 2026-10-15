@@ -42,7 +42,7 @@
 {"word_id": 20632, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 warp、古英语 wearp（经线），另与 weorpan（投掷）同源，原始印欧语 *werb-（扭弯），引申为变形、翘曲。"}
 {"word_id": 20636, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 warantye，经盎格鲁-诺曼语 warrantie 上溯古法语 guarantie，本义为担保，后指保证书。"}
 {"word_id": 20638, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 werreour，经古法语 guerroiier（战士）上溯中世纪拉丁语 werra 与法兰克语 *werʀu（纷争），指作战之人。"}
-{"word_id": 20642, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "由中古英语 ware（谨慎）加后缀 -y 构成；另一说与 warien（诅咒）相关，本义为留心戒备。"}
+{"word_id": 20642, "prompt_version": 2, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "由中古英语 ware 加后缀 -y 构成，表示具有该性质，引申为留心的、谨慎的。"}
 {"word_id": 20644, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 waschen、古英语 wascan，上溯原始日耳曼语 *waskaną，再源于原始印欧语 *wed-（水、湿），本义为洗涤。"}
 {"word_id": 20647, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 waschynge，上溯古英语 *wæsċing 与原始西日耳曼语 *waskingu，由洗涤动词加 -ing 构成。"}
 {"word_id": 20652, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 wappes、古英语 wæsp，上溯原始日耳曼语 *wapsō 与原始印欧语 *webʰ-（编织），因其巢如织物而得名。"}
@@ -82,7 +82,7 @@
 {"word_id": 20722, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 wegge、古英语 weċġ，上溯原始西日耳曼语 *wagi 与原始日耳曼语 *wagjaz，指楔子。"}
 {"word_id": 20724, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 Wednesday，上溯古英语 *wēdnesdæġ，本为神 woden 之日，是拉丁语 diēs Mercuriī（水星日）的仿译。"}
 {"word_id": 20726, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 weed、古英语 wēod，上溯原始西日耳曼语 *weud，指野草、杂草。"}
-{"word_id": 20727, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，上溯古英语 wǣd（衣服）与原始日耳曼语 *wēdiz（布匹），指衣物。"}
+{"word_id": 20727, "prompt_version": 2, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自古英语 wǣd（衣服），上溯原始日耳曼语 *wēdiz（布匹），指衣物。"}
 {"word_id": 20728, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 wyke、古英语 wice 与 wucu，上溯原始日耳曼语 *wikǭ（序列、一周），原始印欧语词根意为弯折，指轮转的一周。"}
 {"word_id": 20729, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 wykeday、古英语 wicdæġ，上溯原始日耳曼语 *wikadagaz，本指一周中的各日，后指工作日。"}
 {"word_id": 20733, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 wykely，由 week（周）加后缀 -ly 构成，意为每周一次的。"}

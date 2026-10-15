@@ -162,7 +162,7 @@ CN_LANGS = {
     "爱尔兰语": ["Irish"],
     "苏格兰盖尔语": ["Scottish Gaelic"],
     "中古苏格兰语": ["Middle Scots"],
-    "苏格兰语": ["Scots"],
+    "苏格兰语": ["Scots", "Scottish"],
     "威尔士语": ["Welsh"],
     "日语": ["Japanese"],
     "朝鲜语": ["Korean"],

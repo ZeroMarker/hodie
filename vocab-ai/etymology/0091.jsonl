@@ -13,7 +13,7 @@
 {"word_id": 17872, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自意大利语 stanza，出自俗拉丁语 *stantia（站立之处、停留之所），源于拉丁语 stans（站立），故本义是房间，后指诗歌中分段排列的诗节。"}
 {"word_id": 17873, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 staple，经古法语 estaple（市场、交易站）上溯原始日耳曼语 *stapulaz（柱子），根为原始印欧语 *stebʰ-（柱、茎），由支柱引申为主要商品或订书钉。"}
 {"word_id": 17874, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 sterre，上溯古英语 steorra（星），原始日耳曼语 *sternô 与原始印欧语 *h₂stḗr（星）同源，词义自古未变，即天空中的星星。"}
-{"word_id": 17877, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 starche，上溯古英语 *stierċe（僵硬、强度），原始日耳曼语 *starkī 与原始印欧语 *sterg-（僵硬）同源，因淀粉能使布料变硬而得名。"}
+{"word_id": 17877, "prompt_version": 2, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 starche、古英语 *stierċe（僵硬、强度），上溯原始西日耳曼语 *starkī 与原始印欧语 *sterg-（僵硬），由使物变硬引申为淀粉、上浆。"}
 {"word_id": 17881, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 staren，上溯古英语 starian（凝视），原始日耳曼语 *starjaną 义为固定不动，根为原始印欧语 *ster-，由僵直不动引申为目不转睛地看。"}
 {"word_id": 17883, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stark，上溯古英语 stearc（僵硬、坚硬、强壮），原始日耳曼语 *starkuz 出自原始印欧语 *（s）terg-（僵硬），由僵硬引申为完全、十足。"}
 {"word_id": 17888, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 sterten（突然跃起、冲出），上溯古英语 styrtan，原始日耳曼语 *sturtijan 义为使动、惊起，由猛然而动引申为开始、出发。"}
@@ -61,7 +61,7 @@
 {"word_id": 17979, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stiffenes，或出自古英语 stīþness（僵硬），由 stiff 加 -ness 构成，故表示坚硬、僵硬的程度。"}
 {"word_id": 17980, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "出自中晚期中古英语 stuflen（因闷热而呼吸困难、窒息），故表示使窒息、扼制，引申为压制。"}
 {"word_id": 17981, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语 stigma，出自古希腊语 στίγμα（奴隶或耻辱的标记），其动词为 στίζω（标记），故引申为耻辱、污名。"}
-{"word_id": 17983, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stille（不动的），上溯古英语 stille（安静），原始日耳曼语 *stillī 出自原始印欧语 *（s）telH-（静默），故表示静止的、安静的。"}
+{"word_id": 17983, "prompt_version": 2, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stille（不动的），上溯古英语 stille（安静）与原始西日耳曼语 *stillī，最终出自原始印欧语 *（s）telH-（静默），表示静止的、安静的。"}
 {"word_id": 17984, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stilnesse，上溯古英语 stilnes（寂静、安宁），由 still（静止）加 -ness 构成，故表示静止、寂静。"}
 {"word_id": 17985, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stilte，上溯古英语 *stilte，原始日耳曼语 *stiltijǭ 出自表僵直的 *stelt-，故指使人变高的高跷。"}
 {"word_id": 17988, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语 stimulātus，出自拉丁语 stimulus（刺棒、赶牲口的尖棍），故本义是用刺棒催促，引申为刺激、激励。"}
@@ -90,7 +90,7 @@
 {"word_id": 18041, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stormy，上溯古英语 *stormiġ（暴风雨的），由 storm（风暴）加 -y 构成，故表示有暴风雨的、激烈的。"}
 {"word_id": 18042, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 storie，经盎格鲁-诺曼语 estorie 上溯拉丁语 historia，其出自古希腊语表示通过探究而得的学问的词，故指故事、叙述。"}
 {"word_id": 18045, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stoute，出自古法语 estout（勇敢、骄傲），其原始日耳曼语词形为 *stultaz，根为原始印欧语 *stel-（放置、站立），故引申为强壮的、结实的。"}
-{"word_id": 18047, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自中古荷兰语与中古低地德语 stove，出自原始日耳曼语 *stubu（有暖气的房间、浴室），故由取暖的房间引申为火炉。"}
+{"word_id": 18047, "prompt_version": 2, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自中古荷兰语与中古低地德语 stove，上溯原始西日耳曼语 *stubu（有暖气的房间、浴室），故由取暖的房间引申为火炉。"}
 {"word_id": 18050, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 straglen，或与挪威语 stragla（艰难行走）同源，故表示掉队、散乱地蔓延。"}
 {"word_id": 18051, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 streight，是 stretch（拉直）的过去分词形式，上溯古英语 streċċan，故表示被拉直的、笔直的。"}
 {"word_id": 18054, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 streen，上溯古英语 strēon（获得、财富），原始日耳曼语 *streuną 义为积聚、收获，故本义为族系，后指血统、品系。"}
