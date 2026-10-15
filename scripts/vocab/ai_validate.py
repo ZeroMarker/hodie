@@ -390,7 +390,8 @@ def main():
     rate = len(passed) / total_lines * 100 if total_lines else 0.0
     print(f"通过 {len(passed)} 个词,不通过 {len(failed)} 个,通过率 {rate:.1f}%")
     for wid, reasons in list(failed.items())[:20]:
-        word = ctx["words"].get(wid, {}).get("word", "?")
+        entry = ctx["words"].get(wid)
+        word = entry if isinstance(entry, str) else (entry or {}).get("word", "?")
         print(f"  不通过 {wid} {word}:{' ; '.join(reasons)}")
     if len(failed) > 20:
         print(f"  …另有 {len(failed) - 20} 个不通过")
