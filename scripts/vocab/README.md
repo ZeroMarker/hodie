@@ -33,6 +33,7 @@ wordfreq 数据禁止转成 CSV 再分发,不要把产物导出为 CSV 对外提
 .venv/bin/python -I scripts/vocab/ai_export.py core_sense    # 任务 2:导出到 data/ai/input/core_sense/
 .venv/bin/python -I scripts/vocab/ai_validate.py examples    # 校验 vocab-ai/examples/,并导出人工抽检 CSV
 .venv/bin/python -I scripts/vocab/ai_validate.py core_sense  # 校验 vocab-ai/core_sense/
+.venv/bin/python -I scripts/vocab/ai_export.py collocations  # 任务 3;任务 4 为 etymology,用法相同
 .venv/bin/python -I scripts/vocab/build.py                   # 重新构建,vocab-ai/ 的结果一并入库
 ```
 
@@ -44,6 +45,10 @@ wordfreq 数据禁止转成 CSV 再分发,不要把产物导出为 CSV 对外提
 2026-10-14 任务 1 全量完成:79 批、7866 个词、15732 条 AI 例句,`ai_validate.py` 校验 7866/7866 通过(`prompt_version=2`)。词书词的例句覆盖从 7120 补到 14986(100%);入库行 `reviewed` 仍为 0,待人工抽检。
 
 2026-10-14 任务 2 全量完成:102 批、10105 个多义词书词,`ai_validate.py` 校验 10105/10105 通过(`prompt_version=1`)。其中 9961 词(98.6%)给出 `core_sense_id`,144 词(1.4%)无法判断写 NULL;待人工抽检。
+
+2026-10-15 任务 3 全量完成:87 批、8639 个没有搭配的词书词,共 19001 条 AI 搭配,`ai_validate.py` 校验 8639/8639 通过。Tatoeba 搭配按搭配词原形合并时态重复(pay/paid attention),从 23435 条降为 23328 条。词书词的搭配覆盖从 6347 补到 14986(100%);待人工抽检。
+
+2026-10-15 任务 4 进行中:105 批完成 33 批(3300 词),校验全部通过;第 1、22 批由 deepseek-v4-pro 生成,其余用 deepseek-v4.1-flash(两者对比后质量相当)。因 Go 用量上限暂停,额度恢复后续跑。
 
 ## 2026-10-14 构建结果
 
@@ -73,7 +78,7 @@ Wiktionary(2026-10-01 dump):15759 词有词源说明,12805 词有来源链(共 4
 
 - 约 4200 词只因词频入选(不在任何词书或 CEFR 词表中),仍混有少量人名、地名和粗俗词,只用于查词,不进学习队列。
 - CEFR 词表有 41 个词条在 ECDICT 中找不到,主要是英式拼写(personalisation)、带重音符号(café)和词组(check-in desk)。
-- 搭配按词形统计,同一搭配的不同时态会重复出现,如 pay attention 和 paid attention。
+- AI 搭配(任务 3)没有 `freq` 和 `log_dice`,`reviewed` 仍为 0,须人工抽检后置 1。
 - 词书词的例句缺口已由阶段 3 任务 1 的 AI 例句补齐(14986/14986,100%);AI 例句 `reviewed` 仍为 0,须人工抽检后置 1。
 - AI 例句为满足「其余词更常见」的规则,用词偏简单:old 出现在约 17% 的句子里(2645/15732),个别句子语义别扭(如 brandish 的「挥舞那块旧金子」)。人工抽检时重点看这两点,必要时提升 `prompt_version`,要求用词多样。
 - 核心义对应的词义(任务 2)为 AI 判断,`reviewed` 仍为 0,须人工抽检后置 1。判断以 ECDICT 释义第一行为准,同一行有多个中文义项时优先取第一个;144 个词因 WordNet 缺对应义项或词条是词组、专名而写 NULL。介词、数词、代词、感叹词等 WordNet 没有对应词性的标记不校验词性,只校验 id 属于该词。

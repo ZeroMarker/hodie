@@ -11,9 +11,9 @@
 | 数据 | 词书词覆盖 | 缺口 |
 | --- | --- | --- |
 | 中英例句(`examples`,Tatoeba + AI) | 14986 | 0(任务 1 已完成;AI 例句 `reviewed` 待人工抽检后置 1) |
-| 搭配(`collocations`,Tatoeba logDice 统计) | 6347 | 8639 词没有搭配 |
+| 搭配(`collocations`,Tatoeba logDice 统计 + AI) | 14986 | 0(任务 3 已完成:87 批、8639 词、19001 条 AI 搭配;Tatoeba 搭配按原形合并时态重复后为 23328 条;`reviewed` 待人工抽检) |
 | WordNet 词义(`senses`) | 14330 | 0(任务 2 已完成:10105 个多义词已确定核心义词义,9961 个有 `core_sense_id`,144 个无法判断为 NULL;`reviewed` 待人工抽检) |
-| 词源来源链(`etymology_steps`) | 10489 | 有数据但没有中文讲解 |
+| 词源中文讲解(`etymology_notes`,基于 `etymology_steps`) | 3300 | 7189 词待生成(任务 4 进行中:105 批完成 33 批,2026-10-15 因 Go 用量上限暂停,额度恢复后续跑) |
 
 ## 通用约定
 
