@@ -11,7 +11,7 @@ python3 -m venv .venv && .venv/bin/pip install -r scripts/vocab/requirements.txt
 
 产物为 SQLite,共十二张表:
 
-- `words`:词条、音标、中英释义、词性、词形变化(`exchange`)、CEFR 等级、wordfreq 排名和 Zipf 值、NGSL 排名、是否具体名词(`concrete`,首个名词词义属于动物、植物、食物、人造物、身体、自然物)、核心义词义(`core_sense_id`,阶段 3 任务 2 生成,多义词书词的 ECDICT 核心中文义对应的 `senses.id`,无法判断时为 NULL)。`id` 由 `word_ids.tsv` 登记,重建时保持不变,新词追加。
+- `words`:词条、音标、中英释义、词性、词形变化(`exchange`)、CEFR 等级、wordfreq 排名和 Zipf 值、NGSL 排名、是否具体名词(`concrete`,首个名词词义属于动物、植物、食物、人造物、身体、自然物)、核心义词义(`core_sense_id`,阶段 3 任务 2 生成,多义词书词在现代英语中**最常用的义项**对应的 `senses.id`,不限 ECDICT 第一行、词性可为释义任意一行的词性,无法判断时为 NULL)。`id` 由 `word_ids.tsv` 登记,重建时保持不变,新词追加。
 - `word_lists`:词书归属,`list` 取 `zk`、`gk`、`cet4`、`cet6`、`ky`、`ielts`、`toefl`、`gre`、`ngsl`。
 - `senses`:Open English WordNet 词义,含释义、英文例句、语域(informal、slang、archaic、vulgar、derogatory)和 lexfile 语义类别。
 - `relations`:词间关系,记录源词义;类型有 synonym、antonym、hypernym、hyponym、similar、derived_from、pertainym。
@@ -34,6 +34,7 @@ wordfreq 数据禁止转成 CSV 再分发,不要把产物导出为 CSV 对外提
 .venv/bin/python -I scripts/vocab/ai_export.py core_sense    # 任务 2:导出到 data/ai/input/core_sense/
 .venv/bin/python -I scripts/vocab/ai_validate.py examples    # 校验 vocab-ai/examples/,并导出人工抽检 CSV
 .venv/bin/python -I scripts/vocab/ai_validate.py core_sense  # 校验 vocab-ai/core_sense/
+.venv/bin/python -I scripts/vocab/core_sense_redo.py --check   # 校验核心义重做的中间结果
 .venv/bin/python -I scripts/vocab/ai_export.py collocations  # 任务 3;任务 4 为 etymology,用法相同
 .venv/bin/python -I scripts/vocab/build.py                   # 重新构建,vocab-ai/ 的结果一并入库
 ```
@@ -42,10 +43,13 @@ wordfreq 数据禁止转成 CSV 再分发,不要把产物导出为 CSV 对外提
 - opencode 逐批把结果写到 `vocab-ai/<任务>/NNNN.jsonl`,每行一个词,带 `word_id`、`prompt_version` 和 `model`。
 - `ai_validate.py` 按任务规则校验,输出通过率和不通过的 `word_id`;不通过的结果丢弃或重写,不入库。`--review 0` 可跳过抽检导出。
 - 例句入库行 `source` 写 `ai:opencode/<model>`;核心义词义写入 `words.core_sense_id`。`reviewed` 先写 0,人工抽检错误率低于 5% 后整批改 1(核心义词义的抽检以结果文件里的 `reviewed` 为准,`words` 表暂不加该列)。
+- 任务 2 改版只重做受影响的词时,用 `core_sense_redo.py` 检测并导出重做输入:`--export` 写 `data/ai/redo/core_sense/in/`,`--check` 校验会话写出的 `out/`,`--merge` 把 v3 行替换回 `vocab-ai/core_sense/`,其余词保留旧版本。规则见该脚本 docstring 和 [阶段 3 词库任务](../../docs/stage3-vocab-tasks.md)。
 
 2026-10-14 任务 1 全量完成:79 批、7866 个词、15732 条 AI 例句。2026-10-15 抽检后把生成要求升到 `prompt_version=3`,新增「不得用 old/whole 凑词」「不得用 do/does/did 强调式」两条校验,只重做命中的 3697 个词,其余保留 v2;另改正抽检发现的 6 个词。现为 `prompt_version=3` 3702 词、`prompt_version=2` 4164 词,`ai_validate.py` 校验 7866/7866 通过。词书词的例句覆盖从 7120 补到 14986(100%);入库行 `reviewed` 仍为 0,待人工抽检。
 
 2026-10-14 任务 2 全量完成:102 批、10105 个多义词书词。2026-10-15 抽检后把判断标准从「ECDICT 第一行」改为「现代英语中最常用的义项」(参考全部释义),全量重做到 `prompt_version=2`:9961→9970 词(98.7%)给出 `core_sense_id`,135 词(1.3%)无法判断写 NULL;与 v1 相比 1463 词(14.5%)选择不同。`ai_validate.py` 校验 10105/10105 通过;待人工抽检。
+
+2026-10-15 任务 2 二次改进(`prompt_version=3`):v2 的校验仍要求所选词义词性和 ECDICT **第一行**一致,第一行是冷僻词性的词选不到常用义(settle→NULL、fine→只能选名词罚款、meet→只能选名词运动会)。把校验放宽为「词性出现在 ECDICT 释义的任意一行即可」,并只重做受影响的 4063 个词(ECDICT 含多个词性,且当前结果为空或所选词性等于第一行词性),其余 6042 词保留 v2。与 v2 相比 1340 词(33%,占全体 13.3%)改选,其中 1036 词换了词性(主要为 n→v 539、n→a 269);原 104 个重做词里的 NULL 有 103 个给出义项,多义词书词 `core_sense_id` 非空从 9970 升到 10073(99.7%),NULL 从 135 降到 32。`ai_validate.py` 校验 10105/10105 通过(100%);`reviewed` 仍为 0,待人工抽检。
 
 2026-10-15 任务 3 全量完成:87 批、8639 个没有搭配的词书词。2026-10-15 抽检后删除目标词是功能词的低价值搭配 146 条(涉及 82 词,36 词清空),AI 搭配从 19001 条降为 18855 条(8603 词),并改正 anodyne remark(→无关痛痒的话)、glamour model(→性感模特)。Tatoeba 搭配按搭配词原形合并时态重复(pay/paid attention),从 23435 条降为 23328 条。词书词的搭配覆盖 100%;待人工抽检。
 
@@ -67,7 +71,7 @@ wordfreq 数据禁止转成 CSV 再分发,不要把产物导出为 CSV 对外提
 | GRE | 7504 |
 | NGSL | 2809 |
 
-WordNet:19504 词有词义,共 58876 个词义,约 23.8 万条关系;947 个词义带语域标签。多义词书词 10105 个,其中 9970 个(98.7%)由阶段 3 任务 2(第 2 版,按现代英语最常用义)确定了核心义对应的 `core_sense_id`,135 个无法判断写 NULL。
+WordNet:19504 词有词义,共 58876 个词义,约 23.8 万条关系;947 个词义带语域标签。多义词书词 10105 个,其中 10073 个(99.7%)由阶段 3 任务 2(第 3 版,按现代英语最常用义、词性不限 ECDICT 第一行)确定了核心义对应的 `core_sense_id`,32 个无法判断写 NULL。
 
 Tatoeba:72863 对中英句子,8430 词配到 19036 句。阶段 3 任务 1 又为没有例句的 7866 个词书词补了 15732 条 AI 例句(第 3 版 3702 词、第 2 版 4164 词,`source=ai:opencode/deepseek-v4.1-flash`)。两者合计 16296 词有例句;词书词覆盖 14986/14986(100%),各词书均 100%(此前:中考 99%、NGSL 95%、高考 92%、CET-4 87%、考研 80%、CET-6 73%、雅思 69%、托福 49%、GRE 29%)。
 
@@ -82,7 +86,7 @@ Wiktionary(2026-10-01 dump):15759 词有词源说明,12805 词有来源链(共 4
 - AI 搭配(任务 3)没有 `freq` 和 `log_dice`,`reviewed` 仍为 0,须人工抽检后置 1。抽检后已删除目标词是功能词的低价值搭配(如 by the way、with him),这类词可能一条都没有(8603 词共 18855 条)。
 - 词书词的例句缺口已由阶段 3 任务 1 的 AI 例句补齐(14986/14986,100%);AI 例句 `reviewed` 仍为 0,须人工抽检后置 1。
 - AI 例句为满足「其余词更常见」的规则,用词偏简单,第 3 版已禁止用 old/whole 凑词和无意义的 do 强调式,并只重做了命中这些规则的 3697 词;其余 v2 句子仍可能有个别语义别扭处,人工抽检时重点看。
-- 核心义对应的词义(任务 2)为 AI 判断,`reviewed` 仍为 0,须人工抽检后置 1。第 2 版改为选「现代英语中最常用的义项」并参考 ECDICT 全部释义,不再照搬第一行;135 个词因 WordNet 缺对应义项或词条是词组、专名而写 NULL。介词、数词、代词、感叹词等 WordNet 没有对应词性的标记不校验词性,只校验 id 属于该词。
+- 核心义对应的词义(任务 2)为 AI 判断,`reviewed` 仍为 0,须人工抽检后置 1。第 3 版改为选「现代英语中最常用的义项」,词性只要求出现在 ECDICT 释义的任意一行(不再要求第一行),只重做了受影响的 4063 词;`core_sense_id` 非空 10073 词(99.7%),32 词写 NULL(如 colossus WordNet 无「巨像」义)。换词性的改选较多(n→v 539、n→a 269),人工抽检时重点看这类词是否选偏。介词、数词、代词、感叹词等 WordNet 没有对应词性的标记不校验词性,只校验 id 属于该词。
 - 词源文本是简化渲染,少数模板被直接丢弃,句子偶有缺词;阶段 3 用 LLM 讲解词源时应以 `etymology_steps` 为准。
 - 词源中文讲解(任务 4)由 AI 生成,`reviewed` 仍为 0,须人工抽检后置 1;第 2 版新增「语言名必须与输入对应」「中文不得出现半角标点」两条校验,程序不再只校验字数、中文、无年代和词形是否来自输入,但引申是否合理仍靠人工抽检(抽检见 `data/ai/review/etymology.csv`)。
 - 来源链只认 inh、der、bor 等模板和紧跟 from 的 {{m}},「past participle of」这类写法的环节会漏掉(如 inspect 缺 inspicio)。
@@ -91,4 +95,4 @@ Wiktionary(2026-10-01 dump):15759 词有词源说明,12805 词有来源链(共 4
 
 ## PostgreSQL
 
-线上库为 Aiven 的 `mammoth` 服务(PostgreSQL 18,免费版 1GB),数据库 `hodie`。词库在 `vocab` schema,`public` 留给用户和学习记录。`load_pg.py` 先导入 `vocab_new`,再在同一事务里替换 `vocab`,约 40 秒,导入期间线上可读;旧 schema 用 CASCADE 删除,所以 `public` 下的表不要对 `vocab` 建外键。导入后 `senses.examples` 转为 jsonb,另加 `lower(word)` 索引。2026-10-15 导入阶段 3 AI 数据后,`vocab` 共 12 张表、占 90MB;AI 数据 `reviewed` 均为 0,应用须只展示已审核的数据或标出「AI 生成」。2026-10-15 的抽检改进(例句 v3、核心义 v2、词源 v2、搭配清理)尚未导入,待人工抽检后一并执行 `load_pg.py`。
+线上库为 Aiven 的 `mammoth` 服务(PostgreSQL 18,免费版 1GB),数据库 `hodie`。词库在 `vocab` schema,`public` 留给用户和学习记录。`load_pg.py` 先导入 `vocab_new`,再在同一事务里替换 `vocab`,约 40 秒,导入期间线上可读;旧 schema 用 CASCADE 删除,所以 `public` 下的表不要对 `vocab` 建外键。导入后 `senses.examples` 转为 jsonb,另加 `lower(word)` 索引。2026-10-15 导入阶段 3 AI 数据后,`vocab` 共 12 张表、占 90MB;AI 数据 `reviewed` 均为 0,应用须只展示已审核的数据或标出「AI 生成」。2026-10-15 的抽检改进(例句 v3、核心义 v2、词源 v2、搭配清理)和其后核心义的 v3 重做都尚未导入,待人工抽检后一并执行 `load_pg.py`。

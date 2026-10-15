@@ -12,7 +12,7 @@
 | --- | --- | --- |
 | 中英例句(`examples`,Tatoeba + AI) | 14986 | 0(任务 1 已完成;AI 例句 `reviewed` 待人工抽检后置 1) |
 | 搭配(`collocations`,Tatoeba logDice 统计 + AI) | 14986 | 0(任务 3 已完成:87 批、8639 词、18855 条 AI 搭配,见改进记录;Tatoeba 搭配按原形合并时态重复后为 23328 条;`reviewed` 待人工抽检) |
-| WordNet 词义(`senses`) | 14330 | 0(任务 2 已完成:10105 个多义词已确定核心义词义,9970 个有 `core_sense_id`,135 个无法判断为 NULL,见改进记录;`reviewed` 待人工抽检) |
+| WordNet 词义(`senses`) | 14330 | 0(任务 2 已完成并二次改进:10105 个多义词按现代英语最常用义确定核心义,10073 个有 `core_sense_id`,32 个无法判断为 NULL,见改进记录;`reviewed` 待人工抽检) |
 | 词源中文讲解(`etymology_notes`,基于 `etymology_steps`) | 10489 | 0(任务 4 已完成:105 批、10489 词,校验 10489/10489 通过;`reviewed` 待人工抽检) |
 
 ## 通用约定
@@ -48,10 +48,10 @@
 
 为 10105 个多义词书词确定 ECDICT 核心中文义对应的 WordNet 词义,作为多义词拆卡和图谱展示的依据(见 [单词学习方案](word-learning-plan.md) 的数据缺口)。
 
-- **输入**:词、ECDICT 中文释义全文、该词全部 `senses`(id、词性、英文释义)。
-- **输出**:`core_sense_id`,必须是输入里给出的 sense id 之一;无法判断时输出 null。
+- **输入**:词、ECDICT 中文释义全文(词性可出现在任意一行)、该词全部 `senses`(id、词性、英文释义)。
+- **输出**:`core_sense_id`,必须是输入里给出的 sense id 之一;无法判断时输出 null。选词以「现代英语中最常用的义项」为准,不受释义行顺序限制。
 - **入库**:`words` 增加 `core_sense_id` 列。
-- **校验**:输出的 id 必须属于该词;词性要和中文释义第一行标注的词性一致(如 `n.` 对应 n,`vt.` 和 `vi.` 对应 v)。
+- **校验**:输出的 id 必须属于该词;所选词义的词性要出现在 ECDICT 释义的任意一行(如 `n.` 对应 n,`vt.` 和 `vi.` 对应 v),不要求与第一行一致。
 
 ## 任务 3:补齐搭配
 
@@ -107,6 +107,16 @@
 - 与 v1 相比,1463 词(14.5%)选择不同。
 - 校验 10105/10105 通过(100%)。
 
+### 2 核心义 · prompt_version 3(二次改进)
+
+- 问题:v2 的校验仍要求所选词义的词性和 ECDICT **第一行**一致,第一行是冷僻词性的词选不到常用义(settle 首行「有背长椅」→ NULL、fine 只能选名词「罚款」、meet 只能选名词「运动会」)。
+- `ai_validate.py` 的词性规则放宽为「词性出现在 ECDICT 释义的任意一行即可」;`ai_export.py` 的输入改为给出 `zh` 全文和 `positions`(释义里出现过的词性),不再把第一行词性单列成 `pos`。
+- `vocab-ai/core_sense/PROMPT.md` 升到 `prompt_version 3`,写明优先选现代英语最常用的义项,不受释义行顺序和第一行词性限制。
+- 只重做受影响的 4063 个词:词书多义词、ECDICT 释义含多个词性,且当前结果为空或所选词性等于第一行词性(含「所选词性只出现在第一行、而其他行还有别的词性」)。用新增的 `scripts/vocab/core_sense_redo.py` 检测并导出重做输入(`--export`/`--check`/`--merge`),其余 6042 词保留 v2;校验按每行自身的 `prompt_version` 承接。
+- 结果:`prompt_version=3` 4063 词、`prompt_version=2` 6042 词;与 v2 相比 1340 词(33%,占全体 13.3%)改选,其中 1036 词换了词性(主要为 n→v 539、n→a 269);104 个重做词里的 NULL 有 103 个给出义项,`core_sense_id` 非空从 9970 升到 10073(99.7%),NULL 从 135 降到 32。
+- 校验 10105/10105 通过(100%)。
+- 抽查(2026-10-15):settle `oewn-settle__2.31.00..`(解决义,原 NULL)、fine `oewn-fine__5.00.00.satisfactory.00`(好的,原名词罚款)、meet `oewn-meet__2.41.01..`(会面,原名词运动会)、kernel 不变(核心);bound 仍选名词「界限」(`oewn-bound__1.15.00..`),未选冷僻的「跳跃」义;colossus 仍写 NULL(WordNet 无「巨像」义)。
+
 ### 3 搭配
 
 - 删除目标词是功能词、搭配其余词也都是功能词或泛化名词的低价值搭配 146 条,涉及 82 个词,其中 36 个词清空;AI 搭配从 19001 条降为 18855 条(8603 词)。校验放宽为允许 0 条。
@@ -123,6 +133,7 @@
 
 - 重新构建 `data/build/vocab.db`;重新导出四份人工抽检 CSV(`--review 200`:`data/ai/review/{examples,core_sense,collocations,etymology}.csv`)。
 - 四个任务在本轮的校验通过率都是 100%。本轮未运行 `load_pg.py`,线上 `vocab` schema 仍是上一版;`reviewed` 全部仍为 0,待人工抽检后统一导入。
+- 2026-10-15 核心义二次改进后再次运行 `build.py` 重建 `data/build/vocab.db`(core_sense 10073 词),并重新导出 `data/ai/review/core_sense.csv`;本轮同样未运行 `load_pg.py`。
 
 ## 交付
 
