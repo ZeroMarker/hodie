@@ -1,100 +1,100 @@
-{"word_id": 17841, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 steire,上溯古英语 stǣġer(楼梯),更早的原始日耳曼语词形为 *staigriz,其根出自原始印欧语 *steygʰ-(行走、攀登),由攀登之义引申为楼梯、阶梯。"}
-{"word_id": 17845, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stake,上溯古英语 staca(钉、桩),原始日耳曼语词形为 *stakô,根为原始印欧语 *stog-,本义即插在地上的木桩。"}
-{"word_id": 17847, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stale,来自古法语 estal(固定的位置、场所),更早或与原始日耳曼语 *stāną(站立)有关,由久置不动引申出陈旧、不新鲜之义。"}
-{"word_id": 17850, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stalke,上溯古英语 *stealc,原始日耳曼语 *stalukaz 是 *stalô 的指小形式,而 *stalô 出自原始印欧语 *stel-(放置、立起),故指植物的茎秆。"}
-{"word_id": 17852, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stall,上溯古英语 steall(站立之处、位置),原始日耳曼语 *stallaz 与原始印欧语 *stel-(放置、站立)同源,由站立之处引申为摊位、畜栏。"}
-{"word_id": 17854, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自苏格兰语 stalwart,出自中古英语 stal-worth,再上溯古英语 stǣlwierþe(能站得稳、可依靠),由原始印欧语 *steh₂-(站立)与 *wert-(转动)构成,引申为健壮、坚定。"}
-{"word_id": 17855, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "直接借自拉丁语 stāmina,是拉丁语 stāmen 的复数形式,原指织物的经线,后引申为支撑身体的力量,即耐力、持久力。"}
-{"word_id": 17856, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stameren,上溯古英语 stamerian,原始日耳曼语 *stamrōną 义为结巴,故本词一直表示口吃、结结巴巴地说话。"}
-{"word_id": 17857, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stampen(捣碎、压碎),上溯古英语 *stampian 与原始日耳曼语 *stampōną,根义为原始印欧语 *stemb-(践踏),由用力踩踏引申为印章、盖章。"}
-{"word_id": 17860, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stanch,是 staunch 的变体;更早出自古法语 estancher(止住液体流动),故引申为止住流血、抑制。"}
-{"word_id": 17861, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stonden,上溯古英语 standan(站立、占据位置),原始日耳曼语 *standaną 与原始印欧语表示站立的词根同源,故本义为站立、位于。"}
-{"word_id": 17868, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 standynge,上溯古英语 standende,是原始日耳曼语 *standaną(站立)的现在分词,由 stand 加 -ing 构成,表示站立的状态或地位。"}
-{"word_id": 17872, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自意大利语 stanza,出自俗拉丁语 *stantia(站立之处、停留之所),源于拉丁语 stans(站立),故本义是房间,后指诗歌中分段排列的诗节。"}
-{"word_id": 17873, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 staple,经古法语 estaple(市场、交易站)上溯原始日耳曼语 *stapulaz(柱子),根为原始印欧语 *stebʰ-(柱、茎),由支柱引申为主要商品或订书钉。"}
-{"word_id": 17874, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 sterre,上溯古英语 steorra(星),原始日耳曼语 *sternô 与原始印欧语 *h₂stḗr(星)同源,词义自古未变,即天空中的星星。"}
-{"word_id": 17877, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 starche,上溯古英语 *stierċe(僵硬、强度),原始日耳曼语 *starkī 与原始印欧语 *sterg-(僵硬)同源,因淀粉能使布料变硬而得名。"}
-{"word_id": 17881, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 staren,上溯古英语 starian(凝视),原始日耳曼语 *starjaną 义为固定不动,根为原始印欧语 *ster-,由僵直不动引申为目不转睛地看。"}
-{"word_id": 17883, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stark,上溯古英语 stearc(僵硬、坚硬、强壮),原始日耳曼语 *starkuz 出自原始印欧语 *(s)terg-(僵硬),由僵硬引申为完全、十足。"}
-{"word_id": 17888, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 sterten(突然跃起、冲出),上溯古英语 styrtan,原始日耳曼语 *sturtijan 义为使动、惊起,由猛然而动引申为开始、出发。"}
-{"word_id": 17891, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 startlen(冲、跳),上溯古英语 steartlian(踢脚、挣扎),由 start 加表反复的 -le 构成,故表示使人突然一惊。"}
-{"word_id": 17896, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 sterven(死亡),上溯古英语 steorfan,原始日耳曼语 *sterbaną 义为变僵硬、死去,故本义是死,后专指因饥饿而死。"}
-{"word_id": 17899, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自新拉丁语 stasis,源于古希腊语 στάσις,义为站立不动,故指停滞、静止的状态。"}
-{"word_id": 17900, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stat,经古法语 estat 上溯拉丁语 stātus(站立的姿态、状况),源于拉丁语 stō(站立),由所处状况引申为国家、状态。"}
-{"word_id": 17902, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stately,由 state(状况、地位)加 -ly 构成,故本词表示威严的、庄严的。"}
-{"word_id": 17907, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自现代拉丁语 staticus,源于古希腊语 στατικός,其根为古希腊语 ἵστημι(使站立),由站立不动引申为静止的、静态的。"}
-{"word_id": 17908, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stacioun,经盎格鲁-诺曼语 estation 上溯拉丁语 statiōnem,源于拉丁语 statiō(站立、岗位),由站立的岗位引申为车站、驻地。"}
-{"word_id": 17909, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语 stationarius,出自拉丁语 statio(停留之处),根为拉丁语 stō(站立);由 station 加 -ary 构成,表示不动的、固定的。"}
-{"word_id": 17915, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自德语 Statistik,出自新拉丁语 statisticum(国家的),并与意大利语 statista(政治家)相关,原指对国家情况的分析,后指统计学。"}
-{"word_id": 17916, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "直接借自拉丁语 statuārius,义为雕像的、制作雕像的人,故本词指雕塑艺术或雕像总称。"}
-{"word_id": 17917, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "经古法语 statue 上溯拉丁语 statua,其源于拉丁语 statuō(竖立、建立),故指立起来的人像或雕像。"}
-{"word_id": 17918, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stature,经古法语上溯拉丁语 statūra,本义指站立的高度,故引申为身高、身材或声望。"}
-{"word_id": 17919, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "直接借自拉丁语 status,义为站立的姿态、状况,故指地位、身份或当前状态。"}
-{"word_id": 17920, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 statut,经古法语上溯晚期拉丁语 statutum,其出自拉丁语 statuō(设立、规定),故指明文规定的法令、法规。"}
-{"word_id": 17924, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 steyen,出自古法语 estayer(支撑、固定),再经中古荷兰语 staeye(支柱)上溯原始日耳曼语 *stadiz(站立之处),由支撑引申为停留。"}
-{"word_id": 17926, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stedefast,上溯古英语 stedefæst,由 stead(位置、处所)与 fast(牢固)构成,意为站得稳的,故引申为坚定的、忠实的。"}
-{"word_id": 17928, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stedy,上溯古英语 stæþþiġ(稳固、坚定),由 stead(位置)加 -y 构成,故表示稳固的、平稳的。"}
-{"word_id": 17929, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 steike,借自古诺斯语 steik(烤肉、串在棍上烤的肉),与古诺斯语 steikja(烤)相关,故指厚切的肉块或牛排。"}
-{"word_id": 17931, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stelthe,上溯古英语 stǣlþ,出自原始日耳曼语 *stelaną(偷窃、潜行),由 steal 加 -th 构成,故表示偷偷摸摸、暗中行动。"}
-{"word_id": 17932, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 steem,上溯古英语 stēam(蒸汽、热气),原始日耳曼语 *staumaz 出自原始印欧语 *dʰewh₂-,义为蒸腾,故指水蒸气。"}
-{"word_id": 17937, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stele,上溯古英语 stīele,原始日耳曼语 *stahlą 出自表示坚固的 *stak-,故指坚硬的材料,即钢。"}
-{"word_id": 17939, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 steep,上溯古英语 stēap(高的),原始日耳曼语 *staupaz 出自原始印欧语 *(s)tewp-(推、插),由高耸引申为陡峭的。"}
-{"word_id": 17940, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stepel,上溯古英语 stīpel(塔),原始日耳曼语 *staupilaz 义为高耸之物,由 steep 加 -le 构成,故指教堂的尖塔。"}
-{"word_id": 17941, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 steeren,上溯古英语 stēoran(操舵、引导船只),原始日耳曼语 *stiurijaną 义为驾驶,故表示掌舵、操纵方向。"}
-{"word_id": 17947, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stem,上溯古英语 stemn(茎),原始日耳曼语 *stamniz 义为树干、茎,根为原始印欧语表示站立的词,由挺立部分引申为茎、柄。"}
-{"word_id": 17948, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stench,上溯古英语 stenċ(气味、香气),原始日耳曼语 *stankwiz 义为气味,故本词由泛指气味转为专指恶臭。"}
-{"word_id": 17949, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "出自中古英语 stencellen(饰以鲜艳色彩),经中古法语 estinceller(闪光)上溯拉丁语 scintilla(火花),由喷饰花样引申为模版、刻版印刷。"}
-{"word_id": 17950, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "由 Stentor 加 -ian 构成,Stentor 出自古希腊语 Στέντωρ,在史诗中为声音洪亮的传令官,故本词形容声音洪亮。"}
-{"word_id": 17951, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 steppen,上溯古英语 steppan(迈步、前进),原始日耳曼语 *stapjaną 出自原始印欧语 *stebʰ-(踏、踩),故指脚步、台阶。"}
-{"word_id": 17955, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "是 stereotype、stereoscope 或 stereophonic 的缩略形式,其共同前缀 stereo- 出自古希腊语 στερεός(实心的、立体的),故表示立体的。"}
-{"word_id": 17957, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自法语 stéréotype,由 stereo- 加 type 构成,原指印刷用的固定铅版,后引申为固定不变的成见、刻板印象。"}
-{"word_id": 17960, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古法语 stérile,上溯拉丁语 sterilis(不结果实、贫瘠),故表示不能生育的、无菌的。"}
-{"word_id": 17964, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 sterling,或出自古英语 *steorling,由 steorra(星)加指小后缀 -ling 构成,因旧时英国便士上铸有星纹,故指纯银货币。"}
-{"word_id": 17965, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stern,上溯古英语 styrne(严厉、严酷),原始日耳曼语 *sturnijaz 出自原始印欧语 *ster-(僵硬),由僵硬引申为严厉的。"}
-{"word_id": 17967, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自法语 stéthoscope,由 stetho-(胸)加 -scope(观察器具)构成,故指用来听诊胸腔的听诊器。"}
-{"word_id": 17968, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stewe,经古法语 estuve(浴室)上溯中世纪拉丁语 stupha,或与古希腊语 τῦφος(烟气、蒸汽)有关,由蒸汽浴引申为煨炖。"}
-{"word_id": 17969, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 steward,上溯古英语 stiġweard(管家、看管家务的人),由 sty(栏、屋)与 ward(看守)构成,故指管家、乘务员。"}
-{"word_id": 17972, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 sticke,上溯古英语 sticca(棍、钉、杆),原始日耳曼语 *stikkô 出自原始印欧语 *(s)teyg-(刺、扎),由尖刺之物引申为棍棒、粘贴。"}
-{"word_id": 17974, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stighteler,由 stickle 加表施动者的 -er 构成,原指持棍主持比赛的裁判,故引申为坚持细节的人。"}
-{"word_id": 17977, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stiff,上溯古英语 stīf,原始日耳曼语 *stīfaz 出自原始印欧语 *steypós,义为坚硬、不易弯,故表示僵硬的、生硬的。"}
-{"word_id": 17978, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stifnen,由 stiff(僵硬)加 -en 构成,故表示使变硬、变僵硬。"}
-{"word_id": 17979, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stiffenes,或出自古英语 stīþness(僵硬),由 stiff 加 -ness 构成,故表示坚硬、僵硬的程度。"}
-{"word_id": 17980, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "出自中晚期中古英语 stuflen(因闷热而呼吸困难、窒息),故表示使窒息、扼制,引申为压制。"}
-{"word_id": 17981, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语 stigma,出自古希腊语 στίγμα(奴隶或耻辱的标记),其动词为 στίζω(标记),故引申为耻辱、污名。"}
-{"word_id": 17983, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stille(不动的),上溯古英语 stille(安静),原始日耳曼语 *stillī 出自原始印欧语 *(s)telH-(静默),故表示静止的、安静的。"}
-{"word_id": 17984, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stilnesse,上溯古英语 stilnes(寂静、安宁),由 still(静止)加 -ness 构成,故表示静止、寂静。"}
-{"word_id": 17985, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stilte,上溯古英语 *stilte,原始日耳曼语 *stiltijǭ 出自表僵直的 *stelt-,故指使人变高的高跷。"}
-{"word_id": 17988, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语 stimulātus,出自拉丁语 stimulus(刺棒、赶牲口的尖棍),故本义是用刺棒催促,引申为刺激、激励。"}
-{"word_id": 17989, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语 stimulātiō,由 stimulate 加 -ion 构成,其词根出自拉丁语表示刺棒的词,故表示刺激、兴奋。"}
-{"word_id": 17991, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "直接借自拉丁语 stimulus(赶牲口的刺棒、尖刺),由刺棒之义引申为引起反应的刺激物。"}
-{"word_id": 17992, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 styng,上溯古英语 sting(刺、螫伤),原始日耳曼语 *stingaz 义为刺扎,故指昆虫的螫刺或刺痛的感受。"}
-{"word_id": 17997, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stinten,上溯古英语 styntan(使变钝),原始日耳曼语 *stintaną 义为使变短,由截短引申为限额、节省。"}
-{"word_id": 17998, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stipend,经古法语上溯拉丁语 stīpendium(军饷、税赋),由 stips(捐献)与表示称量的词根构成,故指定期支付的薪金、津贴。"}
-{"word_id": 17999, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自荷兰语 stippel(小点),原指点本身,后指用密集小点作画或雕刻的技法。"}
-{"word_id": 18000, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语 stipulātus,出自拉丁语 stipulor(要求正式许诺),故表示约定、明确规定为条件。"}
-{"word_id": 18002, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stiren,上溯古英语 styrian(运动、搅动、骚扰),原始日耳曼语 *sturiz 义为骚动、混乱,故表示搅拌、激起。"}
-{"word_id": 18003, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stiche,上溯古英语 stiċe(刺、扎、刺痛),原始日耳曼语 *stikiz 出自原始印欧语 *(s)teyg-(刺穿),故指缝纫的一针。"}
-{"word_id": 18005, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stok,上溯古英语 stocc,原始日耳曼语 *stukkaz 义为树干,由树干引申为存货、股本等义。"}
-{"word_id": 18007, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自法语 estocade,由 stock(木料)加 -ade 构成,故指用木桩围成的防御栅栏、围栏。"}
-{"word_id": 18015, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stoken,出自中古荷兰语 stoken(捅、推),原始日耳曼语 *stukōną 出自原始印欧语 *(s)tewg-(推、打),故指拨旺炉火、添煤。"}
-{"word_id": 18016, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古法语 stolide,上溯拉丁语 stolidus(愚钝、迟缓),故表示不动感情的、迟钝的。"}
-{"word_id": 18017, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stomak,经古法语 estomac 上溯拉丁语 stomachus,其出自古希腊语 στόμα(嘴),故指胃,引申为胃口、承受。"}
-{"word_id": 18020, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 ston,上溯古英语 stān,原始日耳曼语 *stainaz 义为石头,其根出自原始印欧语表凝固变硬的词,故指石块、石头。"}
-{"word_id": 18024, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stonwal,上溯古英语 stānweall(石墙),由 stone(石头)与 wall(墙)构成,由石墙引申为阻碍、拖延。"}
-{"word_id": 18026, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stony,上溯古英语 stāniġ(多石的),由 stone(石头)加 -y 构成,故表示多石的、冷硬的。"}
-{"word_id": 18027, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stool,上溯古英语 stōl(椅子、座位),原始日耳曼语 *stōlaz 义为座椅,其根为原始印欧语表站立的词,故指凳子。"}
-{"word_id": 18028, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stoupen,上溯古英语 stūpian(弯腰、屈身),原始日耳曼语 *stūpōną 出自原始印欧语 *(s)tewb-(推、抵),故表示弯腰、俯身。"}
-{"word_id": 18029, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stoppen,上溯古英语 stoppian(停止、堵塞),原始日耳曼语 *stuppōną 出自原始印欧语表推塞的词根,故表示停止、阻止。"}
-{"word_id": 18038, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 story,经中世纪拉丁语 historia(叙事、图饰)上溯古希腊语表示探究的词,因中世纪建筑上层常饰有图画,故指楼层。"}
-{"word_id": 18040, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 storm(大气骚动、暴风雨、攻击),上溯古英语 storm,原始日耳曼语 *sturmaz 出自原始印欧语 *(s)twerH-(搅动),故指风暴、猛攻。"}
-{"word_id": 18041, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stormy,上溯古英语 *stormiġ(暴风雨的),由 storm(风暴)加 -y 构成,故表示有暴风雨的、激烈的。"}
-{"word_id": 18042, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 storie,经盎格鲁-诺曼语 estorie 上溯拉丁语 historia,其出自古希腊语表示通过探究而得的学问的词,故指故事、叙述。"}
-{"word_id": 18045, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stoute,出自古法语 estout(勇敢、骄傲),其原始日耳曼语词形为 *stultaz,根为原始印欧语 *stel-(放置、站立),故引申为强壮的、结实的。"}
-{"word_id": 18047, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自中古荷兰语与中古低地德语 stove,出自原始日耳曼语 *stubu(有暖气的房间、浴室),故由取暖的房间引申为火炉。"}
-{"word_id": 18050, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 straglen,或与挪威语 stragla(艰难行走)同源,故表示掉队、散乱地蔓延。"}
-{"word_id": 18051, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 streight,是 stretch(拉直)的过去分词形式,上溯古英语 streċċan,故表示被拉直的、笔直的。"}
-{"word_id": 18054, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 streen,上溯古英语 strēon(获得、财富),原始日耳曼语 *streuną 义为积聚、收获,故本义为族系,后指血统、品系。"}
-{"word_id": 18055, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 streit,经古法语 estreit 上溯拉丁语 strictus,其出自拉丁语 stringō(束紧、压缩),故指狭窄的、海峡。"}
-{"word_id": 18056, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 strand,上溯古英语 strand(海滨、岸),原始日耳曼语 *strandō 义为边缘、岸,其根出自原始印欧语表铺展开的词,故指海滩、河岸。"}
-{"word_id": 18058, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 straunge,经古法语 estrange 上溯拉丁语 extrāneus(外来的、外面的),故表示陌生的、奇怪的。"}
-{"word_id": 18060, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 straunger,经古法语 estrangier(外来的)上溯拉丁语 extraneus,其根为拉丁语 extra(在……之外),故指陌生人、外地人。"}
+{"word_id": 17841, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 steire，上溯古英语 stǣġer（楼梯），更早的原始日耳曼语词形为 *staigriz，其根出自原始印欧语 *steygʰ-（行走、攀登），由攀登之义引申为楼梯、阶梯。"}
+{"word_id": 17845, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stake，上溯古英语 staca（钉、桩），原始日耳曼语词形为 *stakô，根为原始印欧语 *stog-，本义即插在地上的木桩。"}
+{"word_id": 17847, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stale，来自古法语 estal（固定的位置、场所），更早或与原始日耳曼语 *stāną（站立）有关，由久置不动引申出陈旧、不新鲜之义。"}
+{"word_id": 17850, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stalke，上溯古英语 *stealc，原始日耳曼语 *stalukaz 是 *stalô 的指小形式，而 *stalô 出自原始印欧语 *stel-（放置、立起），故指植物的茎秆。"}
+{"word_id": 17852, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stall，上溯古英语 steall（站立之处、位置），原始日耳曼语 *stallaz 与原始印欧语 *stel-（放置、站立）同源，由站立之处引申为摊位、畜栏。"}
+{"word_id": 17854, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自苏格兰语 stalwart，出自中古英语 stal-worth，再上溯古英语 stǣlwierþe（能站得稳、可依靠），由原始印欧语 *steh₂-（站立）与 *wert-（转动）构成，引申为健壮、坚定。"}
+{"word_id": 17855, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "直接借自拉丁语 stāmina，是拉丁语 stāmen 的复数形式，原指织物的经线，后引申为支撑身体的力量，即耐力、持久力。"}
+{"word_id": 17856, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stameren，上溯古英语 stamerian，原始日耳曼语 *stamrōną 义为结巴，故本词一直表示口吃、结结巴巴地说话。"}
+{"word_id": 17857, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stampen（捣碎、压碎），上溯古英语 *stampian 与原始日耳曼语 *stampōną，根义为原始印欧语 *stemb-（践踏），由用力踩踏引申为印章、盖章。"}
+{"word_id": 17860, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stanch，是 staunch 的变体；更早出自古法语 estancher（止住液体流动），故引申为止住流血、抑制。"}
+{"word_id": 17861, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stonden，上溯古英语 standan（站立、占据位置），原始日耳曼语 *standaną 与原始印欧语表示站立的词根同源，故本义为站立、位于。"}
+{"word_id": 17868, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 standynge，上溯古英语 standende，是原始日耳曼语 *standaną（站立）的现在分词，由 stand 加 -ing 构成，表示站立的状态或地位。"}
+{"word_id": 17872, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自意大利语 stanza，出自俗拉丁语 *stantia（站立之处、停留之所），源于拉丁语 stans（站立），故本义是房间，后指诗歌中分段排列的诗节。"}
+{"word_id": 17873, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 staple，经古法语 estaple（市场、交易站）上溯原始日耳曼语 *stapulaz（柱子），根为原始印欧语 *stebʰ-（柱、茎），由支柱引申为主要商品或订书钉。"}
+{"word_id": 17874, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 sterre，上溯古英语 steorra（星），原始日耳曼语 *sternô 与原始印欧语 *h₂stḗr（星）同源，词义自古未变，即天空中的星星。"}
+{"word_id": 17877, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 starche，上溯古英语 *stierċe（僵硬、强度），原始日耳曼语 *starkī 与原始印欧语 *sterg-（僵硬）同源，因淀粉能使布料变硬而得名。"}
+{"word_id": 17881, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 staren，上溯古英语 starian（凝视），原始日耳曼语 *starjaną 义为固定不动，根为原始印欧语 *ster-，由僵直不动引申为目不转睛地看。"}
+{"word_id": 17883, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stark，上溯古英语 stearc（僵硬、坚硬、强壮），原始日耳曼语 *starkuz 出自原始印欧语 *（s）terg-（僵硬），由僵硬引申为完全、十足。"}
+{"word_id": 17888, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 sterten（突然跃起、冲出），上溯古英语 styrtan，原始日耳曼语 *sturtijan 义为使动、惊起，由猛然而动引申为开始、出发。"}
+{"word_id": 17891, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 startlen（冲、跳），上溯古英语 steartlian（踢脚、挣扎），由 start 加表反复的 -le 构成，故表示使人突然一惊。"}
+{"word_id": 17896, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 sterven（死亡），上溯古英语 steorfan，原始日耳曼语 *sterbaną 义为变僵硬、死去，故本义是死，后专指因饥饿而死。"}
+{"word_id": 17899, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自新拉丁语 stasis，源于古希腊语 στάσις，义为站立不动，故指停滞、静止的状态。"}
+{"word_id": 17900, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stat，经古法语 estat 上溯拉丁语 stātus（站立的姿态、状况），源于拉丁语 stō（站立），由所处状况引申为国家、状态。"}
+{"word_id": 17902, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stately，由 state（状况、地位）加 -ly 构成，故本词表示威严的、庄严的。"}
+{"word_id": 17907, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自现代拉丁语 staticus，源于古希腊语 στατικός，其根为古希腊语 ἵστημι（使站立），由站立不动引申为静止的、静态的。"}
+{"word_id": 17908, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stacioun，经盎格鲁-诺曼语 estation 上溯拉丁语 statiōnem，源于拉丁语 statiō（站立、岗位），由站立的岗位引申为车站、驻地。"}
+{"word_id": 17909, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语 stationarius，出自拉丁语 statio（停留之处），根为拉丁语 stō（站立）；由 station 加 -ary 构成，表示不动的、固定的。"}
+{"word_id": 17915, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自德语 Statistik，出自新拉丁语 statisticum（国家的），并与意大利语 statista（政治家）相关，原指对国家情况的分析，后指统计学。"}
+{"word_id": 17916, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "直接借自拉丁语 statuārius，义为雕像的、制作雕像的人，故本词指雕塑艺术或雕像总称。"}
+{"word_id": 17917, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "经古法语 statue 上溯拉丁语 statua，其源于拉丁语 statuō（竖立、建立），故指立起来的人像或雕像。"}
+{"word_id": 17918, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stature，经古法语上溯拉丁语 statūra，本义指站立的高度，故引申为身高、身材或声望。"}
+{"word_id": 17919, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "直接借自拉丁语 status，义为站立的姿态、状况，故指地位、身份或当前状态。"}
+{"word_id": 17920, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 statut，经古法语上溯晚期拉丁语 statutum，其出自拉丁语 statuō（设立、规定），故指明文规定的法令、法规。"}
+{"word_id": 17924, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 steyen，出自古法语 estayer（支撑、固定），再经中古荷兰语 staeye（支柱）上溯原始日耳曼语 *stadiz（站立之处），由支撑引申为停留。"}
+{"word_id": 17926, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stedefast，上溯古英语 stedefæst，由 stead（位置、处所）与 fast（牢固）构成，意为站得稳的，故引申为坚定的、忠实的。"}
+{"word_id": 17928, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stedy，上溯古英语 stæþþiġ（稳固、坚定），由 stead（位置）加 -y 构成，故表示稳固的、平稳的。"}
+{"word_id": 17929, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 steike，借自古诺斯语 steik（烤肉、串在棍上烤的肉），与古诺斯语 steikja（烤）相关，故指厚切的肉块或牛排。"}
+{"word_id": 17931, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stelthe，上溯古英语 stǣlþ，出自原始日耳曼语 *stelaną（偷窃、潜行），由 steal 加 -th 构成，故表示偷偷摸摸、暗中行动。"}
+{"word_id": 17932, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 steem，上溯古英语 stēam（蒸汽、热气），原始日耳曼语 *staumaz 出自原始印欧语 *dʰewh₂-，义为蒸腾，故指水蒸气。"}
+{"word_id": 17937, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stele，上溯古英语 stīele，原始日耳曼语 *stahlą 出自表示坚固的 *stak-，故指坚硬的材料，即钢。"}
+{"word_id": 17939, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 steep，上溯古英语 stēap（高的），原始日耳曼语 *staupaz 出自原始印欧语 *（s）tewp-（推、插），由高耸引申为陡峭的。"}
+{"word_id": 17940, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stepel，上溯古英语 stīpel（塔），原始日耳曼语 *staupilaz 义为高耸之物，由 steep 加 -le 构成，故指教堂的尖塔。"}
+{"word_id": 17941, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 steeren，上溯古英语 stēoran（操舵、引导船只），原始日耳曼语 *stiurijaną 义为驾驶，故表示掌舵、操纵方向。"}
+{"word_id": 17947, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stem，上溯古英语 stemn（茎），原始日耳曼语 *stamniz 义为树干、茎，根为原始印欧语表示站立的词，由挺立部分引申为茎、柄。"}
+{"word_id": 17948, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stench，上溯古英语 stenċ（气味、香气），原始日耳曼语 *stankwiz 义为气味，故本词由泛指气味转为专指恶臭。"}
+{"word_id": 17949, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "出自中古英语 stencellen（饰以鲜艳色彩），经中古法语 estinceller（闪光）上溯拉丁语 scintilla（火花），由喷饰花样引申为模版、刻版印刷。"}
+{"word_id": 17950, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "由 Stentor 加 -ian 构成，Stentor 出自古希腊语 Στέντωρ，在史诗中为声音洪亮的传令官，故本词形容声音洪亮。"}
+{"word_id": 17951, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 steppen，上溯古英语 steppan（迈步、前进），原始日耳曼语 *stapjaną 出自原始印欧语 *stebʰ-（踏、踩），故指脚步、台阶。"}
+{"word_id": 17955, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "是 stereotype、stereoscope 或 stereophonic 的缩略形式，其共同前缀 stereo- 出自古希腊语 στερεός（实心的、立体的），故表示立体的。"}
+{"word_id": 17957, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自法语 stéréotype，由 stereo- 加 type 构成，原指印刷用的固定铅版，后引申为固定不变的成见、刻板印象。"}
+{"word_id": 17960, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古法语 stérile，上溯拉丁语 sterilis（不结果实、贫瘠），故表示不能生育的、无菌的。"}
+{"word_id": 17964, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 sterling，或出自古英语 *steorling，由 steorra（星）加指小后缀 -ling 构成，因旧时英国便士上铸有星纹，故指纯银货币。"}
+{"word_id": 17965, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stern，上溯古英语 styrne（严厉、严酷），原始日耳曼语 *sturnijaz 出自原始印欧语 *ster-（僵硬），由僵硬引申为严厉的。"}
+{"word_id": 17967, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自法语 stéthoscope，由 stetho-（胸）加 -scope（观察器具）构成，故指用来听诊胸腔的听诊器。"}
+{"word_id": 17968, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stewe，经古法语 estuve（浴室）上溯中世纪拉丁语 stupha，或与古希腊语 τῦφος（烟气、蒸汽）有关，由蒸汽浴引申为煨炖。"}
+{"word_id": 17969, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 steward，上溯古英语 stiġweard（管家、看管家务的人），由 sty（栏、屋）与 ward（看守）构成，故指管家、乘务员。"}
+{"word_id": 17972, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 sticke，上溯古英语 sticca（棍、钉、杆），原始日耳曼语 *stikkô 出自原始印欧语 *（s）teyg-（刺、扎），由尖刺之物引申为棍棒、粘贴。"}
+{"word_id": 17974, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stighteler，由 stickle 加表施动者的 -er 构成，原指持棍主持比赛的裁判，故引申为坚持细节的人。"}
+{"word_id": 17977, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stiff，上溯古英语 stīf，原始日耳曼语 *stīfaz 出自原始印欧语 *steypós，义为坚硬、不易弯，故表示僵硬的、生硬的。"}
+{"word_id": 17978, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stifnen，由 stiff（僵硬）加 -en 构成，故表示使变硬、变僵硬。"}
+{"word_id": 17979, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stiffenes，或出自古英语 stīþness（僵硬），由 stiff 加 -ness 构成，故表示坚硬、僵硬的程度。"}
+{"word_id": 17980, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "出自中晚期中古英语 stuflen（因闷热而呼吸困难、窒息），故表示使窒息、扼制，引申为压制。"}
+{"word_id": 17981, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语 stigma，出自古希腊语 στίγμα（奴隶或耻辱的标记），其动词为 στίζω（标记），故引申为耻辱、污名。"}
+{"word_id": 17983, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stille（不动的），上溯古英语 stille（安静），原始日耳曼语 *stillī 出自原始印欧语 *（s）telH-（静默），故表示静止的、安静的。"}
+{"word_id": 17984, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stilnesse，上溯古英语 stilnes（寂静、安宁），由 still（静止）加 -ness 构成，故表示静止、寂静。"}
+{"word_id": 17985, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stilte，上溯古英语 *stilte，原始日耳曼语 *stiltijǭ 出自表僵直的 *stelt-，故指使人变高的高跷。"}
+{"word_id": 17988, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语 stimulātus，出自拉丁语 stimulus（刺棒、赶牲口的尖棍），故本义是用刺棒催促，引申为刺激、激励。"}
+{"word_id": 17989, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语 stimulātiō，由 stimulate 加 -ion 构成，其词根出自拉丁语表示刺棒的词，故表示刺激、兴奋。"}
+{"word_id": 17991, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "直接借自拉丁语 stimulus（赶牲口的刺棒、尖刺），由刺棒之义引申为引起反应的刺激物。"}
+{"word_id": 17992, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 styng，上溯古英语 sting（刺、螫伤），原始日耳曼语 *stingaz 义为刺扎，故指昆虫的螫刺或刺痛的感受。"}
+{"word_id": 17997, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stinten，上溯古英语 styntan（使变钝），原始日耳曼语 *stintaną 义为使变短，由截短引申为限额、节省。"}
+{"word_id": 17998, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stipend，经古法语上溯拉丁语 stīpendium（军饷、税赋），由 stips（捐献）与表示称量的词根构成，故指定期支付的薪金、津贴。"}
+{"word_id": 17999, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自荷兰语 stippel（小点），原指点本身，后指用密集小点作画或雕刻的技法。"}
+{"word_id": 18000, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语 stipulātus，出自拉丁语 stipulor（要求正式许诺），故表示约定、明确规定为条件。"}
+{"word_id": 18002, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stiren，上溯古英语 styrian（运动、搅动、骚扰），原始日耳曼语 *sturiz 义为骚动、混乱，故表示搅拌、激起。"}
+{"word_id": 18003, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stiche，上溯古英语 stiċe（刺、扎、刺痛），原始日耳曼语 *stikiz 出自原始印欧语 *（s）teyg-（刺穿），故指缝纫的一针。"}
+{"word_id": 18005, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stok，上溯古英语 stocc，原始日耳曼语 *stukkaz 义为树干，由树干引申为存货、股本等义。"}
+{"word_id": 18007, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自法语 estocade，由 stock（木料）加 -ade 构成，故指用木桩围成的防御栅栏、围栏。"}
+{"word_id": 18015, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stoken，出自中古荷兰语 stoken（捅、推），原始日耳曼语 *stukōną 出自原始印欧语 *（s）tewg-（推、打），故指拨旺炉火、添煤。"}
+{"word_id": 18016, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古法语 stolide，上溯拉丁语 stolidus（愚钝、迟缓），故表示不动感情的、迟钝的。"}
+{"word_id": 18017, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stomak，经古法语 estomac 上溯拉丁语 stomachus，其出自古希腊语 στόμα（嘴），故指胃，引申为胃口、承受。"}
+{"word_id": 18020, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 ston，上溯古英语 stān，原始日耳曼语 *stainaz 义为石头，其根出自原始印欧语表凝固变硬的词，故指石块、石头。"}
+{"word_id": 18024, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stonwal，上溯古英语 stānweall（石墙），由 stone（石头）与 wall（墙）构成，由石墙引申为阻碍、拖延。"}
+{"word_id": 18026, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stony，上溯古英语 stāniġ（多石的），由 stone（石头）加 -y 构成，故表示多石的、冷硬的。"}
+{"word_id": 18027, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stool，上溯古英语 stōl（椅子、座位），原始日耳曼语 *stōlaz 义为座椅，其根为原始印欧语表站立的词，故指凳子。"}
+{"word_id": 18028, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stoupen，上溯古英语 stūpian（弯腰、屈身），原始日耳曼语 *stūpōną 出自原始印欧语 *（s）tewb-（推、抵），故表示弯腰、俯身。"}
+{"word_id": 18029, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stoppen，上溯古英语 stoppian（停止、堵塞），原始日耳曼语 *stuppōną 出自原始印欧语表推塞的词根，故表示停止、阻止。"}
+{"word_id": 18038, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 story，经中世纪拉丁语 historia（叙事、图饰）上溯古希腊语表示探究的词，因中世纪建筑上层常饰有图画，故指楼层。"}
+{"word_id": 18040, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 storm（大气骚动、暴风雨、攻击），上溯古英语 storm，原始日耳曼语 *sturmaz 出自原始印欧语 *（s）twerH-（搅动），故指风暴、猛攻。"}
+{"word_id": 18041, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stormy，上溯古英语 *stormiġ（暴风雨的），由 storm（风暴）加 -y 构成，故表示有暴风雨的、激烈的。"}
+{"word_id": 18042, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 storie，经盎格鲁-诺曼语 estorie 上溯拉丁语 historia，其出自古希腊语表示通过探究而得的学问的词，故指故事、叙述。"}
+{"word_id": 18045, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 stoute，出自古法语 estout（勇敢、骄傲），其原始日耳曼语词形为 *stultaz，根为原始印欧语 *stel-（放置、站立），故引申为强壮的、结实的。"}
+{"word_id": 18047, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "借自中古荷兰语与中古低地德语 stove，出自原始日耳曼语 *stubu（有暖气的房间、浴室），故由取暖的房间引申为火炉。"}
+{"word_id": 18050, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 straglen，或与挪威语 stragla（艰难行走）同源，故表示掉队、散乱地蔓延。"}
+{"word_id": 18051, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 streight，是 stretch（拉直）的过去分词形式，上溯古英语 streċċan，故表示被拉直的、笔直的。"}
+{"word_id": 18054, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 streen，上溯古英语 strēon（获得、财富），原始日耳曼语 *streuną 义为积聚、收获，故本义为族系，后指血统、品系。"}
+{"word_id": 18055, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 streit，经古法语 estreit 上溯拉丁语 strictus，其出自拉丁语 stringō（束紧、压缩），故指狭窄的、海峡。"}
+{"word_id": 18056, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 strand，上溯古英语 strand（海滨、岸），原始日耳曼语 *strandō 义为边缘、岸，其根出自原始印欧语表铺展开的词，故指海滩、河岸。"}
+{"word_id": 18058, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 straunge，经古法语 estrange 上溯拉丁语 extrāneus（外来的、外面的），故表示陌生的、奇怪的。"}
+{"word_id": 18060, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 straunger，经古法语 estrangier（外来的）上溯拉丁语 extraneus，其根为拉丁语 extra（在……之外），故指陌生人、外地人。"}

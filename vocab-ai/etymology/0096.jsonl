@@ -1,100 +1,100 @@
-{"word_id": 18917, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 theft,可上溯古英语与原始日耳曼语,与 thieve(偷窃)同源,本义即偷窃行为。"}
-{"word_id": 18918, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自古诺斯语,取代了古英语原有的 heora,后来成为表示他们所有的限定词。"}
-{"word_id": 18919, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 theires,由 their 加 -s 构成,类比 his 而形成,表示属于他们的东西。"}
-{"word_id": 18921, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,继而来自古诺斯语,由表示那些人的指示词演变而来,用作人称代词的宾格。"}
-{"word_id": 18922, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "由 theme(主题)加后缀 -atic 构成,表示与主题相关的。"}
-{"word_id": 18923, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,经古法语与拉丁语 thema,出自古希腊语 θέμα(放置之物),与 τίθημι(放置)同源,引申为主题。"}
-{"word_id": 18925, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语,本义是在那个时间,即那时。"}
-{"word_id": 18927, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自古希腊语 θεοκρατία(神的统治),由 theo-(神)与 -cracy(统治)构成。"}
-{"word_id": 18931, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自古希腊语 θεώρημα(待证明的命题),与 θεωρέω(观看、考察)有关,指经推理证明的命题。"}
-{"word_id": 18932, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 theorothycall,经拉丁语而来,出自古希腊语,表示理论层面的。"}
-{"word_id": 18936, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自新拉丁语 therapeuticus(治疗、治愈),出自古希腊语,本义为照料与服侍,引申为治疗的。"}
-{"word_id": 18939, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自新拉丁语,出自古希腊语 θεραπεία(服务、医疗),本义为照料与服侍,引申为疗法。"}
-{"word_id": 18940, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语,本义是在那个地方,即那里。"}
-{"word_id": 18941, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,由 there(那里)与 after(之后)合成,表示在那之后。"}
-{"word_id": 18942, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,由 there(那里)与 by(靠近)合成,引申为借此、因此。"}
-{"word_id": 18943, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 therfore,被重新分析为由 there 与 fore 合成,表示因此。"}
-{"word_id": 18944, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,由 there(那里)与 in(在内)合成,表示在其中。"}
-{"word_id": 18945, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 thereof,来自古英语,由表示那里的词与 of 合成,表示其、由此。"}
-{"word_id": 18946, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自法语,经新拉丁语,出自古希腊语 θέρμη(热),与原始印欧语表示加热的词根有关。"}
-{"word_id": 18948, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "由 thermo-(热)与 -meter(测量仪)构成,源自法语,指测量温度的仪器。"}
-{"word_id": 18949, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自古希腊语 θερμός(温暖的),原为商标名,后泛指保温瓶。"}
-{"word_id": 18951, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语,出自古希腊语 θησαυρός(宝库、珍藏),引申为汇集词汇的辞书。"}
-{"word_id": 18952, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语表示那个的形式,是近指的复数指示词。"}
-{"word_id": 18953, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,经拉丁语 thesis,出自古希腊语,本义为放置,引申为提出的论点。"}
-{"word_id": 18956, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,借自古诺斯语表示那些人的代词,后来取代本土形式成为他们。"}
-{"word_id": 18957, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语与原始印欧语,本义即厚、浓密。"}
-{"word_id": 18958, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,由 thick(厚)加 -en 构成,或与古诺斯语同源,表示使变厚。"}
-{"word_id": 18959, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,由表示厚的词加名词后缀构成,指茂密丛生的灌木。"}
-{"word_id": 18961, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,由 thick(厚)加 -ness 构成,表示厚度。"}
-{"word_id": 18962, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语,本义即偷窃的人。"}
-{"word_id": 18963, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语与原始印欧语,指大腿。"}
-{"word_id": 18964, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语,与原始印欧语表示拉伸的词根有关,本义即薄。"}
-{"word_id": 18966, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,本义为集会,后指集会上讨论的事项,再泛指事物。"}
-{"word_id": 18967, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语,出自原始印欧语表示思考的词根,本义即思考。"}
-{"word_id": 18969, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,由 think(思考)加 -ing 构成,表示思考这一行为。"}
-{"word_id": 18971, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语,出自原始印欧语的序数形式,表示第三。"}
-{"word_id": 18975, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语,与原始印欧语表示干燥的词根有关,指口渴。"}
-{"word_id": 18976, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,由 thirst(渴)加 -y 构成,表示口渴的。"}
-{"word_id": 18977, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,由表示三的词加表示十的词构成,即十三。"}
-{"word_id": 18980, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,由 three(三)加 -ty 构成,表示三十。"}
-{"word_id": 18981, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语与原始印欧语指示词,表示这个。"}
-{"word_id": 18987, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语,出自原始印欧语表示僵硬的词根,指刺。"}
-{"word_id": 18988, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,由表示刺的词加后缀构成,表示多刺的。"}
-{"word_id": 18989, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,是 through 的另一种形式,引申为彻底的。"}
-{"word_id": 18993, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 thos,由 tho 加 -s 构成,是表示那些的指示词。"}
-{"word_id": 18995, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,并受古诺斯语影响,可上溯原始日耳曼语,本义为尽管如此。"}
-{"word_id": 18996, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语,出自原始印欧语表示思考的词根,指思想。"}
-{"word_id": 18997, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,由 thought(思想)加 -ful 构成,表示体贴的、深思的。"}
-{"word_id": 19000, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语,出自原始印欧语,表示千。"}
-{"word_id": 19002, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,由 thousand(千)加 -fold(倍)构成,表示千倍。"}
-{"word_id": 19004, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,并来自古诺斯语,出自原始日耳曼语,本义为奴仆。"}
-{"word_id": 19005, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,本义为打谷、踩踏,出自原始印欧语表示摩擦的词根,引申为猛打。"}
-{"word_id": 19006, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语,出自原始印欧语表示搓、扭的词根,指线。"}
-{"word_id": 19009, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,本义为人群、压迫,出自原始印欧语表示挤压的词根,引申为威胁。"}
-{"word_id": 19010, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,由 threat(威胁)加 -en 构成,表示威胁。"}
-{"word_id": 19014, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语与原始印欧语,本义即三。"}
-{"word_id": 19018, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,本义为打谷、踩踏,出自原始印欧语表示摩擦、转动的词根。"}
-{"word_id": 19019, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,本义为门槛,出自原始日耳曼语表示踩踏的词,即门下的踏脚处。"}
-{"word_id": 19021, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,来自古诺斯语,由 thrive(兴旺)加 -t 构成,本义为兴旺,引申为节俭。"}
-{"word_id": 19022, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,由 thrift(节俭)加 -less(无)构成,表示不节俭的。"}
-{"word_id": 19023, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,由 thrift(节俭)加 -y 构成,表示节俭的。"}
-{"word_id": 19024, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自古英语,本义为刺穿,与表示孔洞的词有关,引申为强烈的兴奋感。"}
-{"word_id": 19028, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,来自古诺斯语,本义为抓住、取得,引申为兴旺、茁壮。"}
-{"word_id": 19029, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语,出自原始印欧语表示膨胀的词根,指喉咙。"}
-{"word_id": 19031, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,经古法语与拉丁语,出自古希腊语 θρόνος(座椅),指宝座。"}
-{"word_id": 19032, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,本义为挤压、推拥,出自原始印欧语表示压迫的词根,引申为人群。"}
-{"word_id": 19033, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,由 throat(喉咙)加表反复的后缀 -le 构成,本义与扼住喉咙有关。"}
-{"word_id": 19034, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,出自原始印欧语表示穿越的词根,本义为穿过。"}
-{"word_id": 19035, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自古英语,由 through(穿过)与 out(向外)合成,表示遍及、自始至终。"}
-{"word_id": 19037, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,本义为转动、扭,引申为抛掷。"}
-{"word_id": 19040, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,来自古诺斯语,出自原始日耳曼语,本义为推挤。"}
-{"word_id": 19042, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语,出自原始印欧语表示生长的词根,指拇指。"}
-{"word_id": 19045, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语,出自原始印欧语表示雷响的词根,指雷声。"}
-{"word_id": 19049, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,由神名 Thor 与 day(日)构成,意为雷神之日。"}
-{"word_id": 19050, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始西日耳曼语,本义为如此、这样。"}
-{"word_id": 19051, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,来自古诺斯语表示横过的词,本义为横向,引申为阻挠。"}
-{"word_id": 19057, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "其来源不明确,可能来自古突厥语表示山地的地方,后经古典波斯语传入。"}
-{"word_id": 19059, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,指一种寄生的小虫,即蜱。"}
-{"word_id": 19061, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古苏格兰语与中古法语,出自法兰克语表示刺、钉的词,本义为贴上的标签,引申为票。"}
-{"word_id": 19063, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,可能与表示轻触的词有关,加表反复的后缀构成,表示呵痒。"}
-{"word_id": 19067, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "与 time(时间)同源,出自表示时间的词根。"}
-{"word_id": 19068, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,由 tide(时间)加 -y 构成,本义为及时的,引申为整洁的。"}
-{"word_id": 19069, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,本义为绳索、链条,引申为系、捆绑。"}
-{"word_id": 19072, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "其来源不明,可能是拟声词,模拟一小股气流的声响。"}
-{"word_id": 19074, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,经拉丁语与古希腊语 τίγρις,出自原始印欧语表示刺、尖的词根,指老虎。"}
-{"word_id": 19075, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,出自原始印欧语表示拉紧的词根,本义为紧密的。"}
-{"word_id": 19076, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,由 tight 加 -en 构成,表示使变紧。"}
-{"word_id": 19083, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,经原始日耳曼语,出自拉丁语表示覆盖的词,指瓦片、瓷砖。"}
-{"word_id": 19085, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,来自古诺斯语,本义为到、向,引申为直到。"}
-{"word_id": 19086, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,本义为不稳、摇晃,引申为倾斜。"}
-{"word_id": 19087, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语,出自原始印欧语表示建造的词根,指木材。"}
-{"word_id": 19088, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自法语,出自古希腊语 τύμπανον(鼓),引申为声音的音色。"}
-{"word_id": 19089, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,出自原始印欧语表示切分的词根,本义为被划分的时段。"}
-{"word_id": 19094, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,由 time(时间)加 -ly 构成,表示及时的。"}
-{"word_id": 19099, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古法语,出自拉丁语 timidus(胆怯的),来自 timeō(害怕),表示胆小的。"}
-{"word_id": 19100, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古法语与拉丁语,由 timid(胆怯的)加 -ity 构成,表示胆怯。"}
-{"word_id": 19102, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语,经古法语与中世纪拉丁语,出自拉丁语 timor(恐惧)与 timeō(害怕),表示胆怯的。"}
-{"word_id": 19104, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语,指锡。"}
-{"word_id": 19105, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语,可上溯原始日耳曼语,指引火的火绒。"}
-{"word_id": 19108, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语 tingere(浸染),本义为浸、染色,引申为使略带色彩。"}
+{"word_id": 18917, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 theft，可上溯古英语与原始日耳曼语，与 thieve（偷窃）同源，本义即偷窃行为。"}
+{"word_id": 18918, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自古诺斯语，取代了古英语原有的 heora，后来成为表示他们所有的限定词。"}
+{"word_id": 18919, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 theires，由 their 加 -s 构成，类比 his 而形成，表示属于他们的东西。"}
+{"word_id": 18921, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，继而来自古诺斯语，由表示那些人的指示词演变而来，用作人称代词的宾格。"}
+{"word_id": 18922, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "由 theme（主题）加后缀 -atic 构成，表示与主题相关的。"}
+{"word_id": 18923, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，经古法语与拉丁语 thema，出自古希腊语 θέμα（放置之物），与 τίθημι（放置）同源，引申为主题。"}
+{"word_id": 18925, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语，本义是在那个时间，即那时。"}
+{"word_id": 18927, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自古希腊语 θεοκρατία（神的统治），由 theo-（神）与 -cracy（统治）构成。"}
+{"word_id": 18931, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自古希腊语 θεώρημα（待证明的命题），与 θεωρέω（观看、考察）有关，指经推理证明的命题。"}
+{"word_id": 18932, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 theorothycall，经拉丁语而来，出自古希腊语，表示理论层面的。"}
+{"word_id": 18936, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自新拉丁语 therapeuticus（治疗、治愈），出自古希腊语，本义为照料与服侍，引申为治疗的。"}
+{"word_id": 18939, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自新拉丁语，出自古希腊语 θεραπεία（服务、医疗），本义为照料与服侍，引申为疗法。"}
+{"word_id": 18940, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语，本义是在那个地方，即那里。"}
+{"word_id": 18941, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，由 there（那里）与 after（之后）合成，表示在那之后。"}
+{"word_id": 18942, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，由 there（那里）与 by（靠近）合成，引申为借此、因此。"}
+{"word_id": 18943, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 therfore，被重新分析为由 there 与 fore 合成，表示因此。"}
+{"word_id": 18944, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，由 there（那里）与 in（在内）合成，表示在其中。"}
+{"word_id": 18945, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 thereof，来自古英语，由表示那里的词与 of 合成，表示其、由此。"}
+{"word_id": 18946, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自法语，经新拉丁语，出自古希腊语 θέρμη（热），与原始印欧语表示加热的词根有关。"}
+{"word_id": 18948, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "由 thermo-（热）与 -meter（测量仪）构成，源自法语，指测量温度的仪器。"}
+{"word_id": 18949, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自古希腊语 θερμός（温暖的），原为商标名，后泛指保温瓶。"}
+{"word_id": 18951, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语，出自古希腊语 θησαυρός（宝库、珍藏），引申为汇集词汇的辞书。"}
+{"word_id": 18952, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语表示那个的形式，是近指的复数指示词。"}
+{"word_id": 18953, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，经拉丁语 thesis，出自古希腊语，本义为放置，引申为提出的论点。"}
+{"word_id": 18956, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，借自古诺斯语表示那些人的代词，后来取代本土形式成为他们。"}
+{"word_id": 18957, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语与原始印欧语，本义即厚、浓密。"}
+{"word_id": 18958, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，由 thick（厚）加 -en 构成，或与古诺斯语同源，表示使变厚。"}
+{"word_id": 18959, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，由表示厚的词加名词后缀构成，指茂密丛生的灌木。"}
+{"word_id": 18961, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，由 thick（厚）加 -ness 构成，表示厚度。"}
+{"word_id": 18962, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语，本义即偷窃的人。"}
+{"word_id": 18963, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语与原始印欧语，指大腿。"}
+{"word_id": 18964, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语，与原始印欧语表示拉伸的词根有关，本义即薄。"}
+{"word_id": 18966, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，本义为集会，后指集会上讨论的事项，再泛指事物。"}
+{"word_id": 18967, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语，出自原始印欧语表示思考的词根，本义即思考。"}
+{"word_id": 18969, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，由 think（思考）加 -ing 构成，表示思考这一行为。"}
+{"word_id": 18971, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语，出自原始印欧语的序数形式，表示第三。"}
+{"word_id": 18975, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语，与原始印欧语表示干燥的词根有关，指口渴。"}
+{"word_id": 18976, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，由 thirst（渴）加 -y 构成，表示口渴的。"}
+{"word_id": 18977, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，由表示三的词加表示十的词构成，即十三。"}
+{"word_id": 18980, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，由 three（三）加 -ty 构成，表示三十。"}
+{"word_id": 18981, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语与原始印欧语指示词，表示这个。"}
+{"word_id": 18987, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语，出自原始印欧语表示僵硬的词根，指刺。"}
+{"word_id": 18988, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，由表示刺的词加后缀构成，表示多刺的。"}
+{"word_id": 18989, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，是 through 的另一种形式，引申为彻底的。"}
+{"word_id": 18993, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语 thos，由 tho 加 -s 构成，是表示那些的指示词。"}
+{"word_id": 18995, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，并受古诺斯语影响，可上溯原始日耳曼语，本义为尽管如此。"}
+{"word_id": 18996, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语，出自原始印欧语表示思考的词根，指思想。"}
+{"word_id": 18997, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，由 thought（思想）加 -ful 构成，表示体贴的、深思的。"}
+{"word_id": 19000, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语，出自原始印欧语，表示千。"}
+{"word_id": 19002, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，由 thousand（千）加 -fold（倍）构成，表示千倍。"}
+{"word_id": 19004, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，并来自古诺斯语，出自原始日耳曼语，本义为奴仆。"}
+{"word_id": 19005, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，本义为打谷、踩踏，出自原始印欧语表示摩擦的词根，引申为猛打。"}
+{"word_id": 19006, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语，出自原始印欧语表示搓、扭的词根，指线。"}
+{"word_id": 19009, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，本义为人群、压迫，出自原始印欧语表示挤压的词根，引申为威胁。"}
+{"word_id": 19010, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，由 threat（威胁）加 -en 构成，表示威胁。"}
+{"word_id": 19014, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语与原始印欧语，本义即三。"}
+{"word_id": 19018, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，本义为打谷、踩踏，出自原始印欧语表示摩擦、转动的词根。"}
+{"word_id": 19019, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，本义为门槛，出自原始日耳曼语表示踩踏的词，即门下的踏脚处。"}
+{"word_id": 19021, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，来自古诺斯语，由 thrive（兴旺）加 -t 构成，本义为兴旺，引申为节俭。"}
+{"word_id": 19022, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，由 thrift（节俭）加 -less（无）构成，表示不节俭的。"}
+{"word_id": 19023, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，由 thrift（节俭）加 -y 构成，表示节俭的。"}
+{"word_id": 19024, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自古英语，本义为刺穿，与表示孔洞的词有关，引申为强烈的兴奋感。"}
+{"word_id": 19028, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，来自古诺斯语，本义为抓住、取得，引申为兴旺、茁壮。"}
+{"word_id": 19029, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语，出自原始印欧语表示膨胀的词根，指喉咙。"}
+{"word_id": 19031, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，经古法语与拉丁语，出自古希腊语 θρόνος（座椅），指宝座。"}
+{"word_id": 19032, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，本义为挤压、推拥，出自原始印欧语表示压迫的词根，引申为人群。"}
+{"word_id": 19033, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，由 throat（喉咙）加表反复的后缀 -le 构成，本义与扼住喉咙有关。"}
+{"word_id": 19034, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，出自原始印欧语表示穿越的词根，本义为穿过。"}
+{"word_id": 19035, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自古英语，由 through（穿过）与 out（向外）合成，表示遍及、自始至终。"}
+{"word_id": 19037, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，本义为转动、扭，引申为抛掷。"}
+{"word_id": 19040, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，来自古诺斯语，出自原始日耳曼语，本义为推挤。"}
+{"word_id": 19042, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语，出自原始印欧语表示生长的词根，指拇指。"}
+{"word_id": 19045, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语，出自原始印欧语表示雷响的词根，指雷声。"}
+{"word_id": 19049, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，由神名 Thor 与 day（日）构成，意为雷神之日。"}
+{"word_id": 19050, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始西日耳曼语，本义为如此、这样。"}
+{"word_id": 19051, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，来自古诺斯语表示横过的词，本义为横向，引申为阻挠。"}
+{"word_id": 19057, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "其来源不明确，可能来自古突厥语表示山地的地方，后经古典波斯语传入。"}
+{"word_id": 19059, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，指一种寄生的小虫，即蜱。"}
+{"word_id": 19061, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古苏格兰语与中古法语，出自法兰克语表示刺、钉的词，本义为贴上的标签，引申为票。"}
+{"word_id": 19063, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，可能与表示轻触的词有关，加表反复的后缀构成，表示呵痒。"}
+{"word_id": 19067, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "与 time（时间）同源，出自表示时间的词根。"}
+{"word_id": 19068, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，由 tide（时间）加 -y 构成，本义为及时的，引申为整洁的。"}
+{"word_id": 19069, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，本义为绳索、链条，引申为系、捆绑。"}
+{"word_id": 19072, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "其来源不明，可能是拟声词，模拟一小股气流的声响。"}
+{"word_id": 19074, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，经拉丁语与古希腊语 τίγρις，出自原始印欧语表示刺、尖的词根，指老虎。"}
+{"word_id": 19075, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，出自原始印欧语表示拉紧的词根，本义为紧密的。"}
+{"word_id": 19076, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，由 tight 加 -en 构成，表示使变紧。"}
+{"word_id": 19083, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，经原始日耳曼语，出自拉丁语表示覆盖的词，指瓦片、瓷砖。"}
+{"word_id": 19085, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，来自古诺斯语，本义为到、向，引申为直到。"}
+{"word_id": 19086, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，本义为不稳、摇晃，引申为倾斜。"}
+{"word_id": 19087, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语，出自原始印欧语表示建造的词根，指木材。"}
+{"word_id": 19088, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自法语，出自古希腊语 τύμπανον（鼓），引申为声音的音色。"}
+{"word_id": 19089, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，出自原始印欧语表示切分的词根，本义为被划分的时段。"}
+{"word_id": 19094, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，由 time（时间）加 -ly 构成，表示及时的。"}
+{"word_id": 19099, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古法语，出自拉丁语 timidus（胆怯的），来自 timeō（害怕），表示胆小的。"}
+{"word_id": 19100, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古法语与拉丁语，由 timid（胆怯的）加 -ity 构成，表示胆怯。"}
+{"word_id": 19102, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语，经古法语与中世纪拉丁语，出自拉丁语 timor（恐惧）与 timeō（害怕），表示胆怯的。"}
+{"word_id": 19104, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语，指锡。"}
+{"word_id": 19105, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自中古英语与古英语，可上溯原始日耳曼语，指引火的火绒。"}
+{"word_id": 19108, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "text": "源自拉丁语 tingere（浸染），本义为浸、染色，引申为使略带色彩。"}
