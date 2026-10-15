@@ -18,10 +18,10 @@ BATCH_SIZE = 100
 # 生成要求版本,随每个任务单独维护;改动生成要求时提升,只重做受影响的批次。
 # PROMPT_VERSION 是导出输入时写进文件的目标版本;PROMPT_VERSIONS 是校验时接受的版本集合,
 # 允许同一任务的不同批次(或同一批次的不同行)保留旧版本结果,只重做受影响的词。
-PROMPT_VERSION = {"examples": 3, "core_sense": 2, "collocations": 2, "etymology": 2}
+PROMPT_VERSION = {"examples": 3, "core_sense": 3, "collocations": 2, "etymology": 2}
 PROMPT_VERSIONS = {
     "examples": {2, 3},
-    "core_sense": {1, 2},
+    "core_sense": {1, 2, 3},
     "collocations": {1, 2},
     "etymology": {1, 2},
 }
@@ -30,6 +30,21 @@ DEFAULT_MODEL = "deepseek-v4.1-flash"
 
 # ECDICT 释义的首行是核心义,行首是词性标记(如 n.、vt.)
 POS_RE = re.compile(r"^([a-z]+\.)\s*")
+# ECDICT 释义行首的词性标记 → WordNet 词性;无法对应的不校验词性
+ECDICT_POS = {"n.": "n", "a.": "a", "vt.": "v", "vi.": "v", "v.": "v", "adv.": "r", "pl.": "n"}
+
+
+def ecdict_positions(text):
+    """ECDICT 释义各行行首词性标记对应的 WordNet 词性集合(不认识的行首不计入)。
+
+    任务 2 校验从 prompt_version 3 起允许词性出现在任意一行,不再只认第一行。
+    """
+    positions = set()
+    for line in (text or "").split("\n"):
+        m = POS_RE.match(line.strip())
+        if m and m.group(1) in ECDICT_POS:
+            positions.add(ECDICT_POS[m.group(1)])
+    return positions
 
 
 def split_zh(text):

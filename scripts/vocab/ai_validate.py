@@ -17,9 +17,11 @@
 
 任务 2(核心义对应 WordNet 词义)的校验规则:
     1. core_sense_id 要么是 null,要么必须是该词 sense id 之一;
-    2. 非 null 时,词性要和 ECDICT 释义第一行的词性标记一致
+    2. 非 null 时,词性要出现在 ECDICT 释义的任意一行,不要求与第一行一致
        (n.→n、a.→a、vt./vi./v.→v、adv.→r、pl.→n;介词、数词、代词、感叹词
-        和没有标记的不校验词性,因为 WordNet 没有对应词性)。
+        和没有标记的行不校验词性,因为 WordNet 没有对应词性)。
+       prompt_version 3 起放宽为任意一行;v2 及更早只认第一行,遇到
+       settle、fine、meet 这类常用义在后面的词会被迫选冷僻义或写 NULL。
 
 任务 3(补齐搭配)的校验规则:
     1. 每词 0 到 3 条搭配(目标词是功能词时可为 0),`phrase` 不重复,`partner` 不重复;
@@ -208,8 +210,6 @@ CN_LANGS = {
 }
 
 
-# ECDICT 释义首行的词性标记 → WordNet 词性;无法对应的不校验词性
-ECDICT_POS = {"n.": "n", "a.": "a", "vt.": "v", "vi.": "v", "v.": "v", "adv.": "r", "pl.": "n"}
 # WordNet 的形容词卫星词义(s)按形容词(a)处理
 SENSE_POS = {"s": "a"}
 
@@ -230,11 +230,15 @@ def load_examples_words(db):
 
 
 def load_core_sense_words(db):
-    """word_id → 词、释义首行、词性标记和全部词义 (pos, definition)。"""
+    """word_id → 词、释义首行、各行词性集合和全部词义 (pos, definition)。"""
     words = {}
     for wid, word, zh in db.execute("SELECT id, word, translation_zh FROM words"):
-        _, pos = ai.split_zh(zh)
-        words[wid] = {"word": word, "zh": (zh or "").split("\n", 1)[0].strip(), "pos": pos, "senses": {}}
+        words[wid] = {
+            "word": word,
+            "zh": (zh or "").split("\n", 1)[0].strip(),
+            "positions": ai.ecdict_positions(zh),
+            "senses": {},
+        }
     for wid, sid, pos, definition in db.execute("SELECT word_id, id, pos, definition FROM senses"):
         if wid in words:
             words[wid]["senses"][sid] = (pos, definition)
@@ -433,10 +437,10 @@ def check_core_sense_record(rec, ctx, versions):
             reasons.append(f"core_sense_id {sid!r} 不是该词的词义")
         else:
             sense = words[wid]["senses"][sid]
-            want = ECDICT_POS.get(words[wid]["pos"])
+            wants = words[wid]["positions"]
             got = SENSE_POS.get(sense[0], sense[0])
-            if want and got != want:
-                reasons.append(f"词性 {got} 与释义首行 {words[wid]['pos']} 不一致")
+            if wants and got not in wants:
+                reasons.append(f"词性 {got} 不在释义词性 {sorted(wants)} 中")
     if reasons:
         return reasons, []
     return [], [(wid, words[wid]["word"], words[wid]["zh"], sid,

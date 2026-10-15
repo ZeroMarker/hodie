@@ -50,8 +50,9 @@ def examples_words(db):
 def core_sense_words(db):
     """任务 2 核心义对应 WordNet 词义的输入:有多于一个 WordNet 词义的多义词书词,按 id 排序。
 
-    提供 ECDICT 释义全文(含多行)和该词全部词义(id、词性、英文释义),
-    让模型判断第一行核心中文义对应哪个词义。
+    提供 ECDICT 释义全文(含多行,词性可以出现在任意一行)和该词全部词义
+    (id、词性、英文释义),让模型判断该词在现代英语中最常用的义项对应哪个词义。
+    `positions` 是释义里出现过的 WordNet 词性,供参考;不必局限于第一行。
     """
     rows = db.execute(
         f"SELECT w.id, w.word, w.translation_zh FROM words w"
@@ -65,8 +66,13 @@ def core_sense_words(db):
         senses.setdefault(wid, []).append({"id": sid, "pos": pos, "def": definition})
     words = []
     for wid, word, zh in rows:
-        _, pos = ai.split_zh(zh)
-        words.append({"word_id": wid, "word": word, "zh": zh, "pos": pos, "senses": senses[wid]})
+        words.append({
+            "word_id": wid,
+            "word": word,
+            "zh": zh,
+            "positions": sorted(ai.ecdict_positions(zh)),
+            "senses": senses[wid],
+        })
     return words
 
 
