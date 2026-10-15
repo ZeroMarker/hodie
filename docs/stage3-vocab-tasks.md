@@ -13,7 +13,7 @@
 | 中英例句(`examples`,Tatoeba + AI) | 14986 | 0(任务 1 已完成;AI 例句 `reviewed` 待人工抽检后置 1) |
 | 搭配(`collocations`,Tatoeba logDice 统计 + AI) | 14986 | 0(任务 3 已完成:87 批、8639 词、19001 条 AI 搭配;Tatoeba 搭配按原形合并时态重复后为 23328 条;`reviewed` 待人工抽检) |
 | WordNet 词义(`senses`) | 14330 | 0(任务 2 已完成:10105 个多义词已确定核心义词义,9961 个有 `core_sense_id`,144 个无法判断为 NULL;`reviewed` 待人工抽检) |
-| 词源中文讲解(`etymology_notes`,基于 `etymology_steps`) | 3300 | 7189 词待生成(任务 4 进行中:105 批完成 33 批,2026-10-15 因 Go 用量上限暂停,额度恢复后续跑) |
+| 词源中文讲解(`etymology_notes`,基于 `etymology_steps`) | 10489 | 0(任务 4 已完成:105 批、10489 词,校验 10489/10489 通过;`reviewed` 待人工抽检) |
 
 ## 通用约定
 
@@ -69,6 +69,7 @@
 - **要求**:中文,不超过 120 字;说明词根含义,以及它如何引申到今天的词义。不得出现输入中没有的语言、词形或年代,以免编造。
 - **入库**:新表 `etymology_notes`(`word_id`、`text`、`source`、`reviewed`)。
 - **校验**:讲解中出现的拉丁字母词形,都必须出现在输入里。
+- **完成情况(2026-10-15)**:105 批、10489 词全部生成,`ai_validate.py` 校验 10489/10489 通过(100%,`prompt_version=1`),最长讲解 116 字。第 1、22 批由 deepseek-v4-pro 生成,其余用 deepseek-v4.1-flash。`reviewed` 仍为 0,待人工抽检(`data/ai/review/etymology.csv` 200 条)。
 
 ## 交付
 
