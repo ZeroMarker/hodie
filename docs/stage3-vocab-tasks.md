@@ -11,8 +11,8 @@
 | 数据 | 词书词覆盖 | 缺口 |
 | --- | --- | --- |
 | 中英例句(`examples`,Tatoeba + AI) | 14986 | 0(任务 1 已完成;AI 例句 `reviewed` 待人工抽检后置 1) |
-| 搭配(`collocations`,Tatoeba logDice 统计 + AI) | 14986 | 0(任务 3 已完成:87 批、8639 词、19001 条 AI 搭配;Tatoeba 搭配按原形合并时态重复后为 23328 条;`reviewed` 待人工抽检) |
-| WordNet 词义(`senses`) | 14330 | 0(任务 2 已完成:10105 个多义词已确定核心义词义,9961 个有 `core_sense_id`,144 个无法判断为 NULL;`reviewed` 待人工抽检) |
+| 搭配(`collocations`,Tatoeba logDice 统计 + AI) | 14986 | 0(任务 3 已完成:87 批、8639 词、18855 条 AI 搭配,见改进记录;Tatoeba 搭配按原形合并时态重复后为 23328 条;`reviewed` 待人工抽检) |
+| WordNet 词义(`senses`) | 14330 | 0(任务 2 已完成:10105 个多义词已确定核心义词义,9970 个有 `core_sense_id`,135 个无法判断为 NULL,见改进记录;`reviewed` 待人工抽检) |
 | 词源中文讲解(`etymology_notes`,基于 `etymology_steps`) | 10489 | 0(任务 4 已完成:105 批、10489 词,校验 10489/10489 通过;`reviewed` 待人工抽检) |
 
 ## 通用约定
@@ -88,6 +88,41 @@
 2. 核心义改为「最常用的义项」而非「ECDICT 第一项」,作为任务 2 的第 2 版。
 3. 词源讲解的校验增加一条:讲解中出现的语言名(中古英语、古英语等)必须出现在输入里;标点统一为全角。
 4. 抽检发现的具体错误在对应 jsonl 中直接改正。
+
+## 改进记录
+
+2026-10-15 按上述建议改进阶段 3 数据。沿用 `ai_export`/`ai_validate`/`build` 流程,生成全部用 `deepseek-v4.1-flash`。
+
+### 1 例句 · prompt_version 3
+
+- `ai_validate.py` 新增两条规则:句中用 `old` 或 `whole` 凑词(目标词本身除外),或出现 `do/does/did` 后紧跟原形动词的强调式,即不通过。
+- 只重做命中规则的 3697 个词,其余 4164 个词保留 v2 结果;校验按每行自身的 `prompt_version` 承接,并统一套用新规则。
+- 另改正抽检发现的 6 个词:definitive(改用「决定性的/权威的」义,不再用语法术语)、loutish、squelch(中文与英文不符)、bravura、urbanism、melodrama;farming、bathetic、distention 已由重做覆盖。
+- 结果:`prompt_version=3` 3702 词、`prompt_version=2` 4164 词,校验 7866/7866 通过(100%)。
+
+### 2 核心义 · prompt_version 2
+
+- 判断标准由「ECDICT 第一行」改为「该词在现代英语中最常用的义项」,参考 ECDICT 全部释义,冷僻、古旧、专业义项排前时不选。
+- 全量重做 102 批、10105 词:`prompt_version=2`,9970 词(98.7%)给出核心义词义,135 词(1.3%)写 NULL(colossus 因 WordNet 无「巨像」义写 NULL;sacrifice 改选「献祭/祭品」义)。
+- 与 v1 相比,1463 词(14.5%)选择不同。
+- 校验 10105/10105 通过(100%)。
+
+### 3 搭配
+
+- 删除目标词是功能词、搭配其余词也都是功能词或泛化名词的低价值搭配 146 条,涉及 82 个词,其中 36 个词清空;AI 搭配从 19001 条降为 18855 条(8603 词)。校验放宽为允许 0 条。
+- 改正 anodyne remark(→无关痛痒的话)、glamour model(→性感模特)。
+- 校验 8639/8639 通过(100%)。
+
+### 4 词源讲解 · prompt_version 2
+
+- 先机械地把现有讲解中的半角标点转成全角(共 9092 条,不经 LLM);`ai_validate.py` 新增两条规则:讲解里出现的语言名必须与输入的语言对应;中文里不得出现半角标点 `, . ; : ( ) ! ?`。
+- 再重做 19 个词:14 个语言名与输入不符(confer、accolade、fuse、hunt、jubilation、pencil、perjure、propriety、reckon、slimy、starch、still、stove、weeds,按输入改为早期现代英语/奥克语/意大利语/原始西日耳曼语等),另改正 Greek、wary(去掉 warien 诅咒一说)、switch(不混淆细枝与转辙轨)、arrogance、conformity(删去输入中没有的本义)。
+- 结果:`prompt_version=2` 19 词、`prompt_version=1` 10470 词(仅机械改标点),校验 10489/10489 通过(100%)。
+
+### 结果
+
+- 重新构建 `data/build/vocab.db`;重新导出四份人工抽检 CSV(`--review 200`:`data/ai/review/{examples,core_sense,collocations,etymology}.csv`)。
+- 四个任务在本轮的校验通过率都是 100%。本轮未运行 `load_pg.py`,线上 `vocab` schema 仍是上一版;`reviewed` 全部仍为 0,待人工抽检后统一导入。
 
 ## 交付
 
