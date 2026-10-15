@@ -2,6 +2,7 @@
 
 对每个词条,统计窗口 ±3 内的实词搭配词,按 logDice 打分(14 + log2(2·f_xy / (f_x + f_y)));
 展示形式取两词之间最常见的原文片段,如 decision 的 make a decision。
+同一搭配的不同时态按搭配词的原形合并(如 pay attention / paid attention 只留一条)。
 停用词、人名不作搭配词。只统计,不生成,结果仍需人工抽检。
 """
 
@@ -31,12 +32,26 @@ CREATE TABLE collocations (
     word_id INTEGER NOT NULL REFERENCES words(id),
     partner_id INTEGER NOT NULL REFERENCES words(id),
     phrase TEXT NOT NULL,
-    freq INTEGER NOT NULL,
-    log_dice REAL NOT NULL,
+    freq INTEGER,
+    log_dice REAL,
     source TEXT NOT NULL,
     PRIMARY KEY (word_id, partner_id)
 );
 """
+
+
+def lemma_map(db):
+    """word_id → 原形 word_id。exchange 的 0: 指向原形,如 paid 的 0:pay。"""
+    id_of = {word: wid for wid, word in db.execute("SELECT id, word FROM words")}
+    lemma = {}
+    for wid, exchange in db.execute("SELECT id, exchange FROM words"):
+        base = wid
+        for part in (exchange or "").split("/"):
+            kind, _, form = part.partition(":")
+            if kind == "0" and form in id_of:
+                base = id_of[form]
+        lemma[wid] = base
+    return lemma
 
 
 def load(db, raw):
@@ -76,9 +91,18 @@ def load(db, raw):
         score = 14 + math.log2(2 * f / (unigram[wid] + unigram[other]))
         if score >= MIN_LOGDICE:
             best[wid].append((score, f, other))
+    # 同一搭配的不同时态(如 pay attention / paid attention)按搭配词的原形合并:
+    # 每个原形成一组,组内优先取原形本身,其次取 logDice 最高的那条。
+    lemma = lemma_map(db)
     chosen = {}
     for wid, cands in best.items():
-        for score, f, other in sorted(cands, reverse=True)[:PER_WORD]:
+        groups = {}
+        for score, f, other in cands:
+            base = lemma.get(other, other)
+            rank = (other == base, score)
+            if base not in groups or rank > groups[base][0]:
+                groups[base] = (rank, score, f, other)
+        for _, score, f, other in sorted(groups.values(), key=lambda x: x[0], reverse=True)[:PER_WORD]:
             chosen[wid, other] = (f, round(score, 2))
     spans = defaultdict(Counter)
     for tokens, ids in sentences():

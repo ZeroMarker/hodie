@@ -14,6 +14,7 @@ import argparse
 import json
 import sqlite3
 import sys
+from collections import defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))  # -I 模式下需手动加入本目录
@@ -23,6 +24,8 @@ WORD_BOOK = "EXISTS (SELECT 1 FROM word_lists l WHERE l.word_id = w.id)"
 # 目标集按 Tatoeba 等原始数据判断,不含 vocab-ai/ 已生成的例句,
 # 这样合并入库后重新导出时批次不变,可从缺失的批次继续。
 HAS_EXAMPLES = "EXISTS (SELECT 1 FROM examples e WHERE e.word_id = w.id AND e.source NOT LIKE 'ai:%')"
+HAS_COLLOCATIONS = "EXISTS (SELECT 1 FROM collocations c WHERE c.word_id = w.id AND c.source NOT LIKE 'ai:%')"
+HAS_STEPS = "EXISTS (SELECT 1 FROM etymology_steps s WHERE s.word_id = w.id)"
 
 
 def examples_words(db):
@@ -67,7 +70,77 @@ def core_sense_words(db):
     return words
 
 
-TASKS = {"examples": examples_words, "core_sense": core_sense_words}
+def collocations_words(db):
+    """任务 3 搭配的输入:没有搭配的词书词,按 id 排序。
+
+    给核心义、词性和 exchange(词形变化),让模型写出真实的常见搭配。
+    """
+    rows = db.execute(
+        f"SELECT w.id, w.word, w.translation_zh, w.cefr, w.exchange FROM words w"
+        f" WHERE {WORD_BOOK} AND NOT {HAS_COLLOCATIONS} ORDER BY w.id"
+    ).fetchall()
+    words = []
+    for wid, word, zh, cefr, exchange in rows:
+        core, pos = ai.split_zh(zh)
+        item = {"word_id": wid, "word": word, "zh": core, "pos": pos, "cefr": cefr}
+        if exchange:
+            item["exchange"] = exchange
+        words.append(item)
+    return words
+
+
+def etymology_words(db):
+    """任务 4 词源讲解的输入:有来源链的词书词,按 id 排序。
+
+    只提供库里的词源三件套:来源链、词源说明全文、构词拆分(含语素原义),
+    语言代码转成 Wiktionary 里的英文名。一词多源的按 etym_no 分组,便于只讲主要来源。
+    """
+    langs = dict(db.execute("SELECT code, name FROM languages"))
+    groups = defaultdict(lambda: defaultdict(lambda: {"steps": [], "morphemes": [], "text": None}))
+    for wid, no, type_, lang, term, gloss in db.execute(
+        "SELECT word_id, etym_no, type, lang, term, gloss FROM etymology_steps ORDER BY word_id, etym_no, step"
+    ):
+        groups[wid][no]["steps"].append({"type": type_, "lang": langs.get(lang, lang), "term": term, "gloss": gloss})
+    for wid, no, text in db.execute("SELECT word_id, etym_no, text FROM etymologies ORDER BY word_id, etym_no"):
+        groups[wid][no]["text"] = text
+    for wid, no, form, kind, source_lang, meaning, gloss in db.execute(
+        "SELECT wm.word_id, wm.etym_no, m.form, m.kind, m.source_lang, m.meaning, wm.gloss"
+        " FROM word_morphemes wm JOIN morphemes m ON m.id = wm.morpheme_id"
+        " ORDER BY wm.word_id, wm.etym_no, wm.position"
+    ):
+        groups[wid][no]["morphemes"].append({
+            "form": form,
+            "kind": kind,
+            "lang": langs.get(source_lang, source_lang),
+            "meaning": meaning,
+            "gloss": gloss,
+        })
+    rows = db.execute(
+        f"SELECT w.id, w.word FROM words w WHERE {WORD_BOOK} AND {HAS_STEPS} ORDER BY w.id"
+    ).fetchall()
+    words = []
+    for wid, word in rows:
+        etys = []
+        for no in sorted(groups[wid]):
+            group = groups[wid][no]
+            item = {"etym_no": no}
+            if group["text"]:
+                item["text"] = group["text"]
+            if group["steps"]:
+                item["steps"] = group["steps"]
+            if group["morphemes"]:
+                item["morphemes"] = group["morphemes"]
+            etys.append(item)
+        words.append({"word_id": wid, "word": word, "etymologies": etys})
+    return words
+
+
+TASKS = {
+    "examples": examples_words,
+    "core_sense": core_sense_words,
+    "collocations": collocations_words,
+    "etymology": etymology_words,
+}
 
 
 def main():

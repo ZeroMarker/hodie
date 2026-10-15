@@ -16,7 +16,7 @@ REVIEW = ROOT / "data" / "ai" / "review"  # 人工抽检导出,不入库
 
 BATCH_SIZE = 100
 # 生成要求版本,随每个任务单独维护;改动生成要求时提升,只重做受影响的批次
-PROMPT_VERSION = {"examples": 2, "core_sense": 1}
+PROMPT_VERSION = {"examples": 2, "core_sense": 1, "collocations": 1, "etymology": 1}
 # 入库行的 source 写 ai:opencode/<model>;结果文件里的 model 字段优先,缺省用这个
 DEFAULT_MODEL = "deepseek-v4.1-flash"
 

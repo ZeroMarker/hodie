@@ -132,7 +132,80 @@ def load_ai_core_sense(db, path):
     print("ai core_sense:", len(rows))
 
 
-AI_LOADERS = {"examples": load_ai_examples, "core_sense": load_ai_core_sense}
+def load_ai_collocations(db, path):
+    """搭配:为仍没有非 AI 搭配的词补充,partner 解析成 word_id;freq/log_dice 置空。
+
+    partner 优先取结果里的原形,若词库中没有再按变化形式还原;插不进去的跳过。
+    """
+    known = {row[0] for row in db.execute("SELECT id FROM words")}
+    have = {row[0] for row in db.execute(
+        "SELECT DISTINCT word_id FROM collocations WHERE source NOT LIKE 'ai:%'")}
+    forms = tatoeba.form_map(db)
+    rows = []
+    for file in sorted(path.glob("*.jsonl")):
+        records, errors = ai.read_jsonl(file)
+        for error in errors:
+            print(f"ai collocations: 解析失败 {error}")
+        for rec in records:
+            wid = rec.get("word_id")
+            if wid not in known or wid in have:
+                continue  # 词不在库里,或已有 Tatoeba 搭配,保持原样
+            source = f"ai:opencode/{rec.get('model') or ai.DEFAULT_MODEL}"
+            added = False
+            for item in rec.get("collocations") or []:
+                partner = forms.get((item.get("partner") or "").strip().lower())
+                if not partner or partner[0] == wid:
+                    continue
+                rows.append((wid, partner[0], item["phrase"], None, None, source))
+                added = True
+            if added:
+                have.add(wid)
+    db.executemany(
+        "INSERT OR IGNORE INTO collocations (word_id, partner_id, phrase, freq, log_dice, source)"
+        " VALUES (?,?,?,?,?,?)",
+        rows,
+    )
+    print("ai collocations:", len(rows))
+
+
+def load_ai_etymology(db, path):
+    """词源讲解:每词一条,写进 etymology_notes,reviewed 取结果行里的值(默认 0)。"""
+    db.executescript(
+        """
+        CREATE TABLE IF NOT EXISTS etymology_notes (
+            word_id INTEGER PRIMARY KEY REFERENCES words(id),
+            text TEXT NOT NULL,
+            source TEXT NOT NULL,
+            reviewed INTEGER NOT NULL DEFAULT 0
+        );
+        """
+    )
+    known = {row[0] for row in db.execute("SELECT id FROM words")}
+    rows = []
+    for file in sorted(path.glob("*.jsonl")):
+        records, errors = ai.read_jsonl(file)
+        for error in errors:
+            print(f"ai etymology: 解析失败 {error}")
+        for rec in records:
+            wid = rec.get("word_id")
+            text = (rec.get("text") or "").strip()
+            if wid not in known or not text:
+                continue
+            source = f"ai:opencode/{rec.get('model') or ai.DEFAULT_MODEL}"
+            rows.append((wid, text, source, rec.get("reviewed", 0)))
+    db.executemany(
+        "INSERT OR IGNORE INTO etymology_notes (word_id, text, source, reviewed) VALUES (?,?,?,?)",
+        rows,
+    )
+    print("ai etymology:", len(rows))
+
+
+AI_LOADERS = {
+    "examples": load_ai_examples,
+    "core_sense": load_ai_core_sense,
+    "collocations": load_ai_collocations,
+    "etymology": load_ai_etymology,
+}
 
 
 def main():
