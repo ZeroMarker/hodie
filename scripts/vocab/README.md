@@ -91,4 +91,4 @@ Wiktionary(2026-10-01 dump):15759 词有词源说明,12805 词有来源链(共 4
 
 ## PostgreSQL
 
-线上库为 Aiven 的 `mammoth` 服务(PostgreSQL 18,免费版 1GB),数据库 `hodie`。词库在 `vocab` schema,`public` 留给用户和学习记录。`load_pg.py` 先导入 `vocab_new`,再在同一事务里替换 `vocab`,约 40 秒,导入期间线上可读;旧 schema 用 CASCADE 删除,所以 `public` 下的表不要对 `vocab` 建外键。导入后 `senses.examples` 转为 jsonb,另加 `lower(word)` 索引。2026-10-14 导入后 `vocab` 占 79MB,整库 87MB。
+线上库为 Aiven 的 `mammoth` 服务(PostgreSQL 18,免费版 1GB),数据库 `hodie`。词库在 `vocab` schema,`public` 留给用户和学习记录。`load_pg.py` 先导入 `vocab_new`,再在同一事务里替换 `vocab`,约 40 秒,导入期间线上可读;旧 schema 用 CASCADE 删除,所以 `public` 下的表不要对 `vocab` 建外键。导入后 `senses.examples` 转为 jsonb,另加 `lower(word)` 索引。2026-10-15 导入阶段 3 AI 数据后,`vocab` 共 12 张表、占 90MB;AI 数据 `reviewed` 均为 0,应用须只展示已审核的数据或标出「AI 生成」。
