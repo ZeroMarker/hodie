@@ -22,7 +22,7 @@
 {"word_id": 8827, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "steep hillside", "partner": "steep", "zh": "陡峭的山坡"}, {"phrase": "on the hillside", "partner": "on", "zh": "在山坡上"}]}
 {"word_id": 8829, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "hilly terrain", "partner": "terrain", "zh": "丘陵地带"}, {"phrase": "hilly area", "partner": "area", "zh": "多丘陵地区"}]}
 {"word_id": 8830, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "to the hilt", "partner": "to", "zh": "彻底地"}, {"phrase": "sword hilt", "partner": "sword", "zh": "剑柄"}]}
-{"word_id": 8831, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "for him", "partner": "for", "zh": "为他"}, {"phrase": "with him", "partner": "with", "zh": "和他一起"}]}
+{"word_id": 8831, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": []}
 {"word_id": 8835, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "a hindrance to progress", "partner": "progress", "zh": "进步的障碍"}, {"phrase": "without hindrance", "partner": "without", "zh": "毫无阻碍"}]}
 {"word_id": 8837, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "door hinge", "partner": "door", "zh": "门铰链"}, {"phrase": "hinge on", "partner": "on", "zh": "取决于"}]}
 {"word_id": 8838, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "drop a hint", "partner": "drop", "zh": "暗示一下"}, {"phrase": "take the hint", "partner": "take", "zh": "领会暗示"}]}
@@ -30,7 +30,7 @@
 {"word_id": 8840, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "helpful hints", "partner": "helpful", "zh": "有用的提示"}, {"phrase": "first hints of spring", "partner": "spring", "zh": "春天的初兆"}]}
 {"word_id": 8848, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "young hippopotamus", "partner": "young", "zh": "幼年河马"}, {"phrase": "common hippopotamus", "partner": "common", "zh": "普通河马"}]}
 {"word_id": 8853, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "hirsute man", "partner": "man", "zh": "多毛的男人"}, {"phrase": "hirsute chest", "partner": "chest", "zh": "多毛的胸膛"}]}
-{"word_id": 8854, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "his own", "partner": "own", "zh": "他自己的"}, {"phrase": "his wife", "partner": "wife", "zh": "他的妻子"}]}
+{"word_id": 8854, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "his wife", "partner": "wife", "zh": "他的妻子"}]}
 {"word_id": 8855, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "Hispanic culture", "partner": "culture", "zh": "西班牙裔文化"}, {"phrase": "Hispanic community", "partner": "community", "zh": "西班牙裔社区"}]}
 {"word_id": 8857, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "histology slide", "partner": "slide", "zh": "组织学切片"}, {"phrase": "histology department", "partner": "department", "zh": "组织学部门"}]}
 {"word_id": 8858, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "military historian", "partner": "military", "zh": "军事历史学家"}, {"phrase": "art historian", "partner": "art", "zh": "艺术史学家"}]}
@@ -88,7 +88,7 @@
 {"word_id": 9033, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "do housework", "partner": "do", "zh": "做家务"}, {"phrase": "share the housework", "partner": "share", "zh": "分担家务"}]}
 {"word_id": 9035, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "miserable hovel", "partner": "miserable", "zh": "破败的小屋"}, {"phrase": "live in a hovel", "partner": "live", "zh": "住在陋室里"}]}
 {"word_id": 9037, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "hovercraft service", "partner": "service", "zh": "气垫船服务"}, {"phrase": "ride a hovercraft", "partner": "ride", "zh": "乘坐气垫船"}]}
-{"word_id": 9038, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "how much", "partner": "much", "zh": "多少"}, {"phrase": "how many", "partner": "many", "zh": "多少个"}]}
+{"word_id": 9038, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": []}
 {"word_id": 9041, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "however much", "partner": "much", "zh": "无论多少"}, {"phrase": "however hard", "partner": "hard", "zh": "无论多么艰难"}]}
 {"word_id": 9043, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "howler monkey", "partner": "monkey", "zh": "吼猴"}, {"phrase": "make a howler", "partner": "make", "zh": "犯下大错"}]}
 {"word_id": 9051, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "hubbub of the city", "partner": "city", "zh": "城市的喧闹"}, {"phrase": "cause a hubbub", "partner": "cause", "zh": "引起骚动"}]}

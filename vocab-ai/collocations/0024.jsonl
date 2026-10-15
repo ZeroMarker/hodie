@@ -56,7 +56,7 @@
 {"word_id": 5860, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "dysfunctional family", "partner": "family", "zh": "功能失调的家庭"}, {"phrase": "dysfunctional relationship", "partner": "relationship", "zh": "不健康的关系"}]}
 {"word_id": 5861, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "suffer from dyslexia", "partner": "suffer", "zh": "患有阅读障碍"}, {"phrase": "severe dyslexia", "partner": "severe", "zh": "严重的阅读障碍"}]}
 {"word_id": 5862, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "dyspeptic patient", "partner": "patient", "zh": "消化不良的病人"}, {"phrase": "look dyspeptic", "partner": "look", "zh": "显得脾气不好"}]}
-{"word_id": 5865, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "each other", "partner": "other", "zh": "互相"}, {"phrase": "each day", "partner": "day", "zh": "每天"}]}
+{"word_id": 5865, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": []}
 {"word_id": 5871, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "young eaglet", "partner": "young", "zh": "幼鹰"}, {"phrase": "eaglet in the nest", "partner": "nest", "zh": "巢中的雏鹰"}]}
 {"word_id": 5877, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "in earnest", "partner": "in", "zh": "认真地"}, {"phrase": "earnest effort", "partner": "effort", "zh": "认真的努力"}]}
 {"word_id": 5878, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "annual earnings", "partner": "annual", "zh": "年收入"}, {"phrase": "reported earnings", "partner": "report", "zh": "报告的收入"}]}

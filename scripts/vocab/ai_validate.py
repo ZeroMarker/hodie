@@ -22,7 +22,7 @@
         和没有标记的不校验词性,因为 WordNet 没有对应词性)。
 
 任务 3(补齐搭配)的校验规则:
-    1. 每词 1 到 3 条搭配,`phrase` 不重复,`partner` 不重复;
+    1. 每词 0 到 3 条搭配(目标词是功能词时可为 0),`phrase` 不重复,`partner` 不重复;
     2. `phrase` 必须包含目标词或其变化形式;
     3. `partner` 必须是单词、能在 form_map 里找到(即词库中的词),不能是目标词本身,
        且必须真的出现在 `phrase` 里;
@@ -454,8 +454,8 @@ def check_collocations_record(rec, ctx, versions):
     if rec.get("prompt_version") not in versions:
         reasons.append(f"prompt_version {rec.get('prompt_version')} 不在 {sorted(versions)}")
     items = rec.get("collocations")
-    if not isinstance(items, list) or not 1 <= len(items) <= MAX_COLLOCS:
-        return reasons + [f"搭配条数不在 1-{MAX_COLLOCS}"], []
+    if not isinstance(items, list) or not 0 <= len(items) <= MAX_COLLOCS:
+        return reasons + [f"搭配条数不在 0-{MAX_COLLOCS}"], []
     seen_partners, seen_phrases = set(), set()
     samples = []
     for item in items:

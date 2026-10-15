@@ -1,5 +1,5 @@
 {"word_id": 12669, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "a cozy nook", "partner": "cozy", "zh": "舒适的角落"}, {"phrase": "a breakfast nook", "partner": "breakfast", "zh": "早餐角"}]}
-{"word_id": 12673, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "nor do I", "partner": "do", "zh": "我也不"}, {"phrase": "nor should you", "partner": "should", "zh": "你也不该"}]}
+{"word_id": 12673, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": []}
 {"word_id": 12674, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "become the norm", "partner": "become", "zh": "成为常态"}, {"phrase": "a social norm", "partner": "social", "zh": "社会规范"}]}
 {"word_id": 12676, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "data normalization", "partner": "data", "zh": "数据规范化"}, {"phrase": "gradual normalization", "partner": "gradual", "zh": "逐步正常化"}]}
 {"word_id": 12678, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "work normally", "partner": "work", "zh": "正常运作"}, {"phrase": "behave normally", "partner": "behave", "zh": "举止正常"}]}
@@ -8,7 +8,7 @@
 {"word_id": 12689, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "travel northwards", "partner": "travel", "zh": "向北旅行"}, {"phrase": "sail northwards", "partner": "sail", "zh": "向北航行"}]}
 {"word_id": 12690, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "in the northwest", "partner": "in", "zh": "在西北部"}, {"phrase": "northwest wind", "partner": "wind", "zh": "西北风"}]}
 {"word_id": 12697, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "a political nostrum", "partner": "political", "zh": "政治上的万灵药"}, {"phrase": "an old nostrum", "partner": "old", "zh": "陈旧的妙方"}]}
-{"word_id": 12698, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "not only", "partner": "only", "zh": "不仅"}, {"phrase": "not at all", "partner": "at", "zh": "一点也不"}, {"phrase": "why not", "partner": "why", "zh": "为什么不"}]}
+{"word_id": 12698, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": []}
 {"word_id": 12699, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "achieve notability", "partner": "achieve", "zh": "获得声望"}, {"phrase": "of great notability", "partner": "great", "zh": "极为著名"}]}
 {"word_id": 12700, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "a notable exception", "partner": "exception", "zh": "显著的例外"}, {"phrase": "a notable success", "partner": "success", "zh": "显著的成功"}]}
 {"word_id": 12701, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "most notably", "partner": "most", "zh": "最显著的是"}, {"phrase": "notably absent", "partner": "absent", "zh": "明显缺席"}]}
@@ -29,7 +29,7 @@
 {"word_id": 12727, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "provide nourishment", "partner": "provide", "zh": "提供营养"}, {"phrase": "essential nourishment", "partner": "essential", "zh": "必需的养分"}]}
 {"word_id": 12734, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "a novelty item", "partner": "item", "zh": "新奇小物件"}, {"phrase": "sheer novelty", "partner": "sheer", "zh": "纯粹的新奇"}]}
 {"word_id": 12736, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "a complete novice", "partner": "complete", "zh": "完全的新手"}, {"phrase": "a novice driver", "partner": "driver", "zh": "新手司机"}]}
-{"word_id": 12737, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "right now", "partner": "right", "zh": "立刻"}, {"phrase": "now and then", "partner": "then", "zh": "偶尔"}]}
+{"word_id": 12737, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "right now", "partner": "right", "zh": "立刻"}]}
 {"word_id": 12740, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "noxious gas", "partner": "gas", "zh": "有毒气体"}, {"phrase": "a noxious smell", "partner": "smell", "zh": "难闻的气味"}]}
 {"word_id": 12747, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "a subtle nuance", "partner": "subtle", "zh": "细微的差别"}, {"phrase": "a slight nuance", "partner": "slight", "zh": "微妙的差异"}]}
 {"word_id": 12748, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "a nubile young woman", "partner": "young", "zh": "妙龄女子"}, {"phrase": "a nubile dancer", "partner": "dancer", "zh": "适婚年龄的舞者"}]}

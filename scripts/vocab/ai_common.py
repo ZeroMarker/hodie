@@ -18,11 +18,11 @@ BATCH_SIZE = 100
 # 生成要求版本,随每个任务单独维护;改动生成要求时提升,只重做受影响的批次。
 # PROMPT_VERSION 是导出输入时写进文件的目标版本;PROMPT_VERSIONS 是校验时接受的版本集合,
 # 允许同一任务的不同批次(或同一批次的不同行)保留旧版本结果,只重做受影响的词。
-PROMPT_VERSION = {"examples": 3, "core_sense": 2, "collocations": 1, "etymology": 2}
+PROMPT_VERSION = {"examples": 3, "core_sense": 2, "collocations": 2, "etymology": 2}
 PROMPT_VERSIONS = {
     "examples": {2, 3},
     "core_sense": {1, 2},
-    "collocations": {1},
+    "collocations": {1, 2},
     "etymology": {1, 2},
 }
 # 入库行的 source 写 ai:opencode/<model>;结果文件里的 model 字段优先,缺省用这个

@@ -43,7 +43,7 @@
 {"word_id": 18261, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "successor to the throne", "partner": "throne", "zh": "王位继承人"}, {"phrase": "spiritual successor", "partner": "spiritual", "zh": "精神上的继承者"}]}
 {"word_id": 18262, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "succinct summary", "partner": "summary", "zh": "简洁的总结"}, {"phrase": "clear and succinct", "partner": "clear", "zh": "清晰简洁"}]}
 {"word_id": 18263, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "give succor", "partner": "give", "zh": "给予援助"}, {"phrase": "succor the wounded", "partner": "wounded", "zh": "救助伤员"}]}
-{"word_id": 18267, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "such as", "partner": "as", "zh": "例如"}, {"phrase": "such a thing", "partner": "thing", "zh": "这样的事"}]}
+{"word_id": 18267, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": []}
 {"word_id": 18278, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "suffice to say", "partner": "say", "zh": "足以说"}, {"phrase": "will suffice", "partner": "will", "zh": "将会足够"}]}
 {"word_id": 18281, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "sufficiently large", "partner": "large", "zh": "足够大"}, {"phrase": "sufficiently clear", "partner": "clear", "zh": "足够清楚"}]}
 {"word_id": 18283, "prompt_version": 1, "model": "deepseek-v4.1-flash", "reviewed": 0, "collocations": [{"phrase": "suffocate in the smoke", "partner": "smoke", "zh": "在烟中窒息"}, {"phrase": "suffocate to death", "partner": "death", "zh": "窒息而死"}]}
