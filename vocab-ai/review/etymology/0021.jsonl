@@ -52,7 +52,7 @@
 {"word_id": 4002, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 4003, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 4004, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 4007, "verdict": "fix", "reason": "输入写「borrowed from Middle French conversation」，讲解凭空加了「源自中古英语」一步", "fix": {"text": "借自中古法语 convention，上溯拉丁语 conventiō（聚会、约定），来自 conveniō（相聚），由 con- 加 veniō（来）构成，本义是聚到一起，引申为会议、惯例。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 4007, "verdict": "fix", "reason": "输入写「borrowed from Middle French convention」，讲解凭空加了「源自中古英语」一步", "fix": {"text": "借自中古法语 convention，上溯拉丁语 conventiō（聚会、约定），来自 conveniō（相聚），由 con- 加 veniō（来）构成，本义是聚到一起，引申为会议、惯例。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 4010, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 4013, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 4014, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
