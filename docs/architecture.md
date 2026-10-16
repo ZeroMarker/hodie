@@ -20,7 +20,7 @@ Next.js 应用(Vercel)
   ├─ vocab     词卡、关系、词源查询(只读)
   ├─ ai        对话、造句批改、短故事;限额和缓存
   └─ tts       发音(先浏览器 TTS,后云端 TTS + 对象存储)
-        │ 直连(免费版无连接池,每个实例 1 个连接)
+        │ 进程内连接池 pg.Pool(免费版无 PgBouncer)
 PostgreSQL(Aiven mammoth / hodie 库)
   ├─ vocab schema:词库,只读,由 load_pg.py 整体替换
   └─ app schema:用户、卡片、作答记录、对话,由迁移工具管理
@@ -100,7 +100,14 @@ web/
 
 ### 连接
 
-`mammoth` 是 Aiven 免费版(do-blr,班加罗尔,PostgreSQL 18),不提供 PgBouncer 连接池(创建时返回 403),连接数上限约 20。因此应用用 postgres.js 直连,每个函数实例只开 1 个连接(`max: 1`,关闭预处理语句),见 `web/db/index.ts`。内测并发上来、连接数不够时,升级到付费版并改走 transaction 模式的连接池。连接串放在 Vercel 环境变量里,本地开发用 `avn service get mammoth --format '{service_uri}'` 现取,不写进仓库。
+`mammoth` 是 Aiven 免费版(do-blr,班加罗尔,PostgreSQL 18),不提供 PgBouncer 连接池(创建时返回 403),连接数上限约 20。因此连接池在代码里实现(`web/db/index.ts`):
+
+- 每个函数实例一个 `pg.Pool`,上限 `DB_POOL_MAX`(默认 3),空闲 5 秒关闭连接。Vercel Fluid compute 下一个实例并发处理多个请求,共享这个池。
+- 用 `@vercel/functions` 的 `attachDatabasePool` 注册连接池,实例挂起前先关闭空闲连接,避免连接泄漏。
+- 实例数 × `DB_POOL_MAX` 加上迁移和脚本的连接,要留在 20 以内;内测并发上来后升级付费版,改走 transaction 模式的 PgBouncer。
+- Aiven 证书由项目 CA 签发,CA 证书(非机密)入库在 `web/db/aiven-ca.pem`,`web/db/connection.ts` 用它校验服务器证书,并去掉连接串里的 `sslmode`(否则 pg 会改用系统信任链而失败)。
+
+连接串放在 Vercel 环境变量里,本地开发用 `avn service get mammoth --format '{service_uri}'` 现取,不写进仓库。
 
 ## 学习流程的数据流
 
