@@ -1,11 +1,11 @@
 # 任务 5:全量审核 · 例句
 
 本文件是 `vocab-ai/review/examples/` 的审核标准,每批审核前重读一遍。
-被审对象是 `vocab-ai/examples/` 的生成结果,审核模型为 `opencode/deepseek-v4.1-flash-free`,
+被审对象是 `vocab-ai/examples/` 的生成结果,审核模型为 `opencode/glm-5.3-flash-free`,
 结果记为 **AI 审核**(与人工审核区分)。任务定义见 [阶段 3 词库任务](../../../docs/stage3-vocab-tasks.md)。
 
 - `review_version`:**1**
-- `reviewer`:`ai:opencode/deepseek-v4.1-flash-free`
+- `reviewer`:`ai:opencode/glm-5.3-flash-free`
 - 输出:`vocab-ai/review/examples/NNNN.jsonl`,每行一个词,与输入 `word_id` 一一对应
 
 ## 做什么
@@ -41,9 +41,9 @@
 写到 `vocab-ai/review/examples/NNNN.jsonl`,每行:
 
 ```json
-{"word_id": 25, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 1001, "verdict": "fix", "reason": "中文译成「复制品」，与 representation 的核心义「代表/表现」不符", "fix": {"examples": [{"text_en": "...", "text_zh": "..."}, {"text_en": "...", "text_zh": "..."}]}, "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2002, "verdict": "reject", "reason": "两条英文都用错义项且无法据输入改正", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
+{"word_id": 25, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 1001, "verdict": "fix", "reason": "中文译成「复制品」，与 representation 的核心义「代表/表现」不符", "fix": {"examples": [{"text_en": "...", "text_zh": "..."}, {"text_en": "...", "text_zh": "..."}]}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 2002, "verdict": "reject", "reason": "两条英文都用错义项且无法据输入改正", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 ```
 
 - `verdict`:`ok` / `fix` / `reject`。
@@ -73,7 +73,7 @@
 ## 自检清单
 
 - [ ] 每行 `word_id` 与输入一一对应,行数一致。
-- [ ] `reviewer` 为 `ai:opencode/deepseek-v4.1-flash-free`,`review_version` 为 1。
+- [ ] `reviewer` 为 `ai:opencode/glm-5.3-flash-free`,`review_version` 为 1。
 - [ ] `fix` 的行都有 `reason`,`fix.examples` 恰好 2 条,能通过原校验(词数、含目标词、中文全角标点等)。
 - [ ] 没有为「句式更好」这类风格问题而改;拿不准的判了 `ok`。
 

@@ -1,11 +1,11 @@
 # 任务 5:全量审核 · 搭配
 
 本文件是 `vocab-ai/review/collocations/` 的审核标准,每批审核前重读一遍。
-被审对象是 `vocab-ai/collocations/` 的生成结果,审核模型为 `opencode/deepseek-v4.1-flash-free`,
+被审对象是 `vocab-ai/collocations/` 的生成结果,审核模型为 `opencode/glm-5.3-flash-free`,
 结果记为 **AI 审核**(与人工审核区分)。任务定义见 [阶段 3 词库任务](../../../docs/stage3-vocab-tasks.md)。
 
 - `review_version`:**1**
-- `reviewer`:`ai:opencode/deepseek-v4.1-flash-free`
+- `reviewer`:`ai:opencode/glm-5.3-flash-free`
 - 输出:`vocab-ai/review/collocations/NNNN.jsonl`,每行一个词,与输入 `word_id` 一一对应
 
 ## 做什么
@@ -40,9 +40,9 @@
 写到 `vocab-ai/review/collocations/NNNN.jsonl`,每行:
 
 ```json
-{"word_id": 26, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 1002, "verdict": "fix", "reason": "i.e. 的两条是伪搭配，无学习价值", "fix": {"collocations": []}, "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2003, "verdict": "reject", "reason": "三条搭配都不成立，无法据输入改正", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
+{"word_id": 26, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 1002, "verdict": "fix", "reason": "i.e. 的两条是伪搭配，无学习价值", "fix": {"collocations": []}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 2003, "verdict": "reject", "reason": "三条搭配都不成立，无法据输入改正", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 ```
 
 - `verdict`:`ok` / `fix` / `reject`。
@@ -69,7 +69,7 @@
 ## 自检清单
 
 - [ ] 每行 `word_id` 与输入一一对应,行数一致。
-- [ ] `reviewer` 为 `ai:opencode/deepseek-v4.1-flash-free`,`review_version` 为 1。
+- [ ] `reviewer` 为 `ai:opencode/glm-5.3-flash-free`,`review_version` 为 1。
 - [ ] `fix` 的行都有 `reason`,`fix.collocations` 0 到 3 条,能通过原校验。
 - [ ] 没有为「还能有更好的搭配」而改;拿不准的判了 `ok`。
 

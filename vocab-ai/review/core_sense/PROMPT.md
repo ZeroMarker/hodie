@@ -1,11 +1,11 @@
 # 任务 5:全量审核 · 核心义
 
 本文件是 `vocab-ai/review/core_sense/` 的审核标准,每批审核前重读一遍。
-被审对象是 `vocab-ai/core_sense/` 的生成结果,审核模型为 `opencode/deepseek-v4.1-flash-free`,
+被审对象是 `vocab-ai/core_sense/` 的生成结果,审核模型为 `opencode/glm-5.3-flash-free`,
 结果记为 **AI 审核**(与人工审核区分)。任务定义见 [阶段 3 词库任务](../../../docs/stage3-vocab-tasks.md)。
 
 - `review_version`:**1**
-- `reviewer`:`ai:opencode/deepseek-v4.1-flash-free`
+- `reviewer`:`ai:opencode/glm-5.3-flash-free`
 - 输出:`vocab-ai/review/core_sense/NNNN.jsonl`,每行一个词,与输入 `word_id` 一一对应
 
 ## 做什么
@@ -40,9 +40,9 @@
 写到 `vocab-ai/review/core_sense/NNNN.jsonl`,每行:
 
 ```json
-{"word_id": 23, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 16842, "verdict": "fix", "reason": "选了冷僻的名词义「高背长椅」，现代英语最常用的是动词「安顿、解决」", "fix": {"core_sense_id": "oewn-settle__2.31.00.."}, "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 8054, "verdict": "reject", "reason": "几个词义都对不上常用义，应写 null 但当前选了领域义", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
+{"word_id": 23, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16842, "verdict": "fix", "reason": "选了冷僻的名词义「高背长椅」，现代英语最常用的是动词「安顿、解决」", "fix": {"core_sense_id": "oewn-settle__2.31.00.."}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 8054, "verdict": "reject", "reason": "几个词义都对不上常用义，应写 null 但当前选了领域义", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 ```
 
 - `verdict`:`ok` / `fix` / `reject`。
@@ -69,7 +69,7 @@
 ## 自检清单
 
 - [ ] 每行 `word_id` 与输入一一对应,行数一致。
-- [ ] `reviewer` 为 `ai:opencode/deepseek-v4.1-flash-free`,`review_version` 为 1。
+- [ ] `reviewer` 为 `ai:opencode/glm-5.3-flash-free`,`review_version` 为 1。
 - [ ] `fix` 的行都有 `reason`,其 `core_sense_id` 逐字符等于该词某个 `senses[].id`(或 null),
       词性符合 `zh` 任意一行。
 - [ ] 没有把「同样合理、只是不同」的选择判成错;拿不准的判了 `ok`。
