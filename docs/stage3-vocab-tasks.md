@@ -10,10 +10,10 @@
 
 | 数据 | 词书词覆盖 | 缺口 |
 | --- | --- | --- |
-| 中英例句(`examples`,Tatoeba + AI) | 14986 | 0(任务 1 已完成;AI 例句 `reviewed` 待人工抽检后置 1) |
-| 搭配(`collocations`,Tatoeba logDice 统计 + AI) | 14986 | 0(任务 3 已完成:87 批、8639 词、18855 条 AI 搭配,见改进记录;Tatoeba 搭配按原形合并时态重复后为 23328 条;`reviewed` 待人工抽检) |
-| WordNet 词义(`senses`) | 14330 | 0(任务 2 已完成并二次改进:10105 个多义词按现代英语最常用义确定核心义,10073 个有 `core_sense_id`,32 个无法判断为 NULL,见改进记录;`reviewed` 待人工抽检) |
-| 词源中文讲解(`etymology_notes`,基于 `etymology_steps`) | 10489 | 0(任务 4 已完成:105 批、10489 词,校验 10489/10489 通过;`reviewed` 待人工抽检) |
+| 中英例句(`examples`,Tatoeba + AI) | 14986 | 0(任务 1 已完成;2026-10-16 AI 抽检通过,`reviewed = 1`) |
+| 搭配(`collocations`,Tatoeba logDice 统计 + AI) | 14986 | 0(任务 3 已完成:87 批、8639 词、18855 条 AI 搭配,见改进记录;Tatoeba 搭配按原形合并时态重复后为 23328 条;2026-10-16 AI 抽检通过,`reviewed = 1`) |
+| WordNet 词义(`senses`) | 14330 | 0(任务 2 已完成并二次改进:10105 个多义词按现代英语最常用义确定核心义,10073 个有 `core_sense_id`,32 个无法判断为 NULL,见改进记录;2026-10-16 AI 抽检通过,`reviewed = 1`) |
+| 词源中文讲解(`etymology_notes`,基于 `etymology_steps`) | 10489 | 0(任务 4 已完成:105 批、10489 词,校验 10489/10489 通过;2026-10-16 AI 抽检通过,`reviewed = 1`) |
 
 ## 通用约定
 
@@ -28,7 +28,7 @@
 3. **生成要求写进仓库**:每个任务的生成要求写在 `vocab-ai/<任务>/PROMPT.md`,每批生成前都重读一遍,保证不同会话之间标准一致。
 4. **校验**:每个任务都要有程序校验(规则见各任务),不通过的结果丢弃或重试,不入库。
 5. **来源标记**:入库行的 `source` 写 `ai:opencode/<model>`,并加 `reviewed`(0 或 1)列。应用只展示 `reviewed = 1` 的数据,或在界面上标出「AI 生成」;这一点由产品决定,先两种都支持。
-6. **人工抽检**:每个任务随机抽 200 条导出为 `data/ai/review/<任务>.csv`,供人工检查。抽检错误率低于 5% 时,整批标为 `reviewed = 1`。
+6. **抽检**:每个任务随机抽 200 条导出为 `data/ai/review/<任务>.csv`,由 AI(Claude)逐条审阅,代替人工抽检(2026-10-16 起)。抽检错误率低于 5% 时,整批标为 `reviewed = 1`;发现的具体错误直接在 jsonl 中改正。
 7. **试跑**:每个任务先做 1 批,运行校验并人工看 20 条,确认质量后再做全量。
 8. **不改动现有数据**:Tatoeba、WordNet、Wiktionary 的数据保持原样,AI 数据只做补充。
 
@@ -134,6 +134,19 @@
 - 重新构建 `data/build/vocab.db`;重新导出四份人工抽检 CSV(`--review 200`:`data/ai/review/{examples,core_sense,collocations,etymology}.csv`)。
 - 四个任务在本轮的校验通过率都是 100%。本轮未运行 `load_pg.py`,线上 `vocab` schema 仍是上一版;`reviewed` 全部仍为 0,待人工抽检后统一导入。
 - 2026-10-15 核心义二次改进后再次运行 `build.py` 重建 `data/build/vocab.db`(core_sense 10073 词),并重新导出 `data/ai/review/core_sense.csv`;本轮同样未运行 `load_pg.py`。
+
+## 2026-10-16 AI 抽检
+
+按约定 6 改由 Claude 逐条审阅 `data/ai/review/` 下重新导出的样本(各 200 条,种子固定)。四个任务均低于 5%,全部 `reviewed` 置 1,重建并导入 `hodie_dev` 和 `hodie` 两个库。
+
+| 任务 | 错误 | 错误率 | 改正 |
+| --- | --- | --- | --- |
+| 1 例句 | 7 | 3.5% | bathetic、destructible(语义自相矛盾)、mm、representation(中文译成「复制品」)、squelch(「嘎吱声」改「咕叽声」)、dispel 重写;rack 的「本制」改「木制」 |
+| 2 核心义 | 2 到 4 | 1% 到 2% | magisterial 改「威严的」义,bumble 改「踉跄」义;sanctuary、displacement 有争议,未改 |
+| 3 搭配 | 3 | 1.5% | 删除 i.e. 的两条伪搭配和 tumid and turgid;jesting aside 改译「玩笑归玩笑」 |
+| 4 词源讲解 | 1 到 2 | 不到 1% | brook 讲的是同形动词「容忍」的词源,改为「小溪」义 |
+
+系统性问题(待处理):词源讲解只取 Wiktionary 的第一个词源(`etym_no = 1`),同形异源词可能讲成另一个词。已讲解的 10489 词中有 1450 词有多个词源,需按核心义重新选择词源后重做受影响的词,作为任务 4 的第 3 版。
 
 ## 交付
 

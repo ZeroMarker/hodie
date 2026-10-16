@@ -1,5 +1,5 @@
-{"word_id": 21170, "prompt_version": 3, "model": "deepseek-v4.1-flash", "reviewed": 0, "core_sense_id": "oewn-zip__1.06.00.."}
-{"word_id": 21171, "prompt_version": 2, "model": "deepseek-v4.1-flash", "reviewed": 0, "core_sense_id": "oewn-zipper__1.06.00.."}
-{"word_id": 21174, "prompt_version": 3, "model": "deepseek-v4.1-flash", "reviewed": 0, "core_sense_id": "oewn-zone__1.15.00.."}
-{"word_id": 21178, "prompt_version": 2, "model": "deepseek-v4.1-flash", "reviewed": 0, "core_sense_id": "oewn-zoology__1.09.00.."}
-{"word_id": 21179, "prompt_version": 3, "model": "deepseek-v4.1-flash", "reviewed": 0, "core_sense_id": "oewn-zoom__2.38.03.."}
+{"word_id": 21170, "prompt_version": 3, "model": "deepseek-v4.1-flash", "reviewed": 1, "core_sense_id": "oewn-zip__1.06.00.."}
+{"word_id": 21171, "prompt_version": 2, "model": "deepseek-v4.1-flash", "reviewed": 1, "core_sense_id": "oewn-zipper__1.06.00.."}
+{"word_id": 21174, "prompt_version": 3, "model": "deepseek-v4.1-flash", "reviewed": 1, "core_sense_id": "oewn-zone__1.15.00.."}
+{"word_id": 21178, "prompt_version": 2, "model": "deepseek-v4.1-flash", "reviewed": 1, "core_sense_id": "oewn-zoology__1.09.00.."}
+{"word_id": 21179, "prompt_version": 3, "model": "deepseek-v4.1-flash", "reviewed": 1, "core_sense_id": "oewn-zoom__2.38.03.."}
