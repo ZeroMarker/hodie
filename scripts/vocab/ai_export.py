@@ -5,8 +5,11 @@
     python -I scripts/vocab/ai_export.py examples --batch 1   # 只导出第 1 批
     python -I scripts/vocab/ai_export.py examples --missing   # 只导出还没有结果的批次
 
+    python -I scripts/vocab/ai_export.py review-etymology     # 任务 5:导出审核输入(含当前结果)
+
 写出 data/ai/input/<任务>/NNNN.json,格式见 vocab-ai/<任务>/PROMPT.md。
 批次按 words.id 排序切分,词集不变时批次内容可复现,中断后按缺失的批次继续。
+审核输入写到 data/ai/input/review-<任务>/NNNN.json,格式见 vocab-ai/review/<任务>/PROMPT.md。
 任务定义见 docs/stage3-vocab-tasks.md。
 """
 
@@ -149,12 +152,47 @@ TASKS = {
 }
 
 
+def review_words(task):
+    """任务 5 的审核输入:每批沿用原批次的词,合并原始输入和当前 AI 结果。
+
+    从 data/ai/input/<任务>/NNNN.json 取原始判断依据,从 vocab-ai/<任务>/NNNN.jsonl
+    取当前结果(内容字段用 ai.CONTENT_FIELD[task] 取名),一一合并。给审核模型的
+    东西和当初生成时一致,外加当前结果本身。
+    """
+    content = ai.CONTENT_FIELD[task]
+    batches = []
+    for path in sorted((ai.INPUT / task).glob("*.json")):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        recs = {}
+        result_path = ai.result_path(task, int(path.stem))
+        if result_path.exists():
+            records, errors = ai.read_jsonl(result_path)
+            for error in errors:
+                print(f"ai {task}: 解析失败 {error}", file=sys.stderr)
+            recs = {r.get("word_id"): r for r in records}
+        words = []
+        for item in data["words"]:
+            rec = recs.get(item["word_id"])
+            entry = dict(item)
+            if rec is not None:
+                entry[content] = rec.get(content)
+                entry["prompt_version"] = rec.get("prompt_version")
+                entry["model"] = rec.get("model")
+            words.append(entry)
+        batches.append((path.stem, words))
+    return batches
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("task", choices=sorted(TASKS), help="任务名,如 examples")
+    parser.add_argument("task", choices=sorted(TASKS) + sorted(ai.REVIEW_TASKS), help="任务名,如 examples 或 review-examples")
     parser.add_argument("--batch", type=int, help="只导出这个批次(从 1 开始)")
     parser.add_argument("--missing", action="store_true", help="只导出还没有结果的批次")
     args = parser.parse_args()
+
+    if args.task in ai.REVIEW_TASKS:
+        export_review(ai.REVIEW_TASKS[args.task], args)
+        return
 
     db = sqlite3.connect(ai.DB)
     words = TASKS[args.task](db)
@@ -182,6 +220,39 @@ def main():
         path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         written += 1
     print(f"{args.task}: 输入 {len(words)} 词共 {total} 批,写出 {written} 个批次文件到 {out}")
+
+
+def export_review(task, args):
+    """任务 5 审核输入的导出:data/ai/input/review-<任务>/NNNN.json。"""
+    batches = review_words(task)
+    total = len(batches)
+    if args.batch and not 1 <= args.batch <= total:
+        raise SystemExit(f"批次超出范围:1 到 {total}")
+    out = ai.INPUT / f"review-{task}"
+    out.mkdir(parents=True, exist_ok=True)
+    written = 0
+    for stem, words in batches:
+        if args.batch and int(stem) != args.batch:
+            continue
+        if args.missing:
+            path = ai.REVIEW_OUT / task / f"{stem}.jsonl"
+            if path.exists():
+                records, errors = ai.read_jsonl(path)
+                if not errors and {w["word_id"] for w in words} <= {r.get("word_id") for r in records}:
+                    continue
+        data = {
+            "task": f"review-{task}",
+            "review_version": ai.REVIEW_VERSION,
+            "batch": stem,
+            "total_batches": total,
+            "words": words,
+        }
+        path = out / f"{stem}.json"
+        path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        written += 1
+    total_words = sum(len(w) for _, w in batches)
+    print(f"review-{task}: 输入 {total_words} 词共 {total} 批,写出 {written} 个批次文件到 {out}")
+
 
 
 if __name__ == "__main__":

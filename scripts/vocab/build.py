@@ -77,19 +77,47 @@ def save_registry(ids):
             f.write(f"{i}\t{word}\n")
 
 
-def load_ai(db):
+def load_ai(db, reviews):
     """合并 vocab-ai/ 下各任务的 AI 补全结果;只做补充,不改动现有数据。
 
     结果由 opencode 按 vocab-ai/<任务>/PROMPT.md 生成、ai_validate.py 校验通过。
     入库行 source 写 ai:opencode/<model>,reviewed 取结果行里的值(默认 0,人工抽检后改 1)。
+    任务 5 的全量审核结果(reviews)按 word_id 覆盖:ok/fix 的 reviewed 置 1、reject 置 0,
+    fix 用改正后的内容替换原结果;reviewer 记审核模型。
     """
     for task_dir in sorted(p for p in AI_OUT.glob("*") if p.is_dir()):
         loader = AI_LOADERS.get(task_dir.name)
         if loader:
-            loader(db, task_dir)
+            loader(db, task_dir, reviews)
 
 
-def load_ai_examples(db, path):
+def apply_review(task, wid, content, rec, reviews):
+    """把任务 5 的审核结果套到一条 AI 结果上。
+
+    返回 (改正后的内容, reviewed, reviewer)。没有审核记录时保持原样。
+    ok:内容不变、reviewed 置 1;fix:用 fix 里的内容、reviewed 置 1;
+    reject:内容不变、reviewed 置 0。
+    """
+    reviewed = rec.get("reviewed", 0)
+    reviewer = None
+    rev = reviews.get((task, wid))
+    if not rev:
+        return content, reviewed, reviewer
+    reviewer = rev.get("reviewer")
+    verdict = rev.get("verdict")
+    if verdict == "fix":
+        fix = rev.get("fix")
+        if isinstance(fix, dict) and ai.CONTENT_FIELD[task] in fix:
+            content = fix[ai.CONTENT_FIELD[task]]
+        reviewed = 1
+    elif verdict == "ok":
+        reviewed = 1
+    elif verdict == "reject":
+        reviewed = 0
+    return content, reviewed, reviewer
+
+
+def load_ai_examples(db, path, reviews):
     """例句:为仍没有例句的词补充,每词 2 条,license 写 own。"""
     known = {row[0] for row in db.execute("SELECT id FROM words")}
     have = {row[0] for row in db.execute("SELECT DISTINCT word_id FROM examples")}
@@ -103,19 +131,24 @@ def load_ai_examples(db, path):
             if wid not in known or wid in have:
                 continue  # 词不在库里,或已有例句(Tatoeba 或其他批次),保持原样
             have.add(wid)
-            for i, ex in enumerate(rec.get("examples") or []):
+            examples, reviewed, reviewer = apply_review("examples", wid, rec.get("examples") or [], rec, reviews)
+            for i, ex in enumerate(examples):
                 source = f"ai:opencode/{rec.get('model') or ai.DEFAULT_MODEL}"
-                rows.append((wid, ex["text_en"], ex["text_zh"], source, f"ai-{wid}-{i}", rec.get("reviewed", 0)))
+                rows.append((wid, ex["text_en"], ex["text_zh"], source, f"ai-{wid}-{i}", reviewed, reviewer))
     db.executemany(
-        "INSERT INTO examples (word_id, text_en, text_zh, source, source_id, license, reviewed)"
-        " VALUES (?,?,?,?,?,'own',?)",
+        "INSERT INTO examples (word_id, text_en, text_zh, source, source_id, license, reviewed, reviewer)"
+        " VALUES (?,?,?,?,?,'own',?,?)",
         rows,
     )
     print("ai examples:", len(rows))
 
 
-def load_ai_core_sense(db, path):
-    """核心义对应的 WordNet 词义:写 words.core_sense_id,只接受属于该词的 sense id。"""
+def load_ai_core_sense(db, path, reviews):
+    """核心义对应的 WordNet 词义:写 words.core_sense_id,只接受属于该词的 sense id。
+
+    任务 5 的审核结果同时写 core_sense_reviewed 和 core_sense_reviewer;
+    fix 会把 core_sense_id 换成改正后的词义(可为 null)。
+    """
     sense_ids = {}
     for wid, sid in db.execute("SELECT word_id, id FROM senses"):
         sense_ids.setdefault(wid, set()).add(sid)
@@ -125,14 +158,21 @@ def load_ai_core_sense(db, path):
         for error in errors:
             print(f"ai core_sense: 解析失败 {error}")
         for rec in records:
-            sid, wid = rec.get("core_sense_id"), rec.get("word_id")
-            if isinstance(sid, str) and sid in sense_ids.get(wid, ()):
-                rows.append((sid, wid))
-    db.executemany("UPDATE words SET core_sense_id = ? WHERE id = ?", rows)
+            wid = rec.get("word_id")
+            if wid not in sense_ids:
+                continue
+            sid, reviewed, reviewer = apply_review("core_sense", wid, rec.get("core_sense_id"), rec, reviews)
+            if not (isinstance(sid, str) and sid in sense_ids[wid]):
+                sid = None
+            rows.append((sid, reviewed, reviewer, wid))
+    db.executemany(
+        "UPDATE words SET core_sense_id = ?, core_sense_reviewed = ?, core_sense_reviewer = ? WHERE id = ?",
+        rows,
+    )
     print("ai core_sense:", len(rows))
 
 
-def load_ai_collocations(db, path):
+def load_ai_collocations(db, path, reviews):
     """搭配:为仍没有非 AI 搭配的词补充,partner 解析成 word_id;freq/log_dice 置空。
 
     partner 优先取结果里的原形,若词库中没有再按变化形式还原;插不进去的跳过。
@@ -151,24 +191,26 @@ def load_ai_collocations(db, path):
             if wid not in known or wid in have:
                 continue  # 词不在库里,或已有 Tatoeba 搭配,保持原样
             source = f"ai:opencode/{rec.get('model') or ai.DEFAULT_MODEL}"
+            items, reviewed, reviewer = apply_review(
+                "collocations", wid, rec.get("collocations") or [], rec, reviews)
             added = False
-            for item in rec.get("collocations") or []:
+            for item in items:
                 partner = forms.get((item.get("partner") or "").strip().lower())
                 if not partner or partner[0] == wid:
                     continue
-                rows.append((wid, partner[0], item["phrase"], None, None, source))
+                rows.append((wid, partner[0], item["phrase"], None, None, source, reviewed, reviewer))
                 added = True
             if added:
                 have.add(wid)
     db.executemany(
-        "INSERT OR IGNORE INTO collocations (word_id, partner_id, phrase, freq, log_dice, source)"
-        " VALUES (?,?,?,?,?,?)",
+        "INSERT OR IGNORE INTO collocations (word_id, partner_id, phrase, freq, log_dice, source, reviewed, reviewer)"
+        " VALUES (?,?,?,?,?,?,?,?)",
         rows,
     )
     print("ai collocations:", len(rows))
 
 
-def load_ai_etymology(db, path):
+def load_ai_etymology(db, path, reviews):
     """词源讲解:每词一条,写进 etymology_notes,reviewed 取结果行里的值(默认 0)。"""
     db.executescript(
         """
@@ -176,7 +218,8 @@ def load_ai_etymology(db, path):
             word_id INTEGER PRIMARY KEY REFERENCES words(id),
             text TEXT NOT NULL,
             source TEXT NOT NULL,
-            reviewed INTEGER NOT NULL DEFAULT 0
+            reviewed INTEGER NOT NULL DEFAULT 0,
+            reviewer TEXT
         );
         """
     )
@@ -191,10 +234,11 @@ def load_ai_etymology(db, path):
             text = (rec.get("text") or "").strip()
             if wid not in known or not text:
                 continue
+            text, reviewed, reviewer = apply_review("etymology", wid, text, rec, reviews)
             source = f"ai:opencode/{rec.get('model') or ai.DEFAULT_MODEL}"
-            rows.append((wid, text, source, rec.get("reviewed", 0)))
+            rows.append((wid, text, source, reviewed, reviewer))
     db.executemany(
-        "INSERT OR IGNORE INTO etymology_notes (word_id, text, source, reviewed) VALUES (?,?,?,?)",
+        "INSERT OR IGNORE INTO etymology_notes (word_id, text, source, reviewed, reviewer) VALUES (?,?,?,?,?)",
         rows,
     )
     print("ai etymology:", len(rows))
@@ -230,7 +274,9 @@ def main():
             freq_rank INTEGER,
             zipf REAL,
             ngsl_rank INTEGER,
-            core_sense_id TEXT
+            core_sense_id TEXT,
+            core_sense_reviewed INTEGER,
+            core_sense_reviewer TEXT
         );
         CREATE TABLE word_lists (
             list TEXT NOT NULL,
@@ -292,7 +338,10 @@ def main():
     tatoeba.load(db, RAW)
     collocations.load(db, RAW)
     wiktionary.load(db, RAW)
-    load_ai(db)
+    reviews, review_errors = ai.load_reviews_for_all()
+    for error in review_errors:
+        print(f"ai review: 解析失败 {error}")
+    load_ai(db, reviews)
     db.commit()
     print("words:", db.execute("SELECT count(*) FROM words").fetchone()[0])
     for name, n in db.execute("SELECT list, count(*) FROM word_lists GROUP BY list ORDER BY list"):

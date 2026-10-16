@@ -13,6 +13,7 @@ DB = ROOT / "data" / "build" / "vocab.db"
 AI = ROOT / "vocab-ai"  # AI 生成结果,入库
 INPUT = ROOT / "data" / "ai" / "input"  # 导出给会话的输入,不入库
 REVIEW = ROOT / "data" / "ai" / "review"  # 人工抽检导出,不入库
+REVIEW_OUT = AI / "review"  # 任务 5 全量审核结果,入库
 
 BATCH_SIZE = 100
 # 生成要求版本,随每个任务单独维护;改动生成要求时提升,只重做受影响的批次。
@@ -27,6 +28,25 @@ PROMPT_VERSIONS = {
 }
 # 入库行的 source 写 ai:opencode/<model>;结果文件里的 model 字段优先,缺省用这个
 DEFAULT_MODEL = "deepseek-v4.1-flash"
+
+# 任务 5:全量审核。审核模型与生成模型同属 DeepSeek V4.1 Flash,独立性有限,
+# 结果记为 AI 审核(不写进 source,另记 reviewer 列)。
+REVIEW_VERSION = 1
+# ai_export.py / ai_validate.py 的 review-<任务> → 生成任务名;审核结果写 vocab-ai/review/<任务>/
+REVIEW_TASKS = {
+    "review-examples": "examples",
+    "review-core_sense": "core_sense",
+    "review-collocations": "collocations",
+    "review-etymology": "etymology",
+}
+# 每个任务结果行里承载内容的字段名,审核的 fix 也用同名段给出改正后的完整内容
+CONTENT_FIELD = {
+    "examples": "examples",
+    "core_sense": "core_sense_id",
+    "collocations": "collocations",
+    "etymology": "text",
+}
+REVIEW_VERDICTS = ("ok", "fix", "reject")
 
 # ECDICT 释义的首行是核心义,行首是词性标记(如 n.、vt.)
 POS_RE = re.compile(r"^([a-z]+\.)\s*")
@@ -84,3 +104,35 @@ def covered(task, batch, word_ids):
     if errors:
         return False
     return set(word_ids) <= {r.get("word_id") for r in records}
+
+
+def load_reviews(task):
+    """读 vocab-ai/review/<task>/ 的审核结果:word_id → 审核行。
+
+    返回 (reviews, errors);同一 word_id 后出现的行覆盖先前的。
+    """
+    reviews, errors = {}, []
+    for path in sorted((REVIEW_OUT / task).glob("*.jsonl")):
+        records, errs = read_jsonl(path)
+        errors += errs
+        for rec in records:
+            wid = rec.get("word_id")
+            if wid is not None:
+                reviews[wid] = rec
+    return reviews, errors
+
+
+def load_reviews_for_all():
+    """读四个任务的全部审核结果:(任务, word_id) → 审核行。
+
+    不同任务的 word_id 可能重复(同一个词在例句、搭配等任务里都出现),
+    所以用 (任务, word_id) 作键。返回 (reviews, errors)。
+    """
+    reviews, errors = {}, []
+    for task in CONTENT_FIELD:
+        task_reviews, errs = load_reviews(task)
+        errors += errs
+        for wid, rec in task_reviews.items():
+            reviews[(task, wid)] = rec
+    return reviews, errors
+

@@ -39,6 +39,13 @@
     4. 中文里不得出现半角标点 , . ; : ( ) ! ?(. 只在紧邻中文时判错,避免
        误伤 i.e. 这类拉丁缩写)。
 不通过的结果丢弃或重写后重跑,不入库。
+
+任务 5(全量审核)的校验规则(见 docs/stage3-vocab-tasks.md):
+    1. 每行有 word_id、verdict(ok/fix/reject)、reviewer、review_version(= 1);
+    2. verdict 不是 ok 时 reason 必填;
+    3. verdict 为 fix 时 fix 必填,与 word_id、prompt_version 合并成完整结果行后,
+       须通过对应任务的原有校验(见上)。
+    用法:python -I scripts/vocab/ai_validate.py review-examples
 """
 
 import argparse
@@ -548,6 +555,103 @@ CHECKERS = {
 }
 
 
+def check_review_record(task, rec, base, ctx, versions):
+    """校验一行审核结果,返回不通过原因(空列表表示通过)。
+
+    base 是该词审核输入里带的原始结果内容(含 prompt_version)。verdict 为 fix 时,
+    把 fix 和在原始结果的 word_id、prompt_version、model 合并成一条完整结果行,
+    再走该任务的原有校验,保证改正后的内容本身合规。
+    """
+    reasons = []
+    verdict = rec.get("verdict")
+    if verdict not in ai.REVIEW_VERDICTS:
+        reasons.append(f"verdict {verdict!r} 不是 {'/'.join(ai.REVIEW_VERDICTS)}")
+    if rec.get("review_version") != ai.REVIEW_VERSION:
+        reasons.append(f"review_version {rec.get('review_version')!r} 不是 {ai.REVIEW_VERSION}")
+    if not (rec.get("reviewer") or "").strip():
+        reasons.append("缺 reviewer")
+    if verdict != "ok" and not (rec.get("reason") or "").strip():
+        reasons.append("非 ok 的行缺 reason")
+    if verdict == "fix":
+        fix = rec.get("fix")
+        if not isinstance(fix, dict) or not fix:
+            reasons.append("fix 不是非空对象")
+        else:
+            merged = {"word_id": rec.get("word_id")}
+            if base:
+                merged["prompt_version"] = base.get("prompt_version")
+                merged["model"] = base.get("model")
+            merged.update(fix)
+            for reason in CHECKERS[task](merged, ctx, versions)[0]:
+                reasons.append(f"fix 未通过原校验:{reason}")
+    return reasons
+
+
+def review_main(task, args):
+    """任务 5:校验 vocab-ai/review/<task>/ 的审核结果并统计 ok/fix/reject。"""
+    versions = ai.PROMPT_VERSIONS[task]
+    db = sqlite3.connect(ai.DB)
+    ctx = load_context(task, db)
+
+    inputs = {}
+    for path in sorted((ai.INPUT / f"review-{task}").glob("*.json")):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        inputs[path.stem] = {w["word_id"]: w for w in data["words"]}
+    if not inputs:
+        raise SystemExit(f"没有找到 data/ai/input/review-{task}/ 的输入,先运行 ai_export.py review-{task}")
+
+    paths = sorted((ai.REVIEW_OUT / task).glob("*.jsonl"))
+    if args.batch:
+        paths = [p for p in paths if p.stem == f"{args.batch:04d}"]
+    if not paths:
+        raise SystemExit(f"没有找到 vocab-ai/review/{task}/ 下的结果文件")
+
+    counts = {"ok": 0, "fix": 0, "reject": 0}
+    seen, failed, file_errors, total_lines = set(), {}, [], 0
+    for path in paths:
+        records, errors = ai.read_jsonl(path)
+        file_errors += errors
+        total_lines += len(records)
+        base_by_wid = inputs.get(path.stem, {})
+        for rec in records:
+            wid = rec.get("word_id")
+            if wid not in base_by_wid:
+                failed[wid] = [f"word_id 不在本批输入 {path.stem} 里"]
+                continue
+            seen.add(wid)
+            if rec.get("verdict") in counts:
+                counts[rec["verdict"]] += 1
+            reasons = check_review_record(task, rec, base_by_wid[wid], ctx, versions)
+            if reasons:
+                failed[wid] = reasons
+
+    print(f"任务 review-{task}:review_version={ai.REVIEW_VERSION},校验 {len(paths)} 个批次文件、{total_lines} 行")
+    for error in file_errors:
+        print(f"  解析失败 {error}")
+    for wid, reasons in list(failed.items())[:20]:
+        print(f"  不通过 {wid}: {' ; '.join(reasons)}")
+    if len(failed) > 20:
+        print(f"  …另有 {len(failed) - 20} 个不通过")
+    ok, fix, reject = counts["ok"], counts["fix"], counts["reject"]
+    judged = ok + fix + reject
+    rate = judged / total_lines * 100 if total_lines else 0.0
+    print(f"通过格式校验 {judged}/{total_lines}({rate:.1f}%)")
+    if judged:
+        print(f"ok {ok}({ok / judged * 100:.1f}%)、fix {fix}({fix / judged * 100:.1f}%)、"
+              f"reject {reject}({reject / judged * 100:.1f}%)")
+
+    if args.batch:
+        return
+    all_ids = set().union(*inputs.values()) if inputs else set()
+    missing = sorted(all_ids - seen)
+    print(f"已审核 {len(seen)}/{len(all_ids)} 个词")
+    if missing:
+        print(f"未审核 {len(missing)} 个词,如 {missing[:20]}")
+    if failed:
+        sys.exit(1)
+
+
+
 def load_context(task, db):
     ctx = {"words": LOADERS[task](db)}
     if task in ("examples", "collocations"):
@@ -571,10 +675,15 @@ def expected_batches(task):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("task", choices=sorted(ai.PROMPT_VERSION), help="任务名,如 core_sense")
+    parser.add_argument("task", choices=sorted(ai.PROMPT_VERSION) + sorted(ai.REVIEW_TASKS),
+                        help="任务名,如 core_sense 或 review-core_sense")
     parser.add_argument("--batch", type=int, help="只校验这个批次(从 1 开始)")
     parser.add_argument("--review", type=int, default=200, help="人工抽检 CSV 的条数,0 表示不导出")
     args = parser.parse_args()
+
+    if args.task in ai.REVIEW_TASKS:
+        review_main(ai.REVIEW_TASKS[args.task], args)
+        return
 
     versions = ai.PROMPT_VERSIONS[args.task]
     target = ai.PROMPT_VERSION[args.task]

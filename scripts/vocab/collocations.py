@@ -35,6 +35,8 @@ CREATE TABLE collocations (
     freq INTEGER,
     log_dice REAL,
     source TEXT NOT NULL,
+    reviewed INTEGER NOT NULL DEFAULT 1,
+    reviewer TEXT,
     PRIMARY KEY (word_id, partner_id)
 );
 """
@@ -110,5 +112,8 @@ def load(db, raw):
             if (w, o) in chosen:
                 spans[w, o][" ".join(tokens[min(i, j): max(i, j) + 1])] += 1
     rows = [(w, o, spans[w, o].most_common(1)[0][0], f, score) for (w, o), (f, score) in chosen.items()]
-    db.executemany("INSERT INTO collocations VALUES (?,?,?,?,?,'tatoeba-logdice')", rows)
+    db.executemany(
+        "INSERT INTO collocations (word_id, partner_id, phrase, freq, log_dice, source) VALUES (?,?,?,?,?,'tatoeba-logdice')",
+        rows,
+    )
     print("collocations:", len(rows), "words with collocations:", len(best), "sentences:", n)
