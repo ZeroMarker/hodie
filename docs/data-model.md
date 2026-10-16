@@ -26,4 +26,6 @@
 
 为支持语域,`senses` 增加语域标签列(formal、informal、slang),数据来自 WordNet 和 Wiktionary 的部分标注。
 
+应用端的 `app` schema 见 [架构设计](architecture.md)。
+
 返回 [开发计划](plan.md)。

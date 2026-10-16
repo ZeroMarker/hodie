@@ -1,6 +1,6 @@
 # 英语学习应用开发计划
 
-2026-10-14
+2026-10-14(2026-10-16 更新)
 
 ## 假设
 
@@ -17,42 +17,51 @@
 
 | 层 | 选择 | 理由 |
 | --- | --- | --- |
-| 前端 | Next.js + TypeScript + Tailwind | 一套代码覆盖 PWA 与 SEO |
-| 后端 | Next.js API Routes 或 Node + Fastify | 早期不拆服务 |
-| 数据库 | PostgreSQL(Supabase 或自建) | 用户、词库、学习记录 |
-| 认证 | Supabase Auth 或 Auth.js | 邮箱和 Google 登录 |
+| 前端与后端 | Next.js(App Router)+ TypeScript + Tailwind | 一套代码覆盖 PWA 与 API,早期不拆服务 |
+| 数据库 | Aiven PostgreSQL(`mammoth` 服务的 `hodie` 库) | 词库已导入 `vocab` schema;用户数据放 `app` schema |
+| ORM 与迁移 | Drizzle | 只管理 `app` schema |
+| 认证 | Auth.js | 邮箱和 Google 登录 |
 | 语音 | 浏览器 Web Speech API,后期换云端 TTS/ASR | 先低成本验证 |
 | AI 对话 | Claude API | 口语陪练、语法纠错、造句 |
-| 部署 | Vercel + 托管 Postgres | 运维负担最小 |
+| 部署 | Vercel + Aiven 连接池 | 运维负担最小 |
+
+模块划分、表结构、数据流和环境见 [架构设计](architecture.md)。
 
 词汇图谱继续用 PostgreSQL,不引入 Neo4j:WordNet 约 50 万条关系,用关系表加递归查询即可;相似词推荐用 pgvector。图谱可视化用 Cytoscape.js。数据来源为 Open English WordNet(关系)、ECDICT(中文释义)、wordfreq(词频)、CEFR-J(CEFR 等级),详见 [词库来源选择](vocab-sources.md)。ConceptNet 常识关系和 LLM 自动抽取关系放到发布之后,避免挤压 SRS 主线。
 
 词源作为同一张图谱的扩展,不另建系统。主数据来源是 Wiktionary dump(CC BY-SA,需要署名,衍生数据库还要考虑 share-alike 的影响);Etymonline 是商业站点,不批量抓取,只作人工参考;PIE 数据库的许可证待核对。完整的 PIE 语系图谱和语义变化追踪放到发布之后。
 
+## 现状
+
+2026-10-16:词库已完成,应用端尚未开始。
+
+- **已完成**:词库构建(21181 词、9 本词书、WordNet 词义与关系、Wiktionary 词源、Tatoeba 例句与搭配),并导入线上 `vocab` schema;原阶段 3 的 AI 词库补全(例句、核心义、搭配、词源讲解)已提前完成,只差人工抽检,见 [阶段 3 词库任务](stage3-vocab-tasks.md)。
+- **未开始**:应用代码、账号、学习流程、部署。
+
 ## 里程碑
 
-交付分五个阶段,第 5 周末得到可用的 MVP,第 12 周公开发布。
+交付分五个阶段,从 2026-10-19 那周算起:第 5 周末(11-20)得到可用的 MVP,第 12 周末(2027-01-08)公开发布。词库已就绪,各阶段都只做应用端。
 
-1. **阶段 0:准备(第 1 周)**
+1. **阶段 0:骨架(第 1 周,10-19 至 10-23)**
     - 确认目标人群、核心卖点和成功指标(如 7 日留存、每日学习时长)。
-    - 搭好项目骨架、CI、代码规范和数据库迁移。
-    - 整理词库来源(CET-4/6、雅思、高频 3000 词、WordNet、ECDICT、SUBTLEX-US、Oxford 3000、Wiktionary dump),确认许可证;选择结果见 [词库来源选择](vocab-sources.md)。
+    - 按 [架构设计](architecture.md) 建 `web/`:Next.js、Drizzle、`app` schema 首个迁移、CI、Vercel 预览环境、`hodie_dev` 库。
+    - 词卡只读页 `/word/[id]`,打通 `vocab` schema 的查询。
+    - 完成四个 AI 词库任务的人工抽检,合格的批次标 `reviewed = 1`。
 2. **阶段 1:MVP 核心(第 2 到 5 周)**
-    - 账号体系和用户资料。
-    - 词卡:释义、音标、发音、例句,导入 WordNet 、词频和 CEFR 等级,展示同义词、反义词和词根词缀拆解(词源数据随 Wiktionary 解析导入)。
-    - SRS 调度直接用 FSRS(ts-fsrs);学习流程、题型和调度规则见 [单词学习方案](word-learning-plan.md)。
-    - 每日学习与复习队列、连续打卡、进度统计。
+    - 账号体系和用户资料(Auth.js)。
+    - 选词书、词汇量测试、新词排序与干扰控制。
+    - 词卡:释义、音标、浏览器发音、例句、搭配;多义词用 `core_sense_id` 定核心义。
+    - SRS 调度用 ts-fsrs;L0 到 L3 题型、自动评分、每日队列、连续打卡、进度统计;规则见 [单词学习方案](word-learning-plan.md)。
     - 验收:用户能独立完成「注册 → 学新词 → 次日复习」的闭环。
 3. **阶段 2:内容与练习(第 6 到 8 周)**
-    - 选择、拼写、听写、例句填空四种题型。
-    - 听力片段(TTS 生成加人工抽检)。
-    - 错题本、词书切换,以及词族展开、词源链和图谱可视化(Cytoscape.js)。
-    - PWA 离线缓存,保证通勤场景可用。
+    - 听写、例句填空等题型补齐,错题本、词书切换、自适应。
+    - 云端 TTS 预生成单词和例句音频,存对象存储。
+    - 词族展开、词源链和图谱可视化(Cytoscape.js)。
+    - PWA 离线缓存和作答离线同步,保证通勤场景可用。
 4. **阶段 3:AI 能力(第 9 到 10 周)**
     - AI 口语对话:按场景和难度分级,带实时语法与用词纠正。
-    - 为生词自动生成语境例句;用 pgvector 做相似词推荐;AI 辅助抽取词间关系,须人工审核;基于已入库的词源数据用 LLM 生成词源讲解,避免编造。
-    - 控制成本:限制对话轮数,缓存常见请求,简单任务用小模型。
-    - 词库的 AI 补全(例句、核心义、搭配、词源讲解)交给 opencode,见 [阶段 3 词库任务](stage3-vocab-tasks.md)。
+    - L4 造句批改、语境短故事;用 pgvector 做相似词推荐。
+    - 控制成本:`ai_usage` 限额、`ai_cache` 缓存、简单任务用小模型。
 5. **阶段 4:打磨与发布(第 11 到 12 周)**
     - 埋点和数据看板。
     - 性能优化、无障碍、隐私合规(数据导出和删除)。
@@ -60,7 +69,7 @@
 
 ## 数据模型
 
-数据表和图谱、词源扩展见 [数据模型](data-model.md)。
+词库表和图谱、词源扩展见 [数据模型](data-model.md);应用端的 `app` schema 见 [架构设计](architecture.md)。
 
 ## 学习设计原则
 
