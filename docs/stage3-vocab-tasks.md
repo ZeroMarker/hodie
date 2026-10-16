@@ -148,6 +148,16 @@
 
 系统性问题(待处理):词源讲解只取 Wiktionary 的第一个词源(`etym_no = 1`),同形异源词可能讲成另一个词。已讲解的 10489 词中有 1450 词有多个词源,需按核心义重新选择词源后重做受影响的词,作为任务 4 的第 3 版。
 
+## 任务 5:全量审核
+
+用 `opencode/deepseek-v4.1-flash-free`(免费,200k 上下文)逐条审核任务 1 到 4 的全部 AI 数据,替代只抽 200 条的抽检。审核模型与生成模型同属 DeepSeek V4.1 Flash,独立性有限:审核结果记为 AI 审核,与人工审核区分。
+
+- **输入**:`ai_export.py review-<任务>` 导出每批 100 个词,包含 AI 结果和判断所需的原始数据(词、ECDICT 释义、WordNet 词义、词源输入等)。
+- **输出**:`vocab-ai/review/<任务>/NNNN.jsonl`,每行 `word_id`、`verdict`(`ok`、`fix`、`reject`)、`reason`(不是 ok 时必填)、`fix`(verdict 为 fix 时给出改正后的完整内容,格式与原结果相同,须通过 `ai_validate.py`)、`reviewer`、`review_version`。
+- **判据**:按抽检结果一节的错误类型逐条检查,如例句中英不符、用错义项、核心义不是最常用义项、搭配不常见或释义不准、词源讲解有输入中没有依据的内容或语言名错误。拿不准时判 ok,不要过度修改。
+- **入库**:ok 的行 `reviewed = 1`;fix 的行用改正内容替换原结果,`reviewed = 1`;reject 的行保持 `reviewed = 0`。入库时另记 `reviewer`,如 `ai:opencode/deepseek-v4.1-flash-free`。
+- **抽查**:每个任务完成后,统计 ok、fix、reject 的比例,并列出 10 条 fix 和全部 reject 的例子,供人工复核。
+
 ## 交付
 
 - 每个任务单独提交,提交说明写明生成条数、校验通过率、抽检结果和实际费用。
