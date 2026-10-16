@@ -43,10 +43,11 @@
 交付分五个阶段,从 2026-10-19 那周算起:第 5 周末(11-20)得到可用的 MVP,第 12 周末(2027-01-08)公开发布。词库已就绪,各阶段都只做应用端。
 
 1. **阶段 0:骨架(第 1 周,10-19 至 10-23)**
-    - 确认目标人群、核心卖点和成功指标(如 7 日留存、每日学习时长)。
-    - 按 [架构设计](architecture.md) 建 `web/`:Next.js、Drizzle、`app` schema 首个迁移、CI、Vercel 预览环境、`hodie_dev` 库。
-    - 词卡只读页 `/word/[id]`,打通 `vocab` schema 的查询。
-    - 完成四个 AI 词库任务的人工抽检,合格的批次标 `reviewed = 1`。
+    - [ ] 确认目标人群、核心卖点和成功指标(如 7 日留存、每日学习时长)。
+    - [x] 按 [架构设计](architecture.md) 建 `web/`:Next.js、Drizzle、`app` schema 首个迁移、CI;建 `hodie_dev` 库并导入词库(2026-10-16)。
+    - [ ] Vercel 项目和预览环境(需要 Vercel 账号)。
+    - [x] 词卡只读页 `/word/[id]`,打通 `vocab` schema 的查询(2026-10-16)。
+    - [ ] 完成四个 AI 词库任务的人工抽检,合格的批次标 `reviewed = 1`(抽检 CSV 由 `ai_validate.py` 导出到 `data/ai/review/`)。
 2. **阶段 1:MVP 核心(第 2 到 5 周)**
     - 账号体系和用户资料(Auth.js)。
     - 选词书、词汇量测试、新词排序与干扰控制。

@@ -20,7 +20,7 @@ Next.js 应用(Vercel)
   ├─ vocab     词卡、关系、词源查询(只读)
   ├─ ai        对话、造句批改、短故事;限额和缓存
   └─ tts       发音(先浏览器 TTS,后云端 TTS + 对象存储)
-        │ Aiven 连接池(PgBouncer,transaction 模式)
+        │ 直连(免费版无连接池,每个实例 1 个连接)
 PostgreSQL(Aiven mammoth / hodie 库)
   ├─ vocab schema:词库,只读,由 load_pg.py 整体替换
   └─ app schema:用户、卡片、作答记录、对话,由迁移工具管理
@@ -41,7 +41,7 @@ PostgreSQL(Aiven mammoth / hodie 库)
 | 离线 | Serwist(Service Worker)+ IndexedDB | 阶段 2 实现 |
 | 图谱 | Cytoscape.js | 阶段 2 实现 |
 | AI | Claude API(`claude-sonnet-5-5` 对话,`claude-haiku-5-5` 批改和短任务) | 只在服务端调用 |
-| 部署 | Vercel | 预览环境连独立的 `hodie_dev` 库 |
+| 部署 | Vercel(区域 bom1 孟买,靠近 Aiven do-blr) | 预览环境连独立的 `hodie_dev` 库 |
 | 测试 | Vitest(单元)+ Playwright(端到端) | 调度和计分规则必须有单元测试 |
 
 ## 代码结构
@@ -100,7 +100,7 @@ web/
 
 ### 连接
 
-Vercel 的函数实例多且短命,应用一律走 Aiven 的 PgBouncer 连接池(transaction 模式),不直连数据库;迁移和 `load_pg.py` 仍直连。连接串放在 Vercel 环境变量里,本地开发用 `avn service get mammoth --format '{service_uri}'` 现取,不写进仓库。
+`mammoth` 是 Aiven 免费版(do-blr,班加罗尔,PostgreSQL 18),不提供 PgBouncer 连接池(创建时返回 403),连接数上限约 20。因此应用用 postgres.js 直连,每个函数实例只开 1 个连接(`max: 1`,关闭预处理语句),见 `web/db/index.ts`。内测并发上来、连接数不够时,升级到付费版并改走 transaction 模式的连接池。连接串放在 Vercel 环境变量里,本地开发用 `avn service get mammoth --format '{service_uri}'` 现取,不写进仓库。
 
 ## 学习流程的数据流
 
@@ -138,8 +138,8 @@ AI 功能分两类:离线批量生成的词库数据已在 `vocab` 中(见 [阶�
 | 预览 | `hodie_dev` 库 | 每次推送 main 后 Vercel 自动部署,用于验收 |
 | 生产 | `hodie` 库 | 内测和发布 |
 
-- CI(GitHub Actions):类型检查、lint、单元测试;迁移在部署前由 CI 执行 `drizzle-kit migrate`。
-- 词库更新:先对 `hodie_dev` 运行 `load_pg.py` 和引用检查,通过后再导入 `hodie`。
+- CI(GitHub Actions,`.github/workflows/web.yml`):类型检查、lint、单元测试、构建。接入 Vercel 后,再在部署前由 CI 执行 `drizzle-kit migrate`。
+- 词库更新:先对 `hodie_dev` 运行 `load_pg.py` 和 `pnpm check-refs`,通过后再导入 `hodie`。
 
 ## 安全与隐私
 
@@ -150,8 +150,8 @@ AI 功能分两类:离线批量生成的词库数据已在 `vocab` 中(见 [阶�
 
 ## 待定
 
-- [ ] 生产环境是否需要和 `hodie` 分开的 Aiven 服务(目前词库和用户数据共用 `mammoth`)。
-- [ ] Vercel 区域与 Aiven 区域是否一致,不一致时测量往返延迟。
+- [ ] 生产环境是否需要和 `hodie` 分开的 Aiven 服务(目前词库和用户数据共用 `mammoth`);连接数和付费版一起决定。
+- [ ] 用户在中国大陆,Vercel 和 Aiven 班加罗尔都可能较慢;内测前从国内实测首屏和接口延迟,不达标再考虑香港或新加坡区域。
 - [ ] 云端 TTS 供应商,在阶段 2 开始前比价。
 
 返回 [开发计划](plan.md)。
