@@ -45,7 +45,7 @@
 1. **阶段 0:骨架(第 1 周,10-19 至 10-23)**
     - [ ] 确认目标人群、核心卖点和成功指标(如 7 日留存、每日学习时长)。
     - [x] 按 [架构设计](architecture.md) 建 `web/`:Next.js、Drizzle、`app` schema 首个迁移、CI;建 `hodie_dev` 库并导入词库(2026-10-16)。
-    - [ ] Vercel 项目和预览环境(需要 Vercel 账号)。
+    - [x] Vercel 项目 `hodie`(根目录 `web`,区域 bom1),推送 main 自动部署到 https://hodie-ten.vercel.app;生产连 `hodie` 库,预览连 `hodie_dev` 库(2026-10-16)。
     - [x] 词卡只读页 `/word/[id]`,打通 `vocab` schema 的查询(2026-10-16)。
     - [ ] 完成四个 AI 词库任务的人工抽检,合格的批次标 `reviewed = 1`(抽检 CSV 由 `ai_validate.py` 导出到 `data/ai/review/`)。
 2. **阶段 1:MVP 核心(第 2 到 5 周)**
