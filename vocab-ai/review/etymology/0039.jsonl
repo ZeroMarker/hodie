@@ -1,100 +1,100 @@
-{"word_id": 7381, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7382, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7386, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7388, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7389, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7390, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7391, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7395, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7396, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7397, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7398, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7401, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7403, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7406, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7407, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7409, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7410, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7411, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7417, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7420, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7421, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7425, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7427, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7431, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7433, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7435, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7439, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7441, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7442, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7444, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7447, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7450, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7453, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7455, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7459, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7460, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7461, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7463, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7464, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7466, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7467, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7468, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7471, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7474, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7475, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7478, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7479, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7480, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7482, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7483, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7484, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7485, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7486, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7487, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7488, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7489, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7490, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7491, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7492, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7493, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7495, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7496, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7497, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7499, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7500, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7501, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7504, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7505, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7506, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7507, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7509, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7512, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7515, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7516, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7517, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7518, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7519, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7520, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7521, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7523, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7524, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7525, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7526, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7527, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7529, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7531, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7532, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7533, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7534, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7535, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7536, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7540, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7541, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7542, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7543, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7544, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7547, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7548, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7551, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 7553, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
+{"word_id":7381,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7382,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7386,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7388,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7389,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7390,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7391,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7395,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7396,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7397,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7398,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7401,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7403,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7406,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7407,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7409,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7410,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7411,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7417,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7420,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7421,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7425,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7427,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7431,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7433,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7435,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7439,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7441,"verdict":"fix","reason":"输入里原始印欧语词根 gloss 为空，讲解「词根表在前」无所依据","fix":{"text":"源自中古英语 for、古英语 for（为了、由于），来自原始日耳曼语 furi，故表为了、因为。"},"reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7442,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7444,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7447,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7450,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7453,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7455,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7459,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7460,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7461,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7463,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7464,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7466,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7467,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7468,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7471,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7474,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7475,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7478,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7479,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7480,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7482,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7483,"verdict":"fix","reason":"输入语素 tell 的义为判定、数算，讲解写成「说、讲述」与之不符","fix":{"text":"源自中古英语 foretellen，由前缀 fore-（预先）加 tell 构成，本义为预先判定、数算，引申为预言。"},"reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7484,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7485,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7486,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7487,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7488,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7489,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7490,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7491,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7492,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7493,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7495,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7496,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7497,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7499,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7500,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7501,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7504,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7505,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7506,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7507,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7509,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7512,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7515,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7516,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7517,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7518,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7519,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7520,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7521,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7523,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7524,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7525,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7526,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7527,"verdict":"fix","reason":"跳过拉丁语环节、由「承载」直接推到「偶然」，脉络空洞，按输入补上拉丁语 fors 的依据","fix":{"text":"出自拉丁语 fors（机会、运气），词根意为承载、带来，本指偶然降临之事，故指偶然的、意外的。"},"reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7529,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7531,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7532,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7533,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7534,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7535,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7536,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7540,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7541,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7542,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7543,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7544,"verdict":"fix","reason":"拉丁语 fundātor 在输入里无释义，语素 found 的输入义也与「建立」不符，去掉无依据的解释","fix":{"text":"源自中古英语 foundour、古法语 fondeur，出自拉丁语 fundātor，由 found 加后缀 -er（表人）构成，指创建者。"},"reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7547,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7548,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7551,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":7553,"verdict":"fix","reason":"输入语素 -th 的义为「由动词构成名词」，与讲解「构成序数」不符，去掉该解释","fix":{"text":"源自中古英语 fourthe、古英语 fēorþa，上溯原始日耳曼语 fedurþô，由 four（四）加后缀 -th 构成，指第四。"},"reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
