@@ -3,8 +3,8 @@
 本文件是 `vocab-ai/review/etymology/` 的审核标准,每批审核前重读一遍。
 被审对象是 `vocab-ai/etymology/` 的生成结果,审核模型为 `opencode/glm-5.3-flash-free`,
 结果记为 **AI 审核**(与人工审核区分)。任务定义见 [阶段 3 词库任务](../../../docs/stage3-vocab-tasks.md)。
-批次 0001-0019 已由 deepseek-v4.1-flash-free 审核,其结果不再重做,`reviewer` 保持原样;
-批次 0020 起的 `reviewer` 一律写 `ai:opencode/glm-5.3-flash-free`。
+2026-10-16 的旧会话被意外恢复后,批次 0001-0019 和 0025-0085 误用 deepseek-v4.1-flash-free 审核并覆盖了文件;
+任务 5 要求审核结果全部来自 GLM,故这两组共 80 批用 GLM 重审,`reviewer` 一律写 `ai:opencode/glm-5.3-flash-free`。
 
 - `review_version`:**1**
 - `reviewer`:`ai:opencode/glm-5.3-flash-free`

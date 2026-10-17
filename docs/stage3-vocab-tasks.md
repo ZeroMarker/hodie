@@ -153,6 +153,8 @@
 用 `opencode/glm-5.3-flash-free`(免费)逐条审核任务 1 到 4 的全部 AI 数据,替代只抽 200 条的抽检。审核模型(GLM)与生成模型(DeepSeek)不同,可减少同一模型对自身错误不敏感的问题;词源讲解前 19 批已由 deepseek-v4.1-flash-free 审核,每行的 `reviewer` 记录实际审核模型。审核结果记为 AI 审核,与人工审核区分。
 
 - **输入**:`ai_export.py review-<任务>` 导出每批 100 个词,包含 AI 结果和判断所需的原始数据(词、ECDICT 释义、WordNet 词义、词源输入等)。
+
+**重审说明(2026-10-17)**:上一段工作结束时,一个旧会话被意外恢复,词源讲解审核中批次 0001-0019 和 0025-0085 被再次运行并用 deepseek-v4.1-flash-free 的结果覆盖(文件中 80 批 `reviewer` 为 deepseek)。任务 5 规定审核模型为 `opencode/glm-5.3-flash-free`,且审核结果模型须与生成模型(DeepSeek)不同,所以这 80 批连同未审的 0086-0105 全部用 GLM 审核或重审,`reviewer` 一律写 `ai:opencode/glm-5.3-flash-free`;`vocab-ai/review/etymology/PROMPT.md` 已同步修改。
 - **输出**:`vocab-ai/review/<任务>/NNNN.jsonl`,每行 `word_id`、`verdict`(`ok`、`fix`、`reject`)、`reason`(不是 ok 时必填)、`fix`(verdict 为 fix 时给出改正后的完整内容,格式与原结果相同,须通过 `ai_validate.py`)、`reviewer`、`review_version`。
 - **判据**:按抽检结果一节的错误类型逐条检查,如例句中英不符、用错义项、核心义不是最常用义项、搭配不常见或释义不准、词源讲解有输入中没有依据的内容或语言名错误。拿不准时判 ok,不要过度修改。
 - **入库**:ok 的行 `reviewed = 1`;fix 的行用改正内容替换原结果,`reviewed = 1`;reject 的行保持 `reviewed = 0`。入库时另记 `reviewer`,如 `ai:opencode/deepseek-v4.1-flash-free`。
