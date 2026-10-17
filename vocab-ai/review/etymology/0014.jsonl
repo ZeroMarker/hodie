@@ -1,100 +1,100 @@
-{"word_id": 2587, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2588, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2590, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2592, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2593, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2594, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2596, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2599, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2600, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2604, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2606, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2609, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2610, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2611, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2612, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2614, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2619, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2622, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2623, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2624, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2625, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2626, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2627, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2629, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2630, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2633, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2636, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2638, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2639, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2641, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2645, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2646, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2647, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2648, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2650, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2652, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2655, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2656, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2657, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2659, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2660, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2663, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2664, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2666, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2667, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2668, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2669, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2670, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2671, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2672, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2677, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2678, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2682, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2690, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2693, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2695, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2698, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2703, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2704, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2705, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2708, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2709, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2711, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2714, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2717, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2719, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2724, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2725, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2727, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2728, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2729, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2731, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2733, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2734, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2735, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2739, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2740, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2742, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2743, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2744, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2750, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2751, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2753, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2755, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2756, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2758, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2759, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2760, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2761, "verdict": "fix", "reason": "主要来源讲的是同形动词 cashier（撤职）的词源，与常用义「出纳员」不符；输入第 2 组词源正对应常用义，据以改正", "fix": {"text": "借自荷兰语 cassier、法语 caissier，源自法语 caisse（钱箱），本义是管钱箱的人，引申为出纳员。"}, "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2771, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2773, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2775, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2777, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2778, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2780, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2782, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2784, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2786, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2791, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
-{"word_id": 2793, "verdict": "ok", "reviewer": "ai:opencode/deepseek-v4.1-flash-free", "review_version": 1}
+{"word_id":2587,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2588,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2590,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2592,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2593,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2594,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2596,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2599,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2600,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2604,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2606,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2609,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2610,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2611,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2612,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2614,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2619,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2622,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2623,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2624,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2625,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2626,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2627,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2629,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2630,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2633,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2636,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2638,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2639,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2641,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2645,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2646,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2647,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2648,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2650,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2652,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2655,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2656,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2657,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2659,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2660,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2663,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2664,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2666,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2667,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2668,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2669,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2670,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2671,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2672,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2677,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2678,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2682,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2690,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2693,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2695,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2698,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2703,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2704,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2705,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2708,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2709,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2711,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2714,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2717,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2719,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2724,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2725,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2727,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2728,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2729,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2731,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2733,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2734,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2735,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2739,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2740,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2742,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2743,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2744,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2750,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2751,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2753,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2755,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2756,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2758,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2759,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2760,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2761,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2771,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2773,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2775,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2777,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2778,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2780,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2782,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2784,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2786,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2791,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id":2793,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
