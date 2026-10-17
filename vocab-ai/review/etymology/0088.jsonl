@@ -6,7 +6,7 @@
 {"word_id": 17260, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17262, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17263, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 17266, "verdict": "fix", "reason": "slent 与 *slintaną 在输入里均无释义，「本义为倾斜、滑溜」属输入没有依据的本义解释", "fix": {"text": "源自中古英语 slent，或出自古诺斯语，词根上溯原始日耳曼语 *slintaną，意为倾斜、歪斜。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17266, "verdict": "ok", "reason": "slent 与 *slintaną 在输入里均无释义，「本义为倾斜、滑溜」属输入没有依据的本义解释", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 slent，或出自古诺斯语，词根上溯原始日耳曼语 *slintaną，意为倾斜、歪斜。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 17267, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17269, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17270, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

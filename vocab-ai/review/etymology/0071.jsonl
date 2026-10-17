@@ -1,6 +1,6 @@
 {"word_id": 13950, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13953, "verdict": "fix", "reason": "结尾「指研究生命机能的空间」语义不通,应指出这是研究自然的学问", "fix": {"text": "源自法语 physiologie、拉丁语 physiologia，上溯古希腊语表自然哲学的词，由表自然的 physio- 与表学科研究的 -logy 构成，指研究自然与生命机能的学问。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 13954, "verdict": "fix", "reason": "「本与身体、自然相关」在输入中无依据,应删去该推断", "fix": {"text": "源自法语 physique，用来指人的体格与体形。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 13954, "verdict": "ok", "reason": "「本与身体、自然相关」在输入中无依据,应删去该推断", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自法语 physique，用来指人的体格与体形。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 13956, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13957, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13958, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -57,7 +57,7 @@
 {"word_id": 14053, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14054, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14055, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14056, "verdict": "fix", "reason": "「本为晚祷用语」在输入中无依据,应删去", "fix": {"text": "源自中古英语 placebo，来自拉丁语 placēbō（我将使人愉悦），后指为安慰病人而给的无效药剂。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14056, "verdict": "ok", "reason": "「本为晚祷用语」在输入中无依据,应删去", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 placebo，来自拉丁语 placēbō（我将使人愉悦），后指为安慰病人而给的无效药剂。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14060, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14063, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14064, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -65,7 +65,7 @@
 {"word_id": 14067, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14069, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14070, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14071, "verdict": "fix", "reason": "给输入里没有释义的 plectō 添加了词义「编、织」,判 fix 并删去", "fix": {"text": "源自中古英语 pleit、盎格鲁-诺曼语 pleit，上溯拉丁语 plectō，本指把发丝或布条交织起来，即编辫、打褶。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14071, "verdict": "ok", "reason": "给输入里没有释义的 plectō 添加了词义「编、织」,判 fix 并删去", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 pleit、盎格鲁-诺曼语 pleit，上溯拉丁语 plectō，本指把发丝或布条交织起来，即编辫、打褶。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14072, "verdict": "fix", "reason": "给输入里没有释义的 plānus 添加了词义「平坦」,应删去该括注", "fix": {"text": "借自法语 plan（平面、地面图），上溯拉丁语 plānus，本指平面图或图样，后泛指计划与打算。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14075, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14076, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

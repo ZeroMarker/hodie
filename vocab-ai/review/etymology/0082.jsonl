@@ -36,7 +36,7 @@
 {"word_id": 16065, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 16066, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 16068, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 16071, "verdict": "fix", "reason": "ritus 在输入里没有释义，「宗教仪式」属无依据内容", "fix": {"text": "经中古英语和古法语传入，源自拉丁语 ritus，故指按传统举行的礼仪、仪式。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16071, "verdict": "ok", "reason": "ritus 在输入里没有释义，「宗教仪式」属无依据内容", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "经中古英语和古法语传入，源自拉丁语 ritus，故指按传统举行的礼仪、仪式。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 16072, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 16074, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 16076, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -80,7 +80,7 @@
 {"word_id": 16158, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 16159, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 16160, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 16161, "verdict": "fix", "reason": "rotātiō 在输入里没有释义，「原义为旋转、转动」属无依据内容", "fix": {"text": "借自拉丁语 rotātiō，故指旋转这一动作，引申为轮流、轮换。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16161, "verdict": "ok", "reason": "rotātiō 在输入里没有释义，「原义为旋转、转动」属无依据内容", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "借自拉丁语 rotātiō，故指旋转这一动作，引申为轮流、轮换。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 16163, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 16165, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 16166, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -93,7 +93,7 @@
 {"word_id": 16184, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 16186, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 16191, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 16192, "verdict": "fix", "reason": "rēgālis 在输入里没有释义，「国王的」属无依据内容", "fix": {"text": "源自中古英语 royaltee、古法语 roialté，上溯俗拉丁语 *rēgālitās、拉丁语 rēgālis，由 royal 加 -ty 构成，指王权、版税。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16192, "verdict": "ok", "reason": "rēgālis 在输入里没有释义，「国王的」属无依据内容", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 royaltee、古法语 roialté，上溯俗拉丁语 *rēgālitās、拉丁语 rēgālis，由 royal 加 -ty 构成，指王权、版税。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 16194, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 16198, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 16199, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

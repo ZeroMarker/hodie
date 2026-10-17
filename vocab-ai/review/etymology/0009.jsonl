@@ -55,7 +55,7 @@
 {"word_id": 1590, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 1591, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 1592, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 1593, "verdict": "fix", "reason": "「用桶垒起的路障」这一本义细节在输入里没有依据，输入只提到借自法语 barricade、出自 barricader", "fix": {"text": "借自法语 barricade，出自法语 barricader，本义是路障，引申为障碍。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 1593, "verdict": "ok", "reason": "「用桶垒起的路障」这一本义细节在输入里没有依据，输入只提到借自法语 barricade、出自 barricader", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "借自法语 barricade，出自法语 barricader，本义是路障，引申为障碍。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 1594, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 1599, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 1603, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

@@ -6,7 +6,7 @@
 {"word_id": 12104, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 12106, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 12107, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "mōnstrum 在输入里没有任何释义，「预示凶兆的异象」是输入中没有依据的本义，删去并改用词本身描述", "fix": {"text": "源自中古英语 monstre，经古法语 monstre，出自拉丁语 mōnstrum，本义指怪异骇人之物，引申为怪物、巨大的东西。"}}
-{"word_id": 12108, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "monstrosus 在输入里没有释义，「异兆般的」是输入中没有依据的本义，删去并改用词本身描述", "fix": {"text": "源自中古英语 monstrous，经古法语 monstrueuse，出自拉丁语 monstrosus，本义是怪物般的，引申为骇人、巨大的。"}}
+{"word_id": 12108, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "monstrosus 在输入里没有释义，「异兆般的」是输入中没有依据的本义，删去并改用词本身描述", "discarded_fix": {"text": "源自中古英语 monstrous，经古法语 monstrueuse，出自拉丁语 monstrosus，本义是怪物般的，引申为骇人、巨大的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 12111, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 12112, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 12114, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -55,7 +55,7 @@
 {"word_id": 12189, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 12191, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 12198, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 12199, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "modulus 在输入里没有释义，「小量度」是给输入中无释义词形添加的内容，删去该释义", "fix": {"text": "源自中古英语 molde（模子），经古法语 modle，出自拉丁语 modulus，本义是模具，引申为塑造、成型。"}}
+{"word_id": 12199, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "modulus 在输入里没有释义，「小量度」是给输入中无释义词形添加的内容，删去该释义", "discarded_fix": {"text": "源自中古英语 molde（模子），经古法语 modle，出自拉丁语 modulus，本义是模具，引申为塑造、成型。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 12201, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 12202, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 12204, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

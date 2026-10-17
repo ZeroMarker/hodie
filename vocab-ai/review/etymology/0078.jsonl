@@ -31,7 +31,7 @@
 {"word_id": 15294, "verdict": "fix", "reason": "输入只有中古英语 redily，讲解里「表示准备好的词干」与加副词词尾的分析没有输入依据。", "fix": {"text": "源自中古英语 redily，本义是就绪地、准备妥当地，引申为迅速地、轻易地、乐意地。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15296, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15298, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 15299, "verdict": "fix", "reason": "拉丁语 reagō 输入无释义，「再起作用」没有输入依据，删去该释义。", "fix": {"text": "可能源自拉丁语 reagō，指能引起化学反应的物质，即试剂。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15299, "verdict": "ok", "reason": "拉丁语 reagō 输入无释义，「再起作用」没有输入依据，删去该释义。", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "可能源自拉丁语 reagō，指能引起化学反应的物质，即试剂。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15300, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15304, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15309, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -81,7 +81,7 @@
 {"word_id": 15378, "verdict": "fix", "reason": "输入经盎格鲁-诺曼语与中古法语 reclamer 到拉丁语 reclamo，「经古法语」与输入不符，「本义是唤回」也无依据。", "fix": {"text": "源自中古英语 reclaymen，经盎格鲁-诺曼语与中古法语 reclamer，上溯拉丁语 reclamo，由 re-（回）加 claim（要求）构成，引申为开垦、收回。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15379, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15380, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 15381, "verdict": "fix", "reason": "古法语 reclus 输入无释义，「被关闭的」没有输入依据，据词本身描述改正。", "fix": {"text": "源自古法语 reclus，指闭居不出的人，即隐士、隐遁者。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15381, "verdict": "ok", "reason": "古法语 reclus 输入无释义，「被关闭的」没有输入依据，据词本身描述改正。", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自古法语 reclus，指闭居不出的人，即隐士、隐遁者。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15385, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15388, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15389, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

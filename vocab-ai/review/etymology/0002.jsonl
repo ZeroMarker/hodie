@@ -22,7 +22,7 @@
 {"word_id": 205, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 206, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 207, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 211, "verdict": "fix", "reason": "accognitus 的释义「已知」在输入里没有依据，删去编造的释义", "fix": {"text": "源自中古英语 aqueynten，经古法语 acointier 与晚期拉丁语 accognitus 而来，本义是使知道，引申为使人熟悉、结识。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 211, "verdict": "ok", "reason": "accognitus 的释义「已知」在输入里没有依据，删去编造的释义", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 aqueynten，经古法语 acointier 与晚期拉丁语 accognitus 而来，本义是使知道，引申为使人熟悉、结识。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 212, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 214, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 215, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

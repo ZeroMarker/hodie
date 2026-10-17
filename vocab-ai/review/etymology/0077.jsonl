@@ -1,100 +1,100 @@
-{"word_id":15063,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15064,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15066,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15068,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15069,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15070,"verdict":"fix","reason":"输入中 quartus 无释义，讲解为其添加「四分之一」的中文释义，属无依据内容","fix":{"text":"源自中古英语 quarter，经盎格鲁-诺曼语 quarter，出自拉丁语 quartarius 与 quartus，本义为四分之一，引申为部分、一刻钟与住处。"},"reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15074,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15075,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15076,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15078,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15079,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15081,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15083,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15084,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15085,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15086,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15087,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15088,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15089,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15090,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15093,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15095,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15096,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15097,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15098,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15099,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15101,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15102,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15103,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15104,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15105,"verdict":"fix","reason":"输入中 culcita 无释义，讲解为其添加「垫褥」的中文释义，属无依据内容","fix":{"text":"源自中古英语 quilte，经盎格鲁-诺曼语 quilte 与古法语 coilte，出自拉丁语 culcita，本指被褥，引申为被子。"},"reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15108,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15110,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15111,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15114,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15115,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15116,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15117,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15120,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15122,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15123,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15124,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15126,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15127,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15128,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15129,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15131,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15139,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15140,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15145,"verdict":"fix","reason":"输入中 radius 无释义，讲解为其添加「光线、辐条」的中文释义，属无依据内容","fix":{"text":"源自中世纪拉丁语 radiālis（径向的），出自拉丁语 radius，本义为辐射状的，引申为径向的。"},"reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15147,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15148,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15149,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15151,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15154,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15158,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15160,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15162,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15163,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15164,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15165,"verdict":"fix","reason":"raft 无释义，讲解加「梁、筏」，梁义出自原始印欧语 *rep- 而非 raft，属无依据内容","fix":{"text":"源自古英语 ræfter，与 raft（木筏）同源，本指支撑屋顶的横木，即椽子。"},"reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15166,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15167,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15168,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15170,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15172,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15176,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15182,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15183,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15184,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15185,"verdict":"fix","reason":"输入中 racēmus 无释义，讲解为其添加「果串」的中文释义，属无依据内容","fix":{"text":"源自中古英语 raysyn，借自盎格鲁-诺曼语 raisin（葡萄），上溯晚期拉丁语 racīmus 与拉丁语 racēmus，本指葡萄干。"},"reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15188,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15191,"verdict":"fix","reason":"输入中前缀 re- 无释义，讲解为其添加「再」，属无依据内容","fix":{"text":"源自中古法语 rallier 与古法语 ralier，出自拉丁语 re- 加 ligare（绑），本义为重新集合、团结，引申为集会。"},"reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15192,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15194,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15196,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15197,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15198,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15199,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15200,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15201,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15202,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15206,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15207,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15209,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15212,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15215,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15216,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15217,"verdict":"fix","reason":"输入中 redēmptiō 无释义，讲解为其添加「赎回」，属无依据内容","fix":{"text":"源自中古英语 raunsoun，经古法语 raençon，出自拉丁语 redēmptiō，本义为赎金，引申为赎回、释放。"},"reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15218,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15219,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15220,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15221,"verdict":"fix","reason":"输入中 rapiō 无释义，讲解为其添加「夺取、掠走」，属无依据内容","fix":{"text":"源自中古英语 rapen（强夺、掠走），出自拉丁语 rapiō，本义为强夺、抢走，引申为强奸、蹂躏。"},"reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15222,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15223,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15228,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15231,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15233,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15236,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":15237,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id": 15063, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15064, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15066, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15068, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15069, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15070, "verdict": "ok", "reason": "输入中 quartus 无释义，讲解为其添加「四分之一」的中文释义，属无依据内容", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 quarter，经盎格鲁-诺曼语 quarter，出自拉丁语 quartarius 与 quartus，本义为四分之一，引申为部分、一刻钟与住处。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 15074, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15075, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15076, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15078, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15079, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15081, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15083, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15084, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15085, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15086, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15087, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15088, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15089, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15090, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15093, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15095, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15096, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15097, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15098, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15099, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15101, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15102, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15103, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15104, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15105, "verdict": "ok", "reason": "输入中 culcita 无释义，讲解为其添加「垫褥」的中文释义，属无依据内容", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 quilte，经盎格鲁-诺曼语 quilte 与古法语 coilte，出自拉丁语 culcita，本指被褥，引申为被子。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 15108, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15110, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15111, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15114, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15115, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15116, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15117, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15120, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15122, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15123, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15124, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15126, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15127, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15128, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15129, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15131, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15139, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15140, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15145, "verdict": "fix", "reason": "输入中 radius 无释义，讲解为其添加「光线、辐条」的中文释义，属无依据内容", "fix": {"text": "源自中世纪拉丁语 radiālis（径向的），出自拉丁语 radius，本义为辐射状的，引申为径向的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15147, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15148, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15149, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15151, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15154, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15158, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15160, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15162, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15163, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15164, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15165, "verdict": "ok", "reason": "raft 无释义，讲解加「梁、筏」，梁义出自原始印欧语 *rep- 而非 raft，属无依据内容", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自古英语 ræfter，与 raft（木筏）同源，本指支撑屋顶的横木，即椽子。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 15166, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15167, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15168, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15170, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15172, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15176, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15182, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15183, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15184, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15185, "verdict": "ok", "reason": "输入中 racēmus 无释义，讲解为其添加「果串」的中文释义，属无依据内容", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 raysyn，借自盎格鲁-诺曼语 raisin（葡萄），上溯晚期拉丁语 racīmus 与拉丁语 racēmus，本指葡萄干。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 15188, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15191, "verdict": "ok", "reason": "输入中前缀 re- 无释义，讲解为其添加「再」，属无依据内容", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古法语 rallier 与古法语 ralier，出自拉丁语 re- 加 ligare（绑），本义为重新集合、团结，引申为集会。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 15192, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15194, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15196, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15197, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15198, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15199, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15200, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15201, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15202, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15206, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15207, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15209, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15212, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15215, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15216, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15217, "verdict": "ok", "reason": "输入中 redēmptiō 无释义，讲解为其添加「赎回」，属无依据内容", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 raunsoun，经古法语 raençon，出自拉丁语 redēmptiō，本义为赎金，引申为赎回、释放。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 15218, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15219, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15220, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15221, "verdict": "fix", "reason": "输入中 rapiō 无释义，讲解为其添加「夺取、掠走」，属无依据内容", "fix": {"text": "源自中古英语 rapen（强夺、掠走），出自拉丁语 rapiō，本义为强夺、抢走，引申为强奸、蹂躏。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15222, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15223, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15228, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15231, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15233, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15236, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15237, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

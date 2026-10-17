@@ -15,14 +15,14 @@
 {"word_id": 15834, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15837, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15840, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 15846, "verdict": "fix", "reason": "给无释义的拉丁语 respectus 加了输入里没有的「注视、考虑」释义，删去", "fix": {"text": "借自中世纪拉丁语 respectivus，源自拉丁语 respectus，引申为各自相关的、分别的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15846, "verdict": "ok", "reason": "给无释义的拉丁语 respectus 加了输入里没有的「注视、考虑」释义，删去", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "借自中世纪拉丁语 respectivus，源自拉丁语 respectus，引申为各自相关的、分别的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15848, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 15849, "verdict": "fix", "reason": "词素 respire 在输入里无任何释义，加的「呼吸」没有依据，删去", "fix": {"text": "源自新拉丁语 respīrātōrius，由 respire 加 -atory（与某事物相关的）构成，指与呼吸有关的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15849, "verdict": "ok", "reason": "词素 respire 在输入里无任何释义，加的「呼吸」没有依据，删去", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自新拉丁语 respīrātōrius，由 respire 加 -atory（与某事物相关的）构成，指与呼吸有关的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15850, "verdict": "fix", "reason": "无释义的拉丁语 respectus 被加了「回望、考虑」，删去该释义", "fix": {"text": "经古法语 respit（休息），源自拉丁语 respectus，引申为暂缓、宽限、喘息。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15851, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15852, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15855, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 15857, "verdict": "fix", "reason": "拉丁语 respondeō 在输入里无释义，「回答」没有依据，删去", "fix": {"text": "借自中古法语 responsable，出自拉丁语 responsus 与 respondeō，指须作答的，引申为负责任的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15857, "verdict": "ok", "reason": "拉丁语 respondeō 在输入里无释义，「回答」没有依据，删去", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "借自中古法语 responsable，出自拉丁语 responsus 与 respondeō，指须作答的，引申为负责任的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15859, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15861, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15863, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -52,10 +52,10 @@
 {"word_id": 15912, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15914, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15917, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 15918, "verdict": "fix", "reason": "法语 retoucher 输入里无构词信息，「由再次触摸之意」无依据，删去", "fix": {"text": "源自法语 retoucher，指对作品或照片的修饰、润色。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15918, "verdict": "ok", "reason": "法语 retoucher 输入里无构词信息，「由再次触摸之意」无依据，删去", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自法语 retoucher，指对作品或照片的修饰、润色。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15919, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15920, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 15921, "verdict": "fix", "reason": "拉丁语 retraho 在输入里无释义，「拉回」没有依据，删去", "fix": {"text": "经中古英语 retret、古法语 retrait，源自拉丁语 retractus 与 retraho，指后退、撤退、退隐。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15921, "verdict": "ok", "reason": "拉丁语 retraho 在输入里无释义，「拉回」没有依据，删去", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "经中古英语 retret、古法语 retrait，源自拉丁语 retractus 与 retraho，指后退、撤退、退隐。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15922, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15924, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15926, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -78,14 +78,14 @@
 {"word_id": 15959, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15960, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15962, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 15964, "verdict": "fix", "reason": "拉丁语 revertō 在输入里无释义，「转回」没有依据，删去", "fix": {"text": "经古法语 reversion，源自拉丁语 reversio，出自 revertō，指回复原状、归还。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15964, "verdict": "ok", "reason": "拉丁语 revertō 在输入里无释义，「转回」没有依据，删去", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "经古法语 reversion，源自拉丁语 reversio，出自 revertō，指回复原状、归还。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15965, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15966, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15968, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15969, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15970, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15975, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 15976, "verdict": "fix", "reason": "拉丁语 voco 在输入里无释义，「召唤」没有依据，删去", "fix": {"text": "借自中古法语 révoquer，源自拉丁语 revocare，由 re- 加 voco 构成，指召回、撤销。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 15976, "verdict": "ok", "reason": "拉丁语 voco 在输入里无释义，「召唤」没有依据，删去", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "借自中古法语 révoquer，源自拉丁语 revocare，由 re- 加 voco 构成，指召回、撤销。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15977, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15978, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 15979, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

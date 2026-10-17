@@ -1,7 +1,7 @@
 {"word_id": 15413, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "拉丁语 recursus、recurrō 输入无释义，「本义是跑回去、返回」没有输入依据", "fix": {"text": "源自中古英语 recours，经古法语 recours 来自拉丁语 recursus，即 recurrō 的过去分词，指可以求助、依靠的对象或办法。"}}
 {"word_id": 15414, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "拉丁语 recupero 输入无释义，「本义是重新取得」没有输入依据", "fix": {"text": "源自中古英语 recoveren，经古法语 recovrer 与盎格鲁-诺曼语 recoverer 来自拉丁语 recupero，即 reciperāre 的另一种形式，指恢复健康、找回失去之物。"}}
 {"word_id": 15415, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 15417, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "拉丁语 recreātiō 输入无释义，「恢复精神」没有输入依据", "fix": {"text": "源自中古英语 recreacion，经中古法语、古法语来自拉丁语，由表示再、重新之意的 re- 加 creation 构成，本义是重新创造，引申为消遣娱乐。"}}
+{"word_id": 15417, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "拉丁语 recreātiō 输入无释义，「恢复精神」没有输入依据", "discarded_fix": {"text": "源自中古英语 recreacion，经中古法语、古法语来自拉丁语，由表示再、重新之意的 re- 加 creation 构成，本义是重新创造，引申为消遣娱乐。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15421, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "recruit 输入释义只是补充、增援之物，「新兵」没有输入依据", "fix": {"text": "源自法语 recrutement，由 recruit（增补之物）加后缀 -ment 构成，指招募新成员的行为或过程。"}}
 {"word_id": 15422, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15424, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
@@ -18,12 +18,12 @@
 {"word_id": 15457, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15459, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15462, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 15463, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "「也形容声音尖细」在输入里没有依据，删去", "fix": {"text": "源自中古英语 reedy，由 reed（芦苇）加后缀 -y 构成，指长满芦苇的、像芦苇的。"}}
+{"word_id": 15463, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "「也形容声音尖细」在输入里没有依据，删去", "discarded_fix": {"text": "源自中古英语 reedy，由 reed（芦苇）加后缀 -y 构成，指长满芦苇的、像芦苇的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15464, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15465, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15466, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15470, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 15471, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "拉丁语 referre 输入无释义，「本义是带回来、报告」没有输入依据", "fix": {"text": "源自中古英语 referren，经古法语 referer 来自拉丁语 referre，意为提及、查阅、指向。"}}
+{"word_id": 15471, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "拉丁语 referre 输入无释义，「本义是带回来、报告」没有输入依据", "discarded_fix": {"text": "源自中古英语 referren，经古法语 referer 来自拉丁语 referre，意为提及、查阅、指向。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15472, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15474, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "中世纪拉丁语 referentia 输入无释义，「转交」没有输入依据", "fix": {"text": "来自中古法语 référence，源自中世纪拉丁语 referentia，由 refer（提及）加 -ence 构成，指提及、转述，引申为参照、证明、引用。"}}
 {"word_id": 15475, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
@@ -48,7 +48,7 @@
 {"word_id": 15515, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "拉丁语 refūtō 输入释义为「refute、repudiate」，「击退」没有输入依据", "fix": {"text": "借自拉丁语 refūtō，意为驳倒、否认，指驳斥、批驳，引申为反驳。"}}
 {"word_id": 15517, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15518, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 15519, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "古法语 regarder 输入无释义，「注视」没有输入依据", "fix": {"text": "源自中古英语 regard，经盎格鲁-诺曼语 reguard 与古法语 regarder 而来，指注意、尊重与关心。"}}
+{"word_id": 15519, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "古法语 regarder 输入无释义，「注视」没有输入依据", "discarded_fix": {"text": "源自中古英语 regard，经盎格鲁-诺曼语 reguard 与古法语 regarder 而来，指注意、尊重与关心。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15524, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "generō 输入无释义，「生殖、产生」没有输入依据", "fix": {"text": "源自拉丁语 regenerātus，与 regenerō 有关，由 re-（再、重新）加 generō 构成，指重新生出来，即再生，引申为复兴。"}}
 {"word_id": 15525, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15526, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "generative 输入无释义，「生成的」没有输入依据", "fix": {"text": "源自中古法语 régénératif，由 re-（再、重新）加 generative 构成，指能再生的、有恢复能力的。"}}
@@ -61,7 +61,7 @@
 {"word_id": 15537, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15541, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15543, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 15547, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "拉丁语 rēgula 输入释义为「rule」，「尺子」没有输入依据", "fix": {"text": "源自中古英语 reguler，经中古法语与拉丁语 rēgulāris 而来，其根拉丁语 rēgula 意为规则，本义是按规则行事的，引申为规律的、定期发生的。"}}
+{"word_id": 15547, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "拉丁语 rēgula 输入释义为「rule」，「尺子」没有输入依据", "discarded_fix": {"text": "源自中古英语 reguler，经中古法语与拉丁语 rēgulāris 而来，其根拉丁语 rēgula 意为规则，本义是按规则行事的，引申为规律的、定期发生的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15548, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "「拉丁语表示规则的词」所指 rēgulāris 输入无释义，无依据", "fix": {"text": "借自中古法语 regularite，经古法语来自晚期拉丁语 rēgulāritās，上溯拉丁语 rēgulāris，指合乎规则的状态，即规律性。"}}
 {"word_id": 15550, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "拉丁语 regulō 输入释义为「direct、rule、regulate」，「支配」没有输入依据", "fix": {"text": "借自拉丁语 regulatus，出自 regulō（指导、统治），其根 regula 意为规则，本义是按规则管理，引申为调节、控制。"}}
 {"word_id": 15555, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "拉丁语 rehabilitō 输入无释义，「本义是使重新恢复能力或地位」没有输入依据", "fix": {"text": "借自中世纪拉丁语 rehabilitātus，出自拉丁语 rehabilitō，指恢复、官复原职，引申为康复、使复原。"}}

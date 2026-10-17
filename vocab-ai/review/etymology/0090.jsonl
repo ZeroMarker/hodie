@@ -14,13 +14,13 @@
 {"word_id": 17660, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17665, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17666, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 17667, "verdict": "fix", "reason": "输入里 speculor 无释义，讲解为其注「观察」属无依据内容", "fix": {"text": "源自中古英语 speculacioun，经古法语 speculation 与晚期拉丁语 speculātiō，出自拉丁语 speculor，指思索、推测。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 17668, "verdict": "fix", "reason": "输入里 speculor 无释义，讲解为其注「观察」属无依据内容", "fix": {"text": "源自中古英语 speculatyf，经古法语 speculatif 与晚期拉丁语 speculativus，出自拉丁语 speculor，指基于推测的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17667, "verdict": "ok", "reason": "输入里 speculor 无释义，讲解为其注「观察」属无依据内容", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 speculacioun，经古法语 speculation 与晚期拉丁语 speculātiō，出自拉丁语 speculor，指思索、推测。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 17668, "verdict": "ok", "reason": "输入里 speculor 无释义，讲解为其注「观察」属无依据内容", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 speculatyf，经古法语 speculatif 与晚期拉丁语 speculativus，出自拉丁语 speculor，指基于推测的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 17669, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17671, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17674, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17675, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 17676, "verdict": "fix", "reason": "「咒语」之义在输入的各词源组里都没有依据", "fix": {"text": "源自中古英语 spell，来自古英语 spell（消息、故事），上溯至原始日耳曼语 *spellą（讲述），本义为讲述，后指拼写。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17676, "verdict": "ok", "reason": "「咒语」之义在输入的各词源组里都没有依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 spell，来自古英语 spell（消息、故事），上溯至原始日耳曼语 *spellą（讲述），本义为讲述，后指拼写。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 17680, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17681, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17684, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -38,7 +38,7 @@
 {"word_id": 17707, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17708, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17709, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 17710, "verdict": "fix", "reason": "输入里 spīritus 无释义，讲解为其注「气息、精神」属无依据内容", "fix": {"text": "源自中古英语 spiritual，经古法语 spirituel 与晚期拉丁语 spīrituālis，出自拉丁语 spīritus，意为精神的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17710, "verdict": "ok", "reason": "输入里 spīritus 无释义，讲解为其注「气息、精神」属无依据内容", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 spiritual，经古法语 spirituel 与晚期拉丁语 spīrituālis，出自拉丁语 spīritus，意为精神的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 17713, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17714, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17718, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -54,7 +54,7 @@
 {"word_id": 17739, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17744, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17745, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 17746, "verdict": "fix", "reason": "输入里 -ful 的语素义残缺，讲解注「表充满」属无依据内容", "fix": {"text": "源自中古英语 sponeful，由 spoon（勺）加 -ful 构成，指一勺之量。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17746, "verdict": "ok", "reason": "输入里 -ful 的语素义残缺，讲解注「表充满」属无依据内容", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 sponeful，由 spoon（勺）加 -ful 构成，指一勺之量。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 17748, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17749, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17759, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -81,8 +81,8 @@
 {"word_id": 17795, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17796, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17797, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 17799, "verdict": "fix", "reason": "输入里 quadrus 无释义，讲解为其注「四方」属无依据内容", "fix": {"text": "源自中古英语 square，经古法语 esquarre 与俗拉丁语 *exquadra，出自拉丁语 quadrus，由 ex-（出）与 quadro 构成，指正方形。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 17801, "verdict": "fix", "reason": "输入里 ex 无释义，讲解为其注「出」且「出自 ex」表述不当", "fix": {"text": "源自中古英语 squachen，经古法语 esquacher 上溯至俗拉丁语 *excoāctiāre，意为压碎、压扁。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17799, "verdict": "ok", "reason": "输入里 quadrus 无释义，讲解为其注「四方」属无依据内容", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 square，经古法语 esquarre 与俗拉丁语 *exquadra，出自拉丁语 quadrus，由 ex-（出）与 quadro 构成，指正方形。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 17801, "verdict": "ok", "reason": "输入里 ex 无释义，讲解为其注「出」且「出自 ex」表述不当", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 squachen，经古法语 esquacher 上溯至俗拉丁语 *excoāctiāre，意为压碎、压扁。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 17802, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17805, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17806, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -93,7 +93,7 @@
 {"word_id": 17823, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17824, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17826, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 17827, "verdict": "fix", "reason": "输入里 stæf 只有「字母」一义，讲解为其补「棍棒」属无依据内容", "fix": {"text": "源自中古英语 staf，来自古英语 stæf（字母），上溯至原始日耳曼语 *stabaz，指杖、棍，后引申为全体人员。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17827, "verdict": "ok", "reason": "输入里 stæf 只有「字母」一义，讲解为其补「棍棒」属无依据内容", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 staf，来自古英语 stæf（字母），上溯至原始日耳曼语 *stabaz，指杖、棍，后引申为全体人员。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 17830, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17832, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17834, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

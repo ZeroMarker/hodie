@@ -24,13 +24,13 @@
 {"word_id": 17489, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17490, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17491, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 17499, "verdict": "fix", "reason": "拉丁词形 sōlitārius 在输入中无释义，讲解添加「独居的」没有依据", "fix": {"text": "源自中古英语 solitarie，借自拉丁语 sōlitārius，故指独自的、孤独的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 17500, "verdict": "fix", "reason": "拉丁词形 sōlitūdō 在输入中无释义，讲解添加「独处」没有依据", "fix": {"text": "源自中古英语 solitude 与古法语 solitude，来自拉丁语 sōlitūdō，故指孤独、独居。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 17501, "verdict": "fix", "reason": "拉丁词形 sōlus 在输入中无释义，讲解添加「独自」没有依据", "fix": {"text": "借自意大利语 solo，来自拉丁语 sōlus，故指独奏、独唱或单独进行的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17499, "verdict": "ok", "reason": "拉丁词形 sōlitārius 在输入中无释义，讲解添加「独居的」没有依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 solitarie，借自拉丁语 sōlitārius，故指独自的、孤独的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 17500, "verdict": "ok", "reason": "拉丁词形 sōlitūdō 在输入中无释义，讲解添加「独处」没有依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 solitude 与古法语 solitude，来自拉丁语 sōlitūdō，故指孤独、独居。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 17501, "verdict": "ok", "reason": "拉丁词形 sōlus 在输入中无释义，讲解添加「独自」没有依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "借自意大利语 solo，来自拉丁语 sōlus，故指独奏、独唱或单独进行的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 17504, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17505, "verdict": "fix", "reason": "拉丁词形 solvō 在输入中无释义，讲解添加「松开」没有依据", "fix": {"text": "源自中古英语 solucioun 与古法语 solucion，来自拉丁语 solūtiōnem，由动词 solvō 加名词后缀 -tion 构成，故指解答、溶液。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 17507, "verdict": "fix", "reason": "拉丁词形 solvō 在输入中无释义，讲解添加「松开、解开」没有依据", "fix": {"text": "源自中古英语 solven，来自拉丁语 solvō，故指解决、解答。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 17508, "verdict": "fix", "reason": "拉丁词形 solvō 在输入中无释义，讲解添加「松开」没有依据", "fix": {"text": "源自法语 solvent，来自拉丁语 solventem，本为 solvō 的现在分词，指能溶解他物的，后指溶剂。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17507, "verdict": "ok", "reason": "拉丁词形 solvō 在输入中无释义，讲解添加「松开、解开」没有依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 solven，来自拉丁语 solvō，故指解决、解答。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 17508, "verdict": "ok", "reason": "拉丁词形 solvō 在输入中无释义，讲解添加「松开」没有依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自法语 solvent，来自拉丁语 solventem，本为 solvō 的现在分词，指能溶解他物的，后指溶剂。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 17510, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17515, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17516, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -55,7 +55,7 @@
 {"word_id": 17550, "verdict": "fix", "reason": "希腊词形 σόφισμα 在输入中无释义，讲解称其表示诡辩没有依据", "fix": {"text": "源自早期形式 sophumer，出自已废弃的 sophom，源头是古希腊语 σόφισμα，后又受表示智者与愚人的希腊词影响，故指二年级学生。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17551, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17555, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 17556, "verdict": "fix", "reason": "拉丁词形 sordidus 在输入中无释义，讲解添加「污秽的」没有依据", "fix": {"text": "源自中古英语 sordide，来自拉丁语 sordidus，故指肮脏的、卑鄙的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17556, "verdict": "ok", "reason": "拉丁词形 sordidus 在输入中无释义，讲解添加「污秽的」没有依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 sordide，来自拉丁语 sordidus，故指肮脏的、卑鄙的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 17557, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17561, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17562, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -74,8 +74,8 @@
 {"word_id": 17587, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17588, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17591, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 17594, "verdict": "fix", "reason": "拉丁词形 spatium 在输入中无释义，讲解添加「空间」没有依据", "fix": {"text": "源自中古英语 space 与盎格鲁-诺曼语 space，来自拉丁语 spatium，其原始印欧语词根意为拉伸，故指空间、间隔。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 17598, "verdict": "fix", "reason": "拉丁词形 spatiōsus 在输入中无释义，讲解称其由表示空间的词派生没有依据", "fix": {"text": "源自中古英语 spacious 与古法语 spacios，来自拉丁语 spatiōsus，故指宽敞的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17594, "verdict": "ok", "reason": "拉丁词形 spatium 在输入中无释义，讲解添加「空间」没有依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 space 与盎格鲁-诺曼语 space，来自拉丁语 spatium，其原始印欧语词根意为拉伸，故指空间、间隔。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 17598, "verdict": "ok", "reason": "拉丁词形 spatiōsus 在输入中无释义，讲解称其由表示空间的词派生没有依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 spacious 与古法语 spacios，来自拉丁语 spatiōsus，故指宽敞的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 17599, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17600, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17602, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -89,12 +89,12 @@
 {"word_id": 17624, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17625, "verdict": "fix", "reason": "「词义与轻拍、吐口水有关」等义在输入中没有依据", "fix": {"text": "源自古英语 spittan 与 spætan，或与 spit 相关，故指口角。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17626, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 17627, "verdict": "fix", "reason": "拉丁词形 spatium 在输入中无释义，讲解添加「空间」没有依据", "fix": {"text": "由拉丁语 spatium 加后缀 -al（属于……的）构成，故指空间的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17627, "verdict": "ok", "reason": "拉丁词形 spatium 在输入中无释义，讲解添加「空间」没有依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "由拉丁语 spatium 加后缀 -al（属于……的）构成，故指空间的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 17629, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17630, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17631, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17632, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17633, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 17634, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 17636, "verdict": "fix", "reason": "拉丁词形 speciēs 在输入中无释义，讲解称其意为种类、外观没有依据", "fix": {"text": "源自中古英语 especial 与古法语 especial，来自拉丁语 speciālis，出自 speciēs，故指特别的、专门的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17636, "verdict": "ok", "reason": "拉丁词形 speciēs 在输入中无释义，讲解称其意为种类、外观没有依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 especial 与古法语 especial，来自拉丁语 speciālis，出自 speciēs，故指特别的、专门的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 17638, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

@@ -40,7 +40,7 @@
 {"word_id": 9641, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 9649, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 9650, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 9651, "verdict": "fix", "reason": "给输入里没有释义的拉丁语 aptus 加上「合适」之义，超出输入依据，删去。", "fix": {"text": "源自中古法语 inepte 与拉丁语 ineptus，由 in- 加 aptus 构成，本义是不合宜的，引申为笨拙的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 9651, "verdict": "ok", "reason": "给输入里没有释义的拉丁语 aptus 加上「合适」之义，超出输入依据，删去。", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古法语 inepte 与拉丁语 ineptus，由 in- 加 aptus 构成，本义是不合宜的，引申为笨拙的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 9652, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 9655, "verdict": "fix", "reason": "「由否定成分加表示技艺与活力的词根构成」在该词输入里没有依据，据 iners（不活动的）改正。", "fix": {"text": "源自法语 inerte 与拉丁语 iners（不活动的），意为缺乏活力与生气，引申为惰性的、无生气的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 9656, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

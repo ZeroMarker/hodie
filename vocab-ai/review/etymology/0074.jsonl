@@ -5,18 +5,18 @@
 {"word_id": 14540, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14543, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14544, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14545, "verdict": "fix", "reason": "给语素 preserve 加的「保存」释义在输入中没有依据（输入里 preserve 语素仅有果酱之义），删去该添注。", "fix": {"text": "来自古法语 preservacion，源自中世纪拉丁语 preservatio，由 preserve 加 -ation 构成，引申为保存、维护。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14547, "verdict": "fix", "reason": "给输入中没有释义的中世纪拉丁语 praeservativus 添加「用于保存的」之义，超出输入依据，删去。", "fix": {"text": "来自古法语 preservatif，源自中世纪拉丁语 praeservativus，引申为防腐剂、防腐的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14545, "verdict": "ok", "reason": "给语素 preserve 加的「保存」释义在输入中没有依据（输入里 preserve 语素仅有果酱之义），删去该添注。", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "来自古法语 preservacion，源自中世纪拉丁语 preservatio，由 preserve 加 -ation 构成，引申为保存、维护。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 14547, "verdict": "ok", "reason": "给输入中没有释义的中世纪拉丁语 praeservativus 添加「用于保存的」之义，超出输入依据，删去。", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "来自古法语 preservatif，源自中世纪拉丁语 praeservativus，引申为防腐剂、防腐的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14548, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14550, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14552, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14554, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14556, "verdict": "fix", "reason": "给输入中无释义的拉丁语 pressūra 添加「压、压力」之义并编造「本义是挤压之物」，超出输入依据，删去。", "fix": {"text": "源自拉丁语 pressūra，引申为压力、压强。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14556, "verdict": "ok", "reason": "给输入中无释义的拉丁语 pressūra 添加「压、压力」之义并编造「本义是挤压之物」，超出输入依据，删去。", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自拉丁语 pressūra，引申为压力、压强。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14559, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14560, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14563, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14564, "verdict": "fix", "reason": "给输入中无释义的拉丁语 sūmptus 添加「取」之义，超出输入依据，删去。", "fix": {"text": "来自中古英语 presumpcioun，经古法语 presumption，源自拉丁语 praesūmptiō，由 pre-（在前）与 sūmptus 构成，引申为假定、推定。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14565, "verdict": "fix", "reason": "给输入中无释义的中世纪拉丁语 praesūmptuōsus 添加「本义是擅自的」，超出输入依据，删去。", "fix": {"text": "来自中古英语 presumptuous，经古法语，源自中世纪拉丁语 praesūmptuōsus，引申为冒昧的、放肆的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14564, "verdict": "ok", "reason": "给输入中无释义的拉丁语 sūmptus 添加「取」之义，超出输入依据，删去。", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "来自中古英语 presumpcioun，经古法语 presumption，源自拉丁语 praesūmptiō，由 pre-（在前）与 sūmptus 构成，引申为假定、推定。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 14565, "verdict": "ok", "reason": "给输入中无释义的中世纪拉丁语 praesūmptuōsus 添加「本义是擅自的」，超出输入依据，删去。", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "来自中古英语 presumptuous，经古法语，源自中世纪拉丁语 praesūmptuōsus，引申为冒昧的、放肆的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14567, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14569, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14570, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -29,8 +29,8 @@
 {"word_id": 14581, "verdict": "fix", "reason": "给输入中无释义的拉丁语 praevalēns 添加「占优势的」之义并编造「本义是更有力量的」，超出输入依据，删去。", "fix": {"text": "借自拉丁语 praevalēns，引申为占优势的、盛行的、普遍的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14582, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14583, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14586, "verdict": "fix", "reason": "给输入中无释义的中世纪拉丁语 prēventiō 添加「本义是先来、抢先」，超出输入依据，删去。", "fix": {"text": "来自中古英语 prevencion，源自中世纪拉丁语 prēventiō，引申为防止、预防。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14589, "verdict": "fix", "reason": "给输入中无释义的拉丁语 praevius 添加「走在前面的」之义并编造「本义是在先的」，超出输入依据，删去。", "fix": {"text": "源自拉丁语 praevius，引申为先前的、以前的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14586, "verdict": "ok", "reason": "给输入中无释义的中世纪拉丁语 prēventiō 添加「本义是先来、抢先」，超出输入依据，删去。", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "来自中古英语 prevencion，源自中世纪拉丁语 prēventiō，引申为防止、预防。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 14589, "verdict": "ok", "reason": "给输入中无释义的拉丁语 praevius 添加「走在前面的」之义并编造「本义是在先的」，超出输入依据，删去。", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自拉丁语 praevius，引申为先前的、以前的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14591, "verdict": "fix", "reason": "给输入中无释义的拉丁语 praevideo 添加「预见」之义，超出输入依据，删去。", "fix": {"text": "来自中古英语 previsioun，经古法语 prevision，源自晚期拉丁语 praevisio，来自拉丁语 praevideo，引申为先见、预知。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14592, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14593, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -46,18 +46,18 @@
 {"word_id": 14617, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14619, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14620, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14621, "verdict": "fix", "reason": "给输入中无释义的拉丁语 prīncipālis 添加「首要的」之义，超出输入依据，删去。", "fix": {"text": "来自中古英语 principal，经古法语 principal，源自拉丁语 prīncipālis，引申为主要的、负责人。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14621, "verdict": "ok", "reason": "给输入中无释义的拉丁语 prīncipālis 添加「首要的」之义，超出输入依据，删去。", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "来自中古英语 principal，经古法语 principal，源自拉丁语 prīncipālis，引申为主要的、负责人。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14622, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14623, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14624, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14628, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14631, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14634, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14635, "verdict": "fix", "reason": "给输入中无释义的拉丁语 prehensiōnem 添加「抓捕」之义，超出输入依据，删去。", "fix": {"text": "来自中古英语 prisoun，源自古英语 prisūn，借自古法语 prison，源自拉丁语 prehensiōnem，引申为监狱、监禁。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14635, "verdict": "ok", "reason": "给输入中无释义的拉丁语 prehensiōnem 添加「抓捕」之义，超出输入依据，删去。", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "来自中古英语 prisoun，源自古英语 prisūn，借自古法语 prison，源自拉丁语 prehensiōnem，引申为监狱、监禁。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14636, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14638, "verdict": "fix", "reason": "给输入中无释义的拉丁语 prīstinus 添加「从前的、原来的」之义，超出输入依据，删去。", "fix": {"text": "借自中古法语 pristin，源自拉丁语 prīstinus，引申为原始的、崭新的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14638, "verdict": "ok", "reason": "给输入中无释义的拉丁语 prīstinus 添加「从前的、原来的」之义，超出输入依据，删去。", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "借自中古法语 pristin，源自拉丁语 prīstinus，引申为原始的、崭新的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14640, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14642, "verdict": "fix", "reason": "给输入中无释义的拉丁语 prīvātiō 添加「本义是剥夺」，超出输入依据，删去。", "fix": {"text": "来自中古英语 privacioun，经中古法语与古法语 privacion，源自拉丁语 prīvātiō，引申为匮乏、丧失。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14642, "verdict": "ok", "reason": "给输入中无释义的拉丁语 prīvātiō 添加「本义是剥夺」，超出输入依据，删去。", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "来自中古英语 privacioun，经中古法语与古法语 privacion，源自拉丁语 prīvātiō，引申为匮乏、丧失。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14645, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14648, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14650, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -80,7 +80,7 @@
 {"word_id": 14677, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14679, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14680, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14681, "verdict": "fix", "reason": "给输入中无释义的古法语 procurer 添加「取得」之义，超出输入依据，删去。", "fix": {"text": "来自中古英语 procurement，经古法语 procurement，来自古法语 procurer，引申为采购、获得。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14681, "verdict": "ok", "reason": "给输入中无释义的古法语 procurer 添加「取得」之义，超出输入依据，删去。", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "来自中古英语 procurement，经古法语 procurement，来自古法语 procurer，引申为采购、获得。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14682, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14683, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14684, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

@@ -5,7 +5,7 @@
 {"word_id": 13170, "verdict": "fix", "reason": "cry 在输入里的释义是「流泪、哭泣」，「呼喊」是输入里没有的词义，据输入改正", "fix": {"text": "源自中古英语 outcry，由 out-（向外）加 cry（哭泣）构成，本义是大声哭喊，引申为强烈的抗议与公众哗然。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13176, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13177, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 13187, "verdict": "fix", "reason": "*ūt- 在输入里没有释义，「在外」是给无释义词形添加的内容，删去该释义", "fix": {"text": "源自中古英语 outlandisch，上溯古英语 ūtlendisċ（外国的），由原始日耳曼语 *ūt- 与 *landą（土地）构成，本义为外乡的，引申为古怪离奇的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 13187, "verdict": "ok", "reason": "*ūt- 在输入里没有释义，「在外」是给无释义词形添加的内容，删去该释义", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 outlandisch，上溯古英语 ūtlendisċ（外国的），由原始日耳曼语 *ūt- 与 *landą（土地）构成，本义为外乡的，引申为古怪离奇的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 13189, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13190, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13202, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -40,7 +40,7 @@
 {"word_id": 13300, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13303, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13304, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 13305, "verdict": "fix", "reason": "「由表示拥有的词根构成」在输入里没有依据，输入只给出中古英语 ouner 与古英语 āgnere，删去后按输入改正", "fix": {"text": "源自中古英语 ouner，出自古英语 āgnere，本义为拥有者，引申为物主、所有人。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 13305, "verdict": "ok", "reason": "「由表示拥有的词根构成」在输入里没有依据，输入只给出中古英语 ouner 与古英语 āgnere，删去后按输入改正", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 ouner，出自古英语 āgnere，本义为拥有者，引申为物主、所有人。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 13307, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13308, "verdict": "fix", "reason": "后缀 -en 在输入里的释义是构成过去分词，「复数词尾」与之不符，删去该添注", "fix": {"text": "源自中古英语 oxe、古英语 oxa，由 ox（公牛）加 -en 构成，本义为多头公牛，即 ox 的复数形式。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13309, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -48,7 +48,7 @@
 {"word_id": 13314, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13315, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13316, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 13320, "verdict": "fix", "reason": "拉丁语 passus 在输入里没有释义，「步」是给无释义词形添加的内容，删去", "fix": {"text": "源自中古英语 pase，经盎格鲁-诺曼语与古法语的 pas，源头是拉丁语 passus，本义为一步的距离，引申为步速、节奏。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 13320, "verdict": "ok", "reason": "拉丁语 passus 在输入里没有释义，「步」是给无释义词形添加的内容，删去", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 pase，经盎格鲁-诺曼语与古法语的 pas，源头是拉丁语 passus，本义为一步的距离，引申为步速、节奏。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 13321, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13322, "verdict": "fix", "reason": "后缀 -ist 在输入里的释义残缺，并无「表人」之说，删去该添注", "fix": {"text": "借自法语 pacifiste，由 pacific（和平的）加 -ist 构成，本义为主张和平者，引申为和平主义者。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13323, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -60,7 +60,7 @@
 {"word_id": 13332, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13334, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13340, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 13341, "verdict": "fix", "reason": "拉丁语 pagina 在输入里没有释义，「一页」是给无释义词形添加的内容，删去", "fix": {"text": "借自中古法语 page，源自拉丁语 pagina，本义为书页，引申为页面、网页。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 13341, "verdict": "ok", "reason": "拉丁语 pagina 在输入里没有释义，「一页」是给无释义词形添加的内容，删去", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "借自中古法语 page，源自拉丁语 pagina，本义为书页，引申为页面、网页。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 13342, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13346, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13347, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -79,7 +79,7 @@
 {"word_id": 13376, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13379, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13380, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 13381, "verdict": "fix", "reason": "拉丁语 pallidus 在输入里没有释义，「苍白」添注超出依据，删去", "fix": {"text": "源自拉丁语 pallidus，本义为颜色苍白，引申为无血色的、苍白的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 13381, "verdict": "ok", "reason": "拉丁语 pallidus 在输入里没有释义，「苍白」添注超出依据，删去", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自拉丁语 pallidus，本义为颜色苍白，引申为无血色的、苍白的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 13382, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13385, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13388, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -91,7 +91,7 @@
 {"word_id": 13395, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13396, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13398, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 13399, "verdict": "fix", "reason": "语素 παν- 在输入里没有释义，「全部」是给无释义词形添加的内容，删去", "fix": {"text": "源自古希腊语 πάνδημος（属于全民的），由 παν- 构成，本义为全民的，引申为大范围流行的、大流行病。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 13399, "verdict": "ok", "reason": "语素 παν- 在输入里没有释义，「全部」是给无释义词形添加的内容，删去", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自古希腊语 πάνδημος（属于全民的），由 παν- 构成，本义为全民的，引申为大范围流行的、大流行病。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 13400, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13401, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 13402, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

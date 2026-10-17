@@ -6,7 +6,7 @@
 {"word_id": 11263, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11265, "verdict": "fix", "reason": "拉丁语 castra 在输入中无释义，讲解却写成「指营地」", "fix": {"text": "借自法语 magenta，来自意大利语地名 Magenta，可溯至拉丁语 castra，这种染料颜色得名于当地的战役。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11270, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 11271, "verdict": "fix", "reason": "拉丁语 magisterium 在输入中无释义，讲解却写成「师长之职」", "fix": {"text": "源自晚期拉丁语 magisterialis，出自拉丁语 magisterium，引申为有权威的、师长式的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11271, "verdict": "ok", "reason": "拉丁语 magisterium 在输入中无释义，讲解却写成「师长之职」", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自晚期拉丁语 magisterialis，出自拉丁语 magisterium，引申为有权威的、师长式的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 11272, "verdict": "fix", "reason": "后缀 -ate 的含义在输入中并无「表官职」之说", "fix": {"text": "源自中古英语 magistrat，借自拉丁语 magistrātus，指执掌行政或司法权的官员。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11273, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11274, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -16,7 +16,7 @@
 {"word_id": 11279, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11286, "verdict": "fix", "reason": "拉丁语 magnificentia 在输入中无释义，讲解却写成「宏伟、壮丽」", "fix": {"text": "源自中古英语 magnificence，经古法语，出自拉丁语 magnificentia，意为宏伟、壮丽。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11287, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 11288, "verdict": "fix", "reason": "「本义为称颂其伟大」在输入中无依据", "fix": {"text": "源自中古英语 magnifien，经中古法语 magnifier，出自拉丁语 magnificō 与 magnificus，意为放大、夸大。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11288, "verdict": "ok", "reason": "「本义为称颂其伟大」在输入中无依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 magnifien，经中古法语 magnifier，出自拉丁语 magnificō 与 magnificus，意为放大、夸大。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 11289, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11290, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11296, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -38,7 +38,7 @@
 {"word_id": 11328, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11329, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11330, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 11331, "verdict": "fix", "reason": "法语 mal à propos 在输入中无释义，讲解却写成「不合时宜」", "fix": {"text": "源自法语 mal à propos，加后缀 -ism，指因误用近音词而造成的滑稽错用。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11331, "verdict": "ok", "reason": "法语 mal à propos 在输入中无释义，讲解却写成「不合时宜」", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自法语 mal à propos，加后缀 -ism，指因误用近音词而造成的滑稽错用。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 11332, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11334, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11335, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -73,7 +73,7 @@
 {"word_id": 11397, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11399, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11400, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 11401, "verdict": "fix", "reason": "意大利语 maniera 在输入中无释义，讲解却写成「方式、风格」", "fix": {"text": "源自意大利语 manierismo，出自 maniera，指独特的习气或风格化手法。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11401, "verdict": "ok", "reason": "意大利语 maniera 在输入中无释义，讲解却写成「方式、风格」", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自意大利语 manierismo，出自 maniera，指独特的习气或风格化手法。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 11402, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11405, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11409, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

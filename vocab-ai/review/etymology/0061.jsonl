@@ -40,7 +40,7 @@
 {"word_id": 11948, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11951, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11963, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 11964, "verdict": "fix", "reason": "语素 shapen 在输入中无释义，讲解为其添加了「塑形」的释义。", "fix": {"text": "源自中古英语 misschapen，由 mis-（错误地）加 shapen 构成；指形状难看的、畸形的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11964, "verdict": "ok", "reason": "语素 shapen 在输入中无释义，讲解为其添加了「塑形」的释义。", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 misschapen，由 mis-（错误地）加 shapen 构成；指形状难看的、畸形的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 11965, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11967, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11969, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -84,7 +84,7 @@
 {"word_id": 12061, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 12064, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 12065, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 12067, "verdict": "fix", "reason": "拉丁语 mōmentum 在输入中无释义，讲解为其添加了「瞬间、动量」的释义。", "fix": {"text": "源自中古英语 moment、古法语 moment，上溯拉丁语 mōmentum；指片刻、时刻。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12067, "verdict": "ok", "reason": "拉丁语 mōmentum 在输入中无释义，讲解为其添加了「瞬间、动量」的释义。", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 moment、古法语 moment，上溯拉丁语 mōmentum；指片刻、时刻。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 12069, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 12076, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 12077, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

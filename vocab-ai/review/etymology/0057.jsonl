@@ -14,7 +14,7 @@
 {"word_id": 11043, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11044, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11045, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 11046, "verdict": "fix", "reason": "给输入里没有释义的法语 local 添注「当地的」，属没有依据的词义解释", "fix": {"text": "源自法语 local，是形容词用作名词，指某一地点、场所。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11046, "verdict": "ok", "reason": "给输入里没有释义的法语 local 添注「当地的」，属没有依据的词义解释", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自法语 local，是形容词用作名词，指某一地点、场所。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 11047, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11050, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11051, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -46,14 +46,14 @@
 {"word_id": 11116, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11118, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11119, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 11121, "verdict": "fix", "reason": "给输入里没有释义的 loquor 添注「说话」，属没有依据的词义解释", "fix": {"text": "出自拉丁语 loquor，由 loquāx（多话的）加 -ous 构成，意为健谈的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11121, "verdict": "ok", "reason": "给输入里没有释义的 loquor 添注「说话」，属没有依据的词义解释", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "出自拉丁语 loquor，由 loquāx（多话的）加 -ous 构成，意为健谈的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 11122, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11124, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11127, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11129, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11131, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11132, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 11135, "verdict": "fix", "reason": "给输入里没有释义的古英语 hlot 添注「签、份」，属没有依据的词义解释", "fix": {"text": "借自意大利语 lotteria，与古英语 hlot 同根，本指抽签分配，引申为彩票、抽奖。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11135, "verdict": "ok", "reason": "给输入里没有释义的古英语 hlot 添注「签、份」，属没有依据的词义解释", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "借自意大利语 lotteria，与古英语 hlot 同根，本指抽签分配，引申为彩票、抽奖。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 11137, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11138, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11141, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -62,7 +62,7 @@
 {"word_id": 11148, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11149, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11151, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 11158, "verdict": "fix", "reason": "给输入里没有释义的拉丁语 lēgālis 添注「合法的」，「守法」引申亦无依据", "fix": {"text": "经中古法语 loyal 上溯古法语 loial、leial 与拉丁语 lēgālis，指忠诚的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11158, "verdict": "ok", "reason": "给输入里没有释义的拉丁语 lēgālis 添注「合法的」，「守法」引申亦无依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "经中古法语 loyal 上溯古法语 loial、leial 与拉丁语 lēgālis，指忠诚的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 11160, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11165, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 11167, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

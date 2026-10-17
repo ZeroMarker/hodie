@@ -44,7 +44,7 @@
 {"word_id": 9829, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 9831, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 9832, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 9833, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "输入里 -icide 后缀没有释义，注上的「杀灭」超出了输入依据，删去", "fix": {"text": "源自法语 insecticide，由 insect（昆虫）加 -icide 构成，本义是杀虫之物，引申为杀虫剂。"}}
+{"word_id": 9833, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "输入里 -icide 后缀没有释义，注上的「杀灭」超出了输入依据，删去", "discarded_fix": {"text": "源自法语 insecticide，由 insect（昆虫）加 -icide 构成，本义是杀虫之物，引申为杀虫剂。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 9838, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 9843, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 9845, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
@@ -55,9 +55,9 @@
 {"word_id": 9855, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 9856, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 9857, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 9858, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "输入对 insistens、insisto 只给出词形没有释义，「持续站定的」这一本义没有依据，删去后据输入改正", "fix": {"text": "源自拉丁语 insistens，是动词 insisto 的分词，引申为坚持的、迫切的。"}}
+{"word_id": 9858, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "输入对 insistens、insisto 只给出词形没有释义，「持续站定的」这一本义没有依据，删去后据输入改正", "discarded_fix": {"text": "源自拉丁语 insistens，是动词 insisto 的分词，引申为坚持的、迫切的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 9860, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 9861, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "输入里 īnsolentia 没有释义，「不寻常、过分」这一本义没有依据，删去后据输入改正", "fix": {"text": "源自拉丁语 īnsolentia，经中古法语 insolence 传入，引申为傲慢无礼。"}}
+{"word_id": 9861, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "输入里 īnsolentia 没有释义，「不寻常、过分」这一本义没有依据，删去后据输入改正", "discarded_fix": {"text": "源自拉丁语 īnsolentia，经中古法语 insolence 传入，引申为傲慢无礼。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 9862, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 9863, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "输入里 solūbilis 没有释义，注上的「可溶解的」没有依据，删去词义", "fix": {"text": "源自拉丁语 insolūbilis，经中古法语 insoluble 传入，本义是无法溶解的，引申为无法解决的、解不开的。"}}
 {"word_id": 9866, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
@@ -96,5 +96,5 @@
 {"word_id": 9931, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 9933, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 9935, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 9936, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "输入里没有 intactus 的释义，「未受触动的」这一本义没有依据，删去", "fix": {"text": "源自拉丁语 intactus，经中古法语 intact 传入，引申为完整的、未受损的。"}}
+{"word_id": 9936, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "输入里没有 intactus 的释义，「未受触动的」这一本义没有依据，删去", "discarded_fix": {"text": "源自拉丁语 intactus，经中古法语 intact 传入，引申为完整的、未受损的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 9938, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "输入只说与法语 intangibilité 比较，写成「源自」并编出「不可触摸的性质」的本义没有依据，改为相关表述", "fix": {"text": "与法语 intangibilité 相关，引申为无形、难以捉摸、无法把握。"}}

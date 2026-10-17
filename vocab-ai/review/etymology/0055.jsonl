@@ -13,8 +13,8 @@
 {"word_id": 10649, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10651, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10653, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 10656, "verdict": "fix", "reason": "拉丁语 lardārium 在输入中没有释义，「本指存放腌肉之处」属无依据的本义", "fix": {"text": "源自中古英语 larder，经盎格鲁-诺曼语与古法语 lardier，上溯拉丁语 lardārium，指食品储藏室。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 10657, "verdict": "fix", "reason": "拉丁语 largus 的输入释义只有丰富、充裕等，「慷慨」无依据", "fix": {"text": "源自中古英语 large，经古法语，溯及拉丁语 largus（丰富、充裕），本义为丰盛，后引申为体积大。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 10656, "verdict": "ok", "reason": "拉丁语 lardārium 在输入中没有释义，「本指存放腌肉之处」属无依据的本义", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 larder，经盎格鲁-诺曼语与古法语 lardier，上溯拉丁语 lardārium，指食品储藏室。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 10657, "verdict": "ok", "reason": "拉丁语 largus 的输入释义只有丰富、充裕等，「慷慨」无依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 large，经古法语，溯及拉丁语 largus（丰富、充裕），本义为丰盛，后引申为体积大。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 10660, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10662, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10663, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -49,7 +49,7 @@
 {"word_id": 10718, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10720, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10721, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 10722, "verdict": "fix", "reason": "拉丁语 laxātīvus 在输入中没有释义，「其根意为放松、松弛」无依据", "fix": {"text": "源自中古法语 laxatif，溯及拉丁语 laxātīvus，故指通便的、泻药。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 10722, "verdict": "ok", "reason": "拉丁语 laxātīvus 在输入中没有释义，「其根意为放松、松弛」无依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古法语 laxatif，溯及拉丁语 laxātīvus，故指通便的、泻药。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 10723, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10725, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10727, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -77,7 +77,7 @@
 {"word_id": 10770, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10774, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10779, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 10780, "verdict": "fix", "reason": "拉丁语 lego 在输入中没有释义，「意为委任、遗赠」无依据", "fix": {"text": "源自中古英语 legacie，经古法语，溯及中世纪拉丁语 lēgātia，其根为拉丁语 lego，故指遗产。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 10780, "verdict": "ok", "reason": "拉丁语 lego 在输入中没有释义，「意为委任、遗赠」无依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 legacie，经古法语，溯及中世纪拉丁语 lēgātia，其根为拉丁语 lego，故指遗产。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 10781, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10786, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10787, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

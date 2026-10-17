@@ -9,9 +9,9 @@
 {"word_id": 15651, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15652, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15654, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "remittō 在输入中无释义，「送回、缓解」与「退回」为自加的词义，删去", "fix": {"text": "源自拉丁语 remittens，是拉丁语动词 remittō 的现在分词，引申为减轻的。"}}
-{"word_id": 15656, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "remaneō 在输入中无释义，「留下」为自加的词义，删去", "fix": {"text": "源自中古英语 remenant 的缩略，来自盎格鲁-诺曼语 remanant，其动词源于拉丁语 remaneō，引申为剩余部分、残余。"}}
-{"word_id": 15657, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "输入只给词形，「再次展示、陈述」是无依据的本义，删去", "fix": {"text": "源自中古法语 remonstrance，引申为规劝、抗辩与抗议。"}}
-{"word_id": 15658, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "mōnstrō 在输入中无释义，「显示、指出」为自加，删去", "fix": {"text": "源自晚期拉丁语 remōnstrō，由拉丁语 re- 加 mōnstrō 构成，引申为规劝、抗议。"}}
+{"word_id": 15656, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "remaneō 在输入中无释义，「留下」为自加的词义，删去", "discarded_fix": {"text": "源自中古英语 remenant 的缩略，来自盎格鲁-诺曼语 remanant，其动词源于拉丁语 remaneō，引申为剩余部分、残余。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 15657, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "输入只给词形，「再次展示、陈述」是无依据的本义，删去", "discarded_fix": {"text": "源自中古法语 remonstrance，引申为规劝、抗辩与抗议。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 15658, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "mōnstrō 在输入中无释义，「显示、指出」为自加，删去", "discarded_fix": {"text": "源自晚期拉丁语 remōnstrō，由拉丁语 re- 加 mōnstrō 构成，引申为规劝、抗议。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15659, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15664, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15669, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
@@ -23,13 +23,13 @@
 {"word_id": 15683, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15684, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15685, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 15689, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "renūntiō 在输入中无释义，本义「回报、宣布」无依据，删去", "fix": {"text": "源自古法语 renoncier，来自拉丁语 renūntiō，引申为声明放弃、断绝关系。"}}
+{"word_id": 15689, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "renūntiō 在输入中无释义，本义「回报、宣布」无依据，删去", "discarded_fix": {"text": "源自古法语 renoncier，来自拉丁语 renūntiō，引申为声明放弃、断绝关系。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15690, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15691, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 15692, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "noun 在输入中无释义，「名字」与本义「反复传扬」均为自加内容，删去", "fix": {"text": "源自古法语 renoun，由 re- 加 noun 构成，引申为声誉、名望。"}}
+{"word_id": 15692, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "noun 在输入中无释义，「名字」与本义「反复传扬」均为自加内容，删去", "discarded_fix": {"text": "源自古法语 renoun，由 re- 加 noun 构成，引申为声誉、名望。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15694, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "rendo、reddo 在输入中无释义，「意为归还」无依据，删去", "fix": {"text": "源自中古英语 rente，经古法语 rente 来自早期中世纪拉丁语 rendita，引申为租金。"}}
-{"word_id": 15697, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "renūntiāre 在输入中无释义，「宣布放弃」为自加，删去", "fix": {"text": "源自拉丁语 renuntiātus，是拉丁语动词 renūntiāre 的过去分词，引申为弃绝的、放弃的。"}}
-{"word_id": 15698, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "输入只给词形，原义「回报、宣布」无依据，删去", "fix": {"text": "源自拉丁语 renūntiātiō，引申为放弃、断绝。"}}
+{"word_id": 15697, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "renūntiāre 在输入中无释义，「宣布放弃」为自加，删去", "discarded_fix": {"text": "源自拉丁语 renuntiātus，是拉丁语动词 renūntiāre 的过去分词，引申为弃绝的、放弃的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 15698, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "输入只给词形，原义「回报、宣布」无依据，删去", "discarded_fix": {"text": "源自拉丁语 renūntiātiō，引申为放弃、断绝。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15706, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15708, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15710, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
@@ -38,45 +38,45 @@
 {"word_id": 15715, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15716, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "petō 在输入中义为「攻击、恳求」，写「寻求」与输入不符", "fix": {"text": "源自中古英语 repeten，经古法语 repeter 来自拉丁语 repetō，由 re-（再次）加 petō（攻击、恳求）构成，引申为重复。"}}
 {"word_id": 15718, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 15720, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "repel 语素义为「使退开、拒绝」，「击退」为自加，删去", "fix": {"text": "源自拉丁语 repellēns，由 repel 加 -ent（起……作用的）构成，引申为令人反感的、有排斥作用的。"}}
+{"word_id": 15720, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "repel 语素义为「使退开、拒绝」，「击退」为自加，删去", "discarded_fix": {"text": "源自拉丁语 repellēns，由 repel 加 -ent（起……作用的）构成，引申为令人反感的、有排斥作用的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15721, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15723, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15724, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 15725, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "repertōrium 在本词输入中无释义，「清单、目录」为自加，删去", "fix": {"text": "借自晚期拉丁语 repertōrium，引申为常备剧目、资料库。"}}
-{"word_id": 15726, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "输入只有词形与宾格说明，本义「再次寻求、重述」无依据，删去", "fix": {"text": "借自拉丁语 repetitionem，为 repetitio 的宾格形式，引申为重复。"}}
-{"word_id": 15727, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "repetitus 在输入中无释义，本义「反复的」无依据，删去", "fix": {"text": "源自拉丁语 repetitus，加后缀 -ive 构成，引申为重复乏味的。"}}
+{"word_id": 15725, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "repertōrium 在本词输入中无释义，「清单、目录」为自加，删去", "discarded_fix": {"text": "借自晚期拉丁语 repertōrium，引申为常备剧目、资料库。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 15726, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "输入只有词形与宾格说明，本义「再次寻求、重述」无依据，删去", "discarded_fix": {"text": "借自拉丁语 repetitionem，为 repetitio 的宾格形式，引申为重复。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 15727, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "repetitus 在输入中无释义，本义「反复的」无依据，删去", "discarded_fix": {"text": "源自拉丁语 repetitus，加后缀 -ive 构成，引申为重复乏味的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15728, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 15732, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "plenus 在输入中无释义，「满的」为自加，删去", "fix": {"text": "源自中古英语 replenisshen，经古法语 replenir、plein 来自拉丁语 plenus，引申为重新装满、补充。"}}
-{"word_id": 15733, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "repletus 在输入中无释义，本义「被填满的」无依据，删去", "fix": {"text": "源自中古英语 replete，经古法语 replet 来自拉丁语 repletus，引申为充满的、饱足的。"}}
+{"word_id": 15732, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "plenus 在输入中无释义，「满的」为自加，删去", "discarded_fix": {"text": "源自中古英语 replenisshen，经古法语 replenir、plein 来自拉丁语 plenus，引申为重新装满、补充。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 15733, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "repletus 在输入中无释义，本义「被填满的」无依据，删去", "discarded_fix": {"text": "源自中古英语 replete，经古法语 replet 来自拉丁语 repletus，引申为充满的、饱足的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15734, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15735, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15737, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15738, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "porto 的语素义与输入所记不符，「携带」无依据，删去该释义", "fix": {"text": "源自中古英语 reporten，经盎格鲁-诺曼语 reporter 来自拉丁语 reporto（带回），由 re- 加 porto 构成，引申为报告。"}}
 {"word_id": 15741, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15744, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 15745, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "repositōrium 在输入中无释义，本义「存放之处」无依据，删去", "fix": {"text": "源自中古英语 reposytorye，来自拉丁语 repositōrium，引申为仓库、储藏所。"}}
+{"word_id": 15745, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "repositōrium 在输入中无释义，本义「存放之处」无依据，删去", "discarded_fix": {"text": "源自中古英语 reposytorye，来自拉丁语 repositōrium，引申为仓库、储藏所。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15746, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15747, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 15748, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "repraesentō 在输入中无释义，本义「使呈现」无依据，删去", "fix": {"text": "源自古法语 représenter，来自拉丁语 repraesentō，引申为代表、表现。"}}
+{"word_id": 15748, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "repraesentō 在输入中无释义，本义「使呈现」无依据，删去", "discarded_fix": {"text": "源自古法语 représenter，来自拉丁语 repraesentō，引申为代表、表现。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15749, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "repraesentātiō 在输入中无释义，本义「呈现」无依据，删去", "fix": {"text": "源自中古英语 representacioun，经古法语 representacion 来自拉丁语 repraesentātiō，引申为代表、表述。"}}
 {"word_id": 15750, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15751, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15755, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15756, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 15758, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "输入中「取回」是 riprendere 的释义，reprendere 无释义，删去", "fix": {"text": "源自盎格鲁-诺曼语 reprisaille，经古意大利语 ripresaglia 来自拉丁语 reprendere，引申为报复、还击。"}}
-{"word_id": 15759, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "reprendre 在输入中无释义，「取回」为自加，删去", "fix": {"text": "源自中古英语 reprise，经古法语 reprise 与 reprendre 而来，引申为重复、重演。"}}
-{"word_id": 15760, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "reprochier 在输入中无释义，本义「指责、责难」无依据，删去", "fix": {"text": "源自中古英语 reprochen，来自古法语 reprochier，引申为责备与耻辱。"}}
+{"word_id": 15758, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "输入中「取回」是 riprendere 的释义，reprendere 无释义，删去", "discarded_fix": {"text": "源自盎格鲁-诺曼语 reprisaille，经古意大利语 ripresaglia 来自拉丁语 reprendere，引申为报复、还击。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 15759, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "reprendre 在输入中无释义，「取回」为自加，删去", "discarded_fix": {"text": "源自中古英语 reprise，经古法语 reprise 与 reprendre 而来，引申为重复、重演。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 15760, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "reprochier 在输入中无释义，本义「指责、责难」无依据，删去", "discarded_fix": {"text": "源自中古英语 reprochen，来自古法语 reprochier，引申为责备与耻辱。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15761, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 15765, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "reprover 在输入中无释义，「责备」为自加，删去", "fix": {"text": "源自古法语 reprove，来自古法语 reprover，引申为责备、非难。"}}
-{"word_id": 15766, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "reprobāre 在输入中无释义，「拒绝、谴责」为自加，删去", "fix": {"text": "源自中古英语 repreven，经盎格鲁-诺曼语与中古法语来自拉丁语 reprobāre，引申为责备、指摘。"}}
+{"word_id": 15765, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "reprover 在输入中无释义，「责备」为自加，删去", "discarded_fix": {"text": "源自古法语 reprove，来自古法语 reprover，引申为责备、非难。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 15766, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "reprobāre 在输入中无释义，「拒绝、谴责」为自加，删去", "discarded_fix": {"text": "源自中古英语 repreven，经盎格鲁-诺曼语与中古法语来自拉丁语 reprobāre，引申为责备、指摘。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15767, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15769, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15770, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15771, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 15772, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "repugnantia 在输入中无释义，本义「对抗」无依据，删去", "fix": {"text": "源自中古英语 repugnance，经古法语来自拉丁语 repugnantia，引申为厌恶、反感。"}}
+{"word_id": 15772, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "repugnantia 在输入中无释义，本义「对抗」无依据，删去", "discarded_fix": {"text": "源自中古英语 repugnance，经古法语来自拉丁语 repugnantia，引申为厌恶、反感。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15773, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 15775, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "repulsio、repulsus 在输入中无释义，本义「击退」无依据，删去", "fix": {"text": "借自中古法语 répulsion，来自晚期拉丁语 repulsio 与拉丁语 repulsus，引申为排斥、厌恶。"}}
-{"word_id": 15776, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "repulsivus、repulsus 在输入中无释义，本义「击退的」无依据，删去", "fix": {"text": "借自中古法语 repulsif，来自中世纪拉丁语 repulsivus 与拉丁语 repulsus，引申为令人厌恶的。"}}
+{"word_id": 15775, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "repulsio、repulsus 在输入中无释义，本义「击退」无依据，删去", "discarded_fix": {"text": "借自中古法语 répulsion，来自晚期拉丁语 repulsio 与拉丁语 repulsus，引申为排斥、厌恶。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 15776, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "repulsivus、repulsus 在输入中无释义，本义「击退的」无依据，删去", "discarded_fix": {"text": "借自中古法语 repulsif，来自中世纪拉丁语 repulsivus 与拉丁语 repulsus，引申为令人厌恶的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15778, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15779, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15781, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
@@ -85,14 +85,14 @@
 {"word_id": 15788, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15791, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15792, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 15793, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "rescriptum 仅有「书面答复」一义，「本义为回写」无依据，删去", "fix": {"text": "源自拉丁语 rescriptum（书面答复），引申为敕令、官方答复。"}}
+{"word_id": 15793, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "rescriptum 仅有「书面答复」一义，「本义为回写」无依据，删去", "discarded_fix": {"text": "源自拉丁语 rescriptum（书面答复），引申为敕令、官方答复。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15794, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15795, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15797, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15798, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15799, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15801, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 15802, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "reserve 语素义为「限制」，「保留」无依据，删去", "fix": {"text": "源自中古法语 reservation，由 reserve 加 -ation（行为、过程）构成，引申为预订、保留。"}}
+{"word_id": 15802, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "reserve 语素义为「限制」，「保留」无依据，删去", "discarded_fix": {"text": "源自中古法语 reservation，由 reserve 加 -ation（行为、过程）构成，引申为预订、保留。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 15803, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15805, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 15809, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}

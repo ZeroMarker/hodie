@@ -51,7 +51,7 @@
 {"word_id": 16510, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 16519, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 16527, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 16528, "verdict": "fix", "reason": "拉丁语 scindere 在输入中无释义，「切开」是输入外的词义解释，删去该释义", "fix": {"text": "经中古英语与古法语，出自晚期拉丁语 scissio，源于拉丁语 scindere，意为切断、分裂。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16528, "verdict": "ok", "reason": "拉丁语 scindere 在输入中无释义，「切开」是输入外的词义解释，删去该释义", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "经中古英语与古法语，出自晚期拉丁语 scissio，源于拉丁语 scindere，意为切断、分裂。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 16529, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 16530, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 16532, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

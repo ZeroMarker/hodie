@@ -1,8 +1,8 @@
 {"word_id": 14708, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14712, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14713, "verdict": "fix", "reason": "prō 无释义，原句为其加注「向前」没有输入依据", "fix": {"text": "源自拉丁语 profundus（深的），由 prō 加 fundus（底部、基础）构成，本义是深到底，引申为深刻、深奥。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14713, "verdict": "ok", "reason": "prō 无释义，原句为其加注「向前」没有输入依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自拉丁语 profundus（深的），由 prō 加 fundus（底部、基础）构成，本义是深到底，引申为深刻、深奥。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14714, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14715, "verdict": "fix", "reason": "profusus 输入无释义，「引申指挥霍无度」没有依据", "fix": {"text": "源自拉丁语 profusus，指大量的、充沛的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14715, "verdict": "ok", "reason": "profusus 输入无释义，「引申指挥霍无度」没有依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自拉丁语 profusus，指大量的、充沛的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14718, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14719, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14721, "verdict": "fix", "reason": "προ- 输入无释义，「表示预先的」没有依据", "fix": {"text": "源自晚期拉丁语 prognōsis（预测），借自古希腊语 πρόγνωσις，由 προ- 加 γνῶσῐς（知）构成，指对病情走向的预判。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -10,7 +10,7 @@
 {"word_id": 14724, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14728, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14729, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14730, "verdict": "fix", "reason": "prōgredior 输入无释义，「向前走」没有输入依据", "fix": {"text": "源自拉丁语 prōgressīvus，从 prōgredior 加后缀 -īvus 构成，经中古法语 progressif 进入英语，指逐步向前的、渐进的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14730, "verdict": "ok", "reason": "prōgredior 输入无释义，「向前走」没有输入依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自拉丁语 prōgressīvus，从 prōgredior 加后缀 -īvus 构成，经中古法语 progressif 进入英语，指逐步向前的、渐进的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14732, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14733, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14734, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -21,8 +21,8 @@
 {"word_id": 14745, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14747, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14748, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14749, "verdict": "fix", "reason": "pro- 输入无释义，「在前」没有输入依据", "fix": {"text": "源自拉丁语 prologus，出自古希腊语 πρόλογος，由 pro- 加 -logue（言语）构成，指戏剧或书籍开头的引言。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14750, "verdict": "fix", "reason": "prō 与 longō 输入无释义，加注「向前」「加长」没有依据", "fix": {"text": "源自拉丁语 prōlongō，经古法语 prolonguer 进入英语，指把时间拉长、延长。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14749, "verdict": "ok", "reason": "pro- 输入无释义，「在前」没有输入依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自拉丁语 prologus，出自古希腊语 πρόλογος，由 pro- 加 -logue（言语）构成，指戏剧或书籍开头的引言。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 14750, "verdict": "ok", "reason": "prō 与 longō 输入无释义，加注「向前」「加长」没有依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自拉丁语 prōlongō，经古法语 prolonguer 进入英语，指把时间拉长、延长。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14753, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14754, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14756, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -32,7 +32,7 @@
 {"word_id": 14765, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14766, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14769, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14771, "verdict": "fix", "reason": "prō- 输入义为 for，「公开」没有输入依据", "fix": {"text": "源自拉丁语 prōnūntiātiō，出自 prōnūntiāre（宣告），由 prō- 加 nūntiāre（通告）构成，指发音、宣读的方式。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14771, "verdict": "ok", "reason": "prō- 输入义为 for，「公开」没有输入依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自拉丁语 prōnūntiātiō，出自 prōnūntiāre（宣告），由 prō- 加 nūntiāre（通告）构成，指发音、宣读的方式。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14772, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14774, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14775, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -40,7 +40,7 @@
 {"word_id": 14777, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14779, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14782, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14783, "verdict": "fix", "reason": "proprius 输入无释义，「自己的、特有的」没有输入依据", "fix": {"text": "源自拉丁语 proprius，经古法语 propre 和中古英语 propre 进入英语，指适合的、特有的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14783, "verdict": "ok", "reason": "proprius 输入无释义，「自己的、特有的」没有输入依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自拉丁语 proprius，经古法语 propre 和中古英语 propre 进入英语，指适合的、特有的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14785, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14786, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14787, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -49,7 +49,7 @@
 {"word_id": 14791, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14792, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14797, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14799, "verdict": "fix", "reason": "prōponō 输入无释义，「提出」没有输入依据", "fix": {"text": "源自拉丁语 prōpositiō，出自 prōponō，经古法语 proposicion 进入中古英语，指提出的主张、命题。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14799, "verdict": "ok", "reason": "prōponō 输入无释义，「提出」没有输入依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自拉丁语 prōpositiō，出自 prōponō，经古法语 proposicion 进入中古英语，指提出的主张、命题。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14800, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14801, "verdict": "fix", "reason": "proprius 输入义为所有权，「自己的」与之不符", "fix": {"text": "源自拉丁语 proprietārius，与 proprietas 及 proprius（所有权）同族，经法语 propriétaire 进入英语，指专有的、所有者的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14805, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -58,7 +58,7 @@
 {"word_id": 14808, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14809, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14811, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14812, "verdict": "fix", "reason": "prōsequor 输入无释义，「跟随、追诉」没有输入依据", "fix": {"text": "源自拉丁语 prōsecūtus，即 prōsequor 的过去分词，指依法追诉、提起公诉。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14812, "verdict": "ok", "reason": "prōsequor 输入无释义，「跟随、追诉」没有输入依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自拉丁语 prōsecūtus，即 prōsequor 的过去分词，指依法追诉、提起公诉。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14813, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14816, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14818, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -74,14 +74,14 @@
 {"word_id": 14834, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14836, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14837, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14838, "verdict": "fix", "reason": "prō 输入无释义，「在前」没有输入依据", "fix": {"text": "源自拉丁语 prōtestor，由 prō 加 testor 构成，后者出自 testis（证人），指公开声明、抗议。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14838, "verdict": "ok", "reason": "prō 输入无释义，「在前」没有输入依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自拉丁语 prōtestor，由 prō 加 testor 构成，后者出自 testis（证人），指公开声明、抗议。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14841, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14842, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14843, "verdict": "fix", "reason": "输入是晚期拉丁语 prototypon，写成拉丁语阶段错位", "fix": {"text": "源自晚期拉丁语 prototypon 和法语 prototype，出自古希腊语 πρωτότυπος（原型），由表示第一的 πρωτο- 与表示类型、印记的 τῠ́πος 构成，指原型。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14845, "verdict": "fix", "reason": "prōtrahō 输入无释义，「拉长、拖延」没有输入依据", "fix": {"text": "源自拉丁语 prōtrahō 的过去分词词干，指拖延、延长。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14845, "verdict": "ok", "reason": "prōtrahō 输入无释义，「拉长、拖延」没有输入依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自拉丁语 prōtrahō 的过去分词词干，指拖延、延长。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14846, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14849, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14850, "verdict": "fix", "reason": "protuberare 输入无释义，「隆起」没有输入依据", "fix": {"text": "源自拉丁语 protuberans，即 protuberare 的现在分词，指隆起的、突出的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14850, "verdict": "ok", "reason": "protuberare 输入无释义，「隆起」没有输入依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自拉丁语 protuberans，即 protuberare 的现在分词，指隆起的、突出的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14851, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14853, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14855, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -93,8 +93,8 @@
 {"word_id": 14867, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14868, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14869, "verdict": "fix", "reason": "prōvidēre 输入义为 provide（提供），「预备」与之不符", "fix": {"text": "源自拉丁语 prōvīsiō（预备、预见），出自 prōvidēre（提供），经古法语进入英语，指供给、准备。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14870, "verdict": "fix", "reason": "provision 输入义指供给物资，「暂定」没有输入依据", "fix": {"text": "由 provision（补给）加 -al 构成，或出自中古法语 provisionnal，指临时的、暂定的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14870, "verdict": "ok", "reason": "provision 输入义指供给物资，「暂定」没有输入依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "由 provision（补给）加 -al 构成，或出自中古法语 provisionnal，指临时的、暂定的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14872, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14873, "verdict": "fix", "reason": "prōvocō 输入无释义，「召出、激怒」没有输入依据", "fix": {"text": "源自晚期拉丁语 provocatio，出自拉丁语 prōvocō，经中古英语 provocacioun 进入英语，指挑衅、激怒。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14874, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "provocare 输入无释义，「挑起、激怒」没有输入依据", "fix": {"text": "源自晚期拉丁语 provocativus，出自拉丁语 provocare，经中古法语 provocatif 进入英语，指挑衅的、煽动的。"}}
-{"word_id": 14876, "verdict": "fix", "reason": "prōvocāre 输入无释义，「召出、挑起」没有输入依据", "fix": {"text": "源自拉丁语 prōvocāre，经中古法语 provoquer 进入英语，指激怒、招致。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14873, "verdict": "ok", "reason": "prōvocō 输入无释义，「召出、激怒」没有输入依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自晚期拉丁语 provocatio，出自拉丁语 prōvocō，经中古英语 provocacioun 进入英语，指挑衅、激怒。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 14874, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "provocare 输入无释义，「挑起、激怒」没有输入依据", "discarded_fix": {"text": "源自晚期拉丁语 provocativus，出自拉丁语 provocare，经中古法语 provocatif 进入英语，指挑衅的、煽动的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 14876, "verdict": "ok", "reason": "prōvocāre 输入无释义，「召出、挑起」没有输入依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自拉丁语 prōvocāre，经中古法语 provoquer 进入英语，指激怒、招致。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}

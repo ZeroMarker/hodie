@@ -46,7 +46,7 @@
 {"word_id": 11542, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 11543, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 11544, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 11548, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "māteria 在输入中的释义只有 wood，附带的「物质」无依据，删去", "fix": {"text": "源自中古英语 matere，经古法语 materie，上溯拉丁语 māteria（木料），引申为事情、物质。"}}
+{"word_id": 11548, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "māteria 在输入中的释义只有 wood，附带的「物质」无依据，删去", "discarded_fix": {"text": "源自中古英语 matere，经古法语 materie，上溯拉丁语 māteria（木料），引申为事情、物质。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 11549, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 11550, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 11551, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
@@ -62,7 +62,7 @@
 {"word_id": 11578, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 11580, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 11582, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 11583, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "macer 在输入中没有释义，「瘦的」无依据，改为描述词本身原义", "fix": {"text": "源自中古英语 megre，经古法语 maigre，上溯拉丁语 macer，原指瘦削，引申为贫乏的、不足的。"}}
+{"word_id": 11583, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "macer 在输入中没有释义，「瘦的」无依据，改为描述词本身原义", "discarded_fix": {"text": "源自中古英语 megre，经古法语 maigre，上溯拉丁语 macer，原指瘦削，引申为贫乏的、不足的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 11584, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "macer 在输入中没有释义，「瘦弱」无依据，改为描述词本身原义", "fix": {"text": "源自中古英语 megre，经古法语 maigre，上溯拉丁语 macer，原指瘦弱，引申为稀少、贫乏的。"}}
 {"word_id": 11585, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 11587, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
@@ -81,11 +81,11 @@
 {"word_id": 11620, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 11624, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 11626, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 11629, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "medicus 在本词输入中没有释义，「医生」无依据，删去", "fix": {"text": "借自法语 médical，经中世纪拉丁语 medicālis，源于拉丁语 medicus，意为医学的、医疗的。"}}
+{"word_id": 11629, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "medicus 在本词输入中没有释义，「医生」无依据，删去", "discarded_fix": {"text": "借自法语 médical，经中世纪拉丁语 medicālis，源于拉丁语 medicus，意为医学的、医疗的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 11635, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 11636, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 11638, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 11639, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "mediocris 在本词输入中没有释义，「中等」无依据，删去", "fix": {"text": "源自中古法语 médiocrité，上溯拉丁语 mediocritās，源于 mediocris，指平庸、平常。"}}
+{"word_id": 11639, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "mediocris 在本词输入中没有释义，「中等」无依据，删去", "discarded_fix": {"text": "源自中古法语 médiocrité，上溯拉丁语 mediocritās，源于 mediocris，指平庸、平常。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 11640, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 11641, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 11642, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "输入是派生关系，「借自」应为「源自」，并删去空泛的「由表沉思者派生」", "fix": {"text": "源自中古法语 méditatif，意为好沉思的、冥想的。"}}

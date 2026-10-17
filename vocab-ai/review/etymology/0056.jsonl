@@ -20,7 +20,7 @@
 {"word_id": 10861, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10863, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10864, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 10866, "verdict": "fix", "reason": "libellus 的「小册子」义在输入中没有依据，输入释义仅为呈文（petition）", "fix": {"text": "源自中古英语 libel、古法语 libelle，来自拉丁语 libellus（呈文），由书面上的呈文引申为诽谤性文字。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 10866, "verdict": "ok", "reason": "libellus 的「小册子」义在输入中没有依据，输入释义仅为呈文（petition）", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 libel、古法语 libelle，来自拉丁语 libellus（呈文），由书面上的呈文引申为诽谤性文字。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 10868, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10870, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10872, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

@@ -2,49 +2,49 @@
 {"word_id": 9941, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 9942, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 9945, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给该词输入里无释义的拉丁语 integer 添加「完整」之义，超出输入依据，删去。", "fix": {"text": "借自中古法语 intégrité，源自拉丁语 integritās（完好、完整），词根可溯至拉丁语 integer，本义完整无缺，引申为诚实正直、操守。"}}
-{"word_id": 9946, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "本义「在其中挑选辨别」里的「挑选」在输入中没有依据，据输入删去。", "fix": {"text": "借自晚期拉丁语 intellēctus（理解、智力），源自拉丁语 intellegō（理解、思考），由 inter（在两者之间）加 legō（读）构成，引申为智力、理解力。"}}
-{"word_id": 9947, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 intellectualis 添加「理解、领悟」之义，超出输入依据，删去。", "fix": {"text": "经古法语 intellectuel 传入，源自拉丁语 intellectualis，本义属于智力的，引申为智力的、有才智的。"}}
+{"word_id": 9946, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "本义「在其中挑选辨别」里的「挑选」在输入中没有依据，据输入删去。", "discarded_fix": {"text": "借自晚期拉丁语 intellēctus（理解、智力），源自拉丁语 intellegō（理解、思考），由 inter（在两者之间）加 legō（读）构成，引申为智力、理解力。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 9947, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 intellectualis 添加「理解、领悟」之义，超出输入依据，删去。", "discarded_fix": {"text": "经古法语 intellectuel 传入，源自拉丁语 intellectualis，本义属于智力的，引申为智力的、有才智的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 9949, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 9950, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 9952, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 intelligibilis 添加「理解、领悟」之义，超出输入依据，删去。", "fix": {"text": "来自中古法语 intelligible，经古法语，源自拉丁语 intelligibilis，本义可以被理解的，引申为易懂的、明白的。"}}
+{"word_id": 9952, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 intelligibilis 添加「理解、领悟」之义，超出输入依据，删去。", "discarded_fix": {"text": "来自中古法语 intelligible，经古法语，源自拉丁语 intelligibilis，本义可以被理解的，引申为易懂的、明白的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 9953, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 9954, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 9958, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给拉丁语 intēnsus 标注「绷紧的」，该义不在本词输入里，输入的释义为专注、急切，据输入改正。", "fix": {"text": "源自中古英语 intensive，经古法语 intensif，上溯中世纪拉丁语 intēnsīvus，词根为拉丁语 intēnsus（专注的），加后缀 -ive 构成，引申为密集的、加强的。"}}
-{"word_id": 9959, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 intentus 添加「注意力绷紧、专注」的本义，超出输入依据，删去。", "fix": {"text": "源自中古英语 entente，经古法语 entent，上溯拉丁语 intentus，引申为意图、目的。"}}
+{"word_id": 9959, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 intentus 添加「注意力绷紧、专注」的本义，超出输入依据，删去。", "discarded_fix": {"text": "源自中古英语 entente，经古法语 entent，上溯拉丁语 intentus，引申为意图、目的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 9960, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 9961, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 intentiō 添加「意图」之义，超出输入依据，删去。", "fix": {"text": "借自中世纪拉丁语 intentiōnālis，由 intentiō 加后缀 -ālis 构成，引申为故意的、有意的。"}}
+{"word_id": 9961, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 intentiō 添加「意图」之义，超出输入依据，删去。", "discarded_fix": {"text": "借自中世纪拉丁语 intentiōnālis，由 intentiō 加后缀 -ālis 构成，引申为故意的、有意的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 9963, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 9967, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 9968, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 9970, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 9977, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的晚期拉丁语 intercursus 添加「往来奔跑」的本义，超出输入依据，删去。", "fix": {"text": "来自古法语 entrecours，上溯晚期拉丁语 intercursus，引申为交往、交流。"}}
+{"word_id": 9977, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的晚期拉丁语 intercursus 添加「往来奔跑」的本义，超出输入依据，删去。", "discarded_fix": {"text": "来自古法语 entrecours，上溯晚期拉丁语 intercursus，引申为交往、交流。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 9980, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 9982, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 intersum 添加「在两者之间、有差别」的本义，超出输入依据，删去。", "fix": {"text": "源自中古英语 interest，经古法语 interesse，上溯中世纪拉丁语及拉丁语 intersum，引申为利害相关、兴趣、利息。"}}
-{"word_id": 9987, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的古法语 entre- 添加「在两者之间」之义，超出输入依据，删去。", "fix": {"text": "来自古法语 entreferir，由 entre- 加 ferir（击打）构成，其词根可溯至拉丁语 ferio，本义彼此相击，引申为干涉、妨碍。"}}
+{"word_id": 9982, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 intersum 添加「在两者之间、有差别」的本义，超出输入依据，删去。", "discarded_fix": {"text": "源自中古英语 interest，经古法语 interesse，上溯中世纪拉丁语及拉丁语 intersum，引申为利害相关、兴趣、利息。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 9987, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的古法语 entre- 添加「在两者之间」之义，超出输入依据，删去。", "discarded_fix": {"text": "来自古法语 entreferir，由 entre- 加 ferir（击打）构成，其词根可溯至拉丁语 ferio，本义彼此相击，引申为干涉、妨碍。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 9990, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 9992, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 9993, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的古法语 entre- 添加「在两者之间」之义，超出输入依据，删去。", "fix": {"text": "源自中古英语 entrelacen，经盎格鲁-诺曼语 entrelacer，由古法语 entre- 加 lacer（编织）构成，本义是交织起来，引申为交错、缠绕。"}}
+{"word_id": 9993, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的古法语 entre- 添加「在两者之间」之义，超出输入依据，删去。", "discarded_fix": {"text": "源自中古英语 entrelacen，经盎格鲁-诺曼语 entrelacer，由古法语 entre- 加 lacer（编织）构成，本义是交织起来，引申为交错、缠绕。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 9996, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 10000, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的词根添加「处于中间」之义，超出输入依据，删去。", "fix": {"text": "源自法语 intermédiaire，并据中世纪拉丁语 *intermediārius 调整而成，引申为中间的、居间的，也作名词指中介、调解人。"}}
-{"word_id": 10001, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 intermedius 添加「居中的」之义，超出输入依据，删去。", "fix": {"text": "借自中世纪拉丁语 intermediātus，源自拉丁语 intermediō，再溯 intermedius，加后缀 -ate 构成，引申为中间的、中级的。"}}
+{"word_id": 10000, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的词根添加「处于中间」之义，超出输入依据，删去。", "discarded_fix": {"text": "源自法语 intermédiaire，并据中世纪拉丁语 *intermediārius 调整而成，引申为中间的、居间的，也作名词指中介、调解人。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 10001, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 intermedius 添加「居中的」之义，超出输入依据，删去。", "discarded_fix": {"text": "借自中世纪拉丁语 intermediātus，源自拉丁语 intermediō，再溯 intermedius，加后缀 -ate 构成，引申为中间的、中级的。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 10002, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的词根添加「无界限的」之义，超出输入依据，删去。", "fix": {"text": "源自中古英语 interminable，经中古法语 interminable，上溯晚期拉丁语 interminābilis，本义没有尽头，引申为漫无止境的、没完没了的。"}}
 {"word_id": 10005, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10007, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10008, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10012, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 10018, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 interpolō 添加「修整、插补」的本义，超出输入依据，删去。", "fix": {"text": "借自拉丁语 interpolātus，它是拉丁语 interpolō 的过去分词，加后缀 -ate 构成，引申为插入、篡改。"}}
+{"word_id": 10018, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 interpolō 添加「修整、插补」的本义，超出输入依据，删去。", "discarded_fix": {"text": "借自拉丁语 interpolātus，它是拉丁语 interpolō 的过去分词，加后缀 -ate 构成，引申为插入、篡改。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 10019, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10020, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10021, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10022, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10025, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 10026, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给拉丁语 interrogō 的过去分词添加「反复发问」的本义，「反复」在输入中没有依据，删去。", "fix": {"text": "借自拉丁语 interrogātus，它是拉丁语 interrogō（询问）的过去分词，加后缀 -ate 构成，引申为审问、盘问。"}}
+{"word_id": 10026, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给拉丁语 interrogō 的过去分词添加「反复发问」的本义，「反复」在输入中没有依据，删去。", "discarded_fix": {"text": "借自拉丁语 interrogātus，它是拉丁语 interrogō（询问）的过去分词，加后缀 -ate 构成，引申为审问、盘问。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 10028, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10030, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10031, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10032, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 10034, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 intersectiō 添加「切开相交」之义，超出输入依据，删去。", "fix": {"text": "源自中古法语 intersection，上溯拉丁语 intersectiō，引申为交叉、交点。"}}
-{"word_id": 10035, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 interspergō 添加「散布在中间」的本义，超出输入依据，删去。", "fix": {"text": "源自拉丁语 interspergō，引申为点缀、散布、穿插。"}}
+{"word_id": 10034, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 intersectiō 添加「切开相交」之义，超出输入依据，删去。", "discarded_fix": {"text": "源自中古法语 intersection，上溯拉丁语 intersectiō，引申为交叉、交点。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 10035, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 interspergō 添加「散布在中间」的本义，超出输入依据，删去。", "discarded_fix": {"text": "源自拉丁语 interspergō，引申为点缀、散布、穿插。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 10038, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10040, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10041, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -67,20 +67,20 @@
 {"word_id": 10078, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10081, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10082, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 10085, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 trūdō 添加「推」之义，超出输入依据，删去。", "fix": {"text": "源自中古英语 intrusioun，经古法语 intrusion，上溯中世纪拉丁语 intrūsiō 及拉丁语 intrūdō，引申为侵入、打扰。"}}
+{"word_id": 10085, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 trūdō 添加「推」之义，超出输入依据，删去。", "discarded_fix": {"text": "源自中古英语 intrusioun，经古法语 intrusion，上溯中世纪拉丁语 intrūsiō 及拉丁语 intrūdō，引申为侵入、打扰。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 10088, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10092, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10093, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10095, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10097, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 10098, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的中古法语 invalide 添加「无效的」之义，超出输入依据，删去。", "fix": {"text": "源自中古法语 invalider，由 invalide 加后缀 -er 构成，引申为使无效、废除。"}}
-{"word_id": 10103, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 invāsiō 添加「闯入」之义，超出输入依据，删去。", "fix": {"text": "源自中古法语 invasion，上溯晚期拉丁语 invāsiōnem 及拉丁语 invāsiō，引申为入侵、侵犯。"}}
+{"word_id": 10098, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的中古法语 invalide 添加「无效的」之义，超出输入依据，删去。", "discarded_fix": {"text": "源自中古法语 invalider，由 invalide 加后缀 -er 构成，引申为使无效、废除。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
+{"word_id": 10103, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 invāsiō 添加「闯入」之义，超出输入依据，删去。", "discarded_fix": {"text": "源自中古法语 invasion，上溯晚期拉丁语 invāsiōnem 及拉丁语 invāsiō，引申为入侵、侵犯。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 10105, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 10106, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里释义为运入的拉丁语 invehō 添加「冲入」的本义，超出输入依据，删去。", "fix": {"text": "借自拉丁语 invehō（运入、带入），由 in- 加 vehō（运送）构成，引申为猛烈抨击、痛骂。"}}
+{"word_id": 10106, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里释义为运入的拉丁语 invehō 添加「冲入」的本义，超出输入依据，删去。", "discarded_fix": {"text": "借自拉丁语 invehō（运入、带入），由 in- 加 vehō（运送）构成，引申为猛烈抨击、痛骂。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 10107, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10108, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10109, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 10111, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 inventor 添加「发现者、设计者」之义，超出输入依据，删去。", "fix": {"text": "借自拉丁语 inventor，引申为发明家、创造者。"}}
+{"word_id": 10111, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里无释义的拉丁语 inventor 添加「发现者、设计者」之义，超出输入依据，删去。", "discarded_fix": {"text": "借自拉丁语 inventor，引申为发明家、创造者。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 10112, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10113, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 10116, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

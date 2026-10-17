@@ -4,7 +4,7 @@
 {"word_id": 16614, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 16615, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 16621, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
-{"word_id": 16622, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "输入里 circus 无释义，讲解为其添加「圆圈」之义，属无依据内容", "fix": {"text": "源自中古英语 serchen、古法语 cerchier，来自晚期拉丁语 circō（绕行寻找），本义是绕着寻找，引申为搜寻。"}}
+{"word_id": 16622, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok", "reason": "输入里 circus 无释义，讲解为其添加「圆圈」之义，属无依据内容", "discarded_fix": {"text": "源自中古英语 serchen、古法语 cerchier，来自晚期拉丁语 circō（绕行寻找），本义是绕着寻找，引申为搜寻。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 16625, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 16626, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
 {"word_id": 16630, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}

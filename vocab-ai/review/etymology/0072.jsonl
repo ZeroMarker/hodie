@@ -52,7 +52,7 @@
 {"word_id": 14228, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14237, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14239, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14240, "verdict": "fix", "reason": "本词输入里 pollen 无释义，讲解却补「细面粉、花粉」之义", "fix": {"text": "源自拉丁语 pollen 的斜格词干，本义为撒播花粉，引申为给花授粉。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14240, "verdict": "ok", "reason": "本词输入里 pollen 无释义，讲解却补「细面粉、花粉」之义", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自拉丁语 pollen 的斜格词干，本义为撒播花粉，引申为给花授粉。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14246, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14247, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14249, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
@@ -88,7 +88,7 @@
 {"word_id": 14316, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14317, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14318, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 14320, "verdict": "fix", "reason": "拉丁语 prōtrahō 在输入里无释义，「拉出、描画」无依据", "fix": {"text": "源自中古法语 portraict，出自 portraire（描画），本义为描绘出的像，即肖像。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 14320, "verdict": "ok", "reason": "拉丁语 prōtrahō 在输入里无释义，「拉出、描画」无依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古法语 portraict，出自 portraire（描画），本义为描绘出的像，即肖像。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 14322, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14323, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 14326, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

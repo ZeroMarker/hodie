@@ -29,7 +29,7 @@
 {"word_id": 3072, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 3073, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 3074, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 3075, "verdict": "fix", "reason": "输入里 -en 后缀的释义是构成过去分词，讲解写成「指小」没有依据", "fix": {"text": "源自中古英语 chiken，上溯古英语 ċicen 与原始西日耳曼语 *kiukīn，可分析为 cock（公鸡）加 -en，本义是幼鸡，引申为鸡。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 3075, "verdict": "ok", "reason": "输入里 -en 后缀的释义是构成过去分词，讲解写成「指小」没有依据", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "discarded_fix": {"text": "源自中古英语 chiken，上溯古英语 ċicen 与原始西日耳曼语 *kiukīn，可分析为 cock（公鸡）加 -en，本义是幼鸡，引申为鸡。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 3078, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 3080, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 3082, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

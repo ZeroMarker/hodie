@@ -1,100 +1,100 @@
-{"word_id":16830,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16831,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16832,"verdict":"fix","reason":"古法语 servise 在输入中无释义，「服务」属输入没有依据的内容","fix":{"text":"源自中古英语 servisable，经古法语 servisable，来自古法语 servise，指可使用的、有用的。"},"reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16833,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16834,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16836,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16837,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16842,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16847,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16849,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16851,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16853,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16854,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16855,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16857,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16862,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16864,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16866,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16869,"verdict":"fix","reason":"拉丁语 sextāns 在输入中无释义，「本义为六分之一」及得名缘由属输入没有依据的内容","fix":{"text":"源自拉丁语 sextāns，指测量天体角度的仪器，即六分仪。"},"reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16876,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16877,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16879,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16880,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16882,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16886,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16891,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16892,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16893,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16897,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16898,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16899,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16900,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16901,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16902,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16903,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16905,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16906,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16907,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16908,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16911,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16912,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16913,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16915,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16917,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16919,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16920,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16923,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16925,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16926,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16927,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16929,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16930,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16931,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16932,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16933,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16934,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16938,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16939,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16940,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16942,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16944,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16945,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16946,"verdict":"fix","reason":"reeve 在输入中无释义，「管事」属输入没有依据的内容，删去该释义","fix":{"text":"源自中古英语 shirreve，上溯古英语 sċīrġerēfa，由 shire（郡）加 reeve 构成，指一郡的长官、执法官。"},"reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16950,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16951,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16952,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16957,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16958,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16960,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16961,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16964,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16971,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16972,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16975,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16976,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16983,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16984,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16990,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16993,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16995,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":16997,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":17006,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":17014,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":17018,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":17022,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":17024,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":17025,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":17026,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":17027,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":17028,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":17029,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":17033,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":17038,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":17039,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":17040,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":17041,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":17043,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":17044,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":17046,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
-{"word_id":17047,"verdict":"ok","reviewer":"ai:opencode/glm-5.3-flash-free","review_version":1}
+{"word_id": 16830, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16831, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16832, "verdict": "fix", "reason": "古法语 servise 在输入中无释义，「服务」属输入没有依据的内容", "fix": {"text": "源自中古英语 servisable，经古法语 servisable，来自古法语 servise，指可使用的、有用的。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16833, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16834, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16836, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16837, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16842, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16847, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16849, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16851, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16853, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16854, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16855, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16857, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16862, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16864, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16866, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16869, "verdict": "fix", "reason": "拉丁语 sextāns 在输入中无释义，「本义为六分之一」及得名缘由属输入没有依据的内容", "fix": {"text": "源自拉丁语 sextāns，指测量天体角度的仪器，即六分仪。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16876, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16877, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16879, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16880, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16882, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16886, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16891, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16892, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16893, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16897, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16898, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16899, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16900, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16901, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16902, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16903, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16905, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16906, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16907, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16908, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16911, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16912, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16913, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16915, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16917, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16919, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16920, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16923, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16925, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16926, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16927, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16929, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16930, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16931, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16932, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16933, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16934, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16938, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16939, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16940, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16942, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16944, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16945, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16946, "verdict": "fix", "reason": "reeve 在输入中无释义，「管事」属输入没有依据的内容，删去该释义", "fix": {"text": "源自中古英语 shirreve，上溯古英语 sċīrġerēfa，由 shire（郡）加 reeve 构成，指一郡的长官、执法官。"}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16950, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16951, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16952, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16957, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16958, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16960, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16961, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16964, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16971, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16972, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16975, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16976, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16983, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16984, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16990, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16993, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16995, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 16997, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17006, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17014, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17018, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17022, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17024, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17025, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17026, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17027, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17028, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17029, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17033, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17038, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17039, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17040, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17041, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17043, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17044, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17046, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 17047, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

@@ -45,7 +45,7 @@
 {"word_id": 12406, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 12409, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 12411, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
-{"word_id": 12413, "verdict": "fix", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里没有释义的词形 aught 添加了词义「任何事物」", "fix": {"text": "源自中古英语 naught，上溯古英语 nawiht，由表否定的 ne 与 aught 构成，本义为什么也没有，即零、无。"}}
+{"word_id": 12413, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "reason": "给输入里没有释义的词形 aught 添加了词义「任何事物」", "discarded_fix": {"text": "源自中古英语 naught，上溯古英语 nawiht，由表否定的 ne 与 aught 构成，本义为什么也没有，即零、无。"}, "override": "保留原讲解:审核只删掉了输入中未注释但正确的词根释义(2026-10-17 规则调整)"}
 {"word_id": 12414, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 12415, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
 {"word_id": 12416, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
