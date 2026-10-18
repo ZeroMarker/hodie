@@ -1,0 +1,100 @@
+{"word_id": 12019, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12021, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12035, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12038, "verdict": "fix", "reason": "第二条 modish 的「时髦」义不适用于形容工作,「a modish way about his work」搭配牵强", "fix": {"examples": [{"text_en": "Her modish style was the talk of the town.", "text_zh": "她时髦的风格成了全镇的话题。"}, {"text_en": "He wore a modish jacket to the office.", "text_zh": "他穿着一件时髦的夹克去办公室。"}]}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12040, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12042, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12044, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12045, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12047, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12048, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12051, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12053, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12054, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12057, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12059, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12061, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12063, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12064, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12065, "verdict": "fix", "reason": "molten 通常修饰金属岩浆等,第一条「The molten part」搭配生硬", "fix": {"examples": [{"text_en": "The molten metal stayed hot for a long time.", "text_zh": "那熔化的金属热了很久。"}, {"text_en": "They found molten gold under the hard ground.", "text_zh": "他们在坚硬的地下发现了熔化的金子。"}]}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12070, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12071, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12077, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12078, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12082, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12090, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12091, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12092, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12093, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12095, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12096, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12097, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12098, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12101, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12104, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12108, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12110, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12114, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12122, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12129, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12130, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12133, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12134, "verdict": "fix", "reason": "第二条把 moratorium 说成「争斗中的一段休息」,语义错误,暂停针对的是活动而非供人休息", "fix": {"examples": [{"text_en": "They had a moratorium on the new work.", "text_zh": "他们暂停了这项新工作。"}, {"text_en": "The state put a moratorium on the fishing trade.", "text_zh": "该州对捕捞业实行了暂停。"}]}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12136, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12137, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12140, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12142, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12145, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12146, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12150, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12154, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12157, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12158, "verdict": "fix", "reason": "第一条「研钵放在墙顶」场景混乱,第二条「用研钵做费力的活」表意含混,改为研钵捣碎与拌灰泥的自然场景", "fix": {"examples": [{"text_en": "She crushed the seeds with a stone mortar.", "text_zh": "她用石臼把种子捣碎。"}, {"text_en": "They mixed the mortar with water and sand.", "text_zh": "他们把灰泥与水和沙混合。"}]}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12159, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12160, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12161, "verdict": "fix", "reason": "第二条「坏消息能让一个好人受辱」逻辑不通,坏消息不会令人羞辱,改为玩笑使人难堪的场景", "fix": {"examples": [{"text_en": "They did not want to mortify the young boy.", "text_zh": "他们不想让那个小男孩受辱。"}, {"text_en": "The joke was enough to mortify the shy man.", "text_zh": "这个玩笑足以让那个害羞的人难堪。"}]}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12162, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12163, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12165, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12171, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12179, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12180, "verdict": "fix", "reason": "motile 应形容细胞、微生物;原句的「thing」「part」指代含混,未落实「能动的」义", "fix": {"examples": [{"text_en": "The motile cells can move on their own.", "text_zh": "这些能动的细胞可以自己移动。"}, {"text_en": "The tiny worm is motile in the water.", "text_zh": "这种微小的蠕虫在水中能活动。"}]}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12181, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12183, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12184, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12186, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12189, "verdict": "fix", "reason": "第二条「a motley look about their work」的杂色混杂义与工作作风搭配不当", "fix": {"examples": [{"text_en": "The motley group had people from many places.", "text_zh": "这个混杂的群体里的人们来自许多地方。"}, {"text_en": "The shop sold a motley mix of small toys.", "text_zh": "那家小店卖的是各种各样的小玩具。"}]}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12196, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12197, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12198, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12199, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12206, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12208, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12227, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12231, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12235, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12238, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12241, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12242, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12243, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12247, "verdict": "fix", "reason": "第一条「The mulberry was full of dark life」表意不通,改为桑树结满深色桑椹", "fix": {"examples": [{"text_en": "The mulberry tree is full of dark fruit.", "text_zh": "那棵桑树结满了深色的桑椹。"}, {"text_en": "They had a mulberry in the back of the field.", "text_zh": "他们在田地后面有一棵桑树。"}]}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12248, "verdict": "fix", "reason": "mulct 及物用法需 mulct sb of sth,原句「mulct him for」「mulct the group a large amount」搭配错误", "fix": {"examples": [{"text_en": "The court will mulct him of a large sum.", "text_zh": "法庭将罚他一大笔钱。"}, {"text_en": "These men mulct visitors of their gold.", "text_zh": "这些人以罚款为名骗走访客的金子。"}]}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12250, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12254, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12257, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12258, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12259, "verdict": "fix", "reason": "第一条「The two sides signed a multilateral trade deal」的两个方与「多边」自相矛盾", "fix": {"examples": [{"text_en": "The five nations signed a multilateral trade deal.", "text_zh": "五个国家签署了一项多边贸易协议。"}, {"text_en": "They joined a multilateral effort to help.", "text_zh": "他们加入了多方的援助行动。"}]}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12263, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12264, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12267, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12268, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12271, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12274, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12276, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12277, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12278, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12279, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12280, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12281, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12282, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 12286, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}

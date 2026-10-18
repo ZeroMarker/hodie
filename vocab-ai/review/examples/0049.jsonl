@@ -1,0 +1,100 @@
+{"word_id": 12891, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12895, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12896, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12898, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12899, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12900, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12901, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12902, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12903, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12904, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "「The new form of air」语义空泛不明，改为明确的气体", "fix": {"examples": [{"text_en": "This water is odorless and safe for us.", "text_zh": "这水没有气味，对我们很安全。"}, {"text_en": "The new gas was odorless and quite safe.", "text_zh": "这种新气体没有气味，也很安全。"}]}}
+{"word_id": 12906, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12909, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12910, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12917, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12922, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12923, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12925, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12927, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "「built a town on the offshore land」「the offshore air」用法别扭，offshore 应配 waters/wind", "fix": {"examples": [{"text_en": "Fishermen avoid fishing in offshore waters.", "text_zh": "渔民避开在近海捕鱼。"}, {"text_en": "The offshore wind blows from land to sea.", "text_zh": "离岸风从陆地吹向大海。"}]}}
+{"word_id": 12930, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12934, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12937, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12938, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12941, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12943, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12950, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12951, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12952, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12953, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12965, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12966, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12968, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12972, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12973, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12974, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12975, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12982, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12990, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12992, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12996, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 12997, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13003, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13005, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13006, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "「This opaque form」指代不明，改为 opaque material", "fix": {"examples": [{"text_en": "This opaque material does not let in light.", "text_zh": "这种不透明的材料不透光。"}, {"text_en": "The wall was opaque and we saw nothing.", "text_zh": "那面墙不透明，我们什么也看不见。"}]}}
+{"word_id": 13008, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13016, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13017, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13019, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13021, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13023, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13026, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13032, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13038, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13039, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13040, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "「a special optic form of paper」搭配不经，改为常见的 optic cable", "fix": {"examples": [{"text_en": "The optic part of the body is very important.", "text_zh": "身体中与视觉有关的部分非常重要。"}, {"text_en": "They replaced the copper wire with an optic cable.", "text_zh": "他们用光缆换掉了铜线。"}]}}
+{"word_id": 13041, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "「This optical form is used in the new work」指代含糊，改为 optical lens", "fix": {"examples": [{"text_en": "The camera has a special optical lens.", "text_zh": "这台相机有一个特殊的光学镜头。"}, {"text_en": "The optical part of this game is hard.", "text_zh": "这个游戏里的视觉部分很难。"}]}}
+{"word_id": 13042, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13043, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13044, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13047, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13049, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13053, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13054, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13055, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13057, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13060, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13061, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13065, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13066, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13067, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13068, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13071, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "「orbital line / orbital forms of these small things」不合常理，改为 orbital path/motion", "fix": {"examples": [{"text_en": "He drew the orbital path of the planet on paper.", "text_zh": "他在纸上画出了这颗行星的轨道。"}, {"text_en": "They study the orbital motion of these moons.", "text_zh": "他们研究这些卫星的轨道运动。"}]}}
+{"word_id": 13076, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13077, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13080, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13082, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "「ordinarily 与 on that day（特指某天）」习惯性说法与特指日期自相矛盾", "fix": {"examples": [{"text_en": "He ordinarily works from home on Fridays.", "text_zh": "他通常在周五在家工作。"}, {"text_en": "The road is ordinarily full of cars.", "text_zh": "这条路通常满是车辆。"}]}}
+{"word_id": 13085, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13086, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "「found ore in the dark ground」搭配别扭，改为 deep under the ground", "fix": {"examples": [{"text_en": "They found good ore deep under the ground.", "text_zh": "他们在地下深处发现了优质矿石。"}, {"text_en": "This ore is of great value to us.", "text_zh": "这种矿石对我们很有价值。"}]}}
+{"word_id": 13089, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13092, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13094, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13095, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13100, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13106, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13109, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13113, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13114, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "fix", "reason": "「This ornamental form」含糊凑词，改为常见的 ornamental plants", "fix": {"examples": [{"text_en": "They grow ornamental plants in the garden.", "text_zh": "他们在花园里种植观赏植物。"}, {"text_en": "The shelf holds several ornamental pieces.", "text_zh": "架子上摆着几件装饰品。"}]}}
+{"word_id": 13115, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13116, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13117, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13118, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13119, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13123, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13124, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13129, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13130, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13131, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13133, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13134, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13136, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}
+{"word_id": 13138, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1, "verdict": "ok"}

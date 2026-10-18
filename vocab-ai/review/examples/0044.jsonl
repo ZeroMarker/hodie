@@ -1,0 +1,100 @@
+{"word_id": 11466, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11470, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11472, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11473, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11477, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11479, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11482, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11485, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11486, "verdict": "fix", "reason": "第一条「She wrote a Marxist view of history」搭配生硬,中文「写了一篇马克思主义的历史观」也不通顺", "fix": {"examples": [{"text_en": "She holds a Marxist view of history.", "text_zh": "她对历史持马克思主义的观点。"}, {"text_en": "The group held a Marxist meeting last night.", "text_zh": "这个团体昨晚举行了一场马克思主义的会议。"}]}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11493, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11495, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11496, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11498, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11504, "verdict": "fix", "reason": "第一条「桅杆高高地立在这小群人上方」场景含混,第二条「a long mast on the top」的 on the top 缺所指,中英均欠通顺", "fix": {"examples": [{"text_en": "The tall mast rose above the little boat.", "text_zh": "高高的桅杆立在小船上方。"}, {"text_en": "The sailors climbed the long mast to look out.", "text_zh": "水手们爬上长桅杆向远处观望。"}]}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11510, "verdict": "fix", "reason": "第一条 each part 指代不明,中文却译成「每一口」,中英不符", "fix": {"examples": [{"text_en": "You must masticate your food well.", "text_zh": "你必须好好咀嚼食物。"}, {"text_en": "They masticate every bite slowly and carefully.", "text_zh": "他们把每一口都嚼得又慢又仔细。"}]}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11514, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11516, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11517, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11518, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11525, "verdict": "fix", "reason": "第一条与 money 并列的 materialism 是「物质享乐主义」义,不是 zh 核心义「唯物主义」", "fix": {"examples": [{"text_en": "He studied materialism in his philosophy classes.", "text_zh": "他在哲学课上学习唯物主义。"}, {"text_en": "Materialism was the main idea of that book.", "text_zh": "唯物主义是那本书的主要思想。"}]}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11533, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11535, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11541, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11542, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11543, "verdict": "fix", "reason": "They were in matrimony 用法生硬不地道,改为惯用的 joined in matrimony", "fix": {"examples": [{"text_en": "They were joined in matrimony on a spring day.", "text_zh": "他们在某个春天的日子结为了夫妻。"}, {"text_en": "Matrimony was the main idea of the film.", "text_zh": "婚姻是这部电影的主要主题。"}]}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11550, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11552, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11554, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11555, "verdict": "fix", "reason": "第一条用动词「咬伤破坏」义,不在 zh 义项「大槌」内;第二条用大槌挪动部件也讲不通", "fix": {"examples": [{"text_en": "He swung the heavy maul to break the stones.", "text_zh": "他挥动沉重的大槌砸开石头。"}, {"text_en": "They drove the wooden post with a big maul.", "text_zh": "他们用大槌把那根木桩打进地里。"}]}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11558, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11559, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11560, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11563, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11566, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11572, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11578, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11583, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11584, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11588, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11594, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11597, "verdict": "fix", "reason": "两条都用「份额少得可怜」义,zh 核心义是「患麻疹的」,义项不符", "fix": {"examples": [{"text_en": "The measly child had to stay in bed.", "text_zh": "那个出麻疹的孩子只好卧床休息。"}, {"text_en": "They kept the measly boy away from school.", "text_zh": "他们没让那个出麻疹的男孩去上学。"}]}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11598, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11601, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11602, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11608, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11609, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11611, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11613, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11619, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11624, "verdict": "reject", "reason": "两条都用动词「调停」义,zh 义项是「居间的,间接的」,该义项写不出自然的例句", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11626, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11632, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11638, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11639, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11642, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11645, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11647, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11651, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11652, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11655, "verdict": "fix", "reason": "第二条「Work and play meld into a single day」表意含混不通,改为常用的颜色融合场景", "fix": {"examples": [{"text_en": "They will meld the two groups into one.", "text_zh": "他们会把这两个小组合并成一个。"}, {"text_en": "The two colors meld into a soft blue.", "text_zh": "两种颜色融合成一种柔和的蓝色。"}]}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11658, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11661, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11664, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11671, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11673, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11674, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11675, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11676, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11677, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11678, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11682, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11686, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11687, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11688, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11689, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11697, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11699, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11703, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11704, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11706, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11708, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11709, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11710, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11715, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11718, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11720, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11721, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11722, "verdict": "fix", "reason": "第二条「A mermaid is a thing of the sea」的 thing 用词含混,改为 creature 更自然", "fix": {"examples": [{"text_en": "The mermaid was the talk of the small town.", "text_zh": "那位美人鱼是这座小镇的话题。"}, {"text_en": "A mermaid is a creature of the sea.", "text_zh": "美人鱼是海洋里的生灵。"}]}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11724, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11725, "verdict": "fix", "reason": "第一条中文「那张网眼」量词不搭,应为「那个网眼」", "fix": {"examples": [{"text_en": "The mesh was small and hard to see.", "text_zh": "那个网眼很小，很难看清。"}, {"text_en": "They put a fine mesh over the open part.", "text_zh": "他们在开口处铺了一层细网。"}]}, "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11727, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11729, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11733, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11735, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11736, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11737, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11741, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11742, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11743, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
+{"word_id": 11745, "verdict": "ok", "reviewer": "ai:opencode/glm-5.3-flash-free", "review_version": 1}
