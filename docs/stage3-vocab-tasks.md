@@ -10,10 +10,10 @@
 
 | 数据 | 词书词覆盖 | 缺口 |
 | --- | --- | --- |
-| 中英例句(`examples`,Tatoeba + AI) | 14986 | 0(任务 1 已完成;2026-10-16 AI 抽检通过,`reviewed = 1`) |
-| 搭配(`collocations`,Tatoeba logDice 统计 + AI) | 14986 | 0(任务 3 已完成:87 批、8639 词、18855 条 AI 搭配,见改进记录;Tatoeba 搭配按原形合并时态重复后为 23328 条;2026-10-16 AI 抽检通过,`reviewed = 1`) |
-| WordNet 词义(`senses`) | 14330 | 0(任务 2 已完成并二次改进:10105 个多义词按现代英语最常用义确定核心义,10073 个有 `core_sense_id`,32 个无法判断为 NULL,见改进记录;2026-10-16 AI 抽检通过,`reviewed = 1`) |
-| 词源中文讲解(`etymology_notes`,基于 `etymology_steps`) | 10489 | 0(任务 4 已完成:105 批、10489 词,校验 10489/10489 通过;2026-10-16 AI 抽检通过,`reviewed = 1`) |
+| 中英例句(`examples`,Tatoeba + AI) | 14986 | 0(任务 1 已完成;2026-10-16 AI 抽检通过;2026-10-20 任务 5 全量审核:7866 词中 7865 词 `reviewed = 1`,mediate 判 reject) |
+| 搭配(`collocations`,Tatoeba logDice 统计 + AI) | 14986 | 0(任务 3 已完成:87 批、8639 词;Tatoeba 搭配按原形合并时态重复后为 23328 条;2026-10-20 任务 5 全量审核:AI 搭配 18844 条、8599 词,全部 `reviewed = 1`) |
+| WordNet 词义(`senses`) | 14330 | 0(任务 2 已完成并二次改进:10105 个多义词按现代英语最常用义确定核心义,2026-10-20 审核改正后 10077 个有 `core_sense_id`,28 个无法判断为 NULL,全部 `reviewed = 1`) |
+| 词源中文讲解(`etymology_notes`,基于 `etymology_steps`) | 10489 | 0(任务 4 已完成:105 批、10489 词,校验 10489/10489 通过;2026-10-20 任务 5 全量审核:10486 词 `reviewed = 1`,3 词 reject) |
 
 ## 通用约定
 
@@ -263,10 +263,58 @@ fix 的 10 条例子(为什么改;全部 fix 见 `vocab-ai/review/core_sense/*.j
 
 全部 reject:无。
 
+### 3 搭配(2026-10-20 完成)
+
+全部 87 批、8639 个词审核完毕,`review_version = 1`,校验 8639/8639 通过(100%)。合计
+**ok 8593(99.5%)、fix 46(0.5%)、reject 0(0.0%)**。全部批次由
+`ai:opencode/minimax-m3.1-flash-free` 审核。
+
+fix 的 10 条例子(为什么改;全部 fix 见 `vocab-ai/review/collocations/*.jsonl`):
+
+| 批次 | word_id | 词 | 问题 |
+| --- | --- | --- | --- |
+| 0001 | 152 | accompaniment | 「perfect accompaniment」的中文释义「完美的搭配」与词义(伴随物、伴奏)对不上,改为「完美的伴奏」 |
+| 0008 | 1709 | beehive | 「busy beehive」照字面直译成「忙碌的蜂箱」,常用义是「人群忙碌喧腾的场所」 |
+| 0016 | 3954 | contingency | 「unforeseen contingency」的中文释义把英文词混进了中文,改为「未预见的意外情况」 |
+| 0026 | 6226 | endue | 「endue the spirit」不是完整可学的搭配(须带 with 或 to 补语),改为完整说法 |
+| 0036 | 8548 | hardihood | 「hardihood to」缺动词不是完整说法;「remarkable hardihood」译成「刚毅」不准,应为「胆大、鲁莽」 |
+| 0083 | 20261 | vcd | 目标词释义是「可变电容二极管」的简写,搭配却按影碟机处理,释义与搭配对不上,删光 |
+| 0086 | 20950 | wollongong | 两条搭配把地名写成小写(wollongong beach、visit wollongong),城市名必须大写 |
+
+其余 3 条 fix 是同类问题(中文释义误译、搭配不完整、专有名词未大写),见 jsonl。
+
+全部 reject:无。
+
+## 任务 5 汇总(2026-10-20 完成)
+
+四个任务的 AI 数据全部逐条审核完毕,审核结果在 `vocab-ai/review/<任务>/`,`ai_validate.py` 校验全部 100% 通过。
+
+| 任务 | 批次 | 词数 | ok | fix | reject | 审核模型 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 例句 | 79 | 7866 | 7644(97.2%) | 221(2.8%) | 1(0.0%) | 0001-0062、0065 用 `ai:opencode/glm-5.3-flash-free`;0063、0064、0066-0079 用 `ai:opencode/minimax-m3.1-flash-free` |
+| 2 核心义 | 102 | 10105 | 10007(99.0%) | 98(1.0%) | 0 | 0001-0013 用 `ai:opencode/glm-5.3-flash-free`;0014-0102 用 `ai:opencode/minimax-m3.1-flash-free` |
+| 3 搭配 | 87 | 8639 | 8593(99.5%) | 46(0.5%) | 0 | 全部 `ai:opencode/minimax-m3.1-flash-free` |
+| 4 词源讲解 | 105 | 10489 | 10247(97.7%) | 239(2.3%) | 3(0.0%) | 全部 `ai:opencode/glm-5.3-flash-free` |
+
+合计审核 37099 条:ok 36491(98.4%)、fix 604(1.6%)、reject 4(0.0%)。
+
+审核模型与生成模型(DeepSeek)不同,但同为 AI,结果记为 **AI 审核**,不代替人工抽检;每行 `reviewer` 记录实际审核模型。
+入库时 ok 与 fix 的行 `reviewed = 1`,reject 的行保持 `reviewed = 0`(例句 1 词、词源 3 词)。
+
+2026-10-20 重建 `data/build/vocab.db` 后的变化:
+
+- 例句:AI 例句 15732 条中 15730 条 `reviewed = 1`(mediate 判 reject)。
+- 搭配:AI 搭配从 18855 条减到 18844 条(46 条 fix 删掉了低价值或错误的搭配),覆盖 8599 词,全部 `reviewed = 1`。
+- 核心义:98 词改选后 `core_sense_id` 非空从 10073 升到 10077(99.7%),NULL 从 32 降到 28,全部 `reviewed = 1`。
+- 词源讲解:10486 词 `reviewed = 1`,juicy、math、scalding 判 reject 保持 0。
+
+本轮未运行 `load_pg.py`,线上 `vocab` schema 仍是 2026-10-15 导入的版本;本地 `vocab.db` 已含审核结果和 `reviewer` 列。
+
 ## 交付
 
 - 每个任务单独提交,提交说明写明生成条数、校验通过率、抽检结果和实际费用。
 - 更新 `scripts/vocab/README.md` 的构建结果,以及本文的「现状」表。
-- 重新构建后,运行 `load_pg.py` 更新线上 `vocab` schema(连接方式见 README)。
+- 重新构建后,运行 `load_pg.py` 更新线上 `vocab` schema(连接方式见 README)。任务 5 一轮只重建了本地
+  `data/build/vocab.db`,`load_pg.py` 留到确认后再执行。
 
 返回 [开发计划](plan.md)。
