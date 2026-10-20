@@ -266,7 +266,7 @@ fix 的 10 条例子(为什么改;全部 fix 见 `vocab-ai/review/core_sense/*.j
 ### 3 搭配(2026-10-20 完成)
 
 全部 87 批、8639 个词审核完毕,`review_version = 1`,校验 8639/8639 通过(100%)。合计
-**ok 8593(99.5%)、fix 46(0.5%)、reject 0(0.0%)**。全部批次由
+**ok 8594(99.5%)、fix 45(0.5%)、reject 0(0.0%)**。全部批次由
 `ai:opencode/minimax-m3.1-flash-free` 审核。
 
 fix 的 10 条例子(为什么改;全部 fix 见 `vocab-ai/review/collocations/*.jsonl`):
@@ -293,10 +293,10 @@ fix 的 10 条例子(为什么改;全部 fix 见 `vocab-ai/review/collocations/*
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 例句 | 79 | 7866 | 7644(97.2%) | 221(2.8%) | 1(0.0%) | 0001-0062、0065 用 `ai:opencode/glm-5.3-flash-free`;0063、0064、0066-0079 用 `ai:opencode/minimax-m3.1-flash-free` |
 | 2 核心义 | 102 | 10105 | 10007(99.0%) | 98(1.0%) | 0 | 0001-0013 用 `ai:opencode/glm-5.3-flash-free`;0014-0102 用 `ai:opencode/minimax-m3.1-flash-free` |
-| 3 搭配 | 87 | 8639 | 8593(99.5%) | 46(0.5%) | 0 | 全部 `ai:opencode/minimax-m3.1-flash-free` |
+| 3 搭配 | 87 | 8639 | 8594(99.5%) | 45(0.5%) | 0 | 全部 `ai:opencode/minimax-m3.1-flash-free` |
 | 4 词源讲解 | 105 | 10489 | 10247(97.7%) | 239(2.3%) | 3(0.0%) | 全部 `ai:opencode/glm-5.3-flash-free` |
 
-合计审核 37099 条:ok 36491(98.4%)、fix 604(1.6%)、reject 4(0.0%)。
+合计审核 37099 条:ok 36492(98.4%)、fix 603(1.6%)、reject 4(0.0%)。
 
 审核模型与生成模型(DeepSeek)不同,但同为 AI,结果记为 **AI 审核**,不代替人工抽检;每行 `reviewer` 记录实际审核模型。
 入库时 ok 与 fix 的行 `reviewed = 1`,reject 的行保持 `reviewed = 0`(例句 1 词、词源 3 词)。
@@ -304,7 +304,7 @@ fix 的 10 条例子(为什么改;全部 fix 见 `vocab-ai/review/collocations/*
 2026-10-20 重建 `data/build/vocab.db` 后的变化:
 
 - 例句:AI 例句 15732 条中 15730 条 `reviewed = 1`(mediate 判 reject)。
-- 搭配:AI 搭配从 18855 条减到 18844 条(46 条 fix 删掉了低价值或错误的搭配),覆盖 8599 词,全部 `reviewed = 1`。
+- 搭配:AI 搭配从 18855 条减到 18844 条(45 条 fix 删掉了低价值或错误的搭配),覆盖 8599 词,全部 `reviewed = 1`。
 - 核心义:98 词改选后 `core_sense_id` 非空从 10073 升到 10077(99.7%),NULL 从 32 降到 28,全部 `reviewed = 1`。
 - 词源讲解:10486 词 `reviewed = 1`,juicy、math、scalding 判 reject 保持 0。
 

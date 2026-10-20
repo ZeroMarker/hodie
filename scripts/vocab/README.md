@@ -104,14 +104,14 @@ reject 的行保持 `reviewed = 0`;`reviewer` 列记录实际审核模型。
 | --- | --- | --- | --- | --- | --- |
 | 1 例句 | 7866 | 7644(97.2%) | 221(2.8%) | 1(0.0%) | 0001-0062、0065 用 `ai:opencode/glm-5.3-flash-free`,其余用 `ai:opencode/minimax-m3.1-flash-free` |
 | 2 核心义 | 10105 | 10007(99.0%) | 98(1.0%) | 0 | 0001-0013 用 `ai:opencode/glm-5.3-flash-free`,0014-0102 用 `ai:opencode/minimax-m3.1-flash-free` |
-| 3 搭配 | 8639 | 8593(99.5%) | 46(0.5%) | 0 | 全部 `ai:opencode/minimax-m3.1-flash-free` |
+| 3 搭配 | 8639 | 8594(99.5%) | 45(0.5%) | 0 | 全部 `ai:opencode/minimax-m3.1-flash-free` |
 | 4 词源讲解 | 10489 | 10247(97.7%) | 239(2.3%) | 3(0.0%) | 全部 `ai:opencode/glm-5.3-flash-free` |
 
 审核后入库的变化:
 
 - 例句:AI 例句 15732 条中 15730 条 `reviewed = 1`,mediate 一词(2 条)判 reject 保持 0;`reviewer` 分布为
   glm 12400 条、minimax 3332 条。
-- 搭配:AI 搭配从 18855 条减到 18844 条(46 条 fix 中有 11 条删掉了低价值或错误的搭配),覆盖 8599 词,
+- 搭配:AI 搭配从 18855 条减到 18844 条(45 条 fix 中有 11 条删掉了低价值或错误的搭配),覆盖 8599 词,
   全部 `reviewed = 1`。
 - 核心义:98 词改选后 `core_sense_id` 非空从 10073 升到 10077(99.7%),NULL 从 32 降到 28,全部 `reviewed = 1`。
 - 词源讲解:10486 词 `reviewed = 1`,juicy、math、scalding 三词判 reject 保持 0(输入里没有与常用义对应的词源)。
