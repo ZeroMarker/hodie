@@ -121,3 +121,5 @@ reject 的行保持 `reviewed = 0`;`reviewer` 列记录实际审核模型。
 ## PostgreSQL
 
 线上库为 Aiven 的 `mammoth` 服务(PostgreSQL 18,免费版 1GB),数据库 `hodie`。词库在 `vocab` schema,`public` 留给用户和学习记录。`load_pg.py` 先导入 `vocab_new`,再在同一事务里替换 `vocab`,约 40 秒,导入期间线上可读;旧 schema 用 CASCADE 删除,所以 `public` 下的表不要对 `vocab` 建外键。导入后 `senses.examples` 转为 jsonb,另加 `lower(word)` 索引。2026-10-15 导入阶段 3 AI 数据后,`vocab` 共 12 张表、占 90MB;AI 数据 `reviewed` 均为 0,应用须只展示已审核的数据或标出「AI 生成」。2026-10-15 的抽检改进(例句 v3、核心义 v2、词源 v2、搭配清理)和其后核心义的 v3 重做都尚未导入;2026-10-20 完成任务 5 全量审核(审核结果已入本地 `vocab.db`,含 `reviewer` 列)后,仍待执行 `load_pg.py` 一并导入。
+
+2026-10-20 导入任务 5 全量审核后的数据:`vocab` 共 12 张表、占 93MB。AI 数据除 reject 的 5 行(例句 2 行、词源讲解 3 行,`reviewed = 0`)外均为 `reviewed = 1`,`reviewer` 记录实际审核模型(GLM 或 MiniMax);Tatoeba 原始数据的 `reviewer` 为空。
