@@ -3,11 +3,11 @@
 本文件是 `vocab-ai/review/examples/` 的审核标准,每批审核前重读一遍。
 被审对象是 `vocab-ai/examples/` 的生成结果,审核模型为 `opencode/minimax-m3.1-flash-free`,
 结果记为 **AI 审核**(与人工审核区分)。任务定义见 [阶段 3 词库任务](../../../docs/stage3-vocab-tasks.md)。
-批次 0001-0065 由 `opencode/glm-5.3-flash-free` 审核(0065 是上一段工作中断时留下的文件,校验通过后保留),
-0066 起由 `opencode/minimax-m3.1-flash-free` 审核;每行 `reviewer` 记录**实际**审核模型。
+批次 0001-0062 和 0065 由 `opencode/glm-5.3-flash-free` 审核(0065 是上一段工作中断时留下的文件,校验通过后保留),
+0063、0064、0066 起由 `opencode/minimax-m3.1-flash-free` 审核;每行 `reviewer` 记录**实际**审核模型。
 
 - `review_version`:**1**
-- `reviewer`:`ai:opencode/minimax-m3.1-flash-free`(批次 0001-0065 为 `ai:opencode/glm-5.3-flash-free`)
+- `reviewer`:`ai:opencode/minimax-m3.1-flash-free`(批次 0001-0062 和 0065 为 `ai:opencode/glm-5.3-flash-free`)
 - 输出:`vocab-ai/review/examples/NNNN.jsonl`,每行一个词,与输入 `word_id` 一一对应
 
 ## 做什么
@@ -75,7 +75,7 @@
 ## 自检清单
 
 - [ ] 每行 `word_id` 与输入一一对应,行数一致。
-- [ ] `reviewer` 为 `ai:opencode/minimax-m3.1-flash-free`(批次 0001-0065 为 `ai:opencode/glm-5.3-flash-free`),`review_version` 为 1。
+- [ ] `reviewer` 为 `ai:opencode/minimax-m3.1-flash-free`(批次 0001-0062 和 0065 为 `ai:opencode/glm-5.3-flash-free`),`review_version` 为 1。
 - [ ] `fix` 的行都有 `reason`,`fix.examples` 恰好 2 条,能通过原校验(词数、含目标词、中文全角标点等)。
 - [ ] 没有为「句式更好」这类风格问题而改;拿不准的判了 `ok`。
 
