@@ -116,10 +116,10 @@ reject 的行保持 `reviewed = 0`;`reviewer` 列记录实际审核模型。
 - 核心义:98 词改选后 `core_sense_id` 非空从 10073 升到 10077(99.7%),NULL 从 32 降到 28,全部 `reviewed = 1`。
 - 词源讲解:10486 词 `reviewed = 1`,juicy、math、scalding 三词判 reject 保持 0(输入里没有与常用义对应的词源)。
 
-本轮只重建了本地 `data/build/vocab.db`,未运行 `load_pg.py`,线上 `vocab` schema 仍是 2026-10-15 导入的版本。
+本轮重建了本地 `data/build/vocab.db`,并于 2026-10-20 用 `load_pg.py` 导入线上(见下节)。
 
 ## PostgreSQL
 
-线上库为 Aiven 的 `mammoth` 服务(PostgreSQL 18,免费版 1GB),数据库 `hodie`。词库在 `vocab` schema,`public` 留给用户和学习记录。`load_pg.py` 先导入 `vocab_new`,再在同一事务里替换 `vocab`,约 40 秒,导入期间线上可读;旧 schema 用 CASCADE 删除,所以 `public` 下的表不要对 `vocab` 建外键。导入后 `senses.examples` 转为 jsonb,另加 `lower(word)` 索引。2026-10-15 导入阶段 3 AI 数据后,`vocab` 共 12 张表、占 90MB;AI 数据 `reviewed` 均为 0,应用须只展示已审核的数据或标出「AI 生成」。2026-10-15 的抽检改进(例句 v3、核心义 v2、词源 v2、搭配清理)和其后核心义的 v3 重做都尚未导入;2026-10-20 完成任务 5 全量审核(审核结果已入本地 `vocab.db`,含 `reviewer` 列)后,仍待执行 `load_pg.py` 一并导入。
+线上库为 Aiven 的 `mammoth` 服务(PostgreSQL 18,免费版 1GB),数据库 `hodie`。词库在 `vocab` schema,`public` 留给用户和学习记录。`load_pg.py` 先导入 `vocab_new`,再在同一事务里替换 `vocab`,约 40 秒,导入期间线上可读;旧 schema 用 CASCADE 删除,所以 `public` 下的表不要对 `vocab` 建外键。导入后 `senses.examples` 转为 jsonb,另加 `lower(word)` 索引。2026-10-15 导入阶段 3 AI 数据后,`vocab` 共 12 张表、占 90MB;AI 数据 `reviewed` 均为 0,应用须只展示已审核的数据或标出「AI 生成」。其后的抽检改进(例句 v3、核心义 v2/v3、词源 v2、搭配清理)和任务 5 全量审核结果已于 2026-10-20 一并导入。
 
 2026-10-20 导入任务 5 全量审核后的数据:`vocab` 共 12 张表、占 93MB。AI 数据除 reject 的 5 行(例句 2 行、词源讲解 3 行,`reviewed = 0`)外均为 `reviewed = 1`,`reviewer` 记录实际审核模型(GLM 或 MiniMax);Tatoeba 原始数据的 `reviewer` 为空。

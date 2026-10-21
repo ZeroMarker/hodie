@@ -308,13 +308,12 @@ fix 的 10 条例子(为什么改;全部 fix 见 `vocab-ai/review/collocations/*
 - 核心义:98 词改选后 `core_sense_id` 非空从 10073 升到 10077(99.7%),NULL 从 32 降到 28,全部 `reviewed = 1`。
 - 词源讲解:10486 词 `reviewed = 1`,juicy、math、scalding 判 reject 保持 0。
 
-本轮未运行 `load_pg.py`,线上 `vocab` schema 仍是 2026-10-15 导入的版本;本地 `vocab.db` 已含审核结果和 `reviewer` 列。
+2026-10-20 已运行 `load_pg.py` 把审核结果导入线上 `vocab` schema(12 张表、93MB),详见 `scripts/vocab/README.md`。
 
 ## 交付
 
 - 每个任务单独提交,提交说明写明生成条数、校验通过率、抽检结果和实际费用。
 - 更新 `scripts/vocab/README.md` 的构建结果,以及本文的「现状」表。
-- 重新构建后,运行 `load_pg.py` 更新线上 `vocab` schema(连接方式见 README)。任务 5 一轮只重建了本地
-  `data/build/vocab.db`,`load_pg.py` 留到确认后再执行。
+- 重新构建后,运行 `load_pg.py` 更新线上 `vocab` schema(连接方式见 README)。任务 5 的结果已于 2026-10-20 导入。
 
 返回 [开发计划](plan.md)。
