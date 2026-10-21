@@ -1,6 +1,7 @@
 // app schema:用户数据,由 drizzle-kit 迁移管理。
 // 不对 vocab 建外键(load_pg.py 用 DROP SCHEMA ... CASCADE 替换词库),
 // 引用一致性由 scripts/check-refs.ts 检查。
+import type { AdapterAccountType } from "next-auth/adapters";
 import {
   bigint,
   date,
@@ -19,7 +20,56 @@ import {
 
 export const app = pgSchema("app");
 
-// 账号表(users、sessions 等)在阶段 1 接入 Auth.js 时加入,user_id 先用 text。
+// Auth.js 标准表(@auth/drizzle-adapter 的 PostgreSQL 结构)。
+export const users = app.table("users", {
+  id: text("id")
+    .primaryKey()
+    .$defaultFn(() => crypto.randomUUID()),
+  name: text("name"),
+  email: text("email").unique(),
+  emailVerified: timestamp("email_verified", { withTimezone: true, mode: "date" }),
+  image: text("image"),
+});
+
+export const accounts = app.table(
+  "accounts",
+  {
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    type: text("type").$type<AdapterAccountType>().notNull(),
+    provider: text("provider").notNull(),
+    providerAccountId: text("provider_account_id").notNull(),
+    refresh_token: text("refresh_token"),
+    access_token: text("access_token"),
+    expires_at: integer("expires_at"),
+    token_type: text("token_type"),
+    scope: text("scope"),
+    id_token: text("id_token"),
+    session_state: text("session_state"),
+  },
+  (t) => [primaryKey({ columns: [t.provider, t.providerAccountId] })],
+);
+
+export const sessions = app.table("sessions", {
+  sessionToken: text("session_token").primaryKey(),
+  userId: text("user_id")
+    .notNull()
+    .references(() => users.id, { onDelete: "cascade" }),
+  expires: timestamp("expires", { withTimezone: true, mode: "date" }).notNull(),
+});
+
+export const verificationTokens = app.table(
+  "verification_tokens",
+  {
+    identifier: text("identifier").notNull(),
+    token: text("token").notNull(),
+    expires: timestamp("expires", { withTimezone: true, mode: "date" }).notNull(),
+  },
+  (t) => [primaryKey({ columns: [t.identifier, t.token] })],
+);
+
+// 以下表的 user_id 即 users.id;为了账号删除时逐表清理,不建外键。
 
 export const profiles = app.table("profiles", {
   userId: text("user_id").primaryKey(),
@@ -54,6 +104,8 @@ export const cards = app.table(
     due: timestamp("due", { withTimezone: true }).notNull(),
     stability: real("stability").notNull().default(0),
     difficulty: real("difficulty").notNull().default(0),
+    // ts-fsrs 短期学习步骤的位置(学习和重学阶段)
+    learningSteps: smallint("learning_steps").notNull().default(0),
     reps: integer("reps").notNull().default(0),
     lapses: integer("lapses").notNull().default(0),
     state: smallint("state").notNull().default(0),

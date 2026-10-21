@@ -14,12 +14,16 @@
     "check-refs": "node --experimental-strip-types scripts/check-refs.mts"
   },
   "dependencies": {
+    "@auth/drizzle-adapter": "1.11.3",
     "@vercel/functions": "^3.10.1",
     "drizzle-orm": "^0.45.4",
     "next": "16.4.1",
+    "next-auth": "5.0.0-beta.32",
     "pg": "^8.23.1",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "server-only": "^0.0.1",
+    "ts-fsrs": "5.4.2"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
