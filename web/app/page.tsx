@@ -42,6 +42,8 @@ async function Dashboard() {
         </Link>
       </section>
 
+      <p className="text-center font-serif text-sm italic text-zinc-400">Hodie, non cras</p>
+
       <section className="grid grid-cols-3 gap-3">
         <Stat label="连续打卡" value={`${s.streak} 天`} card />
         <Stat label="已学" value={s.learned} card />
@@ -82,6 +84,7 @@ function Stat({ label, value, card }: { label: string; value: string | number; c
 function Landing() {
   return (
     <section className="space-y-4 py-10">
+      <p className="font-serif text-lg italic text-zinc-500">Hodie, non cras · 今天,而不是明天</p>
       <h1 className="text-3xl font-bold">每天 15 分钟,把考纲词汇记牢</h1>
       <p className="text-zinc-600">
         覆盖中考、高考、四六级、考研、雅思、托福和 GRE 词书。用 FSRS 间隔重复算法安排复习,题目从认词逐步升到拼写,记得越牢间隔越长。

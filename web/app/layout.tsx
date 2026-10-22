@@ -3,8 +3,8 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Hodie 背单词",
-  description: "为备考打造的间隔重复背单词应用",
+  title: "Hodie 背单词 · Hodie, non cras",
+  description: "Hodie, non cras —— 今天,而不是明天。为备考打造的间隔重复背单词应用。",
 };
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1 };
