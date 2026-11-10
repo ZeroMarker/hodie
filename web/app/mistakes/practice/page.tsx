@@ -18,5 +18,5 @@ async function Practice() {
   const userId = await requireUserId();
   const items = await getPracticeQueue(userId);
   if (!items) redirect("/onboarding");
-  return <Session items={items} practice />;
+  return <Session items={items} userId={userId} practice />;
 }

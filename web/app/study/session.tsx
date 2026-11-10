@@ -3,11 +3,10 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { submitReviews } from "@/app/actions";
 import { Speak, speak, useSpeechSupported } from "@/components/speak";
+import { addLog, answeredSince, pendingLogs, syncPending } from "@/modules/offline/pending";
 import { type Exercise, editDistance, isChoice, normalize } from "@/modules/study/grade";
 import type { QueueItem } from "@/modules/study/queue";
-import type { SubmittedLog } from "@/modules/study/submit";
 
 type Step = { item: QueueItem; show: boolean; retry: boolean };
 type Feedback = { correct: boolean; close: boolean; answer: string };
@@ -36,8 +35,22 @@ function buildSteps(items: QueueItem[]): Step[] {
   return steps;
 }
 
-/** practice:错题练习,只做题不提交,不影响复习安排。 */
-export function Session({ items, practice = false }: { items: QueueItem[]; practice?: boolean }) {
+/**
+ * 学习会话。作答先存本地再批量提交,断网时留在本地,联网或下次打开时补交。
+ * generatedAt 是服务端生成队列的时间:页面从离线缓存打开时,跳过此后本地已答过的题。
+ * practice:错题练习,只做题不提交,不影响复习安排。
+ */
+export function Session({
+  items,
+  userId,
+  generatedAt,
+  practice = false,
+}: {
+  items: QueueItem[];
+  userId: string;
+  generatedAt?: number;
+  practice?: boolean;
+}) {
   const router = useRouter();
   const tts = useSpeechSupported();
   const [steps, setSteps] = useState(() => buildSteps(items));
@@ -46,8 +59,7 @@ export function Session({ items, practice = false }: { items: QueueItem[]; pract
   const [stats, setStats] = useState({ done: 0, correct: 0 });
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-  const buffer = useRef<SubmittedLog[]>([]);
-  const pending = useRef<Promise<void>>(Promise.resolve());
+  const sinceFlush = useRef(0);
   const started = useRef(0);
 
   // 「再来一组」刷新后服务端送来新队列,从头开始
@@ -73,23 +85,29 @@ export function Session({ items, practice = false }: { items: QueueItem[]; pract
     }
   }, [pos, step, exercise]);
 
-  function flush() {
-    const logs = buffer.current;
-    if (logs.length === 0) return pending.current;
-    buffer.current = [];
-    const p = pending.current.then(async () => {
-      try {
-        await submitReviews(logs);
-        setError(null);
-      } catch {
-        // 提交失败时放回缓冲区,下次再交(id 去重,重复提交无害)
-        buffer.current = [...logs, ...buffer.current];
-        setError("网络异常,作答已暂存,稍后会自动重新提交。");
-      }
-    });
-    pending.current = p;
-    return p;
+  async function flush() {
+    sinceFlush.current = 0;
+    try {
+      while ((await syncPending(userId)) > 0 && pendingLogs(userId).length > 0);
+      setError(null);
+    } catch {
+      setError("网络异常,作答已存在本机,联网后会自动提交。");
+    }
   }
+
+  // 打开时:跳过离线缓存页面里本地已答过的题,补交上次没交上的作答;联网时再补交
+  useEffect(() => {
+    if (practice || generatedAt === undefined) return;
+    const done = answeredSince(userId, generatedAt);
+    // 已答记录在 localStorage 里,服务端渲染时读不到,只能挂载后再过滤
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (done.size > 0) setSteps((ss) => ss.filter((st) => !done.has(st.item.key)));
+    flush();
+    const online = () => flush();
+    window.addEventListener("online", online);
+    return () => window.removeEventListener("online", online);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- 只在打开会话时执行一次
+  }, [userId, generatedAt, practice]);
 
   async function again() {
     setLoading(true);
@@ -100,16 +118,22 @@ export function Session({ items, practice = false }: { items: QueueItem[]; pract
 
   function record(answer: string, correct: boolean, close: boolean, display: string) {
     const { item } = step;
-    if (!practice) buffer.current.push({
-      id: crypto.randomUUID(),
-      wordId: item.wordId,
-      senseId: item.senseId,
-      exercise,
-      answer,
-      durationMs: Math.round(performance.now() - started.current),
-      reviewedAt: new Date().toISOString(),
-    });
-    if (buffer.current.length >= FLUSH_EVERY) flush();
+    if (!practice) {
+      addLog(
+        userId,
+        {
+          id: crypto.randomUUID(),
+          wordId: item.wordId,
+          senseId: item.senseId,
+          exercise,
+          answer,
+          durationMs: Math.round(performance.now() - started.current),
+          reviewedAt: new Date().toISOString(),
+        },
+        item.key,
+      );
+      if (++sinceFlush.current >= FLUSH_EVERY) flush();
+    }
     setStats((s) => ({ done: s.done + 1, correct: s.correct + (correct ? 1 : 0) }));
     setFeedback({ correct, close, answer: display });
     if (!correct && !step.retry) {
@@ -121,7 +145,7 @@ export function Session({ items, practice = false }: { items: QueueItem[]; pract
 
   function next() {
     // 最后一题之后把剩余作答交上去
-    if (pos + 1 >= steps.length) flush();
+    if (pos + 1 >= steps.length && !practice) flush();
     setFeedback(null);
     setPos((p) => p + 1);
   }

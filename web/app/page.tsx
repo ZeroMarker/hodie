@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
+import { NavLink, PendingSync } from "@/components/pwa";
 import { currentUserId } from "@/modules/auth";
 import { getAdaptedProfile } from "@/modules/study/adapt";
 import { getStats } from "@/modules/study/stats";
@@ -34,12 +35,13 @@ async function Dashboard() {
           <Stat label="待复习" value={s.dueToday} />
           <Stat label="今日新词" value={`${s.today.newCount}/${profile.dailyNew}`} />
         </div>
-        <Link
+        <PendingSync userId={userId} />
+        <NavLink
           href="/study"
           className={`mt-6 block rounded-lg py-3 text-center font-semibold ${done ? "bg-zinc-100 text-zinc-500" : "bg-zinc-900 text-white"}`}
         >
           {done ? "今日任务已完成,再学一点" : s.today.newCount + s.today.reviewCount > 0 ? "继续学习" : "开始今天的学习"}
-        </Link>
+        </NavLink>
       </section>
 
       <p className="text-center font-serif text-sm italic text-zinc-400">Hodie, non cras</p>

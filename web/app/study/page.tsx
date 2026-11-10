@@ -18,5 +18,5 @@ async function Study() {
   const userId = await requireUserId();
   const queue = await getQueue(userId);
   if (!queue) redirect("/onboarding");
-  return <Session items={queue.items} />;
+  return <Session items={queue.items} userId={userId} generatedAt={queue.generatedAt} />;
 }

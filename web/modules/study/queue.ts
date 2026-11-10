@@ -56,6 +56,8 @@ export interface Queue {
   dueTotal: number;
   newToday: number;
   newLimit: number;
+  /** 生成队列的时间(毫秒),离线打开缓存页面时据此跳过本地已答的题 */
+  generatedAt: number;
 }
 
 function cefrNear(a: string | null, b: string | null): boolean {
@@ -256,7 +258,7 @@ export async function getQueue(userId: string, now = new Date()): Promise<Queue 
     });
   });
 
-  return { items, dueTotal, newToday, newLimit };
+  return { items, dueTotal, newToday, newLimit, generatedAt: now.getTime() };
 }
 
 /**

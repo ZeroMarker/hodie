@@ -11,8 +11,8 @@
 ```
 浏览器(PWA)
   ├─ React 页面:学习、复习、词卡、图谱、对话
-  ├─ Service Worker:静态资源和当日队列缓存
-  └─ IndexedDB:离线作答记录(待同步)
+  ├─ Service Worker:静态资源和最近访问的页面(含当日队列)缓存
+  └─ localStorage:离线作答记录(待同步)
         │ HTTPS(Server Actions / Route Handlers)
 Next.js 应用(Vercel)
   ├─ auth      登录、会话
@@ -38,7 +38,7 @@ PostgreSQL(Aiven mammoth / hodie 库)
 | ORM 与迁移 | Drizzle ORM + drizzle-kit | 只管 `app` schema;`vocab` 用 introspect 生成只读类型 |
 | 认证 | Auth.js(邮箱魔法链接 + Google) | 会话存 `app` schema;邮件用 Resend |
 | 调度 | ts-fsrs | 只在服务端运行,保证状态一致 |
-| 离线 | Serwist(Service Worker)+ IndexedDB | 阶段 2 实现 |
+| 离线 | 手写 Service Worker(`public/sw.js`)+ localStorage | 阶段 2 已实现;待提交的作答只有几百条,用不上 IndexedDB,也不引入 Serwist |
 | 图谱 | Cytoscape.js | 阶段 2 实现 |
 | AI | Claude API(`claude-sonnet-5-5` 对话,`claude-haiku-5-5` 批改和短任务) | 只在服务端调用 |
 | 部署 | Vercel(区域 bom1 孟买,靠近 Aiven do-blr) | 预览环境连独立的 `hodie_dev` 库 |
@@ -114,7 +114,7 @@ web/
 一次学习会话分三步,作答可以批量提交。
 
 1. **取队列**:`study.getQueue(user)` 按 [单词学习方案](word-learning-plan.md) 的顺序组出当日队列:到期卡片(上限 100)、新词(按词书和 `freq_rank`,做干扰控制)。返回卡片内容、题型和干扰项,客户端一次拿全。
-2. **作答**:客户端判断对错、记录耗时,把作答写进 IndexedDB,再批量提交。离线时只写本地,联网后补交。
+2. **作答**:客户端判断对错、记录耗时,把作答写进 localStorage(`modules/offline/pending.ts`),每 10 条或一轮结束时批量提交,成功后删除。离线时只写本地,打开页面或联网时补交;离线打开缓存的学习页时,按队列生成时间跳过本地已答的题。
 3. **提交**:`study.submit(logs)` 按 `review_logs.id` 去重,按作答时间顺序重放:计分(`grade`)→ FSRS 调度(`schedule`)→ 更新 `cards` 和 `daily_stats`,在一个事务里完成。服务端结果为准,客户端拿到新状态后覆盖本地。
 
 客户端判对错只用于即时反馈;评分(Again、Hard、Good、Easy)在服务端按耗时中位数等规则重算,避免篡改。

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { logout } from "@/app/actions";
 import { ProfileForm } from "@/components/profile-form";
+import { LogoutButton } from "@/components/pwa";
 import { auth } from "@/modules/auth";
 import { getProfile, listProgress } from "@/modules/study/profile";
 
@@ -39,9 +40,7 @@ async function Inner() {
         <Link href="/placement" className="block text-zinc-700 underline">
           重新做词汇量测试
         </Link>
-        <form action={logout}>
-          <button className="text-red-600 underline">退出登录</button>
-        </form>
+        <LogoutButton action={logout} />
       </section>
     </>
   );
