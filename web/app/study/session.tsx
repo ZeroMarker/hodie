@@ -17,9 +17,15 @@ const FLUSH_EVERY = 10;
 // 不支持朗读的浏览器把听力题换成对应的看词题
 const FALLBACK: Partial<Record<Exercise, Exercise>> = { listen: "choice", dictation: "spell" };
 
-// 新词每 5 个一组:先依次展示词卡,再做选择题。答错的词在队尾再出现一次。
+// 新词每 5 个一组:先依次展示词卡,再做选择题。重学的 leech 卡片先看词卡再答题。
+// 答错的词在队尾再出现一次(新词和重学卡片连同词卡)。
 function buildSteps(items: QueueItem[]): Step[] {
-  const reviews = items.filter((i) => !i.isNew).map((item) => ({ item, show: false, retry: false }));
+  const reviews = items
+    .filter((i) => !i.isNew)
+    .flatMap((item) => [
+      ...(item.relearn ? [{ item, show: true, retry: false }] : []),
+      { item, show: false, retry: false },
+    ]);
   const fresh = items.filter((i) => i.isNew);
   const steps: Step[] = [...reviews];
   for (let g = 0; g < fresh.length; g += 5) {
@@ -30,7 +36,8 @@ function buildSteps(items: QueueItem[]): Step[] {
   return steps;
 }
 
-export function Session({ items }: { items: QueueItem[] }) {
+/** practice:错题练习,只做题不提交,不影响复习安排。 */
+export function Session({ items, practice = false }: { items: QueueItem[]; practice?: boolean }) {
   const router = useRouter();
   const tts = useSpeechSupported();
   const [steps, setSteps] = useState(() => buildSteps(items));
@@ -70,7 +77,7 @@ export function Session({ items }: { items: QueueItem[] }) {
 
   function record(answer: string, correct: boolean, close: boolean, display: string) {
     const { item } = step;
-    buffer.current.push({
+    if (!practice) buffer.current.push({
       id: crypto.randomUUID(),
       wordId: item.wordId,
       senseId: item.senseId,
@@ -84,7 +91,7 @@ export function Session({ items }: { items: QueueItem[] }) {
     setFeedback({ correct, close, answer: display });
     if (!correct && !step.retry) {
       const again = { item, show: false, retry: true };
-      const extra = item.isNew ? [{ ...again, show: true }, again] : [again];
+      const extra = item.isNew || item.relearn ? [{ ...again, show: true }, again] : [again];
       total.current += extra.length;
       setSteps((ss) => [...ss, ...extra]);
     }
@@ -100,10 +107,18 @@ export function Session({ items }: { items: QueueItem[] }) {
   if (items.length === 0 || finished) {
     return (
       <section className="space-y-4 rounded-2xl bg-white p-6 text-center shadow-sm">
-        <h1 className="text-2xl font-bold">{items.length === 0 ? "今天没有要学的了" : "今天的任务完成了"}</h1>
+        <h1 className="text-2xl font-bold">
+          {practice
+            ? items.length === 0
+              ? "最近没有错题"
+              : "错题练习完成了"
+            : items.length === 0
+              ? "今天没有要学的了"
+              : "今天的任务完成了"}
+        </h1>
         {stats.done > 0 && (
           <p className="text-zinc-600">
-            作答 {stats.done} 次,答对 {stats.correct} 次。明天记得回来复习。
+            作答 {stats.done} 次,答对 {stats.correct} 次。{practice ? "练习不影响复习安排。" : "明天记得回来复习。"}
           </p>
         )}
         {error && <p className="text-sm text-red-600">{error}</p>}
@@ -145,7 +160,7 @@ function WordCardView({ item, onNext }: { item: QueueItem; onNext: () => void })
   const c = item.card;
   return (
     <section className="space-y-5 rounded-2xl bg-white p-6 shadow-sm">
-      <p className="text-xs text-zinc-400">新词</p>
+      <p className="text-xs text-zinc-400">{item.relearn ? "这个词忘了好几次,重新看一遍" : "新词"}</p>
       <header>
         <h1 className="flex items-center gap-2 text-3xl font-bold">
           {item.word} <Speak text={item.word} />
@@ -174,6 +189,9 @@ function WordCardView({ item, onNext }: { item: QueueItem; onNext: () => void })
       )}
       {c && c.collocations.length > 0 && (
         <p className="text-sm text-zinc-600">搭配:{c.collocations.map((x) => x.phrase).join(" · ")}</p>
+      )}
+      {c?.etymology && (
+        <p className="rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-900">词源:{c.etymology}</p>
       )}
       <button onClick={onNext} className="w-full rounded-lg bg-zinc-900 py-3 font-semibold text-white">
         记住了,下一个

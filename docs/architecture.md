@@ -53,7 +53,7 @@ web/
   app/                 页面与路由(study、review、word/[id]、graph、chat、settings)
   modules/
     auth/
-    study/             queue.ts、submit.ts、grade.ts、schedule.ts、placement.ts、stats.ts(adapt.ts 待做)
+    study/             queue.ts、submit.ts、grade.ts、schedule.ts、placement.ts、stats.ts、mistakes.ts(adapt.ts 待做)
     vocab/             card.ts、relations.ts、etymology.ts
     ai/                client.ts、quota.ts、prompts/
     tts/

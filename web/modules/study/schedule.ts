@@ -81,3 +81,15 @@ export function exerciseFor(level: number, r = 1): Exercise {
   if (level === 2) return "cloze";
   return listen ? "dictation" : "spell";
 }
+
+/** 累计遗忘达到这个次数的卡片算 leech(顽固词)。 */
+export const LEECH_LAPSES = 4;
+
+export function isLeech(card: Pick<CardState, "lapses">): boolean {
+  return card.lapses >= LEECH_LAPSES;
+}
+
+/** leech 卡片刚遗忘、处在重学阶段时,要重新展示词卡再答题。 */
+export function isRelearning(card: Pick<CardState, "lapses" | "state">): boolean {
+  return isLeech(card) && card.state === State.Relearning;
+}

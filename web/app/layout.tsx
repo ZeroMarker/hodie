@@ -21,6 +21,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <Link href="/study" className="ml-auto text-sm text-zinc-600 hover:text-zinc-900">
               学习
             </Link>
+            <Link href="/mistakes" className="text-sm text-zinc-600 hover:text-zinc-900">
+              错题本
+            </Link>
             <Link href="/settings" className="text-sm text-zinc-600 hover:text-zinc-900">
               设置
             </Link>

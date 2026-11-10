@@ -8,7 +8,16 @@ import { editDistance, grade, median, spellingDistance } from "@/modules/study/g
 import { pickNonInterfering, similarForm } from "@/modules/study/interference";
 import { posTag, sensePos, shortMeaning } from "@/modules/study/meaning";
 import { finished, masteredCutoff } from "@/modules/study/placement-rules";
-import { Rating, State, exerciseFor, levelFor, newCardState, schedule } from "@/modules/study/schedule";
+import {
+  Rating,
+  State,
+  exerciseFor,
+  isLeech,
+  isRelearning,
+  levelFor,
+  newCardState,
+  schedule,
+} from "@/modules/study/schedule";
 
 describe("meaning", () => {
   it("词性标记归并", () => {
@@ -178,5 +187,16 @@ describe("homographs", () => {
     expect(clozeFor("I found my keys.", false, 2, forms, owners)).toBeNull();
     expect(clozeFor("He founded a school.", false, 2, forms, owners)?.answer).toBe("founded");
     expect(clozeFor("They found a new company.", true, 2, forms, owners)?.answer).toBe("found");
+  });
+});
+
+describe("leech", () => {
+  const base = newCardState(new Date("2026-10-21T02:00:00Z"));
+  it("遗忘 4 次以上算 leech,重学阶段要重看词卡", () => {
+    expect(isLeech({ lapses: 3 })).toBe(false);
+    expect(isLeech({ lapses: 4 })).toBe(true);
+    expect(isRelearning({ ...base, lapses: 4, state: State.Relearning })).toBe(true);
+    expect(isRelearning({ ...base, lapses: 4, state: State.Review })).toBe(false);
+    expect(isRelearning({ ...base, lapses: 2, state: State.Relearning })).toBe(false);
   });
 });

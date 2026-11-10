@@ -1,16 +1,18 @@
 import "server-only";
-import { and, asc, count, eq, gte, lte, sql } from "drizzle-orm";
+import { and, asc, count, eq, gte, inArray, lte, sql } from "drizzle-orm";
 import { db } from "@/db";
 import { cards, dailyStats } from "@/db/app-schema";
 import { type WordCard, getWordCard } from "@/modules/vocab/card";
 import { dayEnd, studyDay } from "./day";
-import { clozeFor, wordForms } from "./forms";
+import { type FormOwners, clozeFor, wordForms } from "./forms";
 import { type Exercise, isChoice } from "./grade";
 import { pickNonInterfering } from "./interference";
 import { posTag, shortMeaning } from "./meaning";
 import { getCutoff, getProfile } from "./profile";
-import { type CardState, exerciseFor, levelFor } from "./schedule";
+import { recentMistakes } from "./mistakes";
+import { type CardState, State, exerciseFor, isLeech, isRelearning, levelFor } from "./schedule";
 import {
+  type Sentence,
   type WordRow,
   clozeSentences,
   distractorPool,
@@ -27,13 +29,18 @@ export interface QueueItem {
   wordId: number;
   senseId: string;
   isNew: boolean;
+  /** leech 卡片的重学:先看词卡再答题 */
+  relearn?: boolean;
   level: number;
   exercise: Exercise;
   word: string;
   phonetic: string | null;
   meaning: string;
   /** 新词先展示的词卡内容 */
-  card?: Pick<WordCard, "translations" | "examples" | "collocations" | "cefr" | "lists">;
+  card?: Pick<WordCard, "translations" | "examples" | "collocations" | "cefr" | "lists"> & {
+    /** 词源讲解,只在重学时展示 */
+    etymology: string | null;
+  };
   choice?: { options: string[]; answer: number };
   cloze?: { before: string; after: string; answer: string; hint: string | null; first: string; length: number };
 }
@@ -94,6 +101,86 @@ export function buildChoice(target: WordRow, distractors: string[]) {
   return { options, answer: options.indexOf(meaning) };
 }
 
+/** 出题需要的词库数据,一次查齐。 */
+interface Context {
+  rows: Map<number, WordRow>;
+  pool: WordRow[];
+  sentences: Map<number, Sentence[]>;
+  owners: FormOwners;
+  /** 选择题干扰项要排除的词:同义近义词和当天新词 */
+  excludeFor: (id: number) => Set<number>;
+}
+
+async function loadContext(list: string, ids: number[], newIds = new Set<number>()): Promise<Context> {
+  const [rows, pool, related, sentences, owners] = await Promise.all([
+    wordsByIds(ids),
+    distractorPool(list),
+    relatedPairs(ids),
+    clozeSentences(ids.filter((id) => !newIds.has(id))),
+    formOwners(),
+  ]);
+  return {
+    rows,
+    pool,
+    sentences,
+    owners,
+    excludeFor: (id) => new Set([...newIds, ...(related.get(id) ?? [])]),
+  };
+}
+
+/** 词卡内容(新词和重学时先展示);例句避开同形异义词形。 */
+async function cardContent(w: WordRow, owners: FormOwners, withEtymology = false): Promise<QueueItem["card"]> {
+  const full = await getWordCard(w.id);
+  if (!full) return undefined;
+  const forms = wordForms(w.word, w.exchange);
+  const examples = full.examples.filter((e) => clozeFor(e.textEn, e.source.startsWith("ai:"), w.id, forms, owners));
+  return {
+    translations: full.translations,
+    examples: examples.slice(0, 2),
+    collocations: full.collocations,
+    cefr: full.cefr,
+    lists: full.lists,
+    etymology: withEtymology ? (full.etymology?.text ?? null) : null,
+  };
+}
+
+/** 已有卡片的一道题:按级别出题;leech 卡片在重学阶段先看词卡(附词源),再做选择题。 */
+async function reviewItem(c: typeof cards.$inferSelect, ctx: Context): Promise<QueueItem | null> {
+  const w = ctx.rows.get(c.wordId);
+  if (!w) return null;
+  const level = levelFor(c as CardState);
+  const relearn = isRelearning(c);
+  let exercise = relearn ? "choice" : exerciseFor(level, Math.random());
+  let cloze: QueueItem["cloze"];
+  if (exercise === "cloze") {
+    const forms = wordForms(w.word, w.exchange);
+    for (const s of ctx.sentences.get(w.id) ?? []) {
+      const z = clozeFor(s.en, s.senseMatched, w.id, forms, ctx.owners);
+      if (z) {
+        cloze = { ...z, hint: s.zh, first: z.answer[0], length: z.answer.length };
+        break;
+      }
+    }
+    // 找不到含目标词的例句时退回选择题
+    if (!cloze) exercise = "choice";
+  }
+  return {
+    key: c.id,
+    wordId: c.wordId,
+    senseId: c.senseId,
+    isNew: false,
+    relearn,
+    level,
+    word: w.word,
+    phonetic: w.phonetic,
+    meaning: shortMeaning(w.translation_zh, w.core_sense_id),
+    exercise,
+    cloze,
+    card: relearn ? await cardContent(w, ctx.owners, true) : undefined,
+    choice: isChoice(exercise) ? buildChoice(w, pickDistractors(w, ctx.pool, ctx.excludeFor(w.id))) : undefined,
+  };
+}
+
 /** 今天的学习队列:到期卡片(上限 100,按到期先后)加上今天剩余的新词。 */
 export async function getQueue(userId: string, now = new Date()): Promise<Queue | null> {
   const profile = await getProfile(userId);
@@ -123,62 +210,11 @@ export async function getQueue(userId: string, now = new Date()): Promise<Queue 
   const newToday = stat?.newCount ?? 0;
   const newWords = await pickNewWords(userId, profile.list, newLimit - newToday, now);
 
-  const ids = [...due.map((c) => c.wordId), ...newWords.map((w) => w.id)];
-  const [rows, pool, related, sentences, owners] = await Promise.all([
-    wordsByIds(ids),
-    distractorPool(profile.list),
-    relatedPairs(ids),
-    clozeSentences(due.map((c) => c.wordId)),
-    formOwners(),
-  ]);
   const newIds = new Set(newWords.map((w) => w.id));
-  const excludeFor = (id: number) => new Set([...newIds, ...(related.get(id) ?? [])]);
-
-  const items: QueueItem[] = [];
-  for (const c of due) {
-    const w = rows.get(c.wordId);
-    if (!w) continue;
-    const level = levelFor(c as CardState);
-    let exercise = exerciseFor(level, Math.random());
-    const base = {
-      key: c.id,
-      wordId: c.wordId,
-      senseId: c.senseId,
-      isNew: false,
-      level,
-      word: w.word,
-      phonetic: w.phonetic,
-      meaning: shortMeaning(w.translation_zh, w.core_sense_id),
-    };
-    let cloze: QueueItem["cloze"];
-    if (exercise === "cloze") {
-      const forms = wordForms(w.word, w.exchange);
-      for (const s of sentences.get(w.id) ?? []) {
-        const z = clozeFor(s.en, s.senseMatched, w.id, forms, owners);
-        if (z) {
-          cloze = { ...z, hint: s.zh, first: z.answer[0], length: z.answer.length };
-          break;
-        }
-      }
-      // 找不到含目标词的例句时退回选择题
-      if (!cloze) exercise = "choice";
-    }
-    items.push({
-      ...base,
-      exercise,
-      cloze,
-      choice: isChoice(exercise) ? buildChoice(w, pickDistractors(w, pool, excludeFor(w.id))) : undefined,
-    });
-  }
-
-  const cardsContent = await Promise.all(newWords.map((w) => getWordCard(w.id)));
+  const ctx = await loadContext(profile.list, [...due.map((c) => c.wordId), ...newIds], newIds);
+  const items = (await Promise.all(due.map((c) => reviewItem(c, ctx)))).filter((i) => i !== null);
+  const contents = await Promise.all(newWords.map((w) => cardContent(w, ctx.owners)));
   newWords.forEach((w, i) => {
-    const full = cardsContent[i];
-    // 词卡例句同样避开同形异义词形(如 found 的例句里 found 作 find 的过去式)
-    const forms = wordForms(w.word, w.exchange);
-    const examples = (full?.examples ?? []).filter((e) =>
-      clozeFor(e.textEn, e.source.startsWith("ai:"), w.id, forms, owners),
-    );
     items.push({
       key: `new:${w.id}`,
       wordId: w.id,
@@ -189,16 +225,8 @@ export async function getQueue(userId: string, now = new Date()): Promise<Queue 
       word: w.word,
       phonetic: w.phonetic,
       meaning: shortMeaning(w.translation_zh, w.core_sense_id),
-      card: full
-        ? {
-            translations: full.translations,
-            examples: examples.slice(0, 2),
-            collocations: full.collocations,
-            cefr: full.cefr,
-            lists: full.lists,
-          }
-        : undefined,
-      choice: buildChoice(w, pickDistractors(w, pool, excludeFor(w.id))),
+      card: contents[i],
+      choice: buildChoice(w, pickDistractors(w, ctx.pool, ctx.excludeFor(w.id))),
     });
   });
 
@@ -232,4 +260,27 @@ async function pickNewWords(userId: string, list: string, n: number, now: Date):
   const picked = pickNonInterfering(candidates, n, [...taken.values()], related, hypernyms);
   const byId = new Map(candidates.map((c) => [c.id, c]));
   return picked.map((p) => byId.get(p.id)!);
+}
+
+/** 错题练习最多的词数。 */
+export const PRACTICE_LIMIT = 20;
+
+/**
+ * 错题练习队列:最近答错的卡片按级别出题。练习不提交、不改变复习安排;
+ * leech 卡片先看词卡。
+ */
+export async function getPracticeQueue(userId: string, now = new Date()): Promise<QueueItem[] | null> {
+  const profile = await getProfile(userId);
+  if (!profile) return null;
+  const ids = (await recentMistakes(userId, now)).slice(0, PRACTICE_LIMIT).map((m) => m.cardId);
+  if (ids.length === 0) return [];
+  const rows = await db
+    .select()
+    .from(cards)
+    .where(and(eq(cards.userId, userId), inArray(cards.id, ids)));
+  const ctx = await loadContext(profile.list, rows.map((c) => c.wordId));
+  const items = await Promise.all(
+    rows.map((c) => reviewItem({ ...c, state: isLeech(c) ? State.Relearning : c.state }, ctx)),
+  );
+  return items.filter((i) => i !== null);
 }
