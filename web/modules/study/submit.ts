@@ -1,14 +1,15 @@
 import "server-only";
 import { and, eq, inArray, sql } from "drizzle-orm";
+import type { Grade } from "ts-fsrs";
 import { db } from "@/db";
 import { cards, dailyStats, reviewLogs } from "@/db/app-schema";
 import { studyDay } from "./day";
 import { wordForms } from "./forms";
-import { type Exercise, grade, normalize, spellingDistance } from "./grade";
+import { type Exercise, grade, isChoice, normalize, spellingDistance } from "./grade";
 import { shortMeaning } from "./meaning";
 import { getProfile } from "./profile";
 import { type CardState, levelFor, newCardState, schedule } from "./schedule";
-import { wordsByIds } from "./words";
+import { type WordRow, wordsByIds } from "./words";
 
 export interface SubmittedLog {
   /** 客户端生成的 UUID,用于去重 */
@@ -29,7 +30,7 @@ export interface SubmitResult {
 }
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-const EXERCISES = new Set<Exercise>(["choice", "cloze", "spell"]);
+const EXERCISES = new Set<Exercise>(["choice", "listen", "cloze", "spell", "dictation"]);
 
 export function validLog(l: SubmittedLog): boolean {
   return (
@@ -57,9 +58,22 @@ async function medians(userId: string): Promise<Map<string, number>> {
   return new Map(rows.filter((r) => r.n >= 5).map((r) => [r.exercise, r.med]));
 }
 
+/** 判对错:选择题比对释义,输入题按编辑距离(0 为对)。 */
+function check(l: SubmittedLog, w: WordRow): { correct: boolean; distance: number } {
+  if (isChoice(l.exercise)) {
+    return { correct: normalize(l.answer) === normalize(shortMeaning(w.translation_zh, w.core_sense_id)), distance: 0 };
+  }
+  const distance = spellingDistance(l.answer, wordForms(w.word, w.exchange));
+  return { correct: distance === 0, distance };
+}
+
+const cardKey = (wordId: number, senseId: string) => `${wordId}\t${senseId}`;
+const excluded = (col: string) => sql.raw(`excluded.${col}`);
+
 /**
  * 提交一批作答:按 id 去重,按作答时间顺序重放(判对错 → 评分 → FSRS 调度),
  * 在一个事务里更新 cards、review_logs 和 daily_stats。服务端结果为准。
+ * 一批作答固定 5 次查询:查重、锁定卡片、写卡片、写作答记录、写每日统计。
  */
 export async function submitLogs(
   userId: string,
@@ -90,29 +104,38 @@ export async function submitLogs(
       .from(reviewLogs)
       .where(inArray(reviewLogs.id, logs.map((l) => l.id)));
     const done = new Set(seen.map((s) => s.id));
-    const results: SubmitResult[] = [];
-
-    for (const l of logs) {
-      const w = words.get(l.wordId);
-      if (!w || done.has(l.id)) continue;
+    const todo = logs.filter((l) => {
+      if (!words.has(l.wordId) || done.has(l.id)) return false;
       done.add(l.id);
+      return true;
+    });
+    if (todo.length === 0) return [];
 
-      const [existing] = await tx
-        .select()
-        .from(cards)
-        .where(and(eq(cards.userId, userId), eq(cards.wordId, l.wordId), eq(cards.senseId, l.senseId)))
-        .for("update");
-      const before: CardState = existing ?? newCardState(l.at);
+    const locked = await tx
+      .select()
+      .from(cards)
+      .where(and(eq(cards.userId, userId), inArray(cards.wordId, [...new Set(todo.map((l) => l.wordId))])))
+      .for("update");
+    // 每张卡片的当前状态;本批里同一张卡片的多次作答依次累积
+    const current = new Map<string, CardState>(locked.map((c) => [cardKey(c.wordId, c.senseId), c]));
+
+    type Row = {
+      log: (typeof todo)[number];
+      key: string;
+      isNew: boolean;
+      level: number;
+      rating: Grade;
+      correct: boolean;
+      before: CardState | null;
+      after: CardState;
+    };
+    const rows: Row[] = [];
+    for (const l of todo) {
+      const key = cardKey(l.wordId, l.senseId);
+      const prev = current.get(key) ?? null;
+      const before = prev ?? newCardState(l.at);
       const level = levelFor(before);
-
-      let correct: boolean;
-      let distance = 0;
-      if (l.exercise === "choice") {
-        correct = normalize(l.answer) === normalize(shortMeaning(w.translation_zh, w.core_sense_id));
-      } else {
-        distance = spellingDistance(l.answer, wordForms(w.word, w.exchange));
-        correct = distance === 0;
-      }
+      const { correct, distance } = check(l, words.get(l.wordId)!);
       const rating = grade({
         exercise: l.exercise,
         level,
@@ -122,61 +145,92 @@ export async function submitLogs(
         medianMs: meds.get(l.exercise) ?? 8000,
       });
       const after = schedule(before, rating, l.at, profile.retention, profile.fsrsParams);
-      const state = { ...after, level: levelFor(after) };
+      current.set(key, after);
+      // 卡片的第一次作答算新学;同批里之后的作答已有状态,算复习
+      const isNew = !prev;
+      rows.push({ log: l, key, isNew, level, rating, correct, before: prev, after });
+    }
 
-      let cardId: string;
-      if (existing) {
-        cardId = existing.id;
-        await tx.update(cards).set(state).where(eq(cards.id, cardId));
-      } else {
-        const [row] = await tx
-          .insert(cards)
-          .values({ userId, wordId: l.wordId, senseId: l.senseId, ...state })
-          .returning({ id: cards.id });
-        cardId = row.id;
-      }
-
-      await tx.insert(reviewLogs).values({
-        id: l.id,
-        cardId,
+    const touched = [...new Set(rows.map((r) => r.key))].map((key) => {
+      const [wordId, senseId] = key.split("\t");
+      const c = current.get(key)!;
+      return {
         userId,
-        exercise: l.exercise,
-        level,
-        rating,
-        durationMs: l.durationMs,
-        answer: l.answer,
-        reviewedAt: l.at,
-        stabilityBefore: existing ? before.stability : null,
-        difficultyBefore: existing ? before.difficulty : null,
-        stabilityAfter: after.stability,
-        difficultyAfter: after.difficulty,
-        elapsedDays: before.lastReview ? (l.at.getTime() - before.lastReview.getTime()) / 86400_000 : null,
+        wordId: Number(wordId),
+        senseId,
+        level: levelFor(c),
+        due: c.due,
+        stability: c.stability,
+        difficulty: c.difficulty,
+        learningSteps: c.learningSteps,
+        reps: c.reps,
+        lapses: c.lapses,
+        state: c.state,
+        lastReview: c.lastReview,
+      };
+    });
+    const saved = await tx
+      .insert(cards)
+      .values(touched)
+      .onConflictDoUpdate({
+        target: [cards.userId, cards.wordId, cards.senseId],
+        set: {
+          level: excluded("level"),
+          due: excluded("due"),
+          stability: excluded("stability"),
+          difficulty: excluded("difficulty"),
+          learningSteps: excluded("learning_steps"),
+          reps: excluded("reps"),
+          lapses: excluded("lapses"),
+          state: excluded("state"),
+          lastReview: excluded("last_review"),
+        },
+      })
+      .returning({ id: cards.id, wordId: cards.wordId, senseId: cards.senseId });
+    const cardIds = new Map(saved.map((c) => [cardKey(c.wordId, c.senseId), c.id]));
+
+    await tx.insert(reviewLogs).values(
+      rows.map((r) => ({
+        id: r.log.id,
+        cardId: cardIds.get(r.key)!,
+        userId,
+        exercise: r.log.exercise,
+        level: r.level,
+        rating: r.rating,
+        durationMs: r.log.durationMs,
+        answer: r.log.answer,
+        reviewedAt: r.log.at,
+        stabilityBefore: r.before ? r.before.stability : null,
+        difficultyBefore: r.before ? r.before.difficulty : null,
+        stabilityAfter: r.after.stability,
+        difficultyAfter: r.after.difficulty,
+        elapsedDays: r.before?.lastReview ? (r.log.at.getTime() - r.before.lastReview.getTime()) / 86400_000 : null,
+      })),
+    );
+
+    const days = new Map<string, { newCount: number; reviewCount: number; correctCount: number; durationMs: number }>();
+    for (const r of rows) {
+      const day = studyDay(r.log.at);
+      const d = days.get(day) ?? { newCount: 0, reviewCount: 0, correctCount: 0, durationMs: 0 };
+      if (r.isNew) d.newCount++;
+      else d.reviewCount++;
+      if (r.correct) d.correctCount++;
+      d.durationMs += r.log.durationMs;
+      days.set(day, d);
+    }
+    await tx
+      .insert(dailyStats)
+      .values([...days].map(([day, d]) => ({ userId, day, ...d })))
+      .onConflictDoUpdate({
+        target: [dailyStats.userId, dailyStats.day],
+        set: {
+          newCount: sql`${dailyStats.newCount} + ${excluded("new_count")}`,
+          reviewCount: sql`${dailyStats.reviewCount} + ${excluded("review_count")}`,
+          correctCount: sql`${dailyStats.correctCount} + ${excluded("correct_count")}`,
+          durationMs: sql`${dailyStats.durationMs} + ${excluded("duration_ms")}`,
+        },
       });
 
-      const isNew = !existing;
-      const ok = correct ? 1 : 0;
-      await tx
-        .insert(dailyStats)
-        .values({
-          userId,
-          day: studyDay(l.at),
-          newCount: isNew ? 1 : 0,
-          reviewCount: isNew ? 0 : 1,
-          correctCount: ok,
-          durationMs: l.durationMs,
-        })
-        .onConflictDoUpdate({
-          target: [dailyStats.userId, dailyStats.day],
-          set: {
-            newCount: sql`${dailyStats.newCount} + ${isNew ? 1 : 0}`,
-            reviewCount: sql`${dailyStats.reviewCount} + ${isNew ? 0 : 1}`,
-            correctCount: sql`${dailyStats.correctCount} + ${ok}`,
-            durationMs: sql`${dailyStats.durationMs} + ${l.durationMs}`,
-          },
-        });
-
-      results.push({ id: l.id, correct, rating, due: after.due.toISOString() });
-    }
-    return results;
+    return rows.map((r) => ({ id: r.log.id, correct: r.correct, rating: r.rating, due: r.after.due.toISOString() }));
   });
 }

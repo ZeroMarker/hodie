@@ -4,8 +4,8 @@ import { db } from "@/db";
 import { cards, dailyStats } from "@/db/app-schema";
 import { type WordCard, getWordCard } from "@/modules/vocab/card";
 import { dayEnd, studyDay } from "./day";
-import { makeCloze, wordForms } from "./forms";
-import type { Exercise } from "./grade";
+import { clozeFor, wordForms } from "./forms";
+import { type Exercise, isChoice } from "./grade";
 import { pickNonInterfering } from "./interference";
 import { posTag, shortMeaning } from "./meaning";
 import { getCutoff, getProfile } from "./profile";
@@ -14,6 +14,7 @@ import {
   type WordRow,
   clozeSentences,
   distractorPool,
+  formOwners,
   hypernymSets,
   relatedPairs,
   wordsByIds,
@@ -123,11 +124,12 @@ export async function getQueue(userId: string, now = new Date()): Promise<Queue 
   const newWords = await pickNewWords(userId, profile.list, newLimit - newToday, now);
 
   const ids = [...due.map((c) => c.wordId), ...newWords.map((w) => w.id)];
-  const [rows, pool, related, sentences] = await Promise.all([
+  const [rows, pool, related, sentences, owners] = await Promise.all([
     wordsByIds(ids),
     distractorPool(profile.list),
     relatedPairs(ids),
     clozeSentences(due.map((c) => c.wordId)),
+    formOwners(),
   ]);
   const newIds = new Set(newWords.map((w) => w.id));
   const excludeFor = (id: number) => new Set([...newIds, ...(related.get(id) ?? [])]);
@@ -137,7 +139,7 @@ export async function getQueue(userId: string, now = new Date()): Promise<Queue 
     const w = rows.get(c.wordId);
     if (!w) continue;
     const level = levelFor(c as CardState);
-    let exercise = exerciseFor(level);
+    let exercise = exerciseFor(level, Math.random());
     const base = {
       key: c.id,
       wordId: c.wordId,
@@ -152,7 +154,7 @@ export async function getQueue(userId: string, now = new Date()): Promise<Queue 
     if (exercise === "cloze") {
       const forms = wordForms(w.word, w.exchange);
       for (const s of sentences.get(w.id) ?? []) {
-        const z = makeCloze(s.en, forms);
+        const z = clozeFor(s.en, s.senseMatched, w.id, forms, owners);
         if (z) {
           cloze = { ...z, hint: s.zh, first: z.answer[0], length: z.answer.length };
           break;
@@ -165,13 +167,18 @@ export async function getQueue(userId: string, now = new Date()): Promise<Queue 
       ...base,
       exercise,
       cloze,
-      choice: exercise === "choice" ? buildChoice(w, pickDistractors(w, pool, excludeFor(w.id))) : undefined,
+      choice: isChoice(exercise) ? buildChoice(w, pickDistractors(w, pool, excludeFor(w.id))) : undefined,
     });
   }
 
   const cardsContent = await Promise.all(newWords.map((w) => getWordCard(w.id)));
   newWords.forEach((w, i) => {
     const full = cardsContent[i];
+    // 词卡例句同样避开同形异义词形(如 found 的例句里 found 作 find 的过去式)
+    const forms = wordForms(w.word, w.exchange);
+    const examples = (full?.examples ?? []).filter((e) =>
+      clozeFor(e.textEn, e.source.startsWith("ai:"), w.id, forms, owners),
+    );
     items.push({
       key: `new:${w.id}`,
       wordId: w.id,
@@ -185,7 +192,7 @@ export async function getQueue(userId: string, now = new Date()): Promise<Queue 
       card: full
         ? {
             translations: full.translations,
-            examples: full.examples.slice(0, 2),
+            examples: examples.slice(0, 2),
             collocations: full.collocations,
             cefr: full.cefr,
             lists: full.lists,

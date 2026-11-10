@@ -1,7 +1,13 @@
 // 自动评分:客观题不让用户自评,由对错、耗时和拼写差异决定 FSRS 评分。规则见 docs/word-learning-plan.md。
 import { type Grade, Rating } from "ts-fsrs";
 
-export type Exercise = "choice" | "cloze" | "spell";
+/** choice 看词选义、listen 听音选义、cloze 例句挖空、spell 看中文拼写、dictation 听写。 */
+export type Exercise = "choice" | "listen" | "cloze" | "spell" | "dictation";
+
+/** 选择题(其余为输入题)。 */
+export function isChoice(e: Exercise): boolean {
+  return e === "choice" || e === "listen";
+}
 
 export const DEFAULT_MEDIAN_MS = 8000;
 
@@ -42,7 +48,7 @@ export interface GradeInput {
 }
 
 export function grade(g: GradeInput): Grade {
-  const typed = g.exercise !== "choice";
+  const typed = !isChoice(g.exercise);
   if (!g.correct) {
     // L3 拼写差一个字母记为 Hard,其他错误一律 Again
     return typed && g.distance === 1 ? Rating.Hard : Rating.Again;

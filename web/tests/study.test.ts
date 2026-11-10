@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from "vitest";
 vi.mock("@/db", () => ({ db: {} }));
 vi.mock("next/cache", () => ({ cacheLife: () => {} }));
 import { addDays, dayEnd, streak, studyDay } from "@/modules/study/day";
-import { makeCloze, wordForms } from "@/modules/study/forms";
+import { buildFormOwners, clozeFor, makeCloze, unambiguousForms, wordForms } from "@/modules/study/forms";
 import { editDistance, grade, median, spellingDistance } from "@/modules/study/grade";
 import { pickNonInterfering, similarForm } from "@/modules/study/interference";
 import { posTag, sensePos, shortMeaning } from "@/modules/study/meaning";
@@ -46,6 +46,12 @@ describe("grade", () => {
     expect(grade({ ...base, durationMs: 1000 })).toBe(Rating.Good);
     expect(grade({ ...base, exercise: "spell", level: 3, durationMs: 1000 })).toBe(Rating.Easy);
   });
+  it("听音选义按选择题评分,听写按输入题评分", () => {
+    expect(grade({ ...base, exercise: "listen", correct: false, distance: 1, durationMs: 1000 })).toBe(Rating.Again);
+    expect(
+      grade({ ...base, exercise: "dictation", level: 3, correct: false, distance: 1, durationMs: 1000 }),
+    ).toBe(Rating.Hard);
+  });
   it("编辑距离与中位数", () => {
     expect(editDistance("adapt", "adopt")).toBe(1);
     expect(spellingDistance(" Went ", ["go", "went"])).toBe(0);
@@ -72,6 +78,12 @@ describe("schedule", () => {
     expect(exerciseFor(1)).toBe("choice");
     expect(exerciseFor(2)).toBe("cloze");
     expect(exerciseFor(4)).toBe("spell");
+  });
+  it("L1 和 L3 按比例换成听力题,L2 不变", () => {
+    expect(exerciseFor(1, 0.1)).toBe("listen");
+    expect(exerciseFor(3, 0.1)).toBe("dictation");
+    expect(exerciseFor(2, 0.1)).toBe("cloze");
+    expect(exerciseFor(1, 0.9)).toBe("choice");
   });
   it("Again 增加遗忘次数", () => {
     let c = newCardState(now);
@@ -143,5 +155,28 @@ describe("day", () => {
     expect(streak(["2026-10-20", "2026-10-19"], today)).toBe(2);
     expect(streak(["2026-10-19"], today)).toBe(0);
     expect(addDays(today, 1)).toBe("2026-10-22");
+  });
+});
+
+describe("homographs", () => {
+  const owners = buildFormOwners([
+    { id: 1, word: "find", exchange: "p:found/d:found/i:finding/3:finds" },
+    { id: 2, word: "found", exchange: "p:founded/d:founded/i:founding/3:founds" },
+    { id: 3, word: "apple", exchange: "s:apples" },
+  ]);
+  it("同属另一个词书词的词形有歧义", () => {
+    expect(unambiguousForms(2, wordForms("found", "p:founded/d:founded/i:founding/3:founds"), owners)).toEqual([
+      "founded",
+      "founding",
+      "founds",
+    ]);
+    expect(unambiguousForms(1, ["find", "found", "finding", "finds"], owners)).toEqual(["find", "finding", "finds"]);
+    expect(unambiguousForms(3, ["apple", "apples"], owners)).toEqual(["apple", "apples"]);
+  });
+  it("普通例句只接受无歧义词形,按核心义写成的例句全部接受", () => {
+    const forms = ["found", "founded", "founding", "founds"];
+    expect(clozeFor("I found my keys.", false, 2, forms, owners)).toBeNull();
+    expect(clozeFor("He founded a school.", false, 2, forms, owners)?.answer).toBe("founded");
+    expect(clozeFor("They found a new company.", true, 2, forms, owners)?.answer).toBe("found");
   });
 });

@@ -14,9 +14,14 @@ export function speak(text: string) {
   speechSynthesis.speak(u);
 }
 
+/** 浏览器是否支持朗读(服务端渲染时为 false)。 */
+export function useSpeechSupported(): boolean {
+  return useSyncExternalStore(subscribe, supported, () => false);
+}
+
 /** 浏览器朗读按钮;不支持 Web Speech API 的浏览器不显示。 */
 export function Speak({ text, className = "" }: { text: string; className?: string }) {
-  const ok = useSyncExternalStore(subscribe, supported, () => false);
+  const ok = useSpeechSupported();
   if (!ok) return null;
   return (
     <button

@@ -4,8 +4,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { submitReviews } from "@/app/actions";
-import { Speak, speak } from "@/components/speak";
-import { editDistance, normalize } from "@/modules/study/grade";
+import { Speak, speak, useSpeechSupported } from "@/components/speak";
+import { type Exercise, editDistance, isChoice, normalize } from "@/modules/study/grade";
 import type { QueueItem } from "@/modules/study/queue";
 import type { SubmittedLog } from "@/modules/study/submit";
 
@@ -13,6 +13,9 @@ type Step = { item: QueueItem; show: boolean; retry: boolean };
 type Feedback = { correct: boolean; close: boolean; answer: string };
 
 const FLUSH_EVERY = 10;
+
+// 不支持朗读的浏览器把听力题换成对应的看词题
+const FALLBACK: Partial<Record<Exercise, Exercise>> = { listen: "choice", dictation: "spell" };
 
 // 新词每 5 个一组:先依次展示词卡,再做选择题。答错的词在队尾再出现一次。
 function buildSteps(items: QueueItem[]): Step[] {
@@ -29,6 +32,7 @@ function buildSteps(items: QueueItem[]): Step[] {
 
 export function Session({ items }: { items: QueueItem[] }) {
   const router = useRouter();
+  const tts = useSpeechSupported();
   const [steps, setSteps] = useState(() => buildSteps(items));
   const [pos, setPos] = useState(0);
   const [feedback, setFeedback] = useState<Feedback | null>(null);
@@ -40,11 +44,15 @@ export function Session({ items }: { items: QueueItem[] }) {
 
   const step = steps[pos];
   const finished = pos >= steps.length;
+  const exercise = step && (tts ? step.item.exercise : (FALLBACK[step.item.exercise] ?? step.item.exercise));
 
   useEffect(() => {
     started.current = performance.now();
-    if (step && (step.show || step.item.exercise === "choice")) speak(step.item.word);
-  }, [pos, step]);
+    // 新词卡、选择题和听力题自动读一遍;拼写题不读,否则等于听写
+    if (step && (step.show || exercise === "choice" || exercise === "listen" || exercise === "dictation")) {
+      speak(step.item.word);
+    }
+  }, [pos, step, exercise]);
 
   async function flush() {
     const logs = buffer.current;
@@ -66,7 +74,7 @@ export function Session({ items }: { items: QueueItem[] }) {
       id: crypto.randomUUID(),
       wordId: item.wordId,
       senseId: item.senseId,
-      exercise: item.exercise,
+      exercise,
       answer,
       durationMs: Math.round(performance.now() - started.current),
       reviewedAt: new Date().toISOString(),
@@ -120,7 +128,14 @@ export function Session({ items }: { items: QueueItem[] }) {
       {step.show ? (
         <WordCardView key={pos} item={step.item} onNext={next} />
       ) : (
-        <Question key={pos} item={step.item} feedback={feedback} onAnswer={record} onNext={next} />
+        <Question
+          key={pos}
+          item={step.item}
+          exercise={exercise}
+          feedback={feedback}
+          onAnswer={record}
+          onNext={next}
+        />
       )}
     </div>
   );
@@ -169,11 +184,13 @@ function WordCardView({ item, onNext }: { item: QueueItem; onNext: () => void })
 
 function Question({
   item,
+  exercise,
   feedback,
   onAnswer,
   onNext,
 }: {
   item: QueueItem;
+  exercise: Exercise;
   feedback: Feedback | null;
   onAnswer: (answer: string, correct: boolean, close: boolean, display: string) => void;
   onNext: () => void;
@@ -191,19 +208,23 @@ function Question({
   function submitTyped(e: React.FormEvent) {
     e.preventDefault();
     if (feedback || !text.trim()) return;
-    const expected = item.exercise === "cloze" ? item.cloze!.answer : item.word;
+    const expected = exercise === "cloze" ? item.cloze!.answer : item.word;
     const d = Math.min(editDistance(normalize(text), normalize(expected)), editDistance(normalize(text), normalize(item.word)));
     onAnswer(text, d === 0, d === 1, expected);
   }
 
   return (
     <section className="space-y-5 rounded-2xl bg-white p-6 shadow-sm">
-      {item.exercise === "choice" && item.choice && (
+      {isChoice(exercise) && item.choice && (
         <>
-          <p className="text-xs text-zinc-400">选出中文意思</p>
-          <h1 className="flex items-center gap-2 text-3xl font-bold">
-            {item.word} <Speak text={item.word} />
-          </h1>
+          <p className="text-xs text-zinc-400">{exercise === "listen" ? "听发音,选出中文意思" : "选出中文意思"}</p>
+          {exercise === "listen" && !feedback ? (
+            <ReplayButton word={item.word} />
+          ) : (
+            <h1 className="flex items-center gap-2 text-3xl font-bold">
+              {item.word} <Speak text={item.word} />
+            </h1>
+          )}
           <div className="space-y-2">
             {item.choice.options.map((o, i) => {
               const right = i === item.choice!.answer;
@@ -232,7 +253,7 @@ function Question({
         </>
       )}
 
-      {item.exercise === "cloze" && item.cloze && (
+      {exercise === "cloze" && item.cloze && (
         <form onSubmit={submitTyped} className="space-y-4">
           <p className="text-xs text-zinc-400">填入缺少的单词</p>
           <p className="text-lg leading-relaxed">
@@ -248,12 +269,18 @@ function Question({
         </form>
       )}
 
-      {item.exercise === "spell" && (
+      {exercise === "spell" && (
         <form onSubmit={submitTyped} className="space-y-4">
           <p className="text-xs text-zinc-400">拼写这个单词</p>
-          <p className="flex items-center gap-2 text-2xl font-semibold">
-            {item.meaning} <Speak text={item.word} />
-          </p>
+          <p className="text-2xl font-semibold">{item.meaning}</p>
+          <TypedInput value={text} onChange={setText} disabled={!!feedback} />
+        </form>
+      )}
+
+      {exercise === "dictation" && (
+        <form onSubmit={submitTyped} className="space-y-4">
+          <p className="text-xs text-zinc-400">听写:写出听到的单词</p>
+          <ReplayButton word={item.word} />
           <TypedInput value={text} onChange={setText} disabled={!!feedback} />
         </form>
       )}
@@ -266,7 +293,7 @@ function Question({
             <>
               {feedback.close ? "差一点:" : "正确答案:"}
               <span className="font-semibold">{feedback.answer}</span>
-              {item.exercise !== "choice" && <span className="ml-2">({item.meaning})</span>}
+              {!isChoice(exercise) && <span className="ml-2">({item.meaning})</span>}
             </>
           )}
         </div>
@@ -277,6 +304,18 @@ function Question({
         </button>
       )}
     </section>
+  );
+}
+
+function ReplayButton({ word }: { word: string }) {
+  return (
+    <button
+      type="button"
+      onClick={() => speak(word)}
+      className="flex w-full items-center justify-center gap-2 rounded-xl border border-zinc-200 py-6 text-2xl hover:border-zinc-900"
+    >
+      🔊 <span className="text-base text-zinc-500">再听一遍</span>
+    </button>
   );
 }
 

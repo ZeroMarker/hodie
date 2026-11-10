@@ -1,6 +1,7 @@
 import "server-only";
 import { sql } from "drizzle-orm";
 import { db } from "@/db";
+import { type FormOwners, buildFormOwners } from "./forms";
 
 export type WordRow = {
   id: number;
@@ -66,25 +67,47 @@ export async function hypernymSets(ids: number[]): Promise<Map<number, Set<numbe
   return map;
 }
 
-/** 挖空用的例句:优先 Tatoeba 和已审核的例句,没有时用 WordNet 核心义的英文例句。 */
-export async function clozeSentences(
-  ids: number[],
-): Promise<Map<number, { en: string; zh: string | null }[]>> {
-  const map = new Map<number, { en: string; zh: string | null }[]>();
+/** senseMatched:例句按核心义写成(AI 按核心义生成,或 WordNet 核心义自带的例句)。 */
+export type Sentence = { en: string; zh: string | null; senseMatched: boolean };
+
+/**
+ * 挖空用的例句:优先已审核的例句(随机取至多 6 条),再加 WordNet 核心义的英文例句。
+ * 是否含同形异义词形由调用方用 clozeFor 判断,所以多取几条备选。
+ */
+export async function clozeSentences(ids: number[]): Promise<Map<number, Sentence[]>> {
+  const map = new Map<number, Sentence[]>();
   if (ids.length === 0) return map;
-  const { rows } = await db.execute<{ word_id: number; en: string; zh: string | null }>(sql`
-    SELECT word_id, en, zh FROM (
-      SELECT e.word_id, e.text_en AS en, e.text_zh AS zh,
+  const { rows } = await db.execute<{ word_id: number; en: string; zh: string | null; sense_matched: boolean }>(sql`
+    SELECT word_id, en, zh, sense_matched FROM (
+      SELECT e.word_id, e.text_en AS en, e.text_zh AS zh, e.source LIKE 'ai:%' AS sense_matched,
              row_number() OVER (PARTITION BY e.word_id ORDER BY e.reviewed DESC, random()) AS rn
       FROM vocab.examples e WHERE e.word_id = ANY(${intArray(ids)})
-    ) t WHERE rn <= 3
+    ) t WHERE rn <= 6
     UNION ALL
-    SELECT s.word_id, jsonb_array_elements_text(s.examples) AS en, NULL AS zh
+    SELECT s.word_id, jsonb_array_elements_text(s.examples) AS en, NULL AS zh, true AS sense_matched
     FROM vocab.words w JOIN vocab.senses s ON s.id = w.core_sense_id AND s.word_id = w.id
     WHERE w.id = ANY(${intArray(ids)}) AND s.examples IS NOT NULL`);
   for (const r of rows) {
     if (!map.has(r.word_id)) map.set(r.word_id, []);
-    map.get(r.word_id)!.push({ en: r.en, zh: r.zh });
+    map.get(r.word_id)!.push({ en: r.en, zh: r.zh, senseMatched: r.sense_matched });
   }
   return map;
+}
+
+// 词库只在 load_pg.py 重建时变化,每个实例缓存一小时。
+let ownersCache: { at: number; value: Promise<FormOwners> } | null = null;
+
+/** 全部词书词的词形归属,用于识别同形异义词形。 */
+export function formOwners(): Promise<FormOwners> {
+  if (!ownersCache || Date.now() - ownersCache.at > 3600_000) {
+    const value = db
+      .execute<{ id: number; word: string; exchange: string | null }>(sql`
+        SELECT w.id, w.word, w.exchange FROM vocab.words w
+        WHERE EXISTS (SELECT 1 FROM vocab.word_lists l WHERE l.word_id = w.id)`)
+      .then(({ rows }) => buildFormOwners(rows));
+    // 查询失败时不缓存,下次重试
+    value.catch(() => (ownersCache = null));
+    ownersCache = { at: Date.now(), value };
+  }
+  return ownersCache.value;
 }

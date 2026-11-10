@@ -31,3 +31,41 @@ export function makeCloze(
   }
   return null;
 }
+
+/** 词形 → 拥有该词形的词书词 id(原形或变形)。 */
+export type FormOwners = Map<string, number[]>;
+
+export function buildFormOwners(rows: { id: number; word: string; exchange: string | null }[]): FormOwners {
+  const owners: FormOwners = new Map();
+  for (const r of rows) {
+    for (const f of wordForms(r.word, r.exchange)) {
+      const k = f.toLowerCase();
+      const ids = owners.get(k);
+      if (!ids) owners.set(k, [r.id]);
+      else if (!ids.includes(r.id)) ids.push(r.id);
+    }
+  }
+  return owners;
+}
+
+/**
+ * 去掉同形异义的词形:某个词形同时属于另一个词书词(如 found 既是 found 的原形,
+ * 又是 find 的过去式),句子里出现它时无法确定用的是哪个词。
+ */
+export function unambiguousForms(wordId: number, forms: string[], owners: FormOwners): string[] {
+  return forms.filter((f) => (owners.get(f.toLowerCase()) ?? []).every((id) => id === wordId));
+}
+
+/**
+ * 句子能否用来考这个词:按核心义写成的例句(AI 生成、WordNet 核心义例句)接受全部词形;
+ * 其他例句(Tatoeba)只接受无歧义的词形。返回挖空结果,不能用时返回 null。
+ */
+export function clozeFor(
+  sentence: string,
+  senseMatched: boolean,
+  wordId: number,
+  forms: string[],
+  owners: FormOwners,
+): ReturnType<typeof makeCloze> {
+  return makeCloze(sentence, senseMatched ? forms : unambiguousForms(wordId, forms, owners));
+}

@@ -71,8 +71,13 @@ export function levelFor(card: CardState): number {
   return 4;
 }
 
-export function exerciseFor(level: number): Exercise {
-  if (level <= 1) return "choice";
+/** 复习中听力题(听音选义、听写)所占比例。 */
+export const LISTEN_RATE = 1 / 3;
+
+/** 按级别出题;L1 和 L3 以 LISTEN_RATE 的比例换成听力题。r 为 [0, 1) 的随机数。 */
+export function exerciseFor(level: number, r = 1): Exercise {
+  const listen = r < LISTEN_RATE;
+  if (level <= 1) return listen ? "listen" : "choice";
   if (level === 2) return "cloze";
-  return "spell";
+  return listen ? "dictation" : "spell";
 }
