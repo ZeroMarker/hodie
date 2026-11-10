@@ -1,7 +1,8 @@
 import "server-only";
 import { sql } from "drizzle-orm";
+import { cacheLife } from "next/cache";
 import { db } from "@/db";
-import { type FormOwners, buildFormOwners } from "./forms";
+import { type FormOwners, buildFormOwners, clozeFor, wordForms } from "./forms";
 
 export type WordRow = {
   id: number;
@@ -94,20 +95,31 @@ export async function clozeSentences(ids: number[]): Promise<Map<number, Sentenc
   return map;
 }
 
-// 词库只在 load_pg.py 重建时变化,每个实例缓存一小时。
-let ownersCache: { at: number; value: Promise<FormOwners> } | null = null;
+// 词库只在 load_pg.py 重建时变化,缓存一天。缓存的值要能序列化,所以存成数组再转 Map。
+async function formOwnerEntries(): Promise<[string, number[]][]> {
+  "use cache";
+  cacheLife("days");
+  const { rows } = await db.execute<{ id: number; word: string; exchange: string | null }>(sql`
+    SELECT w.id, w.word, w.exchange FROM vocab.words w
+    WHERE EXISTS (SELECT 1 FROM vocab.word_lists l WHERE l.word_id = w.id)`);
+  return [...buildFormOwners(rows)];
+}
 
 /** 全部词书词的词形归属,用于识别同形异义词形。 */
-export function formOwners(): Promise<FormOwners> {
-  if (!ownersCache || Date.now() - ownersCache.at > 3600_000) {
-    const value = db
-      .execute<{ id: number; word: string; exchange: string | null }>(sql`
-        SELECT w.id, w.word, w.exchange FROM vocab.words w
-        WHERE EXISTS (SELECT 1 FROM vocab.word_lists l WHERE l.word_id = w.id)`)
-      .then(({ rows }) => buildFormOwners(rows));
-    // 查询失败时不缓存,下次重试
-    value.catch(() => (ownersCache = null));
-    ownersCache = { at: Date.now(), value };
-  }
-  return ownersCache.value;
+export async function formOwners(): Promise<FormOwners> {
+  return new Map(await formOwnerEntries());
+}
+
+/**
+ * 去掉例句和搭配里用了同形异义词形的条目(如 found 的例句里 found 作 find 的过去式)。
+ * AI 生成的条目按核心义写成,全部保留。text 取例句英文或搭配短语。
+ */
+export function senseSafe<T extends { source: string }>(
+  w: { id: number; word: string; exchange: string | null },
+  items: T[],
+  text: (t: T) => string,
+  owners: FormOwners,
+): T[] {
+  const forms = wordForms(w.word, w.exchange);
+  return items.filter((t) => clozeFor(text(t), t.source.startsWith("ai:"), w.id, forms, owners));
 }

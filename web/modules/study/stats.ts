@@ -1,5 +1,5 @@
 import "server-only";
-import { and, count, desc, eq, gte, lte } from "drizzle-orm";
+import { and, count, desc, eq, gte, inArray, lte } from "drizzle-orm";
 import { db } from "@/db";
 import { cards, dailyStats } from "@/db/app-schema";
 import { dayEnd, streak, studyDay } from "./day";
@@ -54,4 +54,21 @@ export async function getStats(userId: string, now = new Date()): Promise<Stats>
     mastered: mastered.n,
     week,
   };
+}
+
+export type WordStatus = "mastered" | "learning";
+
+/** 这些词对用户的掌握状态:已掌握(S ≥ 21 天)或在学;没有卡片的词不出现。 */
+export async function wordStatus(userId: string, wordIds: number[]): Promise<Record<number, WordStatus>> {
+  if (wordIds.length === 0) return {};
+  const rows = await db
+    .select({ wordId: cards.wordId, stability: cards.stability })
+    .from(cards)
+    .where(and(eq(cards.userId, userId), inArray(cards.wordId, wordIds)));
+  const out: Record<number, WordStatus> = {};
+  for (const r of rows) {
+    if (r.stability >= MASTERED_STABILITY) out[r.wordId] = "mastered";
+    else out[r.wordId] ??= "learning";
+  }
+  return out;
 }

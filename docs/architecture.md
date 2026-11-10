@@ -54,7 +54,7 @@ web/
   modules/
     auth/
     study/             queue.ts、submit.ts、grade.ts、schedule.ts、placement.ts、stats.ts、mistakes.ts、adapt.ts
-    vocab/             card.ts、relations.ts、etymology.ts
+    vocab/             card.ts、relations.ts、etymology.ts、graph.ts(图谱节点和边,纯函数)
     ai/                client.ts、quota.ts、prompts/
     tts/
   db/

@@ -216,6 +216,11 @@ function WordCardView({ item, onNext }: { item: QueueItem; onNext: () => void })
       {c && c.collocations.length > 0 && (
         <p className="text-sm text-zinc-600">搭配:{c.collocations.map((x) => x.phrase).join(" · ")}</p>
       )}
+      {c?.familyOf && (
+        <p className="rounded-lg bg-blue-50 px-4 py-3 text-sm text-blue-900">
+          和你已经学会的 <span className="font-semibold">{c.familyOf}</span> 是同族词
+        </p>
+      )}
       {c?.etymology && (
         <p className="rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-900">词源:{c.etymology}</p>
       )}

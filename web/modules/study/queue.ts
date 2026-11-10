@@ -22,6 +22,7 @@ import {
   formOwners,
   hypernymSets,
   relatedPairs,
+  senseSafe,
   wordsByIds,
 } from "./words";
 
@@ -43,6 +44,8 @@ export interface QueueItem {
   card?: Pick<WordCard, "translations" | "examples" | "collocations" | "cefr" | "lists"> & {
     /** 词源讲解,只在重学时展示 */
     etymology: string | null;
+    /** 已学会的同族词,新词卡上提示 */
+    familyOf?: string | null;
   };
   choice?: { options: string[]; answer: number };
   cloze?: { before: string; after: string; answer: string; hint: string | null; first: string; length: number };
@@ -104,6 +107,12 @@ export function buildChoice(target: WordRow, distractors: string[]) {
   return { options, answer: options.indexOf(meaning) };
 }
 
+/** 原形稳定性达到这个天数后,优先引入它的同族词。 */
+export const FAMILY_STABILITY = 7;
+
+/** 新词候选;family_of 为已学会的同族词(如学 happiness 时为 happy)。 */
+type NewWordRow = WordRow & { family_of: string | null };
+
 /** 出题需要的词库数据,一次查齐。 */
 interface Context {
   rows: Map<number, WordRow>;
@@ -145,12 +154,10 @@ async function loadContext(
 async function cardContent(w: WordRow, owners: FormOwners, withEtymology = false): Promise<QueueItem["card"]> {
   const full = await getWordCard(w.id);
   if (!full) return undefined;
-  const forms = wordForms(w.word, w.exchange);
-  const examples = full.examples.filter((e) => clozeFor(e.textEn, e.source.startsWith("ai:"), w.id, forms, owners));
   return {
     translations: full.translations,
-    examples: examples.slice(0, 2),
-    collocations: full.collocations,
+    examples: senseSafe(w, full.examples, (e) => e.textEn, owners).slice(0, 2),
+    collocations: senseSafe(w, full.collocations, (c) => c.phrase, owners),
     cefr: full.cefr,
     lists: full.lists,
     etymology: withEtymology ? (full.etymology?.text ?? null) : null,
@@ -244,7 +251,7 @@ export async function getQueue(userId: string, now = new Date()): Promise<Queue 
       word: w.word,
       phonetic: w.phonetic,
       meaning: shortMeaning(w.translation_zh, w.core_sense_id),
-      card: contents[i],
+      card: contents[i] && { ...contents[i], familyOf: w.family_of },
       choice: buildChoice(w, pickDistractors(w, ctx.pool, ctx.excludeFor(w.id))),
     });
   });
@@ -256,8 +263,8 @@ export async function getQueue(userId: string, now = new Date()): Promise<Queue 
  * 取新词;当前词书剩下的词都取完了(没有可学的词)时,自动换到下一本词书继续取,
  * 并把用户的词书改成下一本。
  */
-async function pickAcrossLists(userId: string, list: ListCode, n: number, now: Date): Promise<WordRow[]> {
-  const out: WordRow[] = [];
+async function pickAcrossLists(userId: string, list: ListCode, n: number, now: Date): Promise<NewWordRow[]> {
+  const out: NewWordRow[] = [];
   for (let current = list; n - out.length > 0; ) {
     const { words, exhausted } = await pickNewWords(userId, current, n - out.length, now, out);
     out.push(...words);
@@ -279,19 +286,30 @@ async function pickNewWords(
   n: number,
   now: Date,
   picked: WordRow[] = [],
-): Promise<{ words: WordRow[]; exhausted: boolean }> {
+): Promise<{ words: NewWordRow[]; exhausted: boolean }> {
   if (n <= 0) return { words: [], exhausted: false };
   const pickedIds = picked.map((w) => w.id);
   const cutoff = await getCutoff(userId);
-  const { rows: candidates } = await db.execute<WordRow>(sql`
-    SELECT w.id, w.word, w.phonetic, w.translation_zh, w.exchange, w.cefr, w.core_sense_id, w.freq_rank
+  // 词族:已稳定 7 天以上的词的同族词优先学,并在词卡上提示(如 happy → happiness)
+  const { rows: candidates } = await db.execute<NewWordRow>(sql`
+    WITH fam AS (
+      SELECT DISTINCT ON (r.dst_word_id) r.dst_word_id AS word_id, b.word AS base
+      FROM app.cards c
+      JOIN vocab.relations r ON r.src_word_id = c.word_id AND r.type = 'derived_from'
+      JOIN vocab.words b ON b.id = c.word_id
+      WHERE c.user_id = ${userId} AND c.stability >= ${FAMILY_STABILITY}
+      ORDER BY r.dst_word_id, c.stability DESC
+    )
+    SELECT w.id, w.word, w.phonetic, w.translation_zh, w.exchange, w.cefr, w.core_sense_id, w.freq_rank,
+           fam.base AS family_of
     FROM vocab.word_lists l JOIN vocab.words w ON w.id = l.word_id
+    LEFT JOIN fam ON fam.word_id = w.id
     WHERE l.list = ${list}
       AND w.translation_zh IS NOT NULL AND w.translation_zh <> ''
       AND (w.freq_rank IS NULL OR w.freq_rank > ${cutoff})
       AND NOT EXISTS (SELECT 1 FROM app.cards c WHERE c.user_id = ${userId} AND c.word_id = w.id)
       AND NOT (w.id = ANY(${intArray(pickedIds)}))
-    ORDER BY (w.ngsl_rank IS NULL), w.freq_rank NULLS LAST, w.id
+    ORDER BY (fam.base IS NULL), (w.ngsl_rank IS NULL), w.freq_rank NULLS LAST, w.id
     LIMIT ${n * 5}`);
 
   // 今天已学的新词也参与冲突判断
