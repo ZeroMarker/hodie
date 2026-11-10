@@ -1,8 +1,8 @@
 # 架构设计
 
-2026-10-16
+2026-10-16(2026-11-10 更新)
 
-词库已经建好并导入 Aiven PostgreSQL 的 `vocab` schema(见 [scripts/vocab](../scripts/vocab/README.md)),应用端还没有代码。本文定下应用端的整体架构:一个 Next.js 应用加一个 PostgreSQL 库,不拆服务。学习规则见 [单词学习方案](word-learning-plan.md),表的概念模型见 [数据模型](data-model.md)。
+词库已经建好并导入 Aiven PostgreSQL 的 `vocab` schema(见 [scripts/vocab](../scripts/vocab/README.md)),应用端代码在 `web/`,阶段 1 和阶段 2 已上线(进度见 [开发计划](plan.md))。本文记录应用端的整体架构:一个 Next.js 应用加一个 PostgreSQL 库,不拆服务。学习规则见 [单词学习方案](word-learning-plan.md),表的概念模型见 [数据模型](data-model.md)。
 
 ## 总览
 
@@ -39,7 +39,7 @@ PostgreSQL(Aiven mammoth / hodie 库)
 | 认证 | Auth.js(邮箱魔法链接 + Google) | 会话存 `app` schema;邮件用 Resend |
 | 调度 | ts-fsrs | 只在服务端运行,保证状态一致 |
 | 离线 | 手写 Service Worker(`public/sw.js`)+ localStorage | 阶段 2 已实现;待提交的作答只有几百条,用不上 IndexedDB,也不引入 Serwist |
-| 图谱 | Cytoscape.js | 阶段 2 实现 |
+| 图谱 | Cytoscape.js | 阶段 2 已实现,只在词卡页的浏览器端动态加载 |
 | AI | Claude API(`claude-sonnet-5-5` 对话,`claude-haiku-5-5` 批改和短任务) | 只在服务端调用 |
 | 部署 | Vercel(区域 bom1 孟买,靠近 Aiven do-blr) | 预览环境连独立的 `hodie_dev` 库 |
 | 测试 | Vitest(单元)+ Playwright(端到端) | 调度和计分规则必须有单元测试 |
@@ -134,7 +134,7 @@ AI 功能分两类:离线批量生成的词库数据已在 `vocab` 中(见 [阶�
 
 ## 发音
 
-- 阶段 1(已实现,`web/components/speak.tsx`):浏览器 Web Speech API,en-US、语速 0.9,新词卡和选择题自动读一遍;不支持的浏览器隐藏发音按钮。音质取决于设备,部分国产安卓和微信内置浏览器没有英文语音。
+- 阶段 1(已实现,`web/components/speak.tsx`):浏览器 Web Speech API,en-US、语速 0.9,新词卡、选择题和听力题自动读一遍,拼写题不读;不支持的浏览器隐藏发音按钮,听音选义和听写退回看词选义和看中文拼写。音质取决于设备,部分国产安卓和微信内置浏览器没有英文语音。
 - 阶段 2(2026-10-22 决定暂缓):用 edge-tts 预生成音频,存到 Cloudflare R2 公开桶,`words` 加音频地址列,前端优先播 mp3、失败退回浏览器朗读。先做词书词约 2.1 万个(约 200MB),例句第二批。待定:存储用 R2 还是 Vercel Blob;只做美音还是美音、英音各一套。
 
 ## 环境与发布
