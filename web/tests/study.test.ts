@@ -4,7 +4,8 @@ vi.mock("@/db", () => ({ db: {} }));
 vi.mock("next/cache", () => ({ cacheLife: () => {} }));
 import { addDays, dayEnd, streak, studyDay } from "@/modules/study/day";
 import { buildFormOwners, clozeFor, makeCloze, unambiguousForms, wordForms } from "@/modules/study/forms";
-import { editDistance, grade, median, spellingDistance } from "@/modules/study/grade";
+import { type Exercise, editDistance, grade, median, spellingDistance } from "@/modules/study/grade";
+import { adapt, listenRate } from "@/modules/study/adapt-rules";
 import { pickNonInterfering, similarForm } from "@/modules/study/interference";
 import { posTag, sensePos, shortMeaning } from "@/modules/study/meaning";
 import { finished, masteredCutoff } from "@/modules/study/placement-rules";
@@ -198,5 +199,40 @@ describe("leech", () => {
     expect(isRelearning({ ...base, lapses: 4, state: State.Relearning })).toBe(true);
     expect(isRelearning({ ...base, lapses: 4, state: State.Review })).toBe(false);
     expect(isRelearning({ ...base, lapses: 2, state: State.Relearning })).toBe(false);
+  });
+});
+
+describe("adapt", () => {
+  const today = "2026-11-10";
+  const stats = (total: number, wrong: number, exercise: Exercise = "choice") => [{ exercise, total, wrong }];
+  const base = { dailyNew: 10, overdue: 0, today, boosts: {} };
+  it("正确率高于 92% 且无积压加 2,低于 80% 减 3,样本不足不变", () => {
+    expect(adapt({ ...base, stats: stats(50, 2) }).dailyNew).toBe(12);
+    expect(adapt({ ...base, stats: stats(50, 15) }).dailyNew).toBe(7);
+    expect(adapt({ ...base, stats: stats(50, 5) }).dailyNew).toBe(10);
+    expect(adapt({ ...base, stats: stats(10, 0) }).dailyNew).toBe(10);
+  });
+  it("有积压时减 3,上下限 5 到 20", () => {
+    expect(adapt({ ...base, overdue: 3, stats: stats(50, 0) }).dailyNew).toBe(7);
+    expect(adapt({ ...base, dailyNew: 6, overdue: 1, stats: [] }).dailyNew).toBe(5);
+    expect(adapt({ ...base, dailyNew: 19, stats: stats(50, 0) }).dailyNew).toBe(20);
+  });
+  it("错误率高出平均 15 个百分点的题型加倍 3 天,过期的去掉", () => {
+    const r = adapt({
+      ...base,
+      stats: [
+        { exercise: "choice", total: 80, wrong: 4 },
+        { exercise: "dictation", total: 20, wrong: 8 },
+      ],
+      boosts: { cloze: "2026-11-10", spell: "2026-11-11" },
+    });
+    expect(r.boosts).toEqual({ dictation: "2026-11-13", spell: "2026-11-11" });
+  });
+  it("加倍改变听力题比例", () => {
+    expect(listenRate(1, {}, today)).toBeCloseTo(1 / 3);
+    expect(listenRate(1, { listen: "2026-11-12" }, today)).toBeCloseTo(2 / 3);
+    expect(listenRate(3, { spell: "2026-11-12" }, today)).toBe(0);
+    expect(listenRate(3, { spell: "2026-11-10" }, today)).toBeCloseTo(1 / 3);
+    expect(exerciseFor(3, 0.5, 2 / 3)).toBe("dictation");
   });
 });

@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { logout } from "@/app/actions";
 import { ProfileForm } from "@/components/profile-form";
 import { auth } from "@/modules/auth";
-import { getProfile } from "@/modules/study/profile";
+import { getProfile, listProgress } from "@/modules/study/profile";
 
 export default function Settings() {
   return (
@@ -21,7 +21,7 @@ async function Inner() {
   const session = await auth();
   const userId = session?.user?.id;
   if (!userId) redirect("/login");
-  const profile = await getProfile(userId);
+  const [profile, progress] = await Promise.all([getProfile(userId), listProgress(userId)]);
   if (!profile) redirect("/onboarding");
   return (
     <>
@@ -29,6 +29,8 @@ async function Inner() {
         list={profile.list}
         dailyNew={profile.dailyNew}
         retention={profile.retention}
+        adaptive={profile.adaptive === 1}
+        progress={progress}
         next="/"
         submit="保存"
       />

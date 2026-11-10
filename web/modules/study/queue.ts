@@ -8,13 +8,16 @@ import { type FormOwners, clozeFor, wordForms } from "./forms";
 import { type Exercise, isChoice } from "./grade";
 import { pickNonInterfering } from "./interference";
 import { posTag, shortMeaning } from "./meaning";
-import { getCutoff, getProfile } from "./profile";
+import { getAdaptedProfile } from "./adapt";
+import { type Boosts, listenRate } from "./adapt-rules";
+import { NEXT_LIST, type ListCode, getCutoff, getProfile, setList } from "./profile";
 import { recentMistakes } from "./mistakes";
 import { type CardState, State, exerciseFor, isLeech, isRelearning, levelFor } from "./schedule";
 import {
   type Sentence,
   type WordRow,
   clozeSentences,
+  intArray,
   distractorPool,
   formOwners,
   hypernymSets,
@@ -109,9 +112,17 @@ interface Context {
   owners: FormOwners;
   /** 选择题干扰项要排除的词:同义近义词和当天新词 */
   excludeFor: (id: number) => Set<number>;
+  boosts: Boosts;
+  today: string;
 }
 
-async function loadContext(list: string, ids: number[], newIds = new Set<number>()): Promise<Context> {
+async function loadContext(
+  list: string,
+  ids: number[],
+  boosts: Boosts,
+  today: string,
+  newIds = new Set<number>(),
+): Promise<Context> {
   const [rows, pool, related, sentences, owners] = await Promise.all([
     wordsByIds(ids),
     distractorPool(list),
@@ -125,6 +136,8 @@ async function loadContext(list: string, ids: number[], newIds = new Set<number>
     sentences,
     owners,
     excludeFor: (id) => new Set([...newIds, ...(related.get(id) ?? [])]),
+    boosts,
+    today,
   };
 }
 
@@ -150,7 +163,7 @@ async function reviewItem(c: typeof cards.$inferSelect, ctx: Context): Promise<Q
   if (!w) return null;
   const level = levelFor(c as CardState);
   const relearn = isRelearning(c);
-  let exercise = relearn ? "choice" : exerciseFor(level, Math.random());
+  let exercise = relearn ? "choice" : exerciseFor(level, Math.random(), listenRate(level, ctx.boosts, ctx.today));
   let cloze: QueueItem["cloze"];
   if (exercise === "cloze") {
     const forms = wordForms(w.word, w.exchange);
@@ -183,7 +196,7 @@ async function reviewItem(c: typeof cards.$inferSelect, ctx: Context): Promise<Q
 
 /** 今天的学习队列:到期卡片(上限 100,按到期先后)加上今天剩余的新词。 */
 export async function getQueue(userId: string, now = new Date()): Promise<Queue | null> {
-  const profile = await getProfile(userId);
+  const profile = await getAdaptedProfile(userId, now);
   if (!profile) return null;
   const today = studyDay(now);
   const end = dayEnd(now);
@@ -208,10 +221,16 @@ export async function getQueue(userId: string, now = new Date()): Promise<Queue 
   // 复习积压(到期数超过上限)时新词减半
   const newLimit = dueTotal > REVIEW_LIMIT ? Math.ceil(profile.dailyNew / 2) : profile.dailyNew;
   const newToday = stat?.newCount ?? 0;
-  const newWords = await pickNewWords(userId, profile.list, newLimit - newToday, now);
+  const newWords = await pickAcrossLists(userId, profile.list as ListCode, newLimit - newToday, now);
 
   const newIds = new Set(newWords.map((w) => w.id));
-  const ctx = await loadContext(profile.list, [...due.map((c) => c.wordId), ...newIds], newIds);
+  const ctx = await loadContext(
+    profile.list,
+    [...due.map((c) => c.wordId), ...newIds],
+    profile.boosts as Boosts,
+    today,
+    newIds,
+  );
   const items = (await Promise.all(due.map((c) => reviewItem(c, ctx)))).filter((i) => i !== null);
   const contents = await Promise.all(newWords.map((w) => cardContent(w, ctx.owners)));
   newWords.forEach((w, i) => {
@@ -233,9 +252,36 @@ export async function getQueue(userId: string, now = new Date()): Promise<Queue 
   return { items, dueTotal, newToday, newLimit };
 }
 
-/** 按词书取新词:跳过已有卡片和测试判定已掌握的词,NGSL 词优先,再按词频,最后做干扰控制。 */
-async function pickNewWords(userId: string, list: string, n: number, now: Date): Promise<WordRow[]> {
-  if (n <= 0) return [];
+/**
+ * 取新词;当前词书剩下的词都取完了(没有可学的词)时,自动换到下一本词书继续取,
+ * 并把用户的词书改成下一本。
+ */
+async function pickAcrossLists(userId: string, list: ListCode, n: number, now: Date): Promise<WordRow[]> {
+  const out: WordRow[] = [];
+  for (let current = list; n - out.length > 0; ) {
+    const { words, exhausted } = await pickNewWords(userId, current, n - out.length, now, out);
+    out.push(...words);
+    const next = NEXT_LIST[current];
+    if (!exhausted || !next) break;
+    current = next;
+    await setList(userId, current);
+  }
+  return out;
+}
+
+/**
+ * 按词书取新词:跳过已有卡片、测试判定已掌握的词和 picked 里已选的词,NGSL 词优先,再按词频,
+ * 最后做干扰控制。exhausted 表示这本词书剩下的词已全部取出。
+ */
+async function pickNewWords(
+  userId: string,
+  list: string,
+  n: number,
+  now: Date,
+  picked: WordRow[] = [],
+): Promise<{ words: WordRow[]; exhausted: boolean }> {
+  if (n <= 0) return { words: [], exhausted: false };
+  const pickedIds = picked.map((w) => w.id);
   const cutoff = await getCutoff(userId);
   const { rows: candidates } = await db.execute<WordRow>(sql`
     SELECT w.id, w.word, w.phonetic, w.translation_zh, w.exchange, w.cefr, w.core_sense_id, w.freq_rank
@@ -244,6 +290,7 @@ async function pickNewWords(userId: string, list: string, n: number, now: Date):
       AND w.translation_zh IS NOT NULL AND w.translation_zh <> ''
       AND (w.freq_rank IS NULL OR w.freq_rank > ${cutoff})
       AND NOT EXISTS (SELECT 1 FROM app.cards c WHERE c.user_id = ${userId} AND c.word_id = w.id)
+      AND NOT (w.id = ANY(${intArray(pickedIds)}))
     ORDER BY (w.ngsl_rank IS NULL), w.freq_rank NULLS LAST, w.id
     LIMIT ${n * 5}`);
 
@@ -253,13 +300,17 @@ async function pickNewWords(userId: string, list: string, n: number, now: Date):
     .select({ wordId: cards.wordId })
     .from(cards)
     .where(and(eq(cards.userId, userId), gte(cards.createdAt, dayStart)));
-  const taken = await wordsByIds(takenCards.map((c) => c.wordId));
+  const taken = [...(await wordsByIds(takenCards.map((c) => c.wordId))).values(), ...picked];
 
-  const ids = [...candidates.map((c) => c.id), ...taken.keys()];
+  const ids = [...candidates.map((c) => c.id), ...taken.map((t) => t.id)];
   const [related, hypernyms] = await Promise.all([relatedPairs(ids), hypernymSets(ids)]);
-  const picked = pickNonInterfering(candidates, n, [...taken.values()], related, hypernyms);
+  const chosen = pickNonInterfering(candidates, n, taken, related, hypernyms);
   const byId = new Map(candidates.map((c) => [c.id, c]));
-  return picked.map((p) => byId.get(p.id)!);
+  return {
+    words: chosen.map((p) => byId.get(p.id)!),
+    // 候选不到上限说明取到了词书末尾;全部选中则词书已无可学的词
+    exhausted: candidates.length < n * 5 && chosen.length === candidates.length,
+  };
 }
 
 /** 错题练习最多的词数。 */
@@ -278,7 +329,7 @@ export async function getPracticeQueue(userId: string, now = new Date()): Promis
     .select()
     .from(cards)
     .where(and(eq(cards.userId, userId), inArray(cards.id, ids)));
-  const ctx = await loadContext(profile.list, rows.map((c) => c.wordId));
+  const ctx = await loadContext(profile.list, rows.map((c) => c.wordId), profile.boosts as Boosts, studyDay(now));
   const items = await Promise.all(
     rows.map((c) => reviewItem({ ...c, state: isLeech(c) ? State.Relearning : c.state }, ctx)),
   );

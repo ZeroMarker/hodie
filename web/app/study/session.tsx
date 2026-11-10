@@ -45,9 +45,21 @@ export function Session({ items, practice = false }: { items: QueueItem[]; pract
   const [feedback, setFeedback] = useState<Feedback | null>(null);
   const [stats, setStats] = useState({ done: 0, correct: 0 });
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
   const buffer = useRef<SubmittedLog[]>([]);
-  const total = useRef(steps.length);
+  const pending = useRef<Promise<void>>(Promise.resolve());
   const started = useRef(0);
+
+  // 「再来一组」刷新后服务端送来新队列,从头开始
+  const [prevItems, setPrevItems] = useState(items);
+  if (items !== prevItems) {
+    setPrevItems(items);
+    setSteps(buildSteps(items));
+    setPos(0);
+    setFeedback(null);
+    setStats({ done: 0, correct: 0 });
+    setLoading(false);
+  }
 
   const step = steps[pos];
   const finished = pos >= steps.length;
@@ -61,18 +73,29 @@ export function Session({ items, practice = false }: { items: QueueItem[]; pract
     }
   }, [pos, step, exercise]);
 
-  async function flush() {
+  function flush() {
     const logs = buffer.current;
-    if (logs.length === 0) return;
+    if (logs.length === 0) return pending.current;
     buffer.current = [];
-    try {
-      await submitReviews(logs);
-      setError(null);
-    } catch {
-      // 提交失败时放回缓冲区,下次再交(id 去重,重复提交无害)
-      buffer.current = [...logs, ...buffer.current];
-      setError("网络异常,作答已暂存,稍后会自动重新提交。");
-    }
+    const p = pending.current.then(async () => {
+      try {
+        await submitReviews(logs);
+        setError(null);
+      } catch {
+        // 提交失败时放回缓冲区,下次再交(id 去重,重复提交无害)
+        buffer.current = [...logs, ...buffer.current];
+        setError("网络异常,作答已暂存,稍后会自动重新提交。");
+      }
+    });
+    pending.current = p;
+    return p;
+  }
+
+  async function again() {
+    setLoading(true);
+    // 等作答交完再取新队列,否则刚学的词会被重复选中
+    await flush();
+    router.refresh();
   }
 
   function record(answer: string, correct: boolean, close: boolean, display: string) {
@@ -90,16 +113,15 @@ export function Session({ items, practice = false }: { items: QueueItem[]; pract
     setStats((s) => ({ done: s.done + 1, correct: s.correct + (correct ? 1 : 0) }));
     setFeedback({ correct, close, answer: display });
     if (!correct && !step.retry) {
-      const again = { item, show: false, retry: true };
-      const extra = item.isNew || item.relearn ? [{ ...again, show: true }, again] : [again];
-      total.current += extra.length;
+      const retry = { item, show: false, retry: true };
+      const extra = item.isNew || item.relearn ? [{ ...retry, show: true }, retry] : [retry];
       setSteps((ss) => [...ss, ...extra]);
     }
   }
 
   function next() {
     // 最后一题之后把剩余作答交上去
-    if (pos + 1 >= total.current) flush();
+    if (pos + 1 >= steps.length) flush();
     setFeedback(null);
     setPos((p) => p + 1);
   }
@@ -126,8 +148,12 @@ export function Session({ items, practice = false }: { items: QueueItem[]; pract
           <Link href="/" className="flex-1 rounded-lg bg-zinc-900 py-3 font-semibold text-white">
             返回首页
           </Link>
-          <button onClick={() => router.refresh()} className="flex-1 rounded-lg border border-zinc-300 py-3">
-            再来一组
+          <button
+            onClick={again}
+            disabled={loading}
+            className="flex-1 rounded-lg border border-zinc-300 py-3 disabled:opacity-50"
+          >
+            {loading ? "正在准备…" : "再来一组"}
           </button>
         </div>
       </section>

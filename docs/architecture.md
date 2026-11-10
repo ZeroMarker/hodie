@@ -53,7 +53,7 @@ web/
   app/                 页面与路由(study、review、word/[id]、graph、chat、settings)
   modules/
     auth/
-    study/             queue.ts、submit.ts、grade.ts、schedule.ts、placement.ts、stats.ts、mistakes.ts(adapt.ts 待做)
+    study/             queue.ts、submit.ts、grade.ts、schedule.ts、placement.ts、stats.ts、mistakes.ts、adapt.ts
     vocab/             card.ts、relations.ts、etymology.ts
     ai/                client.ts、quota.ts、prompts/
     tts/
@@ -87,7 +87,7 @@ web/
 | 表 | 主要字段 | 说明 |
 | --- | --- | --- |
 | `users`、`accounts`、`sessions`、`verification_tokens` | Auth.js 标准表 | 账号、会话、验证令牌;只有这几张表之间建外键 |
-| `profiles` | user_id、词书、每日新词数、目标保持率、FSRS 参数 | 偏好和自适应状态 |
+| `profiles` | user_id、词书、每日新词数、目标保持率、FSRS 参数、adaptive、adapted_on、boosts | 偏好和自适应状态 |
 | `placement` | user_id、档位、结果 | 词汇量测试结果 |
 | `cards` | id、user_id、word_id、sense_id、level(L0–L4)、FSRS 状态(due、stability、difficulty、reps、lapses、state、last_review)、suspended | 一张卡片 = 用户 × 词条 × 词义;唯一键 (user_id, word_id, sense_id) |
 | `review_logs` | id(客户端生成的 UUID)、card_id、题型、级别、评分、耗时、用户答案、作答时间、作答前后 S 和 D、上次间隔 | 只追加;UUID 用于离线同步去重 |

@@ -77,6 +77,11 @@ export const profiles = app.table("profiles", {
   dailyNew: smallint("daily_new").notNull().default(10),
   retention: real("retention").notNull().default(0.9),
   fsrsParams: jsonb("fsrs_params").$type<number[] | null>(),
+  // 自适应:1 表示每天按复习表现自动调整 daily_new;adapted_on 为最近一次调整的学习日
+  adaptive: smallint("adaptive").notNull().default(1),
+  adaptedOn: date("adapted_on"),
+  // 偏难题型的加倍截止日,如 {"dictation": "2026-11-13"}
+  boosts: jsonb("boosts").$type<Partial<Record<string, string>>>().notNull().default({}),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
 

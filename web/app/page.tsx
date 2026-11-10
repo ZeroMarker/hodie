@@ -2,7 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 import { currentUserId } from "@/modules/auth";
-import { getProfile } from "@/modules/study/profile";
+import { getAdaptedProfile } from "@/modules/study/adapt";
 import { getStats } from "@/modules/study/stats";
 import { listName } from "@/modules/vocab/card";
 
@@ -19,7 +19,7 @@ export default function Home() {
 async function Dashboard() {
   const userId = await currentUserId();
   if (!userId) return <Landing />;
-  const profile = await getProfile(userId);
+  const profile = await getAdaptedProfile(userId);
   if (!profile) redirect("/onboarding");
   const s = await getStats(userId);
   const newLeft = Math.max(0, profile.dailyNew - s.today.newCount);

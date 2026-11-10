@@ -27,6 +27,8 @@ export async function updateProfile(formData: FormData) {
     list: String(formData.get("list")),
     dailyNew: Number(formData.get("dailyNew")),
     retention: formData.has("retention") ? Number(formData.get("retention")) : undefined,
+    // 只有设置页有自适应开关(和保持率一起出现)
+    adaptive: formData.has("retention") ? formData.has("adaptive") : undefined,
   });
   redirect(String(formData.get("next") ?? "/"));
 }
