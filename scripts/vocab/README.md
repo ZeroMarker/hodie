@@ -9,6 +9,12 @@ python3 -m venv .venv && .venv/bin/pip install -r scripts/vocab/requirements.txt
 .venv/bin/python -I scripts/vocab/load_pg.py "$(avn service get mammoth --format '{service_uri}' | sed 's#/defaultdb?#/hodie?#')"  # 导入 Aiven PostgreSQL 的 vocab schema
 ```
 
+上游不保证能再下载到同一份数据:Wikimedia 只保留最近几个月的 dump,Tatoeba 每周重新导出。2026-11-10 已把 `data/raw/*.bz2`(Wiktionary 20261001 dump 和 3 个 Tatoeba 文件,共约 1.6GB)备份到 PikPak 网盘 `pik:Backup/hodie/data-raw/`(本机挂载在 `~/pik/Backup/hodie/data-raw/`)。恢复时拷回 `data/raw/` 即可,`fetch.sh` 会跳过已有文件并校验 Wiktionary 的 sha1:
+
+```bash
+rclone copy pik:Backup/hodie/data-raw/ data/raw/
+```
+
 产物为 SQLite,共十二张表:
 
 - `words`:词条、音标、中英释义、词性、词形变化(`exchange`)、CEFR 等级、wordfreq 排名和 Zipf 值、NGSL 排名、是否具体名词(`concrete`,首个名词词义属于动物、植物、食物、人造物、身体、自然物)、核心义词义(`core_sense_id`,阶段 3 任务 2 生成,多义词书词在现代英语中**最常用的义项**对应的 `senses.id`,不限 ECDICT 第一行、词性可为释义任意一行的词性,无法判断时为 NULL)。`id` 由 `word_ids.tsv` 登记,重建时保持不变,新词追加。
