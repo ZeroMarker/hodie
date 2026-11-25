@@ -51,6 +51,8 @@ wordfreq 数据禁止转成 CSV 再分发,不要把产物导出为 CSV 对外提
 - 例句入库行 `source` 写 `ai:opencode/<model>`;核心义词义写入 `words.core_sense_id`。`reviewed` 先写 0,人工抽检错误率低于 5% 后整批改 1(核心义词义的抽检以结果文件里的 `reviewed` 为准,`words` 表暂不加该列)。
 - 任务 2 改版只重做受影响的词时,用 `core_sense_redo.py` 检测并导出重做输入:`--export` 写 `data/ai/redo/core_sense/in/`,`--check` 校验会话写出的 `out/`,`--merge` 把 v3 行替换回 `vocab-ai/core_sense/`,其余词保留旧版本。规则见该脚本 docstring 和 [阶段 3 词库任务](../../docs/stage3-vocab-tasks.md)。
 
+以下按日期记录生成和抽检过程。文中「`reviewed` 仍为 0」是当时的状态;最终审核结果和入库情况见文末「2026-10-20 构建结果」。
+
 2026-10-14 任务 1 全量完成:79 批、7866 个词、15732 条 AI 例句。2026-10-15 抽检后把生成要求升到 `prompt_version=3`,新增「不得用 old/whole 凑词」「不得用 do/does/did 强调式」两条校验,只重做命中的 3697 个词,其余保留 v2;另改正抽检发现的 6 个词。现为 `prompt_version=3` 3702 词、`prompt_version=2` 4164 词,`ai_validate.py` 校验 7866/7866 通过。词书词的例句覆盖从 7120 补到 14986(100%);入库行 `reviewed` 仍为 0,待人工抽检。
 
 2026-10-14 任务 2 全量完成:102 批、10105 个多义词书词。2026-10-15 抽检后把判断标准从「ECDICT 第一行」改为「现代英语中最常用的义项」(参考全部释义),全量重做到 `prompt_version=2`:9961→9970 词(98.7%)给出 `core_sense_id`,135 词(1.3%)无法判断写 NULL;与 v1 相比 1463 词(14.5%)选择不同。`ai_validate.py` 校验 10105/10105 通过;待人工抽检。

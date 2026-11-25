@@ -1,8 +1,8 @@
 # 架构设计
 
-2026-10-16(2026-11-10 更新)
+2026-10-16(2026-11-25 更新)
 
-词库已经建好并导入 Aiven PostgreSQL 的 `vocab` schema(见 [scripts/vocab](../scripts/vocab/README.md)),应用端代码在 `web/`,阶段 1 和阶段 2 已上线(进度见 [开发计划](plan.md))。本文记录应用端的整体架构:一个 Next.js 应用加一个 PostgreSQL 库,不拆服务。学习规则见 [单词学习方案](word-learning-plan.md),表的概念模型见 [数据模型](data-model.md)。
+词库已经建好并导入 Aiven PostgreSQL 的 `vocab` schema(见 [scripts/vocab](../scripts/vocab/README.md)),应用端代码在 `web/`,阶段 1 和阶段 2 已上线,阶段 3 尚未开工(进度见 [开发计划](plan.md))。本文记录应用端的整体架构:一个 Next.js 应用加一个 PostgreSQL 库,不拆服务。学习规则见 [单词学习方案](word-learning-plan.md),表的概念模型见 [数据模型](data-model.md),阶段 3 的应用侧拆解见 [阶段 3 应用任务](stage3-app-tasks.md)。
 
 ## 总览
 
@@ -10,7 +10,7 @@
 
 ```
 浏览器(PWA)
-  ├─ React 页面:学习、复习、词卡、图谱、对话
+  ├─ React 页面:学习、词卡、图谱(对话在阶段 3)
   ├─ Service Worker:静态资源和最近访问的页面(含当日队列)缓存
   └─ localStorage:离线作答记录(待同步)
         │ HTTPS(Server Actions / Route Handlers)
@@ -18,8 +18,8 @@ Next.js 应用(Vercel)
   ├─ auth      登录、会话
   ├─ study     队列生成、作答、FSRS 调度、自适应
   ├─ vocab     词卡、关系、词源查询(只读)
-  ├─ ai        对话、造句批改、短故事;限额和缓存
-  └─ tts       发音(先浏览器 TTS,后云端 TTS + 对象存储)
+  ├─ ai        对话、造句批改、短故事;限额和缓存(阶段 3)
+  └─ tts       浏览器 TTS 已实现;云端 TTS + 对象存储暂缓
         │ 进程内连接池 pg.Pool(免费版无 PgBouncer)
 PostgreSQL(Aiven mammoth / hodie 库)
   ├─ vocab schema:词库,只读,由 load_pg.py 整体替换
@@ -36,13 +36,13 @@ PostgreSQL(Aiven mammoth / hodie 库)
 | 包管理 | pnpm | 锁文件入库 |
 | 数据库 | Aiven PostgreSQL `hodie` 库 | 已在用;不再考虑 Supabase |
 | ORM 与迁移 | Drizzle ORM + drizzle-kit | 只管 `app` schema;`vocab` 用 introspect 生成只读类型 |
-| 认证 | Auth.js(邮箱魔法链接 + Google) | 会话存 `app` schema;邮件用 Resend |
+| 认证 | Auth.js(邮箱魔法链接 + Google) | 会话存 `app` schema;邮件用 Resend;取舍和 Clerk 评估见 [认证与账号](auth.md) |
 | 调度 | ts-fsrs | 只在服务端运行,保证状态一致 |
 | 离线 | 手写 Service Worker(`public/sw.js`)+ localStorage | 阶段 2 已实现;待提交的作答只有几百条,用不上 IndexedDB,也不引入 Serwist |
 | 图谱 | Cytoscape.js | 阶段 2 已实现,只在词卡页的浏览器端动态加载 |
-| AI | Claude API(`claude-sonnet-5-5` 对话,`claude-haiku-5-5` 批改和短任务) | 只在服务端调用 |
+| AI | Claude API(`claude-sonnet-5-5` 对话,`claude-haiku-5-5` 批改和短任务) | 阶段 3 接入,只在服务端调用;模型档位和预算待定 |
 | 部署 | Vercel(区域 bom1 孟买,靠近 Aiven do-blr) | 预览环境连独立的 `hodie_dev` 库 |
-| 测试 | Vitest(单元)+ Playwright(端到端) | 调度和计分规则必须有单元测试 |
+| 测试 | Vitest(单元);Playwright(端到端,待补) | 调度和计分规则必须有单元测试 |
 
 ## 代码结构
 
@@ -50,18 +50,20 @@ PostgreSQL(Aiven mammoth / hodie 库)
 
 ```
 web/
-  app/                 页面与路由(study、review、word/[id]、graph、chat、settings)
+  app/                 页面与路由(首页、登录、onboarding、placement、study、mistakes、settings、word/[id];对话在阶段 3)
+  components/          共用组件(profile-form、speak、word-graph、pwa)
   modules/
-    auth/
+    auth/              Auth.js、魔法链接发信
     study/             queue.ts、submit.ts、grade.ts、schedule.ts、placement.ts、stats.ts、mistakes.ts、adapt.ts
     vocab/             card.ts、relations.ts、etymology.ts、graph.ts(图谱节点和边,纯函数)
-    ai/                client.ts、quota.ts、prompts/
-    tts/
+    offline/           pending.ts,本地待提交的作答
+    ai/                阶段 3:client.ts、quota.ts、cache.ts、prompts/
   db/
     app-schema.ts      app schema 的 Drizzle 定义
     vocab-schema.ts    vocab schema 的只读定义(introspect 生成)
     migrations/
-  tests/
+  public/sw.js         手写 Service Worker
+  tests/               Vitest 单元测试
 ```
 
 规则:
@@ -92,9 +94,9 @@ web/
 | `cards` | id、user_id、word_id、sense_id、level(L0–L4)、FSRS 状态(due、stability、difficulty、reps、lapses、state、last_review)、suspended | 一张卡片 = 用户 × 词条 × 词义;唯一键 (user_id, word_id, sense_id) |
 | `review_logs` | id(客户端生成的 UUID)、card_id、题型、级别、评分、耗时、用户答案、作答时间、作答前后 S 和 D、上次间隔 | 只追加;UUID 用于离线同步去重 |
 | `daily_stats` | user_id、日期、新学数、复习数、正确率、用时 | 打卡、统计和自适应的输入 |
-| `conversations` / `messages` | 场景、难度、消息、纠错结果 | AI 对话历史 |
-| `ai_usage` | user_id、日期、功能、输入输出 token 数 | 限额和成本统计 |
-| `ai_cache` | 请求哈希、结果、模型、创建时间 | 相同请求复用结果 |
+| `conversations` / `messages` | 场景、难度、消息、纠错结果 | 阶段 3 的 AI 对话历史,表已建 |
+| `ai_usage` | user_id、日期、功能、输入输出 token 数 | 阶段 3 的限额和成本统计,表已建 |
+| `ai_cache` | 请求哈希、结果、模型、创建时间 | 阶段 3 的相同请求复用,表已建 |
 
 `cards (user_id, due)` 建索引,用于取到期卡片。
 
@@ -121,7 +123,7 @@ web/
 
 ## AI 调用
 
-AI 功能分两类:离线批量生成的词库数据已在 `vocab` 中(见 [阶段 3 词库任务](stage3-vocab-tasks.md)),应用运行时只做和用户输入有关的调用。
+AI 功能分两类:离线批量生成的词库数据已在 `vocab` 中(见 [阶段 3 词库任务](stage3-vocab-tasks.md)),应用运行时只做和用户输入有关的调用。运行时功能尚未实现,任务拆解和验收见 [阶段 3 应用任务](stage3-app-tasks.md)。
 
 | 功能 | 模型 | 输入 | 防护 |
 | --- | --- | --- | --- |
@@ -145,7 +147,7 @@ AI 功能分两类:离线批量生成的词库数据已在 `vocab` 中(见 [阶�
 | 预览 | `hodie_dev` 库 | 每次推送 main 后 Vercel 自动部署,用于验收 |
 | 生产 | `hodie` 库 | 内测和发布 |
 
-- CI(GitHub Actions,`.github/workflows/web.yml`):类型检查、lint、单元测试、构建。接入 Vercel 后,再在部署前由 CI 执行 `drizzle-kit migrate`。
+- CI(GitHub Actions,`.github/workflows/web.yml`):类型检查、lint、单元测试、构建。迁移目前由人工对 `hodie_dev` 和 `hodie` 各执行一次 `pnpm db:migrate`,尚未接入 CI。
 - 词库更新:先对 `hodie_dev` 运行 `load_pg.py` 和 `pnpm check-refs`,通过后再导入 `hodie`。
 
 ## 安全与隐私

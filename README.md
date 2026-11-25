@@ -7,4 +7,4 @@
 - `web/`:Next.js 应用,用法见 [web/README.md](web/README.md)。
 - `scripts/vocab/`:词库构建脚本,见 [scripts/vocab/README.md](scripts/vocab/README.md)。
 - `vocab-ai/`:AI 生成并审核过的词库数据。
-- `docs/`:中文文档,入口是 [开发计划](docs/plan.md)(含当前进度)。
+- `docs/`:中文文档,入口是 [开发计划](docs/plan.md)(含当前进度);当前任务见 [阶段 3 应用任务](docs/stage3-app-tasks.md)(草案)。
